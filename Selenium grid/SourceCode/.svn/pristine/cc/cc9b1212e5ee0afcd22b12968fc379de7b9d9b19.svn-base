@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-TestSuite">
+              <span class="suite-name border-failed">TestSuite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-TestSuite">
+                    <span>C:\Users\duyen.ngoc.nguyen\Downloads\11172016\src\Resources\testng_duyen.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-TestSuite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-TestSuite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-TestSuite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-TestSuite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-TestSuite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-TestSuite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">8 methods, 1 failed,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-TestSuite" class="hide-methods failed suite-TestSuite"> (hide)</a> <!-- hide-methods failed suite-TestSuite -->
+                      <a href="#" panel-name="suite-TestSuite" class="show-methods failed suite-TestSuite"> (show)</a> <!-- show-methods failed suite-TestSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-TestSuite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="article.JoomlaArticle_003" hash-for-method="TO_JOOMLA_ARTICLE_012">TO_JOOMLA_ARTICLE_012</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-TestSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-TestSuite" class="hide-methods passed suite-TestSuite"> (hide)</a> <!-- hide-methods passed suite-TestSuite -->
+                      <a href="#" panel-name="suite-TestSuite" class="show-methods passed suite-TestSuite"> (show)</a> <!-- show-methods passed suite-TestSuite -->
+                    </span>
+                    <div class="method-list-content passed suite-TestSuite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="article.JoomlaArticle_003" hash-for-method="TC_JOOMLA_ARTICLE_008">TC_JOOMLA_ARTICLE_008</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="article.JoomlaArticle_004" hash-for-method="TO_JOOMLA_ARTICLE_007">TO_JOOMLA_ARTICLE_007</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="article.JoomlaArticle_003" hash-for-method="TO_JOOMLA_ARTICLE_011">TO_JOOMLA_ARTICLE_011</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="article.JoomlaArticle_004" hash-for-method="TO_JOOMLA_ARTICLE_014">TO_JOOMLA_ARTICLE_014</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="article.JoomlaArticle_004" hash-for-method="TO_JOOMLA_ARTICLE_015">TO_JOOMLA_ARTICLE_015</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="article.JoomlaArticle_004" hash-for-method="TO_JOOMLA_ARTICLE_016">TO_JOOMLA_ARTICLE_016</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-TestSuite" title="article.JoomlaArticle_003" hash-for-method="TO_JOOMLA_ARTICLE_017">TO_JOOMLA_ARTICLE_017</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-TestSuite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-TestSuite" class="panel TestSuite">
+          <div class="suite-TestSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">article.JoomlaArticle_003</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TO_JOOMLA_ARTICLE_012">
+                  </a> <!-- TO_JOOMLA_ARTICLE_012 -->
+                  <span class="method-name">TO_JOOMLA_ARTICLE_012</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Timed out after 8 seconds waiting for element to be clickable: [[FirefoxDriver: firefox on WINDOWS (5f01d2cc-7ec4-463f-b835-e6b2212678c1)] -&gt; xpath: //div[@id=&apos;list_limit_chzn&apos;]//li[.=&apos;5&apos;]]
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5f01d2cc-7ec4-463f-b835-e6b2212678c1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:261)
+	at common.AutomationActions.waitForControl(AutomationActions.java:153)
+	at common.AutomationActions.click(AutomationActions.java:49)
+	at pages.ArticleManagerPageAction.selectNumberOfArticleDisplay(ArticleManagerPageAction.java:143)
+	at pages.ArticleManagerPageAction.verifyArticlePagingCorrectly(ArticleManagerPageAction.java:229)
+	at article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_012(JoomlaArticle_003.java:109)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-failed -->
+          <div class="suite-TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">article.JoomlaArticle_004</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TO_JOOMLA_ARTICLE_007">
+                  </a> <!-- TO_JOOMLA_ARTICLE_007 -->
+                  <span class="method-name">TO_JOOMLA_ARTICLE_007</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TO_JOOMLA_ARTICLE_014">
+                  </a> <!-- TO_JOOMLA_ARTICLE_014 -->
+                  <span class="method-name">TO_JOOMLA_ARTICLE_014</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TO_JOOMLA_ARTICLE_015">
+                  </a> <!-- TO_JOOMLA_ARTICLE_015 -->
+                  <span class="method-name">TO_JOOMLA_ARTICLE_015</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TO_JOOMLA_ARTICLE_016">
+                  </a> <!-- TO_JOOMLA_ARTICLE_016 -->
+                  <span class="method-name">TO_JOOMLA_ARTICLE_016</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-passed -->
+          <div class="suite-TestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">article.JoomlaArticle_003</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="TC_JOOMLA_ARTICLE_008">
+                  </a> <!-- TC_JOOMLA_ARTICLE_008 -->
+                  <span class="method-name">TC_JOOMLA_ARTICLE_008</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TO_JOOMLA_ARTICLE_011">
+                  </a> <!-- TO_JOOMLA_ARTICLE_011 -->
+                  <span class="method-name">TO_JOOMLA_ARTICLE_011</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="TO_JOOMLA_ARTICLE_017">
+                  </a> <!-- TO_JOOMLA_ARTICLE_017 -->
+                  <span class="method-name">TO_JOOMLA_ARTICLE_017</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-TestSuite-class-passed -->
+        </div> <!-- panel TestSuite -->
+        <div panel-name="test-xml-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\duyen.ngoc.nguyen\Downloads\11172016\src\Resources\testng_duyen.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;4&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;TestSuite&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;configuration.TestNGITestListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;FirefoxTestDuyen&quot;&gt;
+    &lt;parameter name=&quot;port&quot; value=&quot;8881&quot;/&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;parameter name=&quot;ip&quot; value=&quot;192.168.189.93&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;article.JoomlaArticle_003&quot;/&gt;
+      &lt;class name=&quot;article.JoomlaArticle_004&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- FirefoxTestDuyen --&gt;
+&lt;/suite&gt; &lt;!-- TestSuite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">FirefoxTestDuyen (2 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_TestSuite');
+function tableData_TestSuite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(8);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'TO_JOOMLA_ARTICLE_014')
+data.setCell(0, 2, 'article.JoomlaArticle_004')
+data.setCell(0, 3, 81788);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'TO_JOOMLA_ARTICLE_015')
+data.setCell(1, 2, 'article.JoomlaArticle_004')
+data.setCell(1, 3, 75237);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'TO_JOOMLA_ARTICLE_012')
+data.setCell(2, 2, 'article.JoomlaArticle_003')
+data.setCell(2, 3, 38404);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'TO_JOOMLA_ARTICLE_007')
+data.setCell(3, 2, 'article.JoomlaArticle_004')
+data.setCell(3, 3, 35546);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'TO_JOOMLA_ARTICLE_017')
+data.setCell(4, 2, 'article.JoomlaArticle_003')
+data.setCell(4, 3, 22229);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'TC_JOOMLA_ARTICLE_008')
+data.setCell(5, 2, 'article.JoomlaArticle_003')
+data.setCell(5, 3, 18056);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'TO_JOOMLA_ARTICLE_011')
+data.setCell(6, 2, 'article.JoomlaArticle_003')
+data.setCell(6, 3, 11913);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'TO_JOOMLA_ARTICLE_016')
+data.setCell(7, 2, 'article.JoomlaArticle_004')
+data.setCell(7, 3, 10032);
+window.suiteTableData['TestSuite']= { tableData: data, tableDiv: 'times-div-TestSuite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <div id="times-div-TestSuite">
+              </div> <!-- times-div-TestSuite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for TestSuite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TO_JOOMLA_ARTICLE_011</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">2016-11-28 17:48:40,440 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:40,440 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:40,440 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:40,440 INFO  JoomlaArticle_003 - Step4: Click on the Header link of ID column
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:46,498 INFO  JoomlaArticle_003 - VP1: Verify the articles is sorted by ID in ascending order
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:47,781 INFO  JoomlaArticle_003 - ===PASSED===
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:47,781 INFO  JoomlaArticle_003 - Step5: Click on the Header link of ID column
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:51,031 INFO  JoomlaArticle_003 - VP2: Verify the articles is sorted by ID in descending order
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:52,352 INFO  JoomlaArticle_003 - ===PASSED===
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TO_JOOMLA_ARTICLE_016</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step8:Select 'Published' item from 'Status' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step9:Enter value on 'Article Text' text area
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,018 INFO  JoomlaArticle_004 - Step10:Click on 'Save & Close' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,018 INFO  JoomlaArticle_004 - Step11:Verify the article is saved successfully
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,018 INFO  JoomlaArticle_004 - Step12:Check on the recently added article's checkbox
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,018 INFO  JoomlaArticle_004 - Step13:Click on the status icon of the selected article in the Featured column
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:21,120 INFO  JoomlaArticle_004 - Verify the article is unfeatured successfully
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:21,120 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unfeatured'
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:21,225 INFO  JoomlaArticle_004 - ===PASSED===
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:21,226 INFO  JoomlaArticle_004 - Step14:Check on the recently added article's checkbox
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:21,226 INFO  JoomlaArticle_004 - Step15:Click on the status icon of the selected article in the Featured column
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,001 INFO  JoomlaArticle_004 - Verify the article is featured successfully
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,001 INFO  JoomlaArticle_004 - VP2: The icon of the selected item is showed as 'Featured'
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,047 INFO  JoomlaArticle_004 - ===PASSED===
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TO_JOOMLA_ARTICLE_014</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">2016-11-28 17:51:26,190 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,190 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,196 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step8:Enter value on 'Article Text' text area
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step9:Click on 'Save & Close' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step10:Click on 'New' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step11:Enter a title on 'Title' field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,198 INFO  JoomlaArticle_004 - Step12:Select an item from the 'Category' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,198 INFO  JoomlaArticle_004 - Step13:Enter value on 'Article Text' text area
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:26,198 INFO  JoomlaArticle_004 - Step14:Click on 'Save & Close' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:39,350 INFO  JoomlaArticle_004 - Step15:Click on the Header link of Ordering column
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:42,567 INFO  JoomlaArticle_004 - Step16:Click on the Header link of Ordering column
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:42,567 INFO  JoomlaArticle_004 - VP1: Verify the first article changes its position with the second article
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,977 INFO  JoomlaArticle_004 - ===PASSED===
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TO_JOOMLA_ARTICLE_015</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">2016-11-28 17:50:00,778 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:00,778 INFO  JoomlaArticle_004 - Step3: Click on 'Log in' button
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:06,624 INFO  JoomlaArticle_004 - Step4: Select Content > Article Manager
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step5: Click on 'New' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step6: Enter a title on 'Title' field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step7: Select an item from the 'Category' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step8: Select 'Published' item from 'Status' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step9: Enter value on 'Article Text' text area
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:08,978 INFO  JoomlaArticle_004 - Step10: Click on 'Save & Close' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:31,293 INFO  JoomlaArticle_004 - Step 11: Check on the recently added article's checkbox
+</span>
+                <span class="reporter-method-output">2016-11-28 17:50:31,293 INFO  JoomlaArticle_004 - Step 12: Click on the status icon of the selected article in the Status column
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:08,190 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:08,190 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unpublish'
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:08,257 INFO  JoomlaArticle_004 - ===PASSED===
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:08,258 INFO  JoomlaArticle_004 - VP2:The '1 article unpublished' message is displayed
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:09,382 INFO  JoomlaArticle_004 - ===PASSED===
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:09,382 INFO  JoomlaArticle_004 - Step 13: Check on the recently added article's checkbox
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:09,382 INFO  JoomlaArticle_004 - Step 14: Click on the status icon of the selected article in the Status column
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:14,762 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:14,763 INFO  JoomlaArticle_004 - VP3: The icon of the selected item is showed as 'Unpublish'
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:14,878 INFO  JoomlaArticle_004 - ===PASSED===
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:14,879 INFO  JoomlaArticle_004 - VP4:The '1 article unpublished' message is displayed
+</span>
+                <span class="reporter-method-output">2016-11-28 17:51:16,014 INFO  JoomlaArticle_004 - ===PASSED===
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TO_JOOMLA_ARTICLE_007</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,981 INFO  JoomlaArticle_004 - Step8:Enter value on 'Article Text' text area
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,981 INFO  JoomlaArticle_004 - Step9:Click on 'Save & Close' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,981 INFO  JoomlaArticle_004 - Step10: Check on the recently added article's checkbox
+</span>
+                <span class="reporter-method-output">2016-11-28 17:52:47,981 INFO  JoomlaArticle_004 - Step11: Click on 'Trash' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:53:08,794 INFO  JoomlaArticle_004 - VP1: Verify the confirm message is displayed
+</span>
+                <span class="reporter-method-output">2016-11-28 17:53:09,900 INFO  JoomlaArticle_004 - Step12: Select 'Trash' item of 'Status' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:53:23,333 INFO  JoomlaArticle_004 - VP2: Verify the deleted article is displayed on the table grid
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TC_JOOMLA_ARTICLE_008</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">2016-11-28 17:48:00,214 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:00,214 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:07,220 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:10,218 INFO  JoomlaArticle_003 - Step5: Click on 'Help' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:14,963 INFO  JoomlaArticle_003 - VP1: Verify the article's help window is displayed
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,202 INFO  JoomlaArticle_003 - ===PASSED===
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TO_JOOMLA_ARTICLE_017</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">2016-11-28 17:48:18,208 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,208 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,208 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,208 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step5: Click on 'New' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step6: Enter a title on 'Title' field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step7: Select an item from the 'Category' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step8: Enter value on 'Article Text' text area
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step9: Select 'Public' item from the 'Access' dropdown list
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step10: Click on 'Save & Close' icon of the top right toolbar
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:35,147 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:35,148 INFO  JoomlaArticle_003 - VP1: 'Article successfully saved' message is displayed
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:36,440 INFO  JoomlaArticle_003 - ===PASSED===
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:36,440 INFO  JoomlaArticle_003 - VP2: Created article is displayed on the articles table
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:40,411 INFO  JoomlaArticle_003 - ===PASSED===
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:40,411 INFO  JoomlaArticle_003 - VP3: The Access Level of the article is displayed as 'Public'
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:40,436 INFO  JoomlaArticle_003 - ===PASSED===
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">TO_JOOMLA_ARTICLE_012</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">2016-11-28 17:48:52,356 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:52,356 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:52,356 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+</span>
+                <span class="reporter-method-output">2016-11-28 17:48:52,356 INFO  JoomlaArticle_003 - Step4: Select '5' item of the 'Display' dropdown list at the footer section of the article table
+</span>
+                <span class="reporter-method-output">2016-11-28 17:49:13,543 INFO  JoomlaArticle_003 - VP1: Verify the article table is paging into 5 articles per page
+</span>
+                <span class="reporter-method-output">2016-11-28 17:49:13,616 INFO  JoomlaArticle_003 - ===PASSED===
+</span>
+                <span class="reporter-method-output">2016-11-28 17:49:13,616 INFO  JoomlaArticle_003 - Step5: Select 'All' item of the 'Display' dropdown list at the footer section of the article table
+</span>
+                <span class="reporter-method-output">2016-11-28 17:49:19,733 INFO  JoomlaArticle_003 - VP2: All articles are displayed in one page
+</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-TestSuite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">article.JoomlaArticle_003</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">SETUP(firefox, 8881, 192.168.189.93)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">TC_JOOMLA_ARTICLE_008</span>
+                <span class="method-start">19423 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TO_JOOMLA_ARTICLE_017</span>
+                <span class="method-start">37482 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TO_JOOMLA_ARTICLE_011</span>
+                <span class="method-start">59714 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">TO_JOOMLA_ARTICLE_012</span>
+                <span class="method-start">71630 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">CLEAN_ENVIRONMENT</span>
+                <span class="method-start">117478 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">article.JoomlaArticle_004</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">SETUP(firefox, 8881, 192.168.189.93)</span>
+                <span class="method-start">131660 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">TO_JOOMLA_ARTICLE_015</span>
+                <span class="method-start">140052 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TO_JOOMLA_ARTICLE_016</span>
+                <span class="method-start">215291 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TO_JOOMLA_ARTICLE_014</span>
+                <span class="method-start">225464 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">TO_JOOMLA_ARTICLE_007</span>
+                <span class="method-start">307255 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">CLEAN_ENVIRONMENT</span>
+                <span class="method-start">342802 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

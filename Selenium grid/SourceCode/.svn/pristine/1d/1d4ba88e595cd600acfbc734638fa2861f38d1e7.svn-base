@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="TestSuite" parallel="false" thread-count="10"> -->
+<suite name="TestSuite" parallel="tests" thread-count="10">
+	<listeners>
+		<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+		<test name="DuyenNodeChrome">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ip" value="192.168.189.93" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="article"/>
+			<package name="weblink"/>
+			<package name="contact"/>
+			<package name="category"/>
+			<package name="bannerclient"/>
+		</packages>
+	</test>
+<!-- 	<test name="TuanNodeIE"> -->
+<!-- 		<parameter name="browser" value="ie" /> -->
+<!-- 		<parameter name="ip" value="192.168.189.60" /> -->
+<!-- 		<parameter name="port" value="8882" /> -->
+<!-- 		<packages> -->
+<!-- 			<package name="article" /> -->
+<!-- 			<package name="weblink" /> -->
+<!-- 			<package name="contact" /> -->
+<!-- 			<package name="category" /> -->
+<!-- 			<package name="bannerclient" /> -->
+<!-- 		</packages> -->
+<!-- 	</test> -->
+<!-- 	<test name="HieuNodeFirefox"> -->
+<!-- 		<parameter name="browser" value="firefox" /> -->
+<!-- 		<parameter name="ip" value="192.168.191.52" /> -->
+<!-- 		<parameter name="port" value="8883" /> -->
+<!-- 		<packages> -->
+<!-- 			<package name="article" /> -->
+<!-- 			<package name="weblink" /> -->
+<!-- 			<package name="contact" /> -->
+<!-- 			<package name="category" /> -->
+<!-- 			<package name="bannerclient" /> -->
+<!-- 		</packages> -->
+<!-- 	</test> -->
+</suite>

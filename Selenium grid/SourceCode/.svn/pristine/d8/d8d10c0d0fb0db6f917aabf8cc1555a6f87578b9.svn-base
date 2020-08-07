@@ -1,0 +1,23 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import common.Constant;
+import joomla.WeblinkPage;;
+
+public class WeblinkPageAction extends pages.AbstractPageAction{
+	WebDriver driver;
+	
+	public WeblinkPageAction(WebDriver driver){
+		this.driver = driver;
+	}
+		public void addNewWeblink(WebDriver driver, String title, String url_weblink, String status, String button) {
+			clickToolbarButton(driver, Constant.NEW_BUTTON);
+			enterText(driver,WeblinkPage.txtWeblinkTitle, title);
+			enterText(driver, WeblinkPage.txtUrl, url_weblink);
+			selectDropDownList(driver, WeblinkPage.ddlStatus, status, "contains");
+			clickToolbarButton(driver, button);
+		
+	}
+
+}

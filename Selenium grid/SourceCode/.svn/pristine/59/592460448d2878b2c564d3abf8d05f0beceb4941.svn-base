@@ -1,0 +1,15 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class WeblinkPage {
+	
+	/*===================================Static Elements===================================*/
+	public static final By txtWeblinkTitle = By.xpath("//input[@id='jform_title']");
+	public static final By txtWeblinkUrl = By.xpath("//input[@id='jform_url']");
+	public static final By ddlWeblinkStatus = By.xpath("//div[@id='jform_state_chzn']/a");
+	public static final By btnWeblinkImage = By.xpath("//button/span[text()='Image']");
+	public static final By tbWeblinkPublishing = By.xpath("//ul[@id='myTabTabs']//a[.='Publishing']");
+	public static final By txtStartDate = By.xpath("//input[@id='jform_publish_up']");
+	public static final By txtFinishDate = By.xpath("//input[@id='jform_publish_down']");
+}

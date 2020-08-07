@@ -1,0 +1,165 @@
+package contact;
+
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import common.JsonHelper;
+import pages.LoginPageAction;
+import pages.ContactManagerPageAction;
+import pages.ContactPageAction;
+import pages.HelpPageAction;
+
+
+
+
+public class JoomlaContact_004 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void setup(String browser, String ip, String port) {
+
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		contactPage = new ContactPageAction (driver);
+		contactManagerPage = new ContactManagerPageAction (driver);
+		helpPage = new HelpPageAction (driver);
+		json = new JsonHelper();
+				
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+	}
+
+		/* Test Case Variables */
+		String name = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaContact_004", "name")+ CommonActions.getDateTime()+ CommonActions.generateRandomNumber();
+		String category = CommonActions.readDataFromJson("JoomlaContact_004", "category");
+		String saveContactSuccessfulMessage = "Contact successfully saved.";
+		String publishStatus = CommonActions.readDataFromJson("JoomlaContact_004", "publishStatus");
+		String yesFeature = CommonActions.readDataFromJson("JoomlaContact_004", "yesFeature");
+		String featuredStatus = CommonActions.readDataFromJson("JoomlaContact_004", "featuredStatus");
+		String unfeaturedStatus = CommonActions.readDataFromJson("JoomlaContact_004", "unfeaturedStatus");
+		String unpublishContactSuccessfulMessage = "1 contact successfully unpublished.";
+		String publishContactSuccessfulMessage = "1 contact successfully published.";
+			
+			
+		@Test(description = "Verify user can change the feature property of contacts using the Featured column")
+		@Parameters({"browser","ip","port"})
+		public void RUN_02_TC_JOOMLA_CONTACTS_016(String browser, String ip, String port) {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");
+		contactManagerPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_CONTACTS);
+		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Select 'Yes' item from 'Featured' dropdown list");
+		log.info("Step 11: Click on 'Save & Close' icon of the top right toolbar");
+		contactPage.addNewContactWithFeature(driver, name, category, publishStatus, yesFeature, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP1: Verify 'Contact successfully saved' message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, saveContactSuccessfulMessage));
+		
+		log.info("VP2: Verify Created contact is displayed on the contacts table");
+		verifyTrue(contactManagerPage.verifyContactDisplayed(driver, name));
+		
+		log.info("Step 12: Check on the recently added contact's checkbox");
+		contactManagerPage.selectAnContact(driver, name);
+		
+		log.info("Step 13: Click on the status icon of the selected contact in the Featured column");
+		contactManagerPage.changeContactStatus(driver, name, featuredStatus);
+		
+		log.info("VP1: Verify the icon of the selected item is showed as 'Unfeatured'.");
+		verifyTrue(contactManagerPage.verifyStatusOfContact(driver, name, unfeaturedStatus));
+		
+		log.info("Step 14: Check on the recently added contact's checkbox");
+		contactManagerPage.selectAnContact(driver, name);
+		
+		log.info("Step 13: Click on the status icon of the selected contact in the Featured column");
+		contactManagerPage.changeContactStatus(driver, name, unfeaturedStatus);
+		
+		log.info("VP1: Verify the icon of the selected item is showed as 'Featured'.");
+		verifyTrue(contactManagerPage.verifyStatusOfContact(driver, name, featuredStatus));
+			
+		}	
+		
+		
+		@Test(description = "Verify user can change the status of contacts using the Status column")
+		@Parameters({"browser","ip","port"})
+		public void RUN_03_TC_JOOMLA_CONTACTS_015(String browser, String ip, String port) {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 8: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("VP1: Verify 'Contact successfully saved' message is displayed");
+		log.info("VP2: Verify Created contact is displayed on the contacts table");
+		log.info("Step 11: Check on the recently added contact's checkbox");
+		contactManagerPage.selectAnContact(driver, name);
+		
+		log.info("Step 12: Click on the status icon of the selected contact in the Status column");
+		contactManagerPage.changeContactStatus(driver, name, Constant.ICON_PUBLISH);
+		
+		log.info("VP3: The icon of the selected item is showed as 'Unpublish'.");
+		verifyTrue(contactManagerPage.verifyStatusOfContact(driver, name, Constant.ICON_UNPUBLISH));
+		
+		log.info("VP4: The '1 contact successfully unpublished' message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, unpublishContactSuccessfulMessage));
+		
+		log.info("Step 11: Check on the recently added contact's checkbox");
+		contactManagerPage.selectAnContact(driver, name);
+		
+		log.info("Step 12: Click on the status icon of the selected contact in the Status column");
+		contactManagerPage.changeContactStatus(driver, name, Constant.ICON_UNPUBLISH);
+		
+		log.info("VP3: Verify the icon of the selected item is showed as 'Publish'.");
+		verifyTrue(contactManagerPage.verifyStatusOfContact(driver, name, Constant.ICON_PUBLISH));
+		
+		log.info("VP4: The '1 contact successfully published' message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, publishContactSuccessfulMessage));
+		
+		log.info("Post-Test case: Delete contact");
+		contactManagerPage.deleteContact(driver, Constant.SEARCH_STATUS_NO, name);
+			
+		log.info("Post-Test case: Logout Joomla");
+		contactManagerPage.logoutJoomla(driver);
+		
+		}
+						
+		
+		
+	@AfterClass
+	public void clean() {
+			
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects*/
+	WebDriver driver;
+	LoginPageAction loginPage;
+	ContactPageAction contactPage;
+	ContactManagerPageAction contactManagerPage;
+	HelpPageAction helpPage;
+	JsonHelper json;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("urlBap");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	
+}

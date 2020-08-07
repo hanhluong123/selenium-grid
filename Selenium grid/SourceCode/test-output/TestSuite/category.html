@@ -1,0 +1,702 @@
+<html>
+<head>
+<title>TestNG:  category</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>category</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>17/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Dec 20 10:44:07 ICT 2016</td>
+</tr>
+<tr><td>Total time:</td><td>440 seconds (440760 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='category.JoomlaCategory_002.RUN_01_TC_JOOMLA_CATEGORY_003()'><b>RUN_01_TC_JOOMLA_CATEGORY_003</b><br>Test class: category.JoomlaCategory_002<br>Test method: Verify that user can publish a category<br/>
+<a href="#Output-1541075662" onClick='toggleBox("Output-1541075662", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1541075662" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1541075662">
+2016-12-20 10:45:30,007 INFO  JoomlaCategory_002 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:45:30,007 INFO  JoomlaCategory_002 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:45:30,007 INFO  JoomlaCategory_002 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:45:30,007 INFO  JoomlaCategory_002 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:45:32,788 INFO  JoomlaCategory_002 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:45:32,788 INFO  JoomlaCategory_002 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:45:32,788 INFO  JoomlaCategory_002 - Step 7: Select 'Unpublished' in Status dropdown list
+<br/>
+2016-12-20 10:45:32,788 INFO  JoomlaCategory_002 - Step 8: Click 'Save & Close' button
+<br/>
+2016-12-20 10:45:45,512 INFO  JoomlaCategory_002 - VP 9: A message : 'Category successfully saved' shows and new category is created
+<br/>
+2016-12-20 10:45:45,590 INFO  JoomlaCategory_002 - ===PASSED===
+<br/>
+2016-12-20 10:45:47,727 INFO  JoomlaCategory_002 - ===PASSED===
+<br/>
+2016-12-20 10:45:47,727 INFO  JoomlaCategory_002 - Step 10: Check the Category recently created
+<br/>
+2016-12-20 10:45:48,848 INFO  JoomlaCategory_002 - Step 11: Click 'Publish' button in the right top corner
+<br/>
+2016-12-20 10:45:51,103 INFO  JoomlaCategory_002 - VP 12: A message : '1 Category successfully saved' shows and Category is published
+<br/>
+2016-12-20 10:45:51,201 INFO  JoomlaCategory_002 - ===PASSED===
+<br/>
+2016-12-20 10:45:51,230 INFO  JoomlaCategory_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>21</td>
+<td>category.JoomlaCategory_002@400cff1a</td></tr>
+<tr>
+<td title='category.JoomlaCategory_001.RUN_01_TC_JOOMLA_CATEGORY_007()'><b>RUN_01_TC_JOOMLA_CATEGORY_007</b><br>Test class: category.JoomlaCategory_001<br>Test method: Verify that user can browse 'Category help' page<br/>
+<a href="#Output-1197176722" onClick='toggleBox("Output-1197176722", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1197176722" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1197176722">
+2016-12-20 10:44:18,475 INFO  JoomlaCategory_001 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:44:18,475 INFO  JoomlaCategory_001 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:44:18,475 INFO  JoomlaCategory_001 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:44:18,475 INFO  JoomlaCategory_001 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:44:21,166 INFO  JoomlaCategory_001 - Step 5: Click 'Help' button in the right top corner
+<br/>
+2016-12-20 10:44:22,338 INFO  JoomlaCategory_001 - VP 6: Categor help' page appears
+<br/>
+2016-12-20 10:44:23,510 INFO  JoomlaCategory_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>category.JoomlaCategory_001@64c87930</td></tr>
+<tr>
+<td title='category.JoomlaCategory_003.RUN_01_TC_JOOMLA_CATEGORY_011()'><b>RUN_01_TC_JOOMLA_CATEGORY_011</b><br>Test class: category.JoomlaCategory_003<br>Test method: Verify that user can browse 'New Category help' page<br/>
+<a href="#Output-1590404373" onClick='toggleBox("Output-1590404373", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1590404373" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1590404373">
+2016-12-20 10:46:46,492 INFO  JoomlaCategory_003 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:46:46,492 INFO  JoomlaCategory_003 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:46:46,492 INFO  JoomlaCategory_003 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:46:46,492 INFO  JoomlaCategory_003 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:46:49,160 INFO  JoomlaCategory_003 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:46:56,336 INFO  JoomlaCategory_003 - Step 6: Click 'Help' button in the right top corner
+<br/>
+2016-12-20 10:46:57,482 INFO  JoomlaCategory_003 - VP 7: New Categor help' page appears
+<br/>
+2016-12-20 10:46:58,662 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>category.JoomlaCategory_003@275710fc</td></tr>
+<tr>
+<td title='category.JoomlaCategory_004.RUN_01_TC_JOOMLA_CATEGORY_012()'><b>RUN_01_TC_JOOMLA_CATEGORY_012</b><br>Test class: category.JoomlaCategory_004<br>Test method: Verify that user can cancel adding action while adding a new create<br/>
+<a href="#Output-1932303196" onClick='toggleBox("Output-1932303196", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1932303196" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1932303196">
+2016-12-20 10:49:42,308 INFO  JoomlaCategory_004 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:49:42,308 INFO  JoomlaCategory_004 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:49:42,308 INFO  JoomlaCategory_004 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:49:42,308 INFO  JoomlaCategory_004 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:49:44,993 INFO  JoomlaCategory_004 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:49:44,993 INFO  JoomlaCategory_004 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:49:44,993 INFO  JoomlaCategory_004 - Step 7: Click 'Cancel' button
+<br/>
+2016-12-20 10:49:58,629 INFO  JoomlaCategory_004 - VP 1: Category Manager' page displays and category is not added to data
+<br/>
+2016-12-20 10:49:58,636 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:01,712 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>category.JoomlaCategory_004@525f1e4e</td></tr>
+<tr>
+<td title='category.JoomlaCategory_001.RUN_02_TC_JOOMLA_CATEGORY_001()'><b>RUN_02_TC_JOOMLA_CATEGORY_001</b><br>Test class: category.JoomlaCategory_001<br>Test method: Verify that user can create a new category<br/>
+<a href="#Output-1869247587" onClick='toggleBox("Output-1869247587", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1869247587" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1869247587">
+2016-12-20 10:44:23,511 INFO  JoomlaCategory_001 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:44:23,511 INFO  JoomlaCategory_001 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:44:23,511 INFO  JoomlaCategory_001 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:44:23,511 INFO  JoomlaCategory_001 - Step 4: Select Content -> Categories
+<br/>
+2016-12-20 10:44:23,511 INFO  JoomlaCategory_001 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:44:23,512 INFO  JoomlaCategory_001 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:44:23,512 INFO  JoomlaCategory_001 - Step 7: Click 'Save & Close' button
+<br/>
+2016-12-20 10:44:35,628 INFO  JoomlaCategory_001 - VP 8: A message : 'Category successfully saved' shows and new category is created
+<br/>
+2016-12-20 10:44:35,712 INFO  JoomlaCategory_001 - ===PASSED===
+<br/>
+2016-12-20 10:44:37,892 INFO  JoomlaCategory_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>14</td>
+<td>category.JoomlaCategory_001@64c87930</td></tr>
+<tr>
+<td title='category.JoomlaCategory_004.RUN_02_TC_JOOMLA_CATEGORY_002()'><b>RUN_02_TC_JOOMLA_CATEGORY_002</b><br>Test class: category.JoomlaCategory_004<br>Test method: Verify that user can edit a category<br/>
+<a href="#Output-1969969319" onClick='toggleBox("Output-1969969319", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1969969319" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1969969319">
+2016-12-20 10:50:01,714 INFO  JoomlaCategory_004 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:50:01,714 INFO  JoomlaCategory_004 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:50:01,714 INFO  JoomlaCategory_004 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:50:01,714 INFO  JoomlaCategory_004 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:50:01,715 INFO  JoomlaCategory_004 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:50:01,715 INFO  JoomlaCategory_004 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:50:01,715 INFO  JoomlaCategory_004 - Step 7: Click 'Save' button
+<br/>
+2016-12-20 10:50:07,756 INFO  JoomlaCategory_004 - VP 8: A message : 'Category successfully saved' shows and 'Edit an Aritical Category' page displays
+<br/>
+2016-12-20 10:50:07,760 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:07,846 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:07,847 INFO  JoomlaCategory_004 - Step 9: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:50:07,847 INFO  JoomlaCategory_004 - Step 10: Click 'Save & Close' button
+<br/>
+2016-12-20 10:50:10,531 INFO  JoomlaCategory_004 - VP 11: A message : 'Category successfully saved' shows and new category is created
+<br/>
+2016-12-20 10:50:10,613 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:12,676 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:15,625 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>13</td>
+<td>category.JoomlaCategory_004@525f1e4e</td></tr>
+<tr>
+<td title='category.JoomlaCategory_002.RUN_02_TC_JOOMLA_CATEGORY_004()'><b>RUN_02_TC_JOOMLA_CATEGORY_004</b><br>Test class: category.JoomlaCategory_002<br>Test method: Verify that user can unpublish a category<br/>
+<a href="#Output-310212872" onClick='toggleBox("Output-310212872", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-310212872" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-310212872">
+2016-12-20 10:45:51,231 INFO  JoomlaCategory_002 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:45:51,231 INFO  JoomlaCategory_002 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:45:51,231 INFO  JoomlaCategory_002 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:45:51,231 INFO  JoomlaCategory_002 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:45:51,231 INFO  JoomlaCategory_002 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:45:51,232 INFO  JoomlaCategory_002 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:45:51,232 INFO  JoomlaCategory_002 - Step 7: Click 'Save & Close' button
+<br/>
+2016-12-20 10:45:51,232 INFO  JoomlaCategory_002 - VP 8: A message : 'Category successfully saved' shows and new category is created
+<br/>
+2016-12-20 10:45:51,232 INFO  JoomlaCategory_002 - Step 9: Check the Category recently created
+<br/>
+2016-12-20 10:45:52,338 INFO  JoomlaCategory_002 - Step 10: Click 'unpublish' button in the right top corner
+<br/>
+2016-12-20 10:45:54,585 INFO  JoomlaCategory_002 - VP 11: A message : '1 Category successfully saved' shows and Category is unpublished
+<br/>
+2016-12-20 10:45:54,654 INFO  JoomlaCategory_002 - ===PASSED===
+<br/>
+2016-12-20 10:45:54,684 INFO  JoomlaCategory_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>3</td>
+<td>category.JoomlaCategory_002@400cff1a</td></tr>
+<tr>
+<td title='category.JoomlaCategory_003.RUN_02_TC_JOOMLA_CATEGORY_010()'><b>RUN_02_TC_JOOMLA_CATEGORY_010</b><br>Test class: category.JoomlaCategory_003<br>Test method: Verify that user can create many categories by using 'Save & New' button<br/>
+<a href="#Output-766101" onClick='toggleBox("Output-766101", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-766101" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-766101">
+2016-12-20 10:46:58,664 INFO  JoomlaCategory_003 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:46:58,664 INFO  JoomlaCategory_003 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:46:58,664 INFO  JoomlaCategory_003 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:46:58,664 INFO  JoomlaCategory_003 - Step 5: Select Content -> Categories 
+<br/>
+2016-12-20 10:46:58,664 INFO  JoomlaCategory_003 - Step 6: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:46:58,664 INFO  JoomlaCategory_003 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:46:58,664 INFO  JoomlaCategory_003 - Step 8: Click 'Save & New' button
+<br/>
+2016-12-20 10:47:01,629 INFO  JoomlaCategory_003 - VP 9: A message : 'Category successfully saved' shows
+<br/>
+2016-12-20 10:47:01,725 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:47:01,725 INFO  JoomlaCategory_003 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:47:01,725 INFO  JoomlaCategory_003 - Step 10: Click 'Save & Close' button
+<br/>
+2016-12-20 10:47:04,874 INFO  JoomlaCategory_003 - VP 11: A message : 'Category successfully saved' shows and two new categories are created
+<br/>
+2016-12-20 10:47:04,954 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:47:07,009 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:47:08,334 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>9</td>
+<td>category.JoomlaCategory_003@275710fc</td></tr>
+<tr>
+<td title='category.JoomlaCategory_001.RUN_03_TC_JOOMLA_CATEGORY_005()'><b>RUN_03_TC_JOOMLA_CATEGORY_005</b><br>Test class: category.JoomlaCategory_001<br>Test method: Verify that user can archive a category<br/>
+<a href="#Output-505968231" onClick='toggleBox("Output-505968231", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-505968231" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-505968231">
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - Step 7: Click 'Save & Close' button
+<br/>
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - VP 8: A message : 'Category successfully saved' shows and new category is created
+<br/>
+2016-12-20 10:44:37,894 INFO  JoomlaCategory_001 - Step 9: Check the Category recently created
+<br/>
+2016-12-20 10:44:39,027 INFO  JoomlaCategory_001 - Step 10: Click 'archive' button in the right top corner
+<br/>
+2016-12-20 10:44:41,256 INFO  JoomlaCategory_001 - VP 11: A message : '1 Category successfully archived' shows
+<br/>
+2016-12-20 10:44:41,347 INFO  JoomlaCategory_001 - ===PASSED===
+<br/>
+2016-12-20 10:44:41,347 INFO  JoomlaCategory_001 - Step 12: Select 'Archive' in Status dropdown list
+<br/>
+2016-12-20 10:44:46,306 INFO  JoomlaCategory_001 - VP 13: Category is archived
+<br/>
+2016-12-20 10:44:48,331 INFO  JoomlaCategory_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>10</td>
+<td>category.JoomlaCategory_001@64c87930</td></tr>
+<tr>
+<td title='category.JoomlaCategory_002.RUN_03_TC_JOOMLA_CATEGORY_008()'><b>RUN_03_TC_JOOMLA_CATEGORY_008</b><br>Test class: category.JoomlaCategory_002<br>Test method: Verify that user can search a category  by using filter textbox<br/>
+<a href="#Output-1418245573" onClick='toggleBox("Output-1418245573", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1418245573" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1418245573">
+2016-12-20 10:45:54,685 INFO  JoomlaCategory_002 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:45:54,685 INFO  JoomlaCategory_002 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:45:54,685 INFO  JoomlaCategory_002 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:45:54,685 INFO  JoomlaCategory_002 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:45:54,685 INFO  JoomlaCategory_002 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:45:54,685 INFO  JoomlaCategory_002 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:45:54,686 INFO  JoomlaCategory_002 - Step 7: Click 'Save & Close' button
+<br/>
+2016-12-20 10:45:54,686 INFO  JoomlaCategory_002 - VP 8: A message : 'Category successfully saved' shows and new category is created
+<br/>
+2016-12-20 10:45:54,686 INFO  JoomlaCategory_002 - Step 9: Enter valid Category Name to Filter textbox
+<br/>
+2016-12-20 10:45:54,686 INFO  JoomlaCategory_002 - Step 10: Click 'Search' button
+<br/>
+2016-12-20 10:45:56,643 INFO  JoomlaCategory_002 - VP 11: Recently created category displays
+<br/>
+2016-12-20 10:45:56,686 INFO  JoomlaCategory_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>2</td>
+<td>category.JoomlaCategory_002@400cff1a</td></tr>
+<tr>
+<td title='category.JoomlaCategory_004.RUN_03_TC_JOOMLA_CATEGORY_013()'><b>RUN_03_TC_JOOMLA_CATEGORY_013</b><br>Test class: category.JoomlaCategory_004<br>Test method: Verify that user can creat a new category by using 'Save as Copy' button<br/>
+<a href="#Output-379886173" onClick='toggleBox("Output-379886173", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-379886173" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-379886173">
+2016-12-20 10:50:15,627 INFO  JoomlaCategory_004 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:50:15,628 INFO  JoomlaCategory_004 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:50:15,628 INFO  JoomlaCategory_004 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:50:15,628 INFO  JoomlaCategory_004 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:50:15,628 INFO  JoomlaCategory_004 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:50:15,628 INFO  JoomlaCategory_004 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:50:15,628 INFO  JoomlaCategory_004 - Step 7: Click 'Save' button
+<br/>
+2016-12-20 10:50:21,766 INFO  JoomlaCategory_004 - VP 1: A message : 'Category successfully saved' shows and 'Edit an Aritical Category' page displays
+<br/>
+2016-12-20 10:50:21,854 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:21,859 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:21,859 INFO  JoomlaCategory_004 - Step 9: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:50:21,859 INFO  JoomlaCategory_004 - Step 10: Click 'Save as Copy' button
+<br/>
+2016-12-20 10:50:24,688 INFO  JoomlaCategory_004 - VP 11: _ A message : 'Category successfully saved' shows
+<br/>
+2016-12-20 10:50:24,784 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:24,784 INFO  JoomlaCategory_004 - Step 12: Click 'Close' button
+<br/>
+2016-12-20 10:50:27,047 INFO  JoomlaCategory_004 - VP 13: _ A new category is created without replacing the old client
+<br/>
+2016-12-20 10:50:29,047 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:31,070 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>15</td>
+<td>category.JoomlaCategory_004@525f1e4e</td></tr>
+<tr>
+<td title='category.JoomlaCategory_003.RUN_03_TC_JOOMLA_CATEGORY_016()'><b>RUN_03_TC_JOOMLA_CATEGORY_016</b><br>Test class: category.JoomlaCategory_003<br>Test method: Verify that user can change access level to many categories<br/>
+<a href="#Output-841483227" onClick='toggleBox("Output-841483227", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-841483227" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-841483227">
+2016-12-20 10:47:08,335 INFO  JoomlaCategory_003 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:47:08,336 INFO  JoomlaCategory_003 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:47:08,336 INFO  JoomlaCategory_003 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:47:08,336 INFO  JoomlaCategory_003 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:47:08,336 INFO  JoomlaCategory_003 - Step 5: Check many categories
+<br/>
+2016-12-20 10:47:17,445 INFO  JoomlaCategory_003 - Step 6: Click Batch button
+<br/>
+2016-12-20 10:47:17,445 INFO  JoomlaCategory_003 - Step 7: Select Access level in Access level dropdown list in the left bottom
+<br/>
+2016-12-20 10:47:17,445 INFO  JoomlaCategory_003 - Step 8: Click 'Process' button
+<br/>
+2016-12-20 10:47:21,694 INFO  JoomlaCategory_003 - VP 9: The access level of these selected articles are changed
+<br/>
+</div>
+</td>
+<td></td>
+<td>13</td>
+<td>category.JoomlaCategory_003@275710fc</td></tr>
+<tr>
+<td title='category.JoomlaCategory_001.RUN_04_TC_JOOMLA_CATEGORY_006()'><b>RUN_04_TC_JOOMLA_CATEGORY_006</b><br>Test class: category.JoomlaCategory_001<br>Test method: Verify that user can send a category to trash<br>Parameters: chrome, 192.168.189.60, 8881<br/>
+<a href="#Output-658281599" onClick='toggleBox("Output-658281599", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-658281599" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-658281599">
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 7: Click 'Save & Close' button
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - VP 8: A message : 'Category successfully saved' shows and new category is created
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 9: Check the Category recently created
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - VP 10: A message : '1 Category successfully saved' shows
+<br/>
+2016-12-20 10:44:48,333 INFO  JoomlaCategory_001 - Step 11: Click 'Trash' button in the right top corner
+<br/>
+2016-12-20 10:45:07,544 INFO  JoomlaCategory_001 - VP 12: Category is sent to trash
+<br/>
+2016-12-20 10:45:15,569 INFO  JoomlaCategory_001 - post condition 2: Log out Joomla
+<br/>
+</div>
+</td>
+<td></td>
+<td>29</td>
+<td>category.JoomlaCategory_001@64c87930</td></tr>
+<tr>
+<td title='category.JoomlaCategory_002.RUN_04_TC_JOOMLA_CATEGORY_009()'><b>RUN_04_TC_JOOMLA_CATEGORY_009</b><br>Test class: category.JoomlaCategory_002<br>Test method: Verify that user can search a category by using filter dropdown lists<br>Parameters: chrome, 192.168.189.60, 8881<br/>
+<a href="#Output-1643299824" onClick='toggleBox("Output-1643299824", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1643299824" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1643299824">
+2016-12-20 10:45:56,689 INFO  JoomlaCategory_002 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 6: Enter valid Title Name to Title Name textbox
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 7: Select 'Unpublished' in 'Status' dropdown list
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 8: Select 'Registered' in 'Access' dropdown list
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 9: Select 'English (UK)' in 'Language' dropdown list
+<br/>
+2016-12-20 10:45:56,690 INFO  JoomlaCategory_002 - Step 10: Click 'Save & Close' button
+<br/>
+2016-12-20 10:46:09,109 INFO  JoomlaCategory_002 - VP 11: A message : 'Category successfully saved' shows and new category is created
+<br/>
+2016-12-20 10:46:09,110 INFO  JoomlaCategory_002 - Step 12: Select 'Unpublished' in 'Status' dropdown list
+<br/>
+2016-12-20 10:46:09,110 INFO  JoomlaCategory_002 - Step 13: Select 'Registered' in 'Access' dropdown list
+<br/>
+2016-12-20 10:46:09,110 INFO  JoomlaCategory_002 - Step 14: Select 'English (UK)' in 'Language' dropdown list
+<br/>
+2016-12-20 10:46:18,206 INFO  JoomlaCategory_002 - VP 15: Recently created category displays
+<br/>
+2016-12-20 10:46:18,245 INFO  JoomlaCategory_002 - ===PASSED===
+<br/>
+2016-12-20 10:46:18,245 INFO  JoomlaCategory_002 - Post-precondition: Delete categpories that has been created
+<br/>
+2016-12-20 10:46:32,392 INFO  JoomlaCategory_002 - Post-precondition: Log out Joomla
+<br/>
+</div>
+</td>
+<td></td>
+<td>37</td>
+<td>category.JoomlaCategory_002@400cff1a</td></tr>
+<tr>
+<td title='category.JoomlaCategory_003.RUN_04_TC_JOOMLA_CATEGORY_015()'><b>RUN_04_TC_JOOMLA_CATEGORY_015</b><br>Test class: category.JoomlaCategory_003<br>Test method: Verify that user can copy may categories to another parent category<br/>
+<a href="#Output-691854979" onClick='toggleBox("Output-691854979", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-691854979" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-691854979">
+2016-12-20 10:47:21,778 INFO  JoomlaCategory_003 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:47:21,778 INFO  JoomlaCategory_003 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:47:21,778 INFO  JoomlaCategory_003 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:47:21,778 INFO  JoomlaCategory_003 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:47:21,778 INFO  JoomlaCategory_003 - Step 5: Check many categories
+<br/>
+2016-12-20 10:47:31,142 INFO  JoomlaCategory_003 - Step 6: Click Batch button
+<br/>
+2016-12-20 10:47:31,142 INFO  JoomlaCategory_003 - Step 7: Select destination category in Category dropdown list in the left bottom
+<br/>
+2016-12-20 10:47:31,142 INFO  JoomlaCategory_003 - Step 8: Check 'Copy' radio button
+<br/>
+2016-12-20 10:47:31,142 INFO  JoomlaCategory_003 - Step 9: Click 'Process' button
+<br/>
+2016-12-20 10:47:34,325 INFO  JoomlaCategory_003 - VP 10: Selected categories are copied to destination category
+<br/>
+2016-12-20 10:47:44,599 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:47:53,613 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:47:55,668 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:47:57,712 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:47:57,712 INFO  JoomlaCategory_003 - Post-condition: Delete categpories that has been created
+<br/>
+</div>
+</td>
+<td></td>
+<td>68</td>
+<td>category.JoomlaCategory_003@275710fc</td></tr>
+<tr>
+<td title='category.JoomlaCategory_004.RUN_04_TC_JOOMLA_CATEGORY_017()'><b>RUN_04_TC_JOOMLA_CATEGORY_017</b><br>Test class: category.JoomlaCategory_004<br>Test method: Verify that user cannot create a new Category without entering the title of the category<br/>
+<a href="#Output-397857830" onClick='toggleBox("Output-397857830", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-397857830" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-397857830">
+2016-12-20 10:50:31,071 INFO  JoomlaCategory_004 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:50:31,071 INFO  JoomlaCategory_004 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:50:31,071 INFO  JoomlaCategory_004 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:50:31,071 INFO  JoomlaCategory_004 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:50:31,071 INFO  JoomlaCategory_004 - Step 5: Click 'New' button in the right top corner
+<br/>
+2016-12-20 10:50:31,071 INFO  JoomlaCategory_004 - Step 7: Click 'Save & Close' button
+<br/>
+2016-12-20 10:50:35,269 INFO  JoomlaCategory_004 - VP 8: _ The color of Title textbox changes to red _ New category is not created
+<br/>
+2016-12-20 10:50:35,296 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:35,373 INFO  JoomlaCategory_004 - ===PASSED===
+<br/>
+2016-12-20 10:50:35,373 INFO  JoomlaCategory_004 - Post-condition: Delete categpories that has been created
+<br/>
+</div>
+</td>
+<td></td>
+<td>55</td>
+<td>category.JoomlaCategory_004@525f1e4e</td></tr>
+<tr>
+<td title='category.JoomlaCategory_003.RUN_05_TC_JOOMLA_CATEGORY_014()'><b>RUN_05_TC_JOOMLA_CATEGORY_014</b><br>Test class: category.JoomlaCategory_003<br>Test method: Verify that user can move may categories to another parent category<br/>
+<a href="#Output-197449185" onClick='toggleBox("Output-197449185", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-197449185" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-197449185">
+2016-12-20 10:48:29,933 INFO  JoomlaCategory_003 - Step 1: Navigate Joomla login page
+<br/>
+2016-12-20 10:48:29,933 INFO  JoomlaCategory_003 - Step 2: Login with User Name : 'lctp' and password : 'lctp'
+<br/>
+2016-12-20 10:48:29,934 INFO  JoomlaCategory_003 - Step 3: Click 'Login in' button
+<br/>
+2016-12-20 10:48:29,934 INFO  JoomlaCategory_003 - Step 4: Select Content -> Categories 
+<br/>
+2016-12-20 10:48:29,934 INFO  JoomlaCategory_003 - Step 5: Check many categories
+<br/>
+2016-12-20 10:48:38,728 INFO  JoomlaCategory_003 - Step 6: Click Batch button
+<br/>
+2016-12-20 10:48:38,728 INFO  JoomlaCategory_003 - Step 7: Select destination category in Category dropdown list in the left bottom
+<br/>
+2016-12-20 10:48:38,728 INFO  JoomlaCategory_003 - Step 8: Check 'Move' radio button
+<br/>
+2016-12-20 10:48:38,728 INFO  JoomlaCategory_003 - Step 9: Click 'Process' button
+<br/>
+2016-12-20 10:48:41,897 INFO  JoomlaCategory_003 - VP 10: Selected categories are moved to destination category
+<br/>
+2016-12-20 10:48:50,216 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:48:58,568 INFO  JoomlaCategory_003 - ===PASSED===
+<br/>
+2016-12-20 10:48:58,568 INFO  JoomlaCategory_003 - Post-condition: Delete categpories that has been created
+<br/>
+</div>
+</td>
+<td></td>
+<td>58</td>
+<td>category.JoomlaCategory_003@275710fc</td></tr>
+</table><p>
+</body>
+</html>

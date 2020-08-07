@@ -1,0 +1,219 @@
+{
+	"JoomlaArticle_001":
+		{
+		"title": "Test Article 01",
+		"titleUpdate": "Test Article Update",
+		"category" : "Sample Data-Articles",
+		"categoryUpdate" : "Uncategorised",
+		"status" : "Published",
+		"access" : "Public",
+		"articleText" : "this is article content",
+		"articleTextUpdate" : "this is modified article content"
+		},	
+		
+	"JoomlaArticle_002":
+		{
+		"title": "Test Article 02",
+		"title1": "Test Article 02x",
+		"category": "Sample Data-Articles",
+		"articleText": "This is article content",
+		"imageFolder": "/",
+		"imageName": "powered_by.png",
+		"publishStatus": "Publish",
+		"unpublishStatus": "Unpublish",
+		"publishIcon": "publish",
+		"unpublishIcon": "unpublish"
+		},
+		
+	"JoomlaArticle_003":
+		{
+		"title": "Test Article 03",
+		"category" : "Sample Data-Articles",
+		"articleText" : "this is article content",
+		"expectedMessage" : "Article successfully saved.",
+		"numberOfItemsDisplay5" : "5",
+		"numberOfItemsDisplayAll" : "All"
+		},	
+		
+	"JoomlaArticle_004":
+		{	
+		"title": "Test Article 04",
+		"category" : "Sample Data-Articles",
+		"status" : "Published",
+		"articleText" : "this is article content",
+		"expectedMessage_unpublish" : "1 article unpublished.",
+		"expectedMessage_publish" : "1 article published.",
+		"expectedMessage_trashed" : "1 article trashed.",
+		"search_status" : "Trashed"
+		},
+
+	"JoomlaWeblink_001":
+		{
+		"title": "Test Weblink",
+		"URL": "http://www.joomla.org",
+		"updateTitle": "Test Weblink Update",
+		"updateTitle2": "Test Weblink Update 2",
+		"updateURL": "http://www.google.com",
+		"copyTitle": "Test Weblink Copy",
+		"copyURL":"http://www.joomla.org",
+		"publishStatus" : "Published",
+		"unpublishStatus" : "Unpublished",
+		"archivedStatus": "Archived"
+		},
+
+	"JoomlaWeblink_002":
+		{	
+		"title": "Test Weblink",
+		"titleOrder1": "Test Weblink Order 1",
+		"titleOrder2": "Test Weblink Order 2",
+		"weblinkUrl" : "https://www.google.com/",
+		"category": "Sample Data-Weblinks",
+		"categoryUpdate": "Sample Update Data-Articles",
+		"publishStatus" : "Published",
+		"unpublishStatus" : "Unpublished",
+		"trashStatus" : "Trashed",
+		"weblinkText" : "this is weblink content",
+		"weblinkTextUpdate" : "this is modified weblink content"
+		},				
+			
+	"JoomlaWeblink_003":
+		{	
+		"title": "Test Weblink",
+		"newTitle": "New Test Weblink",
+		"url_weblink" : "https://www.google.com/",
+		"status" : "Published",
+		"expectedMessage_checkin" : "1 web link successfully checked in."
+		"expectedMessage_save" : "Web link successfully saved",
+		"numberOfItemsDisplay5" : "5",
+		"numberOfItemsDisplayAll" : "All",
+		"imageFolder": "/",
+		"imageName": "powered_by.png",
+		"startpublishingdate" : "2016-12-03 00:00:00",
+		"finishpublishingdate" : "2016-12-04 00:00:00"
+		},
+		
+	"JoomlaContact_001":
+		{
+		"name": "Test Contact",
+		"updateName": "Test Contact Update",
+		"category": "Sample Data-Contact",
+		"updateCategory": "Park Site",
+		"archivedStatus": "Archived",
+		"trashStatus" : "Trashed"
+		},
+		
+	"JoomlaContact_002":
+		{
+		"name": "Test Contact",
+		"name1": "Test Contact 1",
+		"category": "Sample Data-Contact",
+		"publishStatus" : "Published",
+		"imageFolder": "/",
+		"imageName": "powered_by.png"
+		},	
+		
+	"JoomlaContact_003":
+		{
+		"name": "Test Contact",
+		"name1": "Test Contact 1",
+		"category": "Sample Data-Contact",
+		"publishStatus" : "Published",
+		"unpublishStatus": "Unpublished"
+	
+		},	
+		
+	"JoomlaContact_004":
+		{
+		"name": "Test Contact",
+		"category": "Sample Data-Contact",
+		"publishStatus" : "Published",
+		"yesFeature": "Yes",
+		"featuredStatus": "icon-featured",
+		"unfeaturedStatus": "icon-unfeatured"
+		},
+		
+	"JoomlaBannerClient_001":
+		{
+		"title": "Test BannerClient",
+		"title_new" : "Test New BannerClient",
+		"title_edit" : "Test Edit BannerClient",
+		"contactname" : "Duyen Nguyen",
+		"contactname_edit" : "Duyen Nguyen Edit",
+		"contactemail" : "dnguyen@gmail.com",
+		"contactemail_edit" : "editn@gmail.com",
+		"expectedMessage_saved" : "Client successfully saved.",
+		"expectedMessage_deleted" : "1 client successfully trashed.",
+		"search_status" : "Trashed"
+		},
+		
+	"JoomlaBannerClient_002":
+		{
+		"title": "Test BannerClient",
+		"contactname" : "Duyen Nguyen",
+		"contactemail" : "dnguyen@gmail.com",
+		"status_unpublished" : "Unpublished",
+		"expectedMessage_published" : "1 client successfully published.",
+		"expectedMessage_unpublished" : "1 client successfully unpublished.",
+		"expectedMessage_archived" : "1 client successfully archived.",
+		"status_archived" : "Archived",
+		"numberOfItems" : "20"
+		},
+		
+	"JoomlaBannerClient_003":
+		{
+		"title": "Test BannerClient",
+		"title_new" : "Test New BannerClient",
+		"title1" : "Test1 BannerClient",
+		"contactname" : "Duyen Nguyen",
+		"contactname_new" : "Duyen Nguyen New",
+		"contactemail" : "dnguyen@gmail.com",
+		"contactemail_new" : "new@gmail.com",
+		"status" : "Unpublished",
+		"expectedMessage_saved" : "Client successfully saved.",
+		"expectedMessage_checkin" : "1 client successfully checked in."
+		},
+		
+	"JoomlaBannerClient_004":
+		{
+		"title": "Test BannerClient",
+		"title_new" : "Test New BannerClient",
+		"contactname" : "Duyen Nguyen",
+		"contactemail_valid" : "dnguyen@gmail.com",
+		"contactemail_invalid" : "invalid mail",
+		"expectedMessage_saved" : "Client successfully saved.",
+		},
+		
+	"JoomlaCategory_001":
+		{
+		"title": "Test Category 1",
+		"archiveStatus" : "Archived",
+		"trashStatus" : "Trashed"
+		},	
+		
+	"JoomlaCategory_002":
+		{
+		"title": "Test Category 02",
+		"status": "Unpublished",
+		"access": "Registered",
+		"language": "English (UK)"
+		},
+		
+	"JoomlaCategory_003":
+		{
+		"categoryTitle": "Test Category 03",
+		"categoryTitleNew": "Test Category 03 New",
+		"language": "English (UK)",
+		"access": "Special",
+		"destinationCategory": "Uncategorised",
+		"moveOption": "Move",
+		"copyOption": "Copy"
+		},	
+		
+	"JoomlaCategory_004":
+		{
+		"title": "Test Category 04",
+		"titleUpdate": "Test Category 04 Update"
+		"title2": "Test Category 04x",
+		"title2Update": "Test Category 04x Update"
+		},
+}

@@ -1,0 +1,16 @@
+package zDraft;
+
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+
+public class loginnhap extends AbstractTest{
+	
+	@Test
+	public void adc (){
+//		test d = new test();
+		verifyResults(test());
+	}
+
+}
+

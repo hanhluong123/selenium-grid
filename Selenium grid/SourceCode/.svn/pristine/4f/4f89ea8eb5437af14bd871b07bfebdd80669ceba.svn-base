@@ -1,0 +1,2 @@
+cd C:\Users
+java -jar selenium-server-standalone-2.53.1.jar -role webdriver -hub http://192.168.189.93:4444/grid/register -port 8881 -browser browserName=chrome,maxInstances=5,maxSession=2 -browser browserName=firefox,maxInstances=5,maxSession=2 -browser browserName=ie,maxInstances=5,maxSession=2

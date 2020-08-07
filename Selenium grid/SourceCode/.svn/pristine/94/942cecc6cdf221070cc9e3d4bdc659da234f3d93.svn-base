@@ -1,0 +1,211 @@
+package weblink;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import pages.LoginPageAction;
+import pages.WeblinkPageAction;
+import pages.WeblinkManagerPageAction;
+
+public class JoomlaWeblink_003 extends AbstractTest {
+	WebDriver driver;
+
+	@BeforeClass
+	@Parameters({ "browser", "port", "ip" })
+	public void SETUP(String browser, String port, String ip) {
+		driver = openBrowser(driver, browser, ip, port);
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		navigateBrowser(driver, url);
+		loginPage = new LoginPageAction(driver);
+		weblinkPage = new WeblinkPageAction(driver);
+		weblinkManagerPage = new WeblinkManagerPageAction(driver);
+	}
+
+	@Test(description = "Verify user can check in a web link")
+	@Parameters({ "browser", "port", "ip" })
+	public void RUN_01_TC_JOOMLA_WEBLINKS_006(String browser, String port, String ip) {
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		loginPage.loginToJoomla(driver, username, password);
+
+		log.info("Step4: Select Components > Weblinks");
+		weblinkPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_WEBLINKS);
+
+		log.info("Step5: Click on 'New' icon of the top right toolbar");
+		log.info("Step6: Enter a title on 'Title' field");
+		log.info("Step7: Enter valid URL into 'URL' text field");
+		log.info("Step8: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step9: Click on 'Save' icon of the top right toolbar");
+		weblinkPage.addNewWeblink(driver, title, url_weblink, status, Constant.BUTTON_SAVE);
+
+		log.info("Step10: Close the browser window");
+		closeBrowser(driver);
+
+		log.info("Step11: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step12: Enter valid username into Username field and valid password into Password field");
+		log.info("Step13: Click on 'Log in' button");
+		driver = openBrowser(driver, browser, ip, port);
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+		log.info("Step14: Select Components > Weblinks");
+		weblinkPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_WEBLINKS);
+
+		log.info("Step15: Check on the recently added weblink's checkbox");
+		weblinkManagerPage.selectWeblink(driver, title);
+
+		log.info("Step16: Click on 'Check In' icon of the top right toolbar");
+		weblinkManagerPage.clickToolbarButton(driver, Constant.BUTTON_CHECKIN);
+
+		log.info("VP: Verify the weblink is checked in successfully");
+		log.info("VP1: The '1 weblink successfully checked in' message is displayed");
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed(driver, expectedMessage_checkin));
+		
+		log.info("VP2: The lock icon next to the weblink is removed");
+		// verifyFalse(weblinkManagerPage.verifyCheckoutDisplayed(driver,
+		// title));
+	}
+
+	@Test(description = "Verify user can sort the weblink table by ID column")
+	public void RUN_02_TC_JOOMLA_WEBLINKS_011() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4:Click on the Header link of ID column");
+		weblinkManagerPage.sortWeblinkByID(driver, Constant.SORT_ASCENDING);
+
+		log.info("VP1: Verify the weblinks is sorted by ID in ascending order");
+		verifyTrue(weblinkManagerPage.verifySortInAscending(driver));
+
+		log.info("Step5:Click on the Header link of ID column");
+		weblinkManagerPage.sortWeblinkByID(driver, Constant.SORT_DESCENDING);
+
+		log.info("VP: Verify the weblinks is sorted by ID in descending order");
+		verifyTrue(weblinkManagerPage.verifySortInDescending(driver));
+	}
+
+	@Test(description = "Verify user can paging the weblinks using the paging control")
+	public void RUN_03_TC_JOOMLA_WEBLINKS_012() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select '5' item of the 'Display' dropdown list at the footer section of the weblink table");
+		weblinkManagerPage.hoverOverElement(driver, joomla.AbstractPage.btnHelp);
+		weblinkManagerPage.selectNumberOfWeblinkDisplay(driver, numberOfItemsDisplay5);
+
+		log.info("VP1: Verify the weblink table is paging into 5 weblinks per page");
+		verifyTrue(weblinkManagerPage.verifyWeblinkPagingCorrectly(driver, numberOfItemsDisplay5));
+
+		log.info("Step5: Select 'All' item of the 'Display' dropdown list at the footer section of the weblink table");
+		weblinkManagerPage.selectNumberOfWeblinkDisplay(driver, numberOfItemsDisplayAll);
+
+		log.info("VP2: Verify all weblinks are displayed in one page");
+		verifyTrue(weblinkManagerPage.verifyWeblinkPagingCorrectly(driver, "All"));
+	}
+
+	@Test(description= "Verify user can add image to weblink's description")
+	public void RUN_04_TC_JOOMLA_WEBLINKS_013() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select Components > Weblinks");
+		log.info("Step5: Click on 'New' icon of the top right toolbar");
+		log.info("Step6: Enter a title on 'Title' field");
+		log.info("Step7: Enter valid URL into 'URL' text field");
+		log.info("Step8: Click on 'Image' button");
+		log.info("Step9: Select 'powered_by.pnj' image from the 'Image' dialog");
+		log.info("Step10: Click on 'Insert' button");
+		log.info("Step11: Click on 'Save & Close' icon of the top right toolbar");
+		weblinkPage.addNewWeblink(driver, title_new, url_weblink, filepath, filename, Constant.BUTTON_SAVEANDCLOSE);
+
+		log.info("VP: Verify the weblink is saved successfully");
+		log.info("VP1: 'Weblink successfully saved'message is displayed");
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed(driver, expectedMessage_save));
+
+		log.info("VP2: Created weblink is displayed on the weblinks table");
+		verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver, title_new));
+
+	}
+
+	@Test(description = "Verify user can edit the Publish Date of a weblink")
+	public void RUN_05_TC_JOOMLA_WEBLINKS_017() {
+		  log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		  log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		  log.info("Step3: Click on 'Log in' button");
+		  log.info("Step4: Select Components > Weblinks");
+		  log.info("Step5: Click on 'New' icon of the top right toolbar");
+		  log.info("Step6: Enter a title on 'Title' field");
+		  log.info("Step7: Enter valid URL into 'URL' text field");
+		  log.info("Step8: Click on 'Save & Close' icon of the top right toolbar");
+		  log.info("VP: Verify the web link is saved successfully");
+		  log.info("Step9: Check on the recently added weblink's checkbox");
+		  weblinkManagerPage.selectWeblink(driver, title_new);
+		  
+		  log.info("Step10: Click on 'Edit' icon of the top right toolbar");
+		  weblinkManagerPage.clickToolbarButton(driver, Constant.BUTTON_EDIT);
+		  
+		  log.info("Step11: Click on the calendar icon of the Start Publishing Date");
+		  log.info("Step12: Select a date from the popup calendar");
+		  log.info("Step13: Click on the calendar icon of the Finish Publishing Date");
+		  log.info("Step14: Select a date from the popup calendar");
+		  log.info("Step15: Click on 'Save & Close' icon of the top right toolbar");
+		  weblinkPage.selectDateFromCalendar(driver, startdate, finishdate, Constant.BUTTON_SAVEANDCLOSE);
+		  
+		  log.info("VP: Verify the web link is saved successfully");
+		  log.info("'Weblink successfully saved' message is displayed");
+		  weblinkManagerPage.verifyMessageDisplayed(driver, expectedMessage_save);
+		  
+		  log.info("Edited weblink is displayed on the weblinks table");
+		  verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver, title_new));
+		  
+		  log.info("Step16: Click on the recently added weblink's title");
+		  weblinkManagerPage.openWeblink(driver, title_new);
+		  
+		  log.info("VP: verifyTrue( the publish date of web link is saved successfully");
+		  verifyTrue(weblinkPage.verifyWeblinkPublishDate(driver, startdate, finishdate));
+		  
+		  log.info("post condition 1: Delete Article" );
+		  weblinkPage.clickToolbarButton(driver, Constant.BUTTON_CANCEL);
+		  weblinkManagerPage.deleteWeblink(driver, null, title_new);
+		  weblinkManagerPage.deleteWeblink(driver, Constant.SEARCH_STATUS_YES, title);
+			
+		  log.info("post condition 2: Log out Joomla" );
+		  weblinkManagerPage.logoutJoomla(driver);
+	}
+	
+	@AfterClass
+	public void TEARDOWN() {
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects */
+
+	LoginPageAction loginPage;
+	WeblinkPageAction weblinkPage;
+	WeblinkManagerPageAction weblinkManagerPage;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaWeblink_003", "title")
+			+ " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String title_new = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaWeblink_003", "newTitle")
+			+ " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String url_weblink = CommonActions.readDataFromJson("JoomlaWeblink_003", "url_weblink");
+	String status = CommonActions.readDataFromJson("JoomlaWeblink_003", "status");
+	String expectedMessage_checkin = CommonActions.readDataFromJson("JoomlaWeblink_003", "expectedMessage_checkin");
+	String expectedMessage_save = CommonActions.readDataFromJson("JoomlaWeblink_003", "expectedMessage_save");
+	String numberOfItemsDisplay5 = CommonActions.readDataFromJson("JoomlaArticle_003", "numberOfItemsDisplay5");
+	String numberOfItemsDisplayAll = CommonActions.readDataFromJson("JoomlaArticle_003", "numberOfItemsDisplayAll");
+	String filepath = CommonActions.readDataFromJson("JoomlaWeblink_003", "imageFolder");
+	String filename = CommonActions.readDataFromJson("JoomlaWeblink_003", "imageName");
+	String startdate = CommonActions.readDataFromJson("JoomlaWeblink_003", "startpublishingdate");
+	String finishdate = CommonActions.readDataFromJson("JoomlaWeblink_003", "finishpublishingdate");
+}

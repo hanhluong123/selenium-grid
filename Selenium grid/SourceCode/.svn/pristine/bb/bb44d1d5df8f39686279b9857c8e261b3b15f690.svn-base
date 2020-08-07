@@ -1,0 +1,20 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class ImageDialog {
+
+	/*===================================Static Elements===================================*/
+	public static final By dllFolder = By.xpath("//div[@id='folderlist_chzn']/a");
+	public static final By btnInsert = By.xpath("//button[text()='Insert']");
+	public static final By iFrameArticleImage = By.xpath("//iframe[contains(@src,'jform_articletext')]");
+	public static final By iFrameWeblinkImage = By.xpath("//iframe[contains(@src,'jform_description')]");
+	
+	
+	
+	/*===================================Dynamic Elements===================================*/
+	public static final String iFrameImageSelectionID = "imageframe";
+	public static final String imgFilename = "//a[@title='%s']";
+	
+
+}

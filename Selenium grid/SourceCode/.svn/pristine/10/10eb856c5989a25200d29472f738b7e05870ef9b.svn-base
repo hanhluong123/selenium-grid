@@ -1,0 +1,189 @@
+package pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import common.Constant;
+import joomla.AbstractPage;
+import joomla.BannerClientManagerPage;
+
+public class BannerClientManagerPageAction extends AbstractPageAction{
+	WebDriver driver;
+	
+	public BannerClientManagerPageAction (WebDriver driver){
+		this.driver = driver;
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+	public void openBannerClient(WebDriver driver, String searchstatus, String title) {
+		if(searchstatus=="YES"){
+			searchBannerClientByTitle(driver, title);
+		}
+		click(driver, By.linkText(title));
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+	public void selectBannerClient(WebDriver driver, String searchstatus, String title) {
+		if(searchstatus.equals("YES")){
+			searchBannerClientByTitle(driver, title);
+		}
+		dependableWaitForControl(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientchkRow, title)), Constant.LONG_TIME);
+		if(isControlDisplayed(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientchkRow, title)))){
+		click(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientchkRow, title)));
+		sleep(Constant.MEDIUM_TIME/5);
+		}
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+	public void searchBannerClientByTitle (WebDriver driver, String title){
+		enterText(driver, BannerClientManagerPage.txtBannerClientSearch, title);
+		click(driver, BannerClientManagerPage.btnBannerClientSearch);
+		sleep(2);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param status
+	 */
+	public void selectBannerClientSearchTools(WebDriver driver, String status){
+		clearSearchTools(driver);
+		click(driver, AbstractPage.btnSearchTools);
+		sleep(Constant.QUICK_SLEEP);
+		if (status != null) {
+			selectDropDownList(driver, BannerClientManagerPage.ddlBannerClientStatusSearch, status, "contains");
+		}
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 */
+	public void selectNumberOfBannerClientDisplay(WebDriver driver, String numberOfItems) {
+		String currentNumberOfItemDisplay = driver.findElement(BannerClientManagerPage.ddlNumberBannerClientDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			selectDropDownList(driver, BannerClientManagerPage.ddlNumberBannerClientDisplay, numberOfItems,"exact");
+		}
+	} 
+	
+	public void selectNumberOfBannerClientDisplay(WebDriver driver, String numberOfItems, boolean performSearch) {
+		String currentNumberOfItemDisplay = driver.findElement(BannerClientManagerPage.ddlNumberBannerClientDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			selectDropDownList(driver, BannerClientManagerPage.ddlNumberBannerClientDisplay, numberOfItems,true);
+		}
+	} 
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param searchStatus
+	 * @param title
+	 */
+	public void deleteBannerClient(WebDriver driver, String searchStatus, String title) {
+		if (searchStatus == "YES") {
+			searchBannerClientByTitle(driver, title);
+		}
+		sleep(Constant.QUICK_SLEEP);
+		selectBannerClient(driver, Constant.SEARCH_STATUS_NO, title);
+		click(driver, AbstractPage.btnTrash);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param typeOfStatus
+	 */
+	public boolean verifyStatusOfBannerClient(WebDriver driver, String title, String typeOfStatus) {
+		return (isControlDisplayed(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientStatus, title, typeOfStatus))));
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @return
+	 */
+	public boolean verifyBannerClientDisplayed(WebDriver driver, String searchstatus, String title) {
+		if(searchstatus.equals("YES")){
+		searchBannerClientByTitle(driver, title);
+		}
+		return (isControlDisplayed(driver, By.xpath(String.format(BannerClientManagerPage.dynamiclnkBannerClient, title))));
+		
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 * @return
+	 */
+	public boolean verifyBannerClientPagingCorrectly(WebDriver driver, String numberOfItems) {
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		int numberOfRows = rows.size() - 2;
+
+		if (!numberOfItems.equals("All")) {
+			int numberOfItems1 = Integer.parseInt(numberOfItems);
+			if (isControlDisplayed(driver, BannerClientManagerPage.btnBannerClientEndPage)) {
+				if (numberOfRows != numberOfItems1) {
+					return false;
+				} 
+				return true;
+			} else if (numberOfItems1 >= numberOfRows) {
+				return true;
+			}
+			return false;
+		} else {
+			selectNumberOfBannerClientDisplay(driver, "5",true);
+			if (isControlDisplayed(driver, BannerClientManagerPage.btnBannerClientEndPage)) {
+				click(driver, BannerClientManagerPage.btnBannerClientEndPage);
+				int numberOfPage = Integer.parseInt(driver.findElement(BannerClientManagerPage.btnBannerClientNumberEndPage).getText());
+				WebElement tableEndPAge = driver.findElement(AbstractPage.tblTable);
+				List<WebElement> rowsEndPage = tableEndPAge.findElements(AbstractPage.rowsTable);
+				int numberOfItemsInEndPage = rowsEndPage.size() - 2;
+				int totalOfItems = 5 * (numberOfPage - 1) + numberOfItemsInEndPage;
+				if (totalOfItems != numberOfRows) {
+					return false;
+				}
+
+				return true;
+			}
+
+			else if (numberOfRows <= 5) {
+				return true;
+			}
+
+			return false;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @return
+	 */
+	public boolean verifyBannerClientLocked (WebDriver driver, String searchstatus, String title){
+		if(searchstatus.equals("YES")){
+		searchBannerClientByTitle(driver, title);
+		}
+		return(isControlDisplayed(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientLockedStatus, title))));
+}
+}

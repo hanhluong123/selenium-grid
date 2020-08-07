@@ -1,0 +1,135 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import common.Constant;
+import joomla.CategoryPage;
+import joomla.ImageDialog;
+
+public class CategoryPageAction extends pages.AbstractPageAction {
+
+	WebDriver driver;
+
+	public CategoryPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param category
+	 * @param status
+	 * @param categoryText
+	 * @param button
+	 */
+	public void addNewCategory(WebDriver driver, String title, String status, String categoryText, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, CategoryPage.txtCategoryTitle, title);
+		selectDropDownList(driver, CategoryPage.ddlCategoryStatus, status, "contains");
+		switchIFrame(driver, CategoryPage.iFrameCategoryText);
+		sleep(2);
+		click(driver, CategoryPage.txtCategoryText);
+		enterText(driver, CategoryPage.txtCategoryText, categoryText);
+		switchbackWindow(driver);
+		sleep(2);
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param category
+	 * @param status
+	 * @param access
+	 * @param categoryText
+	 * @param button
+	 */
+	public void addNewCategory(WebDriver driver, String title, String status, String access, String categoryText, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, CategoryPage.txtCategoryTitle, title);
+		selectDropDownList(driver, CategoryPage.ddlCategoryStatus, status, "contains");
+		selectDropDownList(driver, CategoryPage.ddlCategoryAccess, access, "contains");
+		switchIFrame(driver, CategoryPage.iFrameCategoryText);
+		sleep(2);
+		click(driver, CategoryPage.txtCategoryText);
+		enterText(driver, CategoryPage.txtCategoryText, categoryText);
+		switchbackWindow(driver);
+		sleep(2);
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param category
+	 * @param status
+	 * @param categoryText
+	 * @param filepath
+	 * @param filename
+	 * @param button
+	 */
+	public void addNewCategory(WebDriver driver, String title, String status, String categoryText, String filepath, String filename, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, CategoryPage.txtCategoryTitle, title);
+		selectDropDownList(driver, CategoryPage.ddlCategoryStatus, status, "contains");
+		switchIFrame(driver, CategoryPage.iFrameCategoryText);
+		sleep(2);
+		click(driver, CategoryPage.txtCategoryText);
+		enterText(driver, CategoryPage.txtCategoryText, categoryText);
+		switchbackWindow(driver);
+		sleep(2);
+		addImageToCategory(driver, filepath, filename);
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param filepath
+	 * @param filename
+	 */
+	public void addImageToCategory(WebDriver driver, String filepath, String filename) {
+		click(driver, CategoryPage.btnCategoryImage);
+		try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		switchIFrame(driver, ImageDialog.iFrameCategoryImage);
+		selectDropDownList(driver, ImageDialog.dllFolder, filepath, "exact");
+		switchIFrame(driver, ImageDialog.iFrameImageSelectionID);
+		click(driver, By.xpath(String.format(ImageDialog.imgFilename, filename)));
+		driver.switchTo().parentFrame();
+		click(driver, ImageDialog.btnInsert);
+		switchbackWindow(driver);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param oldTitle
+	 * @param newTitle
+	 * @param newCategory
+	 * @param newStatus
+	 * @param newDescription
+	 * @param button
+	 */
+	
+	public void editCategory(WebDriver driver,String newTitle, String newStatus,
+			String newDescription, String button) {
+		clickToolbarButton (driver, Constant.BUTTON_EDIT);
+		enterText(driver, CategoryPage.txtCategoryTitle, newTitle);
+		selectDropDownList(driver, CategoryPage.ddlCategoryStatus, newStatus, "contains");
+		switchIFrame(driver, CategoryPage.iFrameCategoryText);
+		sleep(2);
+		click(driver, CategoryPage.txtCategoryText);
+		enterText(driver, CategoryPage.txtCategoryText, newDescription);
+		switchbackWindow(driver);
+		sleep(2);
+		clickToolbarButton(driver, button);
+	}
+	
+}

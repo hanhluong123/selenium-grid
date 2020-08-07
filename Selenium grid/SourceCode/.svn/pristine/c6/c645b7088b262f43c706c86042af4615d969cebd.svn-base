@@ -1,0 +1,181 @@
+package category;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import pages.LoginPageAction;
+import pages.CategoryPageAction;
+import pages.CategoryManagerPageAction;
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+
+public class JoomlaCategory_004 extends AbstractTest {
+	WebDriver driver;
+
+	@BeforeClass
+	@Parameters({ "browser", "port", "ip" })
+	public void SETUP(String browser, String port, String ip) {
+		driver = openBrowser(driver, browser, ip, port);
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		navigateBrowser(driver, url);
+		loginPage = new LoginPageAction(driver);
+		categoryPage = new CategoryPageAction(driver);
+		categoryManagerPage = new CategoryManagerPageAction(driver);
+	}
+
+	@Test(description = "Verify that user can copy may articles to another category")
+	public void RUN_01_TC_JOOMLA_CATEGORY_015() {
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		loginPage.loginToJoomla(driver, username, password);
+		
+		log.info("Step4: Select Content > Category Manager");
+		categoryManagerPage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_CATEGORIES);
+
+		log.info("Step5: Click on 'New' icon of the top right toolbar");
+		log.info("Step6: Enter a title on 'Title' field");
+		log.info("Step7: Select an item from the 'Category' dropdown list");
+		log.info("Step8: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step9: Enter value on 'Category Text' text area");
+		log.info("Step10: Click on 'Save & Close' icon of the top right toolbar");
+		categoryPage.addNewCategory(driver, titleOrder1, category, status, null, categoryText, Constant.BUTTON_SAVEANDCLOSE);
+
+		log.info("Step 11: Check on the recently added category's checkbox");
+		log.info("Step 12: Click on the status icon of the selected category in the Status column");
+		categoryManagerPage.changeCategoryStatus(driver, titleOrder1, Constant.ICON_PUBLISH);
+		
+		log.info("Verify the category is unpublished successfully");
+		log.info("VP1: The icon of the selected item is showed as 'Unpublish'");
+		verifyTrue(categoryManagerPage.verifyStatusOfCategory(driver, titleOrder1, Constant.ICON_UNPUBLISH));
+		
+		log.info("VP2:The '1 category unpublished' message is displayed");
+		verifyTrue(categoryManagerPage.verifyMessageDisplayed(driver, expectedMessage_unpublish));
+		
+		log.info("Step 13: Check on the recently added category's checkbox");
+		log.info("Step 14: Click on the status icon of the selected category in the Status column");
+		categoryManagerPage.changeCategoryStatus(driver, titleOrder1, Constant.ICON_UNPUBLISH);
+		
+		log.info("Verify the category is unpublished successfully");
+		log.info("VP3: The icon of the selected item is showed as 'Unpublish'");
+		verifyTrue(categoryManagerPage.verifyStatusOfCategory(driver, titleOrder1, Constant.ICON_PUBLISH));
+		
+		log.info("VP4:The '1 category unpublished' message is displayed");
+		verifyTrue(categoryManagerPage.verifyMessageDisplayed(driver, expectedMessage_publish));
+	}
+
+	@Test(description = "Verify that user can change access level to may articles")
+	public void RUN_02_TC_JOOMLA_CATEGORY_016() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3:Click on 'Log in' button");
+		log.info("Step4:Select Content > Category Manager");
+		log.info("Step5:Click on 'New' icon of the top right toolbar");
+		log.info("Step6:Enter a title on 'Title' field");
+		log.info("Step7:Select an item from the 'Category' dropdown list");
+		log.info("Step8:Select 'Published' item from 'Status' dropdown list");
+		log.info("Step9:Enter value on 'Category Text' text area");
+		log.info("Step10:Click on 'Save & Close' icon of the top right toolbar");
+		log.info("Step11:Verify the category is saved successfully");
+		log.info("Step12:Check on the recently added category's checkbox");
+		log.info("Step13:Click on the status icon of the selected category in the Featured column");
+		categoryManagerPage.changeCategoryStatus(driver, titleOrder1, Constant.ICON_UNFEATURED);
+		
+		log.info("Verify the category is unfeatured successfully");
+		log.info("VP1: The icon of the selected item is showed as 'Unfeatured'");
+		verifyTrue(categoryManagerPage.verifyStatusOfCategory(driver, titleOrder1, Constant.ICON_FEATURED));
+		
+		log.info("Step14:Check on the recently added category's checkbox");
+		log.info("Step15:Click on the status icon of the selected category in the Featured column");
+		categoryManagerPage.changeCategoryStatus(driver, titleOrder1, Constant.ICON_FEATURED);
+		
+		log.info("Verify the category is featured successfully");
+		log.info("VP2: The icon of the selected item is showed as 'Featured'");
+		verifyTrue(categoryManagerPage.verifyStatusOfCategory(driver, titleOrder1, Constant.ICON_UNFEATURED));
+	}
+
+	@Test(description = "Verify that user can move may articles to another category")
+	public void RUN_03_TC_JOOMLA_CATEGORY_014() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3:Click on 'Log in' button");
+		log.info("Step4:Select Content > Category Manager");
+		log.info("Step5:Click on 'New' icon of the top right toolbar");
+		log.info("Step6:Enter a title on 'Title' field");
+		log.info("Step7:Select an item from the 'Category' dropdown list");
+		log.info("Step8:Enter value on 'Category Text' text area");
+		log.info("Step9:Click on 'Save & Close' icon of the top right toolbar");
+		log.info("Step10:Click on 'New' icon of the top right toolbar");
+		log.info("Step11:Enter a title on 'Title' field");
+		log.info("Step12:Select an item from the 'Category' dropdown list");
+		log.info("Step13:Enter value on 'Category Text' text area");
+		log.info("Step14:Click on 'Save & Close' icon of the top right toolbar");
+		categoryPage.addNewCategory(driver, titleOrder2, category, status, null, categoryText, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("Step15:Click on the Header link of Ordering column");
+		categoryManagerPage.clickHeaderLinkOfOrdering(driver);
+		
+		log.info("Step16:Click on the Header link of Ordering column");
+		log.info("VP1: Verify the first category changes its position with the second category");
+		verifyTrue(categoryManagerPage.verifyCategorySortInOrdering(driver, titleOrder2, titleOrder1));
+	}
+
+	@Test(description = "Verify that user can browse 'Category help' page")
+	public void RUN_04_TC_JOOMLA_CATEGORY_007() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3:Click on 'Log in' button");
+		log.info("Step4:Select Content > Category Manager");
+		log.info("Step5:Click on 'New' icon of the top right toolbar");
+		log.info("Step6:Enter a title on 'Title' field");
+		log.info("Step7:Select an item from the 'Category' dropdown list");
+		log.info("Step8:Enter value on 'Category Text' text area");
+		log.info("Step9:Click on 'Save & Close' icon of the top right toolbar");
+		log.info("Step10: Check on the recently added category's checkbox");
+		log.info("Step11: Click on 'Trash' icon of the top right toolbar");
+		categoryManagerPage.deleteCategory(driver, Constant.SEARCH_STATUS_YES, titleOrder1);
+		
+		log.info("VP1: Verify the confirm message is displayed");
+		categoryManagerPage.verifyMessageDisplayed(driver, expectedMessage_trashed);
+		
+		log.info("Step12: Select 'Trash' item of 'Status' dropdown list");
+		categoryManagerPage.selectSearchTools(driver, search_status, null, null, null, null, null, null);
+		
+		log.info("VP2: Verify the deleted category is displayed on the table grid");
+		categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, titleOrder1);
+		
+		log.info("post condition 1: Delete Category" );
+		categoryManagerPage.deleteCategory(driver, Constant.SEARCH_STATUS_YES, titleOrder2);
+		
+		log.info("post condition 2: Log out Joomla" );
+		categoryManagerPage.logoutJoomla(driver);
+	}
+
+	@AfterClass
+	public void CLEAN() {
+		closeBrowser(driver);
+	}
+
+	/* Initialize Objects */
+	LoginPageAction loginPage;
+	CategoryPageAction categoryPage;
+	CategoryManagerPageAction categoryManagerPage;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	String titleOrder1 = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_004", "title")  + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String titleOrder2 = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_004", "title")  + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String category = CommonActions.readDataFromJson("JoomlaCategory_004", "category");
+	String status = CommonActions.readDataFromJson("JoomlaCategory_004", "status");	
+	String categoryText = CommonActions.readDataFromJson("JoomlaCategory_004", "categoryText");
+	String expectedMessage_unpublish = CommonActions.readDataFromJson("JoomlaCategory_004", "expectedMessage_unpublish");
+	String expectedMessage_publish = CommonActions.readDataFromJson("JoomlaCategory_004", "expectedMessage_publish");
+	String expectedMessage_trashed = CommonActions.readDataFromJson("JoomlaCategory_004", "expectedMessage_trashed");
+	String search_status = CommonActions.readDataFromJson("JoomlaCategory_004", "search_status");
+
+}

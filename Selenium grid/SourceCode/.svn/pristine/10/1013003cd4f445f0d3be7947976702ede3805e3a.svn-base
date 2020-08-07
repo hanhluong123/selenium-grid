@@ -1,0 +1,122 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import common.Constant;
+import pages.AbstractPageAction;
+import joomla.ArticlePage;
+import joomla.ContactPage;
+import joomla.ImageDialog;
+
+public class ContactPageAction extends AbstractPageAction{
+	
+	WebDriver driver;
+	
+	public ContactPageAction (WebDriver driver){
+		this.driver = driver;
+	}
+	
+	/**
+	 * Add new contact without Status field
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+	
+	public void addNewContact (WebDriver driver, String name, String category, String button){
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		clickToolbarButton (driver, button);
+		
+	}
+	
+	/**
+	 * Add new contact with Status field
+	 * @param driver
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+		
+	public void addNewContact (WebDriver driver, String name, String category, String status, String button){
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		selectDropDownList(driver, ContactPage.ddlContactStatus, category, "contains");
+		clickToolbarButton (driver, button);
+		
+	}
+	
+	/**
+	 * Add new contact with adding image
+	 * @param driver
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+	
+	public void addNewContact (WebDriver driver, String name, String category, String filepath, String filename, String button){
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		addImageToContact(driver,filepath,filename);
+		clickToolbarButton (driver, button);
+		
+	}
+	
+	/**
+	 * Edit an existing contact without editing Status field
+	 * @param driver
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+	
+	public void editNewContact (WebDriver driver, String name, String category, String button){
+		clickToolbarButton(driver, Constant.BUTTON_EDIT);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		clickToolbarButton (driver, button);
+		
+	}
+	
+	/**
+	 * Edit an existing contact with editing Status field
+	 * @param driver
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+	public void editNewContact (WebDriver driver, String name, String category, String status, String button){
+		clickToolbarButton(driver, Constant.BUTTON_EDIT);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		selectDropDownList(driver, ContactPage.ddlContactStatus, category, "contains");
+		clickToolbarButton (driver, button);
+		
+	}
+	
+	/**
+	 * Add image to Contact's information
+	 * @param driver
+	 * @param filepath
+	 * @param filename
+	 */
+	public void addImageToContact(WebDriver driver, String filepath, String filename) {
+		click(driver, ContactPage.btnSelect);
+		try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		switchIFrame(driver, ImageDialog.iFrameContactImage);
+		selectDropDownList(driver, ImageDialog.dllFolder, filepath, "exact");
+		switchIFrame(driver, ImageDialog.iFrameImageSelectionID);
+		click(driver, By.xpath(String.format(ImageDialog.imgFilename, filename)));
+		driver.switchTo().parentFrame();
+		click(driver, ImageDialog.btnInsert);
+		switchbackWindow(driver);
+	}
+}

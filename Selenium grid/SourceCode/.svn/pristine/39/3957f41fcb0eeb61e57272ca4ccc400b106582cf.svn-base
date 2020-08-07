@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" thread-count="4" parallel="tests">
+	<listeners>
+		<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+	<!-- <test name="FirefoxTestTuan">
+		<parameter name="browser" value="Firefox" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<class name="article.JoomlaArticle_001"></class>
+			<class name="article.JoomlaArticle_004"></class>
+		</classes>
+	</test> -->
+
+	<test name="IETestTuan">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<class name="article.JoomlaArticle_001"></class>
+			<!-- <class name="article.JoomlaArticle_004"></class> -->
+		</classes>
+	</test>
+
+	<!-- <test name="FirefoxTestTuanChrm">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<class name="article.JoomlaArticle_001"></class>
+			<class name="article.JoomlaArticle_004"></class>
+		</classes>
+	</test> -->
+	
+<!-- 	<test name="FirefoxTestDuyen">
+		<parameter name="browser" value="Firefox" />
+		<parameter name="ip" value="192.168.189.93" />
+		<parameter name="port" value="8882" />
+		<classes>
+			<class name="article.JoomlaArticle_001"></class>
+			<class name="article.JoomlaArticle_004"></class>
+		</classes>
+	</test>
+	
+	<test name="FirefoxTestDuyenChrm">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ip" value="192.168.189.93" />
+		<parameter name="port" value="8882" />
+		<classes>
+			<class name="article.JoomlaArticle_001"></class>
+			<class name="article.JoomlaArticle_004"></class>
+		</classes>
+	</test> -->
+	
+	<!--<test name="ChromeTest">
+		<parameter name="browser" value="Chrome" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<class name="article.TC_JOOMLA_ARTICLE_001_002"></class>
+		</classes>
+	</test>
+
+	<test name="IETest">
+		<parameter name="browser" value="IE" />
+		<classes>
+			<class name="article.TC_JOOMLA_ARTICLE_001_002">
+				<methods>
+					<include name="TC_JOOMLA_ARTICLE_001"/>
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+</suite>

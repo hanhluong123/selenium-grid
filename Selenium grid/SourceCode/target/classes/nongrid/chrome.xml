@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="TestSuite" parallel="true" thread-count="10"> -->
+<suite name="TestSuite" thread-count="4" parallel="classes">
+	<listeners>
+	<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+	
+	<test name="doTest1">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ip" value="192.168.189.134" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<class name="DoExam.goToDoTest1" />
+			<class name="DoExam.goToDoTest2" />
+		</classes>
+	</test>
+	
+<!-- 	<test name="doTest2">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ip" value="192.168.190.164" />
+		<parameter name="port" value="4546" />
+		<classes>
+			<class name="DoExam.goToDoTest1" />
+			<class name="DoExam.goToDoTest2" />
+		</classes>
+	</test> -->
+</suite>

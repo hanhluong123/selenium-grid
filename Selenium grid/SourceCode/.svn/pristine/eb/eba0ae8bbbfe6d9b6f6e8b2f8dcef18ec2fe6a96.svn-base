@@ -1,0 +1,143 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import common.Constant;
+import joomla.ArticlePage;
+import joomla.ImageDialog;
+
+public class ArticlePageAction extends pages.AbstractPageAction {
+
+	WebDriver driver;
+
+	public ArticlePageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param category
+	 * @param status
+	 * @param articleText
+	 * @param button
+	 */
+	public void addNewArticle(WebDriver driver, String title, String category, String status, String articleText, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, ArticlePage.txtArticleTitle, title);
+		selectDropDownList(driver, ArticlePage.ddlArticleCategory, category, "contains");
+		selectDropDownList(driver, ArticlePage.ddlArticleStatus, status, "contains");
+		switchIFrame(driver, ArticlePage.iFrameArticleText);
+		sleep(2);
+		click(driver, ArticlePage.txtArticleText);
+		enterText(driver, ArticlePage.txtArticleText, articleText);
+		switchbackWindow(driver);
+		sleep(2);
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param category
+	 * @param status
+	 * @param access
+	 * @param articleText
+	 * @param button
+	 */
+	public void addNewArticle(WebDriver driver, String title, String category, String status, String access, String articleText, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, ArticlePage.txtArticleTitle, title);
+		selectDropDownList(driver, ArticlePage.ddlArticleCategory, category, "contains");
+		selectDropDownList(driver, ArticlePage.ddlArticleStatus, status, "contains");
+		selectDropDownList(driver, ArticlePage.ddlArticleAccess, access, "contains");
+		switchIFrame(driver, ArticlePage.iFrameArticleText);
+		sleep(2);
+		click(driver, ArticlePage.txtArticleText);
+		enterText(driver, ArticlePage.txtArticleText, articleText);
+		switchbackWindow(driver);
+		sleep(2);
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param category
+	 * @param status
+	 * @param articleText
+	 * @param filepath
+	 * @param filename
+	 * @param button
+	 */
+	public void addNewArticle(WebDriver driver, String title, String category, String status, String articleText, String filepath, String filename, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, ArticlePage.txtArticleTitle, title);
+		selectDropDownList(driver, ArticlePage.ddlArticleCategory, category, "contains");
+		selectDropDownList(driver, ArticlePage.ddlArticleStatus, status, "contains");
+		switchIFrame(driver, ArticlePage.iFrameArticleText);
+		sleep(2);
+		click(driver, ArticlePage.txtArticleText);
+		enterText(driver, ArticlePage.txtArticleText, articleText);
+		switchbackWindow(driver);
+		sleep(2);
+		addImageToArticle(driver, filepath, filename);
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param filepath
+	 * @param filename
+	 */
+	public void addImageToArticle(WebDriver driver, String filepath, String filename) {
+		click(driver, ArticlePage.btnArticleImage);
+		try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		switchIFrame(driver, ImageDialog.iFrameArticleImage);
+		sleep(2);
+		selectDropDownList(driver, ImageDialog.dllFolder, filepath, "exact");
+		switchIFrame(driver, ImageDialog.iFrameImageSelectionID);
+		sleep(2);
+		click(driver, By.xpath(String.format(ImageDialog.imgFilename, filename)));
+		driver.switchTo().parentFrame();
+		sleep(2);
+		click(driver, ImageDialog.btnInsert);
+		switchbackWindow(driver);
+		sleep(2);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param oldTitle
+	 * @param newTitle
+	 * @param newCategory
+	 * @param newStatus
+	 * @param newArticle
+	 * @param button
+	 */
+	
+	public void editArticle(WebDriver driver,String newTitle, String newCategory, String newStatus,
+			String newArticle, String button) {
+		clickToolbarButton (driver, Constant.BUTTON_EDIT);
+		enterText(driver, ArticlePage.txtArticleTitle, newTitle);
+		selectDropDownList(driver, ArticlePage.ddlArticleCategory, newCategory, "contains");
+		selectDropDownList(driver, ArticlePage.ddlArticleStatus, newStatus, "contains");
+		switchIFrame(driver, ArticlePage.iFrameArticleText);
+		sleep(2);
+		click(driver, ArticlePage.txtArticleText);
+		enterText(driver, ArticlePage.txtArticleText, newArticle);
+		switchbackWindow(driver);
+		sleep(2);
+		clickToolbarButton(driver, button);
+	}
+	
+}

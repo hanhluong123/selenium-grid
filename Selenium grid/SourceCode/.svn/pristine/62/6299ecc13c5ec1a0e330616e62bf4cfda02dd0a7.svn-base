@@ -1,0 +1,79 @@
+package pages;
+
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import common.Constant;
+import joomla.AbstractPage;
+import joomla.LoginPage;
+
+public class LoginPageAction extends pages.AbstractPageAction {
+
+	WebDriver driver;
+
+	public LoginPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param username
+	 * @param password
+	 */
+	public void loginToJoomla(WebDriver driver, String username, String password) {
+		int MAX_RETRIES = 5;
+		int timecount = 0;
+		do {
+			click(driver, LoginPage.txtUsername);
+			enterText(driver, LoginPage.txtUsername, username);
+			enterText(driver, LoginPage.txtPassword, password);
+			clickAndWaitReload(driver, LoginPage.btnLogin);
+			
+	        timecount++;
+	        if (timecount > MAX_RETRIES) {
+	            break;
+	        }
+		}
+		while (isControlDisplayed(driver, LoginPage.btnLogin));
+		
+		/*handle for IE, sometimes, user is navigated to login page
+		 get current browser name*/
+		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+	    String browserName = cap.getBrowserName().toLowerCase();
+	    if (browserName.equals("internet explorer")){	    	
+			if(!isControlDisplayed(driver, AbstractPage.btnUserMenu)){
+				MAX_RETRIES = 10;
+				timecount = 0;
+				do {
+					driver.navigate().refresh();
+				    try {
+				        driver.switchTo().alert().accept();
+				    } catch (NoAlertPresentException e) {
+				        // That's fine.
+				    }
+			        timecount++;
+			        if (timecount > MAX_RETRIES) {
+			            break;
+			        }
+				}
+				while(!isControlDisplayed(driver, AbstractPage.btnUserMenu));
+				waitForControl(driver, AbstractPage.btnUserMenu, Constant.LONG_TIME);
+			}
+	    }
+	}
+	
+	public void loginToJoomla(WebDriver driver, String username, String password, boolean notRetry) {
+		if (notRetry) {
+			click(driver, LoginPage.txtUsername);
+			enterText(driver, LoginPage.txtUsername, username);
+			enterText(driver, LoginPage.txtPassword, password);
+			clickAndWaitReload(driver, LoginPage.btnLogin);
+		}
+		else { 
+			loginToJoomla(driver, username, password);
+		}
+	}
+}

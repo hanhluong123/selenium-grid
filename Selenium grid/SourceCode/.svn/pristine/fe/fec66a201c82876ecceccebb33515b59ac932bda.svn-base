@@ -1,0 +1,267 @@
+package pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import joomla.AbstractPage;
+import joomla.ArticleManagerPage;
+import pages.AbstractPageAction;
+import common.AbstractTest;
+import common.Constant;
+
+public class ArticleManagerPageAction extends AbstractPageAction {
+
+	WebDriver driver;
+	AbstractTest abstractTest = new AbstractTest();
+
+	public ArticleManagerPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	/**
+	 * Change status icon of any item in table
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param typeOfStatus
+	 */
+
+	public void changeArticleStatus(WebDriver driver, String title, String typeOfStatus) {
+		selectAnArticle(driver, title);
+		click(driver, By.xpath(String.format(ArticleManagerPage.dynamiciconArtileStatus, title, typeOfStatus)));
+	}
+
+	/**
+	 * Check on/off the recently added item's checkbox
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+
+	public void selectAnArticle(WebDriver driver, String title) {
+		dependableWaitForControl(driver, By.xpath(String.format(ArticleManagerPage.dynamicArtileRow, title)), Constant.LONG_TIME);
+		click(driver, By.xpath(String.format(ArticleManagerPage.dynamicArtilechkRow, title)));
+		sleep(1);
+	}
+	
+
+	/**
+	 * Search for a title
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+
+	public void searchArticleByTitle(WebDriver driver, String title) {
+		enterText(driver, ArticleManagerPage.txtArticleSearch, title);
+		click(driver, ArticleManagerPage.btnArticleSearch);
+		sleep(1);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param searchStatus
+	 * @param title
+	 */
+	public void deleteArticle(WebDriver driver, String searchStatus, String title) {
+		clearSearchTools(driver);
+		if (searchStatus.toLowerCase().equals("yes")) {
+			searchArticleByTitle(driver, title);
+		}
+		selectAnArticle(driver, title);
+		click(driver, AbstractPage.btnTrash);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param searchStatus
+	 * @param title
+	 * @param status
+	 */
+	public void deleteArticle(WebDriver driver, String searchStatus, String title, String status) {
+		
+		if (status.equals("Archived")) {
+			selectSearchTools(driver, status, null, null, null, null, null, null);
+		}
+		else {
+			clearSearchTools(driver);
+		}
+		if (searchStatus == "YES") {
+			searchArticleByTitle(driver, title);
+		}
+		selectAnArticle(driver, title);
+		click(driver, AbstractPage.btnTrash);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+	public void openArticle(WebDriver driver, String title) {
+		click(driver, By.linkText(title));
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param typeSort
+	 */
+
+	public void sortArticleByID(WebDriver driver, String typeSort) {
+		String typeSortInDropdownlist = driver.findElement(ArticleManagerPage.ddlSortArticleByID).getText();
+		if (typeSortInDropdownlist != typeSort) {
+			click(driver, ArticleManagerPage.btnSortArticleByID);
+		}
+	}
+	
+	/**
+	 * Select item of the 'Display' dropdown list at the footer section of the
+	 * table
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 */
+
+	public void selectNumberOfArticleDisplay(WebDriver driver, String numberOfItems) {
+		String currentNumberOfItemDisplay = driver.findElement(ArticleManagerPage.ddlNumberArtileDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			selectDropDownList(driver, ArticleManagerPage.ddlNumberArtileDisplay, numberOfItems,"exact");
+		}
+	} 
+	
+	/**
+	 * Select Number Of Article Display by using filter feature
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 * @param performSearch
+	 */
+	public void selectNumberOfArticleDisplay(WebDriver driver, String numberOfItems, boolean performSearch) {
+		String currentNumberOfItemDisplay = driver.findElement(ArticleManagerPage.ddlNumberArtileDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			selectDropDownList(driver, ArticleManagerPage.ddlNumberArtileDisplay, numberOfItems, performSearch);
+		}
+	} 
+	
+	/**
+	 * Verify article is displayed on the articles table
+	 * 
+	 * @param driver
+	 * @param searchStatus
+	 * @param title
+	 * @return
+	 */
+
+	public boolean verifyArticleDisplayed(WebDriver driver, String searchStatus, String title) {
+		if (searchStatus.toLowerCase().equals("yes")) {
+			searchArticleByTitle(driver, title);
+		}
+		return (isControlDisplayed(driver, By.xpath(String.format(ArticleManagerPage.dynamiclnkArticle, title))));
+	}
+
+	/**
+	 * Verify status icon of of any item in table
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param typeOfStatus
+	 * @return
+	 */
+
+	public boolean verifyStatusOfArticle(WebDriver driver, String title, String typeOfStatus) {
+		return (isControlDisplayed(driver, By.xpath(String.format(ArticleManagerPage.dynamiciconArtileStatus, title, typeOfStatus))));
+	}
+
+	/**
+	 * The first item changes its position with the second item after ordering
+	 * 
+	 * @param driver
+	 * @param firstIem
+	 * @param secondItem
+	 * @return
+	 */
+
+	public boolean verifyArticleSortInOrdering(WebDriver driver, String firstIem, String secondItem) {
+		selectNumberOfArticleDisplay(driver, "All");
+		int firstIndex = getIndexOfTitle(driver, firstIem);
+		int secondIndex = getIndexOfTitle(driver, secondItem);
+		clickHeaderLinkOfOrdering(driver);
+		int firstIndex1 = getIndexOfTitle(driver, firstIem);
+		int secondIndex1 = getIndexOfTitle(driver, secondItem);
+		if (firstIndex > secondIndex) {
+			if (firstIndex1 < secondIndex1) {
+				return true;
+			}
+			return false;
+		}
+		if (firstIndex1 > secondIndex1) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Verify items in table are paging correctly
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 * @return
+	 */
+
+	public boolean verifyArticlePagingCorrectly(WebDriver driver, String numberOfItems) {
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		int numberOfRows = rows.size() - 2;
+
+		if (!numberOfItems.equals("All")) {
+			int numberOfItems1 = Integer.parseInt(numberOfItems);
+			if (isControlDisplayed(driver, ArticleManagerPage.btnArticleEndPage)) {
+				if (numberOfRows != numberOfItems1) {
+					return false;
+				} 
+				return true;
+			} else if (numberOfItems1 >= numberOfRows) {
+				return true;
+			}
+			return false;
+		} else {
+			selectNumberOfArticleDisplay(driver, "5",true);
+			if (isControlDisplayed(driver, ArticleManagerPage.btnArticleEndPage)) {
+				click(driver, ArticleManagerPage.btnArticleEndPage);
+				int numberOfPage = Integer.parseInt(driver.findElement(ArticleManagerPage.btnArticleNumberEndPage).getText());
+				WebElement tableEndPAge = driver.findElement(AbstractPage.tblTable);
+				List<WebElement> rowsEndPage = tableEndPAge.findElements(AbstractPage.rowsTable);
+				int numberOfItemsInEndPage = rowsEndPage.size() - 2;
+				int totalOfItems = 5 * (numberOfPage - 1) + numberOfItemsInEndPage;
+				if (totalOfItems != numberOfRows) {
+					return false;
+				}
+
+				return true;
+			}
+
+			else if (numberOfRows <= 5) {
+				return true;
+			}
+
+			return false;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param checkinstatus
+	 * @return
+	 */
+	public boolean isCheckoutIConDisplayed(WebDriver driver, String title, String checkinstatus){
+		return(isControlDisplayed(driver, By.xpath(String.format(ArticleManagerPage.dynamicbtnCheckoutStatus, title, checkinstatus))));
+	}
+}

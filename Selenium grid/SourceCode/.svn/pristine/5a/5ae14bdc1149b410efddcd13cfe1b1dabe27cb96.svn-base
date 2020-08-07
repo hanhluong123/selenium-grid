@@ -1,0 +1,238 @@
+package bannerclient;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import pages.BannerClientManagerPageAction;
+import pages.BannerClientPageAction;
+import pages.HelpPageAction;
+import pages.LoginPageAction;
+
+public class JoomlaBannerClient_003 extends AbstractTest {
+	WebDriver driver;
+
+	@BeforeClass
+	@Parameters({ "browser", "port", "ip" })
+	public void SETUP(String browser, String port, String ip) {
+		driver = openBrowser(driver, browser, ip, port);
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		navigateBrowser(driver, url);
+		this.browser = browser;
+		loginPage = new LoginPageAction(driver);
+		bannerClientPage = new BannerClientPageAction(driver);
+		bannerClientManagerPage = new BannerClientManagerPageAction(driver);
+		helpPage = new HelpPageAction(driver);
+	}
+
+	@Test(description = "User can create many clients by using 'Save & New' button")
+	public void RUN_01_TC_JOOMLA_BANNERS_CLIENTS_011() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		loginPage.loginToJoomla(driver, username, password);
+
+		log.info("Step4: Select Components -> Banners -> Clients");
+		bannerClientManagerPage.selectMenuItems3(driver, browser, Constant.MENUITEM_COMPONENTS,
+				Constant.MENUITEM_BANNERS, Constant.MENUITEM_CLIENTS);
+
+		log.info("Step5: Click 'New' button in the right top corner");
+		log.info("Step6: Enter valid Client Name to Client Name textbox");
+		log.info("Step7: Enter valid Contact Name to Contact Name textbox");
+		log.info("Step8: Enter valid Contact Email to Contact Email textbox");
+		log.info("Step9: Click 'Save & New' button");
+		bannerClientPage.addNewBannerClient(driver, clientname, contactname, contactemail, Constant.BUTTON_SAVEANDNEW);
+
+		log.info("VP: A message : 'Client successfully saved' shows and 'Add Client' page displays");
+		log.info("VP1: A message : 'Client successfully saved' shows");
+		verifyTrue(bannerClientManagerPage.verifyMessageDisplayed(driver, expectedMessage_saved));
+
+		log.info("VP2: 'New Client' page displays");
+		verifyTrue(bannerClientPage.verifyCorrectPageDisplayed(driver, titlepage_new));
+
+		log.info("Step10: Enter valid Client Name to Client Name textbox");
+		log.info("Step11: Enter valid Contact Name to Contact Name textbox");
+		log.info("Step12: Enter valid Contact Email to Contact Email textbox");
+		log.info("Step13: Click 'Save & Close' button");
+		bannerClientPage.editBannerClient(driver, clientname_new, contactname_new, contactemail_new,
+				Constant.BUTTON_SAVEANDCLOSE);
+
+		log.info("VP: A message : 'Client successfully saved' shows and 2 new clients are created");
+		log.info("VP1: A message : 'Client successfully saved' shows.");
+		verifyTrue(bannerClientManagerPage.verifyMessageDisplayed(driver, expectedMessage_saved));
+
+		log.info("VP2: Two new clients are created");
+		verifyTrue(bannerClientManagerPage.verifyBannerClientDisplayed(driver, Constant.SEARCH_STATUS_YES, clientname));
+		verifyTrue(
+				bannerClientManagerPage.verifyBannerClientDisplayed(driver, Constant.SEARCH_STATUS_NO, clientname_new));
+
+	}
+
+	@Test(description = "Verify that user can check in a client")
+	@Parameters({ "browser", "port", "ip" })
+	public void RUN_02_TC_JOOMLA_BANNERS_CLIENTS_010(String browser, String port, String ip) {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select Components -> Banners -> Clients");
+		log.info("Step5: Click 'New' button in the right top corner");
+		log.info("Step6: Enter valid Client Name to Client Name textbox");
+		log.info("Step7: Enter valid Contact Name to Contact Name textbox");
+		log.info("Step8: Enter valid Contact Email to Contact Email textbox");
+		log.info("Step9: Click 'Save' button");
+		bannerClientPage.addNewBannerClient(driver, clientname1, contactname, contactemail, status,
+				Constant.BUTTON_SAVE);
+
+		log.info("VP: A message : 'Client successfully saved' shows and 'edit page' is displayed");
+		log.info("Step10: Close browser");
+		closeBrowser(driver);
+
+		log.info("Step11: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		driver = openBrowser(driver, browser, ip, port);
+		navigateBrowser(driver, url);
+
+		log.info("Step12: Enter valid username into Username field and valid password into Password field");
+		log.info("Step13: Click on 'Log in' button");
+		loginPage.loginToJoomla(driver, username, password);
+
+		log.info("Step14: Select Components -> Banners -> Clients");
+		bannerClientManagerPage.selectMenuItems3(driver, browser, Constant.MENUITEM_COMPONENTS,
+				Constant.MENUITEM_BANNERS, Constant.MENUITEM_CLIENTS);
+
+		log.info("VP1: Recently created client displays and locked");
+		verifyTrue(bannerClientManagerPage.verifyBannerClientLocked(driver, Constant.SEARCH_STATUS_YES, clientname1));
+
+		log.info("Step15: Check recently created client");
+		bannerClientManagerPage.selectBannerClient(driver, Constant.SEARCH_STATUS_NO, clientname1);
+
+		log.info("Step16: Click 'Check In' button");
+		bannerClientManagerPage.clickToolbarButton(driver, Constant.BUTTON_CHECKIN);
+
+		log.info("VP: A message '1 client successfully checked in' appears and client is changed to unlock");
+		log.info("VP2: A message : '1 client successfully checked in' appears.");
+		verifyTrue(bannerClientManagerPage.verifyMessageDisplayed(driver, expectedMessage_checkin));
+
+		log.info("VP3: Client is changed to unlock");
+		verifyFalse(bannerClientManagerPage.verifyBannerClientLocked(driver, Constant.SEARCH_STATUS_NO, clientname1));
+		bannerClientManagerPage.clearSearchTools(driver);
+	}
+
+	@Test(description = "Verify that user can search a client  by using filter textbox")
+	public void RUN_03_TC_JOOMLA_BANNERS_CLIENTS_008() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select Components -> Banners -> Clients");
+		log.info("Step5: Click 'New' button in the right top corner");
+		log.info("Step6: Enter valid Client Name to Client Name textbox");
+		log.info("Step7: Enter valid Contact Name to Contact Name textbox");
+		log.info("Step8: Enter valid Contact Email to Contact Email textbox");
+		log.info("Step9: Click 'Save & Close' button");
+		log.info("VP: A message : 'Client successfully saved' shows and new client is created");
+		log.info("Step10: Enter valid Client Name to Filter textbox");
+		log.info("Step11: Click 'Search' button");
+		bannerClientManagerPage.searchBannerClientByTitle(driver, clientname1);
+
+		log.info("VP: Recently created client displays");
+		verifyTrue(bannerClientManagerPage.verifyBannerClientDisplayed(driver, Constant.SEARCH_STATUS_NO, clientname1));
+	}
+
+	@Test(description = "Verify that user can search a client by using filter dropdown list")
+	public void RUN_04_TC_JOOMLA_BANNERS_CLIENTS_009() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select Components -> Banners -> Clients");
+		log.info("Step5: Click 'New' button in the right top corner");
+		log.info("Step6: Enter valid Client Name to Client Name textbox");
+		log.info("Step7: Enter valid Contact Name to Contact Name textbox");
+		log.info("Step8: Enter valid Contact Email to Contact Email textbox");
+		log.info("Step9: Select 'Unpublished' in Status drop downlist");
+		log.info("Step10: Click 'Save & Close' button");
+		log.info("VP: A message : 'Client successfully saved' shows and new client is created");
+
+		log.info("Step11: Select 'Unpublished' in Status drop downlist");
+		bannerClientManagerPage.selectBannerClientSearchTools(driver, status);
+
+		log.info("VP1: Recently created client displays");
+		verifyTrue(
+				bannerClientManagerPage.verifyBannerClientDisplayed(driver, Constant.SEARCH_STATUS_YES, clientname1));
+	}
+
+	@Test(description = "Verify that user can browse 'Banner client help' page")
+	public void RUN_05_TC_JOOMLA_BANNERS_CLIENTS_007() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select Components -> Banners -> Clients");
+		log.info("Step5: Click 'Help' button in the right top corner");
+		bannerClientManagerPage.clickToolbarButton(driver, Constant.BUTTON_HELP);
+
+		log.info("VP: 'Banner client help' page appears");
+		verifyTrue(helpPage.verifyHelpPageDisplayed(driver, Constant.TITLE_HELP));
+	}
+
+	@Test(description = "Verify that user can browse'New client help'page")
+	public void RUN_06_TC_JOOMLA_BANNERS_CLIENTS_012() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select Components -> Banners -> Clients");
+		log.info("Step5: Click 'New' button in the right top corner");
+		bannerClientManagerPage.clickToolbarButton(driver, Constant.BUTTON_NEW);
+
+		log.info("Step6: Click 'Help' button in the right top corner");
+		bannerClientPage.clickToolbarButton(driver, Constant.BUTTON_HELP);
+
+		log.info("VP: 'New client help' page appears");
+		verifyTrue(helpPage.verifyHelpPageDisplayed(driver, Constant.TITLE_HELP));
+
+		log.info("post condition 1: Delete BannerClients");
+		bannerClientManagerPage.clickToolbarButton(driver, Constant.BUTTON_CANCEL);
+		bannerClientManagerPage.clearSearchTools(driver);
+		bannerClientManagerPage.deleteBannerClient(driver, Constant.SEARCH_STATUS_YES, clientname);
+		bannerClientManagerPage.deleteBannerClient(driver, Constant.SEARCH_STATUS_YES, clientname_new);
+		bannerClientManagerPage.deleteBannerClient(driver, Constant.SEARCH_STATUS_YES, clientname1);
+
+		log.info("post condition 2: Log out Joomla");
+		bannerClientManagerPage.logoutJoomla(driver);
+	}
+
+	@AfterClass
+	public void TEARDOWN() {
+		closeBrowser(driver);
+	}
+
+	/* Initialize Objects */
+
+	LoginPageAction loginPage;
+	BannerClientPageAction bannerClientPage;
+	BannerClientManagerPageAction bannerClientManagerPage;
+	HelpPageAction helpPage;
+
+	/* Class Variables */
+	String browser;
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	String clientname = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaBannerClient_003", "title")
+			+ CommonActions.getDateTime();
+	String clientname_new = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaBannerClient_003", "title_new")
+			+ CommonActions.getDateTime();
+	String clientname1 = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaBannerClient_003", "title1")
+			+ CommonActions.getDateTime();
+	String contactname = CommonActions.readDataFromJson("JoomlaBannerClient_003", "contactname");
+	String contactname_new = CommonActions.readDataFromJson("JoomlaBannerClient_003", "contactname_new");
+	String contactemail = CommonActions.readDataFromJson("JoomlaBannerClient_003", "contactemail");
+	String contactemail_new = CommonActions.readDataFromJson("JoomlaBannerClient_003", "contactemail_new");
+	String status = CommonActions.readDataFromJson("JoomlaBannerClient_003", "status");
+	String expectedMessage_saved = CommonActions.readDataFromJson("JoomlaBannerClient_003", "expectedMessage_saved");
+	String expectedMessage_checkin = CommonActions.readDataFromJson("JoomlaBannerClient_003",
+			"expectedMessage_checkin");
+	String titlepage_new = CommonActions.readDataFromJson("JoomlaBannerClient_003", "titlepage_new");
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="4" guice-stage="DEVELOPMENT" name="Failed suite [TestSuite]">
+  <parameter name="port" value="8881"/>
+  <parameter name="browser" value="firefox"/>
+  <parameter name="ip" value="192.168.189.93"/>
+  <listeners>
+    <listener class-name="configuration.TestNGITestListener"/>
+  </listeners>
+  <test name="FirefoxTestDuyen(failed)">
+    <parameter name="port" value="8881"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="ip" value="192.168.189.93"/>
+    <classes>
+      <class name="article.JoomlaArticle_004">
+        <methods>
+          <include name="SETUP"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_004 -->
+      <class name="article.JoomlaArticle_003">
+        <methods>
+          <include name="TC_JOOMLA_ARTICLE_008"/>
+          <include name="TO_JOOMLA_ARTICLE_011"/>
+          <include name="TO_JOOMLA_ARTICLE_017"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="TO_JOOMLA_ARTICLE_012"/>
+          <include name="SETUP"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_003 -->
+    </classes>
+  </test> <!-- FirefoxTestDuyen(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

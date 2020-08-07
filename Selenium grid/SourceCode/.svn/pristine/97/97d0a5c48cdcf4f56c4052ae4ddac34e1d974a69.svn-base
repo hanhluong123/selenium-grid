@@ -1,0 +1,15 @@
+package zDraft;
+
+import org.testng.annotations.Test;
+
+import zDraft.*;
+
+public class test extends zDraft.loginnhap {
+
+	@Test
+	public static void print (){
+    getrandom("Duyen");
+
+	}
+	
+}

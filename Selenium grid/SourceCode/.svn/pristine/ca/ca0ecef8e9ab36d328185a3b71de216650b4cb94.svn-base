@@ -1,0 +1,41 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import common.AutomationActions;
+import common.Constant;
+
+public class HelpPageAction {
+	WebDriver driver;
+
+	public HelpPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param titleHelp
+	 * @return
+	 */
+
+	public boolean verifyHelpPageDisplayed(WebDriver driver, String titleHelp) {
+		Boolean result = false;
+		// Store the current window handle
+		AutomationActions.sleep(Constant.LONG_TIME);
+		String winHandleBefore = driver.getWindowHandle();
+		// Switch to new window opened
+		for (String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+			if (driver.getTitle().equals(titleHelp)) {
+				result = true;
+			}
+		}
+		// Close the new window, if that window no more required
+		driver.close();
+		// Switch back to original browser (first window)
+		driver.switchTo().window(winHandleBefore);
+		return result;
+	}
+
+}

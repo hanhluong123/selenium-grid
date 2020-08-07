@@ -1,0 +1,1222 @@
+<html>
+<head>
+<title>TestNG:  FirefoxTestTuan</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>FirefoxTestTuan</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>12/2/2</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Nov 24 18:28:17 ICT 2016</td>
+</tr>
+<tr><td>Total time:</td><td>477 seconds (477696 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_002.clean()'><b>clean</b><br>Test class: article.JoomlaArticle_002</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logout&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;LGDN14847-W7D&apos;, ip: &apos;192.168.189.60&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 30.79 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webdriver.remote.sessionid=41d50681-471d-454d-acd2-99ebaa53b743, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 41d50681-471d-454d-acd2-99ebaa53b743
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Logout&apos;)]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at common.AutomationActions.waitForControl(AutomationActions.java:147)
+	at common.AutomationActions.click(AutomationActions.java:46)
+	at pages.AbstractPageAction.logoutJoomla(AbstractPageAction.java:429)
+	at article.JoomlaArticle_002.clean(JoomlaArticle_002.java:185)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.openqa.selenium.remote.ScreenshotException: Screen shot has been taken
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:138)
+	... 66 more
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logout&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;LGDN14847-W7D&apos;, ip: &apos;192.168.189.60&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/tuan.le/AppData/Local/Temp/anonymous7804950174716980836webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/tuan.le/AppData/Local/Temp/anonymous7804950174716980836webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1746074170", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1746074170'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logout&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;LGDN14847-W7D&apos;, ip: &apos;192.168.189.60&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+Command duration or timeout: 30.79 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webdriver.remote.sessionid=41d50681-471d-454d-acd2-99ebaa53b743, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 41d50681-471d-454d-acd2-99ebaa53b743
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Logout&apos;)]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at common.AutomationActions.waitForControl(AutomationActions.java:147)
+	at common.AutomationActions.click(AutomationActions.java:46)
+	at pages.AbstractPageAction.logoutJoomla(AbstractPageAction.java:429)
+	at article.JoomlaArticle_002.clean(JoomlaArticle_002.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:220)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:202)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:155)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.openqa.selenium.remote.ScreenshotException: Screen shot has been taken
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:138)
+	... 66 more
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logout&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1&apos;, time: &apos;2016-06-30 17:37:03&apos;
+System info: host: &apos;LGDN14847-W7D&apos;, ip: &apos;192.168.189.60&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/tuan.le/AppData/Local/Temp/anonymous7804950174716980836webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/tuan.le/AppData/Local/Temp/anonymous7804950174716980836webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+</pre></div></td>
+<td>0</td>
+<td>article.JoomlaArticle_002@28348c6</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_006()'><b>TC_JOOMLA_ARTICLE_006</b><br>Test class: article.JoomlaArticle_002<br>Parameters: firefox, 192.168.189.60, 8882<br/>
+<a href="#Output-794526288" onClick='toggleBox("Output-794526288", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-794526288" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-794526288">
+2016-11-24 18:29:31,756 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-24 18:29:31,756 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-24 18:29:31,756 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-24 18:29:31,757 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-24 18:29:31,757 INFO  JoomlaArticle_002 - Step 5: Select Content > Article Manager
+<br/>
+2016-11-24 18:29:34,243 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:29:34,244 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-11-24 18:29:34,244 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:29:34,244 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-24 18:29:34,244 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:29:34,245 INFO  JoomlaArticle_002 - Step 11: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:29:49,925 INFO  JoomlaArticle_002 - VP1: Verify the article is saved successfully
+<br/>
+2016-11-24 18:29:51,146 INFO  JoomlaArticle_002 - ===FAILED===
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at common.AbstractTest.verifyTrue(AbstractTest.java:15)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_006(JoomlaArticle_002.java:148)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace794526288", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace794526288'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at common.AbstractTest.verifyTrue(AbstractTest.java:15)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_006(JoomlaArticle_002.java:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:202)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:155)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+</pre></div></td>
+<td>19</td>
+<td>article.JoomlaArticle_002@28348c6</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017()'><b>TO_JOOMLA_ARTICLE_017</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-2040548959" onClick='toggleBox("Output-2040548959", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2040548959" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2040548959">
+2016-11-24 18:30:50,816 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-11-24 18:30:50,816 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-24 18:30:50,816 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-24 18:30:50,816 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+<br/>
+2016-11-24 18:30:50,816 INFO  JoomlaArticle_003 - Step5: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:30:50,817 INFO  JoomlaArticle_003 - Step6: Enter a title on 'Title' field
+<br/>
+2016-11-24 18:30:50,817 INFO  JoomlaArticle_003 - Step7: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:30:50,817 INFO  JoomlaArticle_003 - Step8: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:30:50,817 INFO  JoomlaArticle_003 - Step9: Select 'Public' item from the 'Access' dropdown list
+<br/>
+2016-11-24 18:30:50,817 INFO  JoomlaArticle_003 - Step10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:31:10,812 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+<br/>
+2016-11-24 18:31:10,813 INFO  JoomlaArticle_003 - VP1: 'Article successfully saved' message is displayed
+<br/>
+2016-11-24 18:31:11,978 INFO  JoomlaArticle_003 - ===FAILED===
+<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at common.AbstractTest.verifyTrue(AbstractTest.java:15)
+	at article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017(JoomlaArticle_003.java:65)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 39 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2040548959", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2040548959'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:496)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at common.AbstractTest.verifyTrue(AbstractTest.java:15)
+	at article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017(JoomlaArticle_003.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:202)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:155)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+</pre></div></td>
+<td>21</td>
+<td>article.JoomlaArticle_003@6de0f580</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_001()'><b>TC_JOOMLA_ARTICLE_001</b><br>Test class: article.JoomlaArticle_001<br/>
+<a href="#Output-2045143855" onClick='toggleBox("Output-2045143855", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2045143855" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2045143855">
+2016-11-24 18:34:51,639 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>
+2016-11-24 18:34:51,640 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-24 18:34:51,640 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-24 18:34:51,640 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-24 18:34:51,640 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+<br/>
+2016-11-24 18:34:51,640 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:34:51,641 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-11-24 18:34:51,641 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:34:51,641 INFO  JoomlaArticle_001 - Step 9: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:34:51,641 INFO  JoomlaArticle_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:34:51,641 INFO  JoomlaArticle_001 - VP: Verify the article is saved successfully
+<br/>
+2016-11-24 18:35:15,522 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+2016-11-24 18:35:19,468 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>27</td>
+<td>article.JoomlaArticle_001@58e92c23</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_002()'><b>TC_JOOMLA_ARTICLE_002</b><br>Test class: article.JoomlaArticle_001<br/>
+<a href="#Output-1139915666" onClick='toggleBox("Output-1139915666", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1139915666" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1139915666">
+2016-11-24 18:35:19,469 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>
+2016-11-24 18:35:19,469 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-24 18:35:19,469 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-24 18:35:19,469 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-24 18:35:19,469 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+<br/>
+2016-11-24 18:35:19,470 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:19,470 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' text field
+<br/>
+2016-11-24 18:35:19,470 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:35:19,470 INFO  JoomlaArticle_001 - Step 9: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:35:19,470 INFO  JoomlaArticle_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:19,470 INFO  JoomlaArticle_001 - VP 11: Verify the article is saved successfully
+<br/>
+2016-11-24 18:35:19,470 INFO  JoomlaArticle_001 - Step 12: Select Content > Articles
+<br/>
+2016-11-24 18:35:19,470 INFO  JoomlaArticle_001 - Step 13: Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:35:19,471 INFO  JoomlaArticle_001 - Step 14: Click on 'Edit' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:19,471 INFO  JoomlaArticle_001 - Step 15: Enter a new title on 'Title' text field
+<br/>
+2016-11-24 18:35:19,471 INFO  JoomlaArticle_001 - Step 16: Select a new item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:35:19,471 INFO  JoomlaArticle_001 - Step 17: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:35:19,471 INFO  JoomlaArticle_001 - Step 18: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:19,471 INFO  JoomlaArticle_001 - VP 19: Verify the article is saved successfully
+<br/>
+2016-11-24 18:35:32,715 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+2016-11-24 18:35:36,547 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>17</td>
+<td>article.JoomlaArticle_001@58e92c23</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_003()'><b>TC_JOOMLA_ARTICLE_003</b><br>Test class: article.JoomlaArticle_002<br/>
+<a href="#Output-1219797059" onClick='toggleBox("Output-1219797059", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1219797059" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1219797059">
+2016-11-24 18:29:25,741 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-24 18:29:25,741 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-24 18:29:25,741 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-24 18:29:25,741 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-24 18:29:25,741 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:29:25,742 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-11-24 18:29:25,742 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:29:25,742 INFO  JoomlaArticle_002 - Step 9: Select 'Unpublished' item from 'Status' dropdown list
+<br/>
+2016-11-24 18:29:25,742 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:29:25,742 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:29:26,956 INFO  JoomlaArticle_002 - Step 12: Click on 'Publish' icon of the top right toolbar
+<br/>
+2016-11-24 18:29:30,510 INFO  JoomlaArticle_002 - VP1: Verify the article is published successfully 
+<br/>
+2016-11-24 18:29:31,695 INFO  JoomlaArticle_002 - ===PASSED===
+<br/>
+2016-11-24 18:29:31,695 INFO  JoomlaArticle_002 - VP2: The icon of the selected item is showed as 'Publish'
+<br/>
+2016-11-24 18:29:31,755 INFO  JoomlaArticle_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>article.JoomlaArticle_002@28348c6</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_004()'><b>TC_JOOMLA_ARTICLE_004</b><br>Test class: article.JoomlaArticle_002<br/>
+<a href="#Output-1850680894" onClick='toggleBox("Output-1850680894", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1850680894" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1850680894">
+2016-11-24 18:29:11,823 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-24 18:29:11,823 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-24 18:29:11,823 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-24 18:29:11,824 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-24 18:29:11,824 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:29:11,824 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-11-24 18:29:11,824 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:29:11,824 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-24 18:29:11,824 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:29:11,825 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:29:13,029 INFO  JoomlaArticle_002 - Step 14: Click on 'Unpublish' icon of the top right toolbar
+<br/>
+2016-11-24 18:29:24,437 INFO  JoomlaArticle_002 - VP1: Verify the article is unpublished successfully 
+<br/>
+2016-11-24 18:29:25,692 INFO  JoomlaArticle_002 - ===PASSED===
+<br/>
+2016-11-24 18:29:25,692 INFO  JoomlaArticle_002 - VP2: The icon of the selected item is showed as 'Unpublish'
+<br/>
+2016-11-24 18:29:25,740 INFO  JoomlaArticle_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>13</td>
+<td>article.JoomlaArticle_002@28348c6</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_005()'><b>TC_JOOMLA_ARTICLE_005</b><br>Test class: article.JoomlaArticle_001<br/>
+<a href="#Output-1014278669" onClick='toggleBox("Output-1014278669", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1014278669" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1014278669">
+2016-11-24 18:35:57,190 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>
+2016-11-24 18:35:57,190 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-24 18:35:57,190 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-24 18:35:57,190 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-24 18:35:57,190 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+<br/>
+2016-11-24 18:35:57,190 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:57,190 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-11-24 18:35:57,190 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:35:57,191 INFO  JoomlaArticle_001 - Step 9: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:35:57,191 INFO  JoomlaArticle_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:57,191 INFO  JoomlaArticle_001 - VP: Verify the article is saved successfully
+<br/>
+2016-11-24 18:35:57,191 INFO  JoomlaArticle_001 - Step 12: Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:35:57,191 INFO  JoomlaArticle_001 - Step 13: Click on 'Archive' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:57,191 INFO  JoomlaArticle_001 - VP1: Verify the confirm message is displayed
+<br/>
+2016-11-24 18:35:57,191 INFO  JoomlaArticle_001 - Step 15: Select 'Archived' item of 'Status' dropdown list
+<br/>
+2016-11-24 18:35:57,191 INFO  JoomlaArticle_001 - VP2: Verify the archived article is displayed on the table grid
+<br/>
+2016-11-24 18:36:03,048 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+2016-11-24 18:36:15,621 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>18</td>
+<td>article.JoomlaArticle_001@58e92c23</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TC_JOOMLA_ARTICLE_008()'><b>TC_JOOMLA_ARTICLE_008</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-880282841" onClick='toggleBox("Output-880282841", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-880282841" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-880282841">
+2016-11-24 18:30:29,460 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-24 18:30:29,466 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-24 18:30:40,874 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+<br/>
+2016-11-24 18:30:43,321 INFO  JoomlaArticle_003 - Step5: Click on 'Help' icon of the top right toolbar
+<br/>
+2016-11-24 18:30:47,699 INFO  JoomlaArticle_003 - VP1: Verify the article's help window is displayed
+<br/>
+2016-11-24 18:30:50,814 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>21</td>
+<td>article.JoomlaArticle_003@6de0f580</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_010()'><b>TC_JOOMLA_ARTICLE_010</b><br>Test class: article.JoomlaArticle_001<br/>
+<a href="#Output-992457879" onClick='toggleBox("Output-992457879", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-992457879" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-992457879">
+2016-11-24 18:35:36,548 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>
+2016-11-24 18:35:36,548 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-24 18:35:36,548 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-24 18:35:36,548 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-24 18:35:36,548 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' text field
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - Step 10: Select an item from the 'Access' dropdown list
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - Step 11: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - Step 12: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - VP 13: Verify the article is saved successfully
+<br/>
+2016-11-24 18:35:36,549 INFO  JoomlaArticle_001 - Step 14: Select an item from the 'Status' filter dropdown list
+<br/>
+2016-11-24 18:35:36,550 INFO  JoomlaArticle_001 - Step 15: Select an item from the 'Category' filter dropdown list
+<br/>
+2016-11-24 18:35:36,550 INFO  JoomlaArticle_001 - Step 16: Select an item from the 'Access' filter dropdown list
+<br/>
+2016-11-24 18:35:36,550 INFO  JoomlaArticle_001 - Step 17: Select an item from the 'Author' filter dropdown list
+<br/>
+2016-11-24 18:35:36,550 INFO  JoomlaArticle_001 - VP 18: Verify the property of displayed articles are matched with the selected criteria from the filter dropdown lists
+<br/>
+2016-11-24 18:35:57,189 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>article.JoomlaArticle_001@58e92c23</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_013()'><b>TC_JOOMLA_ARTICLE_013</b><br>Test class: article.JoomlaArticle_002<br/>
+<a href="#Output-839180856" onClick='toggleBox("Output-839180856", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-839180856" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-839180856">
+2016-11-24 18:28:40,097 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-24 18:28:40,099 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-24 18:28:40,099 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-24 18:28:40,099 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-24 18:28:40,099 INFO  JoomlaArticle_002 - Step 5: Select Content > Article Manager
+<br/>
+2016-11-24 18:28:42,593 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:28:42,594 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-11-24 18:28:42,594 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:28:42,594 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-24 18:28:42,594 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:28:42,594 INFO  JoomlaArticle_002 - Step 11: Click on 'Image' button
+<br/>
+2016-11-24 18:28:42,595 INFO  JoomlaArticle_002 - Step 12: Select image from the 'Image' dialog
+<br/>
+2016-11-24 18:28:42,595 INFO  JoomlaArticle_002 - Step 13: Click on 'Insert' button
+<br/>
+2016-11-24 18:28:42,595 INFO  JoomlaArticle_002 - Step 14: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:29:10,596 INFO  JoomlaArticle_002 - VP1: Verify the article is saved successfully
+<br/>
+2016-11-24 18:29:11,779 INFO  JoomlaArticle_002 - ===PASSED===
+<br/>
+2016-11-24 18:29:11,782 INFO  JoomlaArticle_002 - VP2: Created article is displayed on the articles table
+<br/>
+2016-11-24 18:29:11,819 INFO  JoomlaArticle_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>31</td>
+<td>article.JoomlaArticle_002@28348c6</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_007()'><b>TO_JOOMLA_ARTICLE_007</b><br>Test class: article.JoomlaArticle_004<br/>
+<a href="#Output-1043535321" onClick='toggleBox("Output-1043535321", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1043535321" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1043535321">
+2016-11-24 18:33:51,246 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-24 18:33:51,246 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-24 18:33:51,247 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+<br/>
+2016-11-24 18:33:51,247 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+<br/>
+2016-11-24 18:33:51,247 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:33:51,247 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+<br/>
+2016-11-24 18:33:51,247 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:33:51,247 INFO  JoomlaArticle_004 - Step8:Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:33:51,248 INFO  JoomlaArticle_004 - Step9:Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:33:51,248 INFO  JoomlaArticle_004 - Step10: Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:33:51,248 INFO  JoomlaArticle_004 - Step11: Click on 'Trash' icon of the top right toolbar
+<br/>
+2016-11-24 18:34:00,449 INFO  JoomlaArticle_004 - VP1: Verify the confirm message is displayed
+<br/>
+2016-11-24 18:34:01,679 INFO  JoomlaArticle_004 - Step12: Select 'Trash' item of 'Status' dropdown list
+<br/>
+2016-11-24 18:34:11,829 INFO  JoomlaArticle_004 - VP2: Verify the deleted article is displayed on the table grid
+<br/>
+</div>
+</td>
+<td></td>
+<td>20</td>
+<td>article.JoomlaArticle_004@53c68ce</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_014()'><b>TO_JOOMLA_ARTICLE_014</b><br>Test class: article.JoomlaArticle_004<br/>
+<a href="#Output-759099777" onClick='toggleBox("Output-759099777", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-759099777" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-759099777">
+2016-11-24 18:33:01,794 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-24 18:33:01,794 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-24 18:33:01,794 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+<br/>
+2016-11-24 18:33:01,795 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+<br/>
+2016-11-24 18:33:01,795 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:33:01,795 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+<br/>
+2016-11-24 18:33:01,795 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:33:01,795 INFO  JoomlaArticle_004 - Step8:Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:33:01,795 INFO  JoomlaArticle_004 - Step9:Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:33:01,795 INFO  JoomlaArticle_004 - Step10:Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:33:01,795 INFO  JoomlaArticle_004 - Step11:Enter a title on 'Title' field
+<br/>
+2016-11-24 18:33:01,796 INFO  JoomlaArticle_004 - Step12:Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:33:01,796 INFO  JoomlaArticle_004 - Step13:Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:33:01,796 INFO  JoomlaArticle_004 - Step14:Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:33:22,225 INFO  JoomlaArticle_004 - Step15:Click on the Header link of Ordering column
+<br/>
+2016-11-24 18:33:25,408 INFO  JoomlaArticle_004 - Step16:Click on the Header link of Ordering column
+<br/>
+2016-11-24 18:33:25,409 INFO  JoomlaArticle_004 - VP1: Verify the first article changes its position with the second article
+<br/>
+2016-11-24 18:33:51,245 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>49</td>
+<td>article.JoomlaArticle_004@53c68ce</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_015()'><b>TO_JOOMLA_ARTICLE_015</b><br>Test class: article.JoomlaArticle_004<br/>
+<a href="#Output-2101326063" onClick='toggleBox("Output-2101326063", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2101326063" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2101326063">
+2016-11-24 18:31:31,472 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-24 18:31:31,472 INFO  JoomlaArticle_004 - Step3: Click on 'Log in' button
+<br/>
+2016-11-24 18:31:39,500 INFO  JoomlaArticle_004 - Step4: Select Content > Article Manager
+<br/>
+2016-11-24 18:31:41,964 INFO  JoomlaArticle_004 - Step5: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:31:41,965 INFO  JoomlaArticle_004 - Step6: Enter a title on 'Title' field
+<br/>
+2016-11-24 18:31:41,965 INFO  JoomlaArticle_004 - Step7: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:31:41,965 INFO  JoomlaArticle_004 - Step8: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-24 18:31:41,965 INFO  JoomlaArticle_004 - Step9: Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:31:41,965 INFO  JoomlaArticle_004 - Step10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:32:20,858 INFO  JoomlaArticle_004 - Step 11: Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:32:20,858 INFO  JoomlaArticle_004 - Step 12: Click on the status icon of the selected article in the Status column
+<br/>
+2016-11-24 18:32:44,526 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+<br/>
+2016-11-24 18:32:44,526 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unpublish'
+<br/>
+2016-11-24 18:32:44,625 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+2016-11-24 18:32:44,625 INFO  JoomlaArticle_004 - VP2:The '1 article unpublished' message is displayed
+<br/>
+2016-11-24 18:32:45,774 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+2016-11-24 18:32:45,774 INFO  JoomlaArticle_004 - Step 13: Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:32:45,774 INFO  JoomlaArticle_004 - Step 14: Click on the status icon of the selected article in the Status column
+<br/>
+2016-11-24 18:32:50,715 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+<br/>
+2016-11-24 18:32:50,715 INFO  JoomlaArticle_004 - VP3: The icon of the selected item is showed as 'Unpublish'
+<br/>
+2016-11-24 18:32:50,778 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+2016-11-24 18:32:50,778 INFO  JoomlaArticle_004 - VP4:The '1 article unpublished' message is displayed
+<br/>
+2016-11-24 18:32:51,944 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>80</td>
+<td>article.JoomlaArticle_004@53c68ce</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_016()'><b>TO_JOOMLA_ARTICLE_016</b><br>Test class: article.JoomlaArticle_004<br/>
+<a href="#Output-83532470" onClick='toggleBox("Output-83532470", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-83532470" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-83532470">
+2016-11-24 18:32:51,945 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-11-24 18:32:51,945 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-24 18:32:51,945 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+<br/>
+2016-11-24 18:32:51,945 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+<br/>
+2016-11-24 18:32:51,945 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-24 18:32:51,945 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+<br/>
+2016-11-24 18:32:51,946 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+<br/>
+2016-11-24 18:32:51,946 INFO  JoomlaArticle_004 - Step8:Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-24 18:32:51,946 INFO  JoomlaArticle_004 - Step9:Enter value on 'Article Text' text area
+<br/>
+2016-11-24 18:32:51,946 INFO  JoomlaArticle_004 - Step10:Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-24 18:32:51,946 INFO  JoomlaArticle_004 - Step11:Verify the article is saved successfully
+<br/>
+2016-11-24 18:32:51,946 INFO  JoomlaArticle_004 - Step12:Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:32:51,946 INFO  JoomlaArticle_004 - Step13:Click on the status icon of the selected article in the Featured column
+<br/>
+2016-11-24 18:32:56,763 INFO  JoomlaArticle_004 - Verify the article is unfeatured successfully
+<br/>
+2016-11-24 18:32:56,763 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unfeatured'
+<br/>
+2016-11-24 18:32:56,835 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+2016-11-24 18:32:56,835 INFO  JoomlaArticle_004 - Step14:Check on the recently added article's checkbox
+<br/>
+2016-11-24 18:32:56,835 INFO  JoomlaArticle_004 - Step15:Click on the status icon of the selected article in the Featured column
+<br/>
+2016-11-24 18:33:01,720 INFO  JoomlaArticle_004 - Verify the article is featured successfully
+<br/>
+2016-11-24 18:33:01,721 INFO  JoomlaArticle_004 - VP2: The icon of the selected item is showed as 'Featured'
+<br/>
+2016-11-24 18:33:01,793 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>9</td>
+<td>article.JoomlaArticle_004@53c68ce</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()'><b>TO_JOOMLA_ARTICLE_011</b><br>Test class: article.JoomlaArticle_003</td>
+<td><div><pre>java.lang.Throwable: Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()[pri:0, instance:article.JoomlaArticle_003@6de0f580] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1144499207", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1144499207'><pre>java.lang.Throwable: Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()[pri:0, instance:article.JoomlaArticle_003@6de0f580] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1033)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:202)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:155)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()'><b>TO_JOOMLA_ARTICLE_012</b><br>Test class: article.JoomlaArticle_003</td>
+<td><div><pre>java.lang.Throwable: Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()[pri:0, instance:article.JoomlaArticle_003@6de0f580] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1058984040", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1058984040'><pre>java.lang.Throwable: Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()[pri:0, instance:article.JoomlaArticle_003@6de0f580] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1033)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:281)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:121)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray2(ReflectionUtils.java:202)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:155)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:81)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+</body>
+</html>

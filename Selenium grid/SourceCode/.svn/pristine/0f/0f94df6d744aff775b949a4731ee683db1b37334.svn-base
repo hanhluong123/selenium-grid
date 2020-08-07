@@ -1,0 +1,194 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import common.Constant;
+import joomla.ImageDialog;
+import joomla.WeblinkPage;;
+
+public class WeblinkPageAction extends pages.AbstractPageAction {
+	WebDriver driver;
+
+	public WeblinkPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param url_weblink
+	 * @param button
+	 */
+	
+	public void addNewWeblink(WebDriver driver, String title, String url_weblink,String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, title);
+		enterText(driver, WeblinkPage.txtWeblinkUrl, url_weblink);
+		clickToolbarButton(driver, button);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param url_weblink
+	 * @param status
+	 * @param button
+	 */
+	
+	public void addNewWeblink(WebDriver driver, String title, String url_weblink, String status, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, title);
+		enterText(driver, WeblinkPage.txtWeblinkUrl, url_weblink);
+		selectDropDownList(driver, WeblinkPage.ddlWeblinkStatus, status, "contains");
+		clickToolbarButton(driver, button);
+	}
+	
+	public void addNewWeblink(WebDriver driver, String title, String url_weblink, String status, String category, String language, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, title);
+		enterText(driver, WeblinkPage.txtWeblinkUrl, url_weblink);
+		if (status != null)
+			selectDropDownList(driver, WeblinkPage.ddlWeblinkStatus, status, "contains");
+		if (category != null)
+			selectDropDownList(driver, WeblinkPage.ddlWeblinkCategory, category, "contains");
+		if (language != null)
+			selectDropDownList(driver, WeblinkPage.ddlWeblinkLanguage, language, "contains");
+		clickToolbarButton(driver, button);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param url_weblink
+	 * @param filepath
+	 * @param filename
+	 * @param button
+	 */
+	public void addNewWeblink(WebDriver driver, String title, String url_weblink, String filepath, String filename, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, title);
+		enterText(driver, WeblinkPage.txtWeblinkUrl, url_weblink);
+        addImageToWeblink(driver, filepath, filename);
+		clickToolbarButton(driver, button);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param newTitle
+	 * @param url_weblink
+	 * @param button
+	 */
+	public void editWeblink(WebDriver driver, String newTitle, String url_weblink, String button) {
+		clickToolbarButton (driver, Constant.BUTTON_EDIT);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, newTitle);
+		enterText(driver, WeblinkPage.txtWeblinkUrl, url_weblink);
+		clickToolbarButton(driver, button);
+				   
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param newTitle
+	 * @param url_weblink
+	 * @param button
+	 */
+	public void editWeblink(WebDriver driver, String newTitle, String url_weblink, String status, String button) {
+		clickToolbarButton (driver, Constant.BUTTON_EDIT);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, newTitle);
+		enterText(driver, WeblinkPage.txtWeblinkUrl, url_weblink);
+		selectDropDownList(driver, WeblinkPage.ddlWeblinkStatus, status, "contains");
+		clickToolbarButton(driver, button);
+				   
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param newTitle
+	 * @param url_weblink
+	 * @param status
+	 * @param category
+	 * @param button
+	 */
+	public void editWeblink(WebDriver driver, String newTitle, String url_weblink, String status, String category, String button) {
+		clickToolbarButton (driver, Constant.BUTTON_EDIT);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, newTitle);
+		enterText(driver, WeblinkPage.txtWeblinkUrl, url_weblink);
+		selectDropDownList(driver, WeblinkPage.ddlWeblinkStatus, status, "contains");
+		selectDropDownList(driver, WeblinkPage.ddlWeblinkCategory, category, "contains");
+		clickToolbarButton(driver, button);			   
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param filepath
+	 * @param filename
+	 */
+	public void addImageToWeblink(WebDriver driver, String filepath, String filename) {
+		click(driver, WeblinkPage.btnWeblinkImage);
+		try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		switchIFrame(driver, ImageDialog.iFrameWeblinkImage);
+		sleep(2);
+		selectDropDownList(driver, ImageDialog.dllFolder, filepath, "exact");
+		switchIFrame(driver, ImageDialog.iFrameImageSelectionID);
+		sleep(2);
+		click(driver, By.xpath(String.format(ImageDialog.imgFilename, filename)));
+		driver.switchTo().parentFrame();
+		sleep(2);
+		click(driver, ImageDialog.btnInsert);
+		switchbackWindow(driver);
+		sleep(2);
+	}
+		
+	
+	/**
+	 * Create a copied version of an existing weblink
+	 * @param driver
+	 * @param title
+	 * @param url
+	 */
+	public void copyWeblink(WebDriver driver, String title, String url){
+		clickToolbarButton(driver, Constant.BUTTON_EDIT);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, title);
+		enterText(driver, WeblinkPage.txtWeblinkUrl, url);
+		clickToolbarButton(driver, Constant.BUTTON_SAVEASCOPY);
+	}
+	
+		 /**
+		  * 
+		  * @param driver
+		  * @param startdate
+		  * @param finishdate
+		  * @param button
+		  */
+		 public void selectDateFromCalendar (WebDriver driver, String startdate, String finishdate, String button){
+			 click(driver, WeblinkPage.tbWeblinkPublishing);
+			 waitForControl(driver, WeblinkPage.txtStartDate, Constant.LONG_TIME);
+			 enterText(driver, WeblinkPage.txtStartDate, startdate);
+			 enterText(driver, WeblinkPage.txtFinishDate, finishdate);
+			 clickToolbarButton(driver, button);		  
+		 }
+
+		 public boolean verifyWeblinkPublishDate (WebDriver driver, String startdate, String finishdate){
+			 click(driver, WeblinkPage.tbWeblinkPublishing);
+			 waitForControl(driver, WeblinkPage.txtStartDate, Constant.LONG_TIME);
+			String getStartdate = driver.findElement(WeblinkPage.txtStartDate).getAttribute("value");
+			String getFinishdate = driver.findElement(WeblinkPage.txtFinishDate).getAttribute("value");
+			if((getStartdate.equals(getStartdate))&&(getFinishdate.equals(finishdate))){
+				return true;
+			}
+			return false;
+		 }
+
+}

@@ -1,0 +1,146 @@
+package weblink;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import common.JsonHelper;
+import pages.LoginPageAction;
+import pages.WeblinkManagerPageAction;
+import pages.WeblinkPageAction;
+
+
+
+
+public class JoomlaWeblink_001 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void setup(String browser, String ip, String port) {
+
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		weblinkPage = new WeblinkPageAction (driver);
+		weblinkManagerPage = new WeblinkManagerPageAction (driver);
+		json = new JsonHelper();
+				
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+	}
+
+		/* Test Case Variables */
+		String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("TC_JOOMLA_WEBLINKS_001", "title")+ CommonActions.getDateTime();
+		String updatedTitle = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("TC_JOOMLA_WEBLINKS_002", "updateTitle")+ CommonActions.getDateTime();
+		String weblinkUrl = CommonActions.readDataFromJson("TC_JOOMLA_WEBLINKS_001", "weblinkURL");
+		String updatedWeblinkUrl = CommonActions.readDataFromJson("TC_JOOMLA_WEBLINKS_002", "updatedWeblinkURL");
+		String createWeblinkSuccessfulMessage = "Weblink successfully saved";
+	
+	
+	
+		@Test(description = "Verify user can create new weblink with valid information")
+		public void TC_JOOMLA_WEBLINKS_001() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");
+		weblinkPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_WEBLINKS);
+		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");
+		weblinkPage.addNewWeblink(driver, title, weblinkUrl, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP1: Verify the web link is saved successfully");
+		weblinkManagerPage.verifyMessageDisplayed(driver, createWeblinkSuccessfulMessage);
+					
+		log.info("VP2: Verify Created weblink is displayed on the weblinks table");
+		weblinkManagerPage.verifyWeblinkDisplayed(driver, title);
+		
+		}
+		
+		
+		@Test(description = "Verify user can edit a weblink")
+		public void TC_JOOMLA_WEBLINKS_002() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("Step 10: Check on the recently added article's checkbox");
+		weblinkManagerPage.selectWeblink(driver, title);
+		
+		log.info("Step 11: Click on 'Edit' icon of the top right toolbar");
+		log.info("Step 12: Enter a new title on 'Title' field");
+		log.info("Step 13: Enter new valid URL into 'URL' text field");
+		log.info("Step 14: Click on 'Save & Close' icon of the top right toolbar");
+		weblinkPage.editWeblink(driver, updatedTitle, updatedWeblinkUrl, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP1: Verify 'Weblink successfully saved' message is displayed");
+		weblinkManagerPage.verifyMessageDisplayed(driver, createWeblinkSuccessfulMessage);
+		
+		log.info("VP2: Edited weblink is displayed on the weblinks table");
+		weblinkManagerPage.verifyWeblinkDisplayed(driver, title);
+		
+		}
+		
+		@Test(description = "Verify user can create a copied version of an existed weblink")
+		public void TC_JOOMLA_WEBLINKS_016() {
+		
+			
+		}
+		
+		
+		@Test(description = "Verify user can change the order of weblinks using the Ordering column")
+		@Parameters({"browser","ip","port"})
+		public void TC_JOOMLA_WEBLINKS_014 (String browser, String ip, String port) {
+						
+		
+				
+		}
+		
+		@Test(description = "Verify user can change the status of weblinks using the Status column")
+		@Parameters({"browser","ip","port"})
+		public void TC_JOOMLA_WEBLINKS_015(String browser, String ip, String port) {
+		
+				
+		}
+		
+		@Test(description = "Verify user can move a weblink to the archive")
+		@Parameters({"browser","ip","port"})
+		public void TC_JOOMLA_WEBLINKS_005(String browser, String ip, String port) {
+		
+				
+		}
+		
+	@AfterClass
+	public void clean() {
+		
+		weblinkManagerPage.logoutJoomla(driver);
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects*/
+	WebDriver driver;
+	LoginPageAction loginPage;
+	WeblinkPageAction weblinkPage;
+	WeblinkManagerPageAction weblinkManagerPage;
+	JsonHelper json;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	
+}

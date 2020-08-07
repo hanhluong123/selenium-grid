@@ -1,0 +1,676 @@
+<html>
+<head>
+<title>TestNG:  ChromeTestDuyen</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>ChromeTestDuyen</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>11/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sat Nov 26 15:22:43 ICT 2016</td>
+</tr>
+<tr><td>Total time:</td><td>573 seconds (573624 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_007()'><b>TO_JOOMLA_ARTICLE_007</b><br>Test class: article.JoomlaArticle_004<br/>
+<a href="#Output-512238546" onClick='toggleBox("Output-512238546", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-512238546" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-512238546">
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step8:Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step9:Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step10: Check on the recently added article's checkbox
+<br/>
+2016-11-26 15:30:07,129 INFO  JoomlaArticle_004 - Step11: Click on 'Trash' icon of the top right toolbar
+<br/>
+2016-11-26 15:30:16,526 INFO  JoomlaArticle_004 - VP1: Verify the confirm message is displayed
+<br/>
+2016-11-26 15:30:17,634 INFO  JoomlaArticle_004 - Step12: Select 'Trash' item of 'Status' dropdown list
+<br/>
+2016-11-26 15:31:09,032 INFO  JoomlaArticle_004 - VP2: Verify the deleted article is displayed on the table grid
+<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;articleList&apos;]//a[contains(text(),&apos;Team 1: Test Article161126151427&apos;)]&quot;}
+Command duration or timeout: 30.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;DELLW7&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 565e9c51-0b76-41bb-a253-68ca8712dbf1
+*** Element info: {Using=xpath, value=//table[@id=&apos;articleList&apos;]//a[contains(text(),&apos;Team 1: Test Article161126151427&apos;)]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at pages.AbstractPageAction.isControlDisplay(AbstractPageAction.java:28)
+	at pages.ArticleManagerPageAction.verifyArticleDisplayed(ArticleManagerPageAction.java:64)
+	at article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_007(JoomlaArticle_004.java:150)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;articleList&apos;]//a[contains(text(),&apos;Team 1: Test Article161126151427&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;DELLW7&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Admin/AppData/Local/Temp/anonymous8546227673346481262webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/Admin/AppData/Local/Temp/anonymous8546227673346481262webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace512238546", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace512238546'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;articleList&apos;]//a[contains(text(),&apos;Team 1: Test Article161126151427&apos;)]&quot;}
+Command duration or timeout: 30.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;DELLW7&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=47.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 565e9c51-0b76-41bb-a253-68ca8712dbf1
+*** Element info: {Using=xpath, value=//table[@id=&apos;articleList&apos;]//a[contains(text(),&apos;Team 1: Test Article161126151427&apos;)]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at pages.AbstractPageAction.isControlDisplay(AbstractPageAction.java:28)
+	at pages.ArticleManagerPageAction.verifyArticleDisplayed(ArticleManagerPageAction.java:64)
+	at article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_007(JoomlaArticle_004.java:150)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:639)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:816)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1124)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[@id=&apos;articleList&apos;]//a[contains(text(),&apos;Team 1: Test Article161126151427&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;DELLW7&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Admin/AppData/Local/Temp/anonymous8546227673346481262webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/Admin/AppData/Local/Temp/anonymous8546227673346481262webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+</pre></div></td>
+<td>91</td>
+<td>article.JoomlaArticle_004@4206a205</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_001()'><b>TC_JOOMLA_ARTICLE_001</b><br>Test class: article.JoomlaArticle_001<br/>
+<a href="#Output-1724814719" onClick='toggleBox("Output-1724814719", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1724814719" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1724814719">
+2016-11-26 15:23:46,444 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>
+2016-11-26 15:23:46,445 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - Step 9: Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:23:46,446 INFO  JoomlaArticle_001 - VP: Verify the article is saved successfully
+<br/>
+2016-11-26 15:24:21,595 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+2016-11-26 15:24:25,932 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>39</td>
+<td>article.JoomlaArticle_001@564718df</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_002()'><b>TC_JOOMLA_ARTICLE_002</b><br>Test class: article.JoomlaArticle_001<br/>
+<a href="#Output-1416415959" onClick='toggleBox("Output-1416415959", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1416415959" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1416415959">
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+<br/>
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' text field
+<br/>
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:24:25,936 INFO  JoomlaArticle_001 - Step 9: Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - VP 11: Verify the article is saved successfully
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - Step 12: Select Content > Articles
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - Step 13: Check on the recently added article's checkbox
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - Step 14: Click on 'Edit' icon of the top right toolbar
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - Step 15: Enter a new title on 'Title' text field
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - Step 16: Select a new item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - Step 17: Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - Step 18: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:24:25,937 INFO  JoomlaArticle_001 - VP 19: Verify the article is saved successfully
+<br/>
+2016-11-26 15:24:40,306 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+2016-11-26 15:24:44,446 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>18</td>
+<td>article.JoomlaArticle_001@564718df</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_005()'><b>TC_JOOMLA_ARTICLE_005</b><br>Test class: article.JoomlaArticle_001<br/>
+<a href="#Output-1429616542" onClick='toggleBox("Output-1429616542", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1429616542" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1429616542">
+2016-11-26 15:25:06,340 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>
+2016-11-26 15:25:06,340 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 9: Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - VP: Verify the article is saved successfully
+<br/>
+2016-11-26 15:25:06,341 INFO  JoomlaArticle_001 - Step 12: Check on the recently added article's checkbox
+<br/>
+2016-11-26 15:25:06,342 INFO  JoomlaArticle_001 - Step 13: Click on 'Archive' icon of the top right toolbar
+<br/>
+2016-11-26 15:25:06,342 INFO  JoomlaArticle_001 - VP1: Verify the confirm message is displayed
+<br/>
+2016-11-26 15:25:06,342 INFO  JoomlaArticle_001 - Step 15: Select 'Archived' item of 'Status' dropdown list
+<br/>
+2016-11-26 15:25:06,342 INFO  JoomlaArticle_001 - VP2: Verify the archived article is displayed on the table grid
+<br/>
+2016-11-26 15:25:12,172 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+2016-11-26 15:25:25,235 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>18</td>
+<td>article.JoomlaArticle_001@564718df</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TC_JOOMLA_ARTICLE_008()'><b>TC_JOOMLA_ARTICLE_008</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-258737099" onClick='toggleBox("Output-258737099", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-258737099" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-258737099">
+2016-11-26 15:25:30,422 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-26 15:25:30,422 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-26 15:25:54,329 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+<br/>
+2016-11-26 15:25:56,713 INFO  JoomlaArticle_003 - Step5: Click on 'Help' icon of the top right toolbar
+<br/>
+2016-11-26 15:26:32,471 INFO  JoomlaArticle_003 - VP1: Verify the article's help window is displayed
+<br/>
+2016-11-26 15:26:37,874 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>67</td>
+<td>article.JoomlaArticle_003@62e136d3</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_010()'><b>TC_JOOMLA_ARTICLE_010</b><br>Test class: article.JoomlaArticle_001<br/>
+<a href="#Output-564817260" onClick='toggleBox("Output-564817260", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-564817260" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-564817260">
+2016-11-26 15:24:44,449 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>
+2016-11-26 15:24:44,449 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-11-26 15:24:44,449 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-11-26 15:24:44,449 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-11-26 15:24:44,449 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+<br/>
+2016-11-26 15:24:44,449 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:24:44,449 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' text field
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 10: Select an item from the 'Access' dropdown list
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 11: Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 12: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - VP 13: Verify the article is saved successfully
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 14: Select an item from the 'Status' filter dropdown list
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 15: Select an item from the 'Category' filter dropdown list
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 16: Select an item from the 'Access' filter dropdown list
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - Step 17: Select an item from the 'Author' filter dropdown list
+<br/>
+2016-11-26 15:24:44,450 INFO  JoomlaArticle_001 - VP 18: Verify the property of displayed articles are matched with the selected criteria from the filter dropdown lists
+<br/>
+2016-11-26 15:25:06,337 INFO  JoomlaArticle_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>21</td>
+<td>article.JoomlaArticle_001@564718df</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()'><b>TO_JOOMLA_ARTICLE_011</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-1687627235" onClick='toggleBox("Output-1687627235", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1687627235" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1687627235">
+2016-11-26 15:27:00,381 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-11-26 15:27:00,381 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-26 15:27:00,381 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-26 15:27:00,381 INFO  JoomlaArticle_003 - Step4: Click on the Header link of ID column
+<br/>
+2016-11-26 15:27:06,522 INFO  JoomlaArticle_003 - VP1: Verify the articles is sorted by ID in ascending order
+<br/>
+2016-11-26 15:27:08,030 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+2016-11-26 15:27:08,030 INFO  JoomlaArticle_003 - Step5: Click on the Header link of ID column
+<br/>
+2016-11-26 15:27:20,982 INFO  JoomlaArticle_003 - VP2: Verify the articles is sorted by ID in descending order
+<br/>
+2016-11-26 15:27:22,526 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>article.JoomlaArticle_003@62e136d3</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()'><b>TO_JOOMLA_ARTICLE_012</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-216376974" onClick='toggleBox("Output-216376974", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-216376974" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-216376974">
+2016-11-26 15:27:22,529 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-11-26 15:27:22,529 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-26 15:27:22,529 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-26 15:27:22,529 INFO  JoomlaArticle_003 - Step4: Select '5' item of the 'Display' dropdown list at the footer section of the article table
+<br/>
+2016-11-26 15:27:31,937 INFO  JoomlaArticle_003 - VP1: Verify the article table is paging into 5 articles per page
+<br/>
+2016-11-26 15:27:32,014 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+2016-11-26 15:27:32,015 INFO  JoomlaArticle_003 - Step5: Select 'All' item of the 'Display' dropdown list at the footer section of the article table
+<br/>
+2016-11-26 15:27:37,427 INFO  JoomlaArticle_003 - VP2: All articles are displayed in one page
+<br/>
+2016-11-26 15:27:45,419 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>article.JoomlaArticle_003@62e136d3</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_014()'><b>TO_JOOMLA_ARTICLE_014</b><br>Test class: article.JoomlaArticle_004<br/>
+<a href="#Output-2047984839" onClick='toggleBox("Output-2047984839", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2047984839" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2047984839">
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step8:Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step9:Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step10:Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step11:Enter a title on 'Title' field
+<br/>
+2016-11-26 15:28:59,143 INFO  JoomlaArticle_004 - Step12:Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:28:59,144 INFO  JoomlaArticle_004 - Step13:Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:28:59,144 INFO  JoomlaArticle_004 - Step14:Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:29:13,826 INFO  JoomlaArticle_004 - Step15:Click on the Header link of Ordering column
+<br/>
+2016-11-26 15:29:17,095 INFO  JoomlaArticle_004 - Step16:Click on the Header link of Ordering column
+<br/>
+2016-11-26 15:29:17,095 INFO  JoomlaArticle_004 - VP1: Verify the first article changes its position with the second article
+<br/>
+2016-11-26 15:30:07,126 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>67</td>
+<td>article.JoomlaArticle_004@4206a205</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_015()'><b>TO_JOOMLA_ARTICLE_015</b><br>Test class: article.JoomlaArticle_004<br/>
+<a href="#Output-98351968" onClick='toggleBox("Output-98351968", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-98351968" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-98351968">
+2016-11-26 15:28:03,159 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-26 15:28:03,159 INFO  JoomlaArticle_004 - Step3: Click on 'Log in' button
+<br/>
+2016-11-26 15:28:15,009 INFO  JoomlaArticle_004 - Step4: Select Content > Article Manager
+<br/>
+2016-11-26 15:28:17,395 INFO  JoomlaArticle_004 - Step5: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:28:17,395 INFO  JoomlaArticle_004 - Step6: Enter a title on 'Title' field
+<br/>
+2016-11-26 15:28:17,395 INFO  JoomlaArticle_004 - Step7: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:28:17,395 INFO  JoomlaArticle_004 - Step8: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-26 15:28:17,395 INFO  JoomlaArticle_004 - Step9: Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:28:17,395 INFO  JoomlaArticle_004 - Step10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:28:36,334 INFO  JoomlaArticle_004 - Step 11: Check on the recently added article's checkbox
+<br/>
+2016-11-26 15:28:36,334 INFO  JoomlaArticle_004 - Step 12: Click on the status icon of the selected article in the Status column
+<br/>
+2016-11-26 15:28:41,277 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+<br/>
+2016-11-26 15:28:41,277 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unpublish'
+<br/>
+2016-11-26 15:28:41,344 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+2016-11-26 15:28:41,344 INFO  JoomlaArticle_004 - VP2:The '1 article unpublished' message is displayed
+<br/>
+2016-11-26 15:28:42,450 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+2016-11-26 15:28:42,450 INFO  JoomlaArticle_004 - Step 13: Check on the recently added article's checkbox
+<br/>
+2016-11-26 15:28:42,450 INFO  JoomlaArticle_004 - Step 14: Click on the status icon of the selected article in the Status column
+<br/>
+2016-11-26 15:28:47,527 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+<br/>
+2016-11-26 15:28:47,527 INFO  JoomlaArticle_004 - VP3: The icon of the selected item is showed as 'Unpublish'
+<br/>
+2016-11-26 15:28:47,594 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+2016-11-26 15:28:47,595 INFO  JoomlaArticle_004 - VP4:The '1 article unpublished' message is displayed
+<br/>
+2016-11-26 15:28:48,712 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>45</td>
+<td>article.JoomlaArticle_004@4206a205</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_016()'><b>TO_JOOMLA_ARTICLE_016</b><br>Test class: article.JoomlaArticle_004<br/>
+<a href="#Output-777813771" onClick='toggleBox("Output-777813771", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-777813771" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-777813771">
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step8:Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step9:Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:28:48,715 INFO  JoomlaArticle_004 - Step10:Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:28:48,716 INFO  JoomlaArticle_004 - Step11:Verify the article is saved successfully
+<br/>
+2016-11-26 15:28:48,716 INFO  JoomlaArticle_004 - Step12:Check on the recently added article's checkbox
+<br/>
+2016-11-26 15:28:48,716 INFO  JoomlaArticle_004 - Step13:Click on the status icon of the selected article in the Featured column
+<br/>
+2016-11-26 15:28:53,949 INFO  JoomlaArticle_004 - Verify the article is unfeatured successfully
+<br/>
+2016-11-26 15:28:53,949 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unfeatured'
+<br/>
+2016-11-26 15:28:54,016 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+2016-11-26 15:28:54,016 INFO  JoomlaArticle_004 - Step14:Check on the recently added article's checkbox
+<br/>
+2016-11-26 15:28:54,016 INFO  JoomlaArticle_004 - Step15:Click on the status icon of the selected article in the Featured column
+<br/>
+2016-11-26 15:28:59,030 INFO  JoomlaArticle_004 - Verify the article is featured successfully
+<br/>
+2016-11-26 15:28:59,031 INFO  JoomlaArticle_004 - VP2: The icon of the selected item is showed as 'Featured'
+<br/>
+2016-11-26 15:28:59,141 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>10</td>
+<td>article.JoomlaArticle_004@4206a205</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017()'><b>TO_JOOMLA_ARTICLE_017</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-771923297" onClick='toggleBox("Output-771923297", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-771923297" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-771923297">
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step5: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step6: Enter a title on 'Title' field
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step7: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step8: Enter value on 'Article Text' text area
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step9: Select 'Public' item from the 'Access' dropdown list
+<br/>
+2016-11-26 15:26:37,878 INFO  JoomlaArticle_003 - Step10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-26 15:26:54,955 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+<br/>
+2016-11-26 15:26:54,955 INFO  JoomlaArticle_003 - VP1: 'Article successfully saved' message is displayed
+<br/>
+2016-11-26 15:26:56,118 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+2016-11-26 15:26:56,118 INFO  JoomlaArticle_003 - VP2: Created article is displayed on the articles table
+<br/>
+2016-11-26 15:27:00,350 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+2016-11-26 15:27:00,350 INFO  JoomlaArticle_003 - VP3: The Access Level of the article is displayed as 'Public'
+<br/>
+2016-11-26 15:27:00,379 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>22</td>
+<td>article.JoomlaArticle_003@62e136d3</td></tr>
+</table><p>
+</body>
+</html>

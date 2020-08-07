@@ -1,0 +1,55 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import common.Constant;
+
+public class HelpPageAction extends AbstractPageAction{
+	WebDriver driver;
+
+	public HelpPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param titleHelp
+	 * @return
+	 */
+
+	public boolean verifyHelpPageDisplayed(WebDriver driver, String titleHelp) {
+		Boolean result = false;
+		// Find current window & new window handle
+		String winHandleBefore = null;
+		String winHandleAfter = null;
+		for (String winHandle : driver.getWindowHandles()) {	
+			driver.switchTo().window(winHandle);
+			if (driver.getTitle().contains("Administration")) {
+				winHandleBefore = driver.getWindowHandle();
+			}
+			else {
+				winHandleAfter = driver.getWindowHandle();
+			}
+		}
+		// Close the new window, if that window no more required
+		driver.switchTo().window(winHandleAfter);
+        // wait for loading Help page
+		WebDriverWait wait = new WebDriverWait(driver, Constant.LONG_TIME);
+		WebElement element = driver.findElement(By.xpath("//span[@id='Description']"));
+		wait.until(ExpectedConditions.visibilityOf(element));
+		if (driver.getTitle().startsWith(titleHelp)) {
+			result = true;
+		}
+		driver.close();
+		
+		// Switch back to original browser (first window)
+		driver.switchTo().window(winHandleBefore);
+		return result;
+	}
+
+}

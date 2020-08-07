@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="TestSuite" duration-ms="86322" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:08:33 ICT">
+    <groups>
+    </groups>
+    <test name="nodeChromeChauXit1" duration-ms="59493" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:08:07 ICT">
+      <class name="DoExam.goToDoTest">
+        <test-method status="PASS" signature="SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:DoExam.goToDoTest@33afa13b]" name="SETUP" is-config="true" duration-ms="17752" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:07:25 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[192.168.191.228]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8886]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SETUP -->
+        <test-method status="PASS" signature="doAnExam(int, java.lang.String)[pri:0, instance:DoExam.goToDoTest@33afa13b]" name="doAnExam" duration-ms="41700" started-at="2019-12-31T16:07:25 ICT" finished-at="2019-12-31T16:08:07 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8886]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doAnExam -->
+      </class> <!-- DoExam.goToDoTest -->
+    </test> <!-- nodeChromeChauXit1 -->
+    <test name="nodeChromeDo2" duration-ms="61630" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:08:09 ICT">
+      <class name="DoExam.goToDoTest">
+        <test-method status="PASS" signature="SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:DoExam.goToDoTest@3c72f59f]" name="SETUP" is-config="true" duration-ms="16868" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:07:24 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[192.168.190.83]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8882]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SETUP -->
+        <test-method status="PASS" signature="doAnExam(int, java.lang.String)[pri:0, instance:DoExam.goToDoTest@3c72f59f]" name="doAnExam" duration-ms="44561" started-at="2019-12-31T16:07:24 ICT" finished-at="2019-12-31T16:08:09 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8882]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doAnExam -->
+      </class> <!-- DoExam.goToDoTest -->
+    </test> <!-- nodeChromeDo2 -->
+    <test name="nodeChromeVien2" duration-ms="63262" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:08:10 ICT">
+      <class name="DoExam.goToDoTest">
+        <test-method status="PASS" signature="SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:DoExam.goToDoTest@1ffe63b9]" name="SETUP" is-config="true" duration-ms="14915" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:07:22 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[192.168.188.27]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8887]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SETUP -->
+        <test-method status="PASS" signature="doAnExam(int, java.lang.String)[pri:0, instance:DoExam.goToDoTest@1ffe63b9]" name="doAnExam" duration-ms="48301" started-at="2019-12-31T16:07:22 ICT" finished-at="2019-12-31T16:08:10 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8887]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doAnExam -->
+      </class> <!-- DoExam.goToDoTest -->
+    </test> <!-- nodeChromeVien2 -->
+    <test name="nodeChromeHanh2" duration-ms="72928" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:08:20 ICT">
+      <class name="DoExam.goToDoTest">
+        <test-method status="PASS" signature="SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:DoExam.goToDoTest@1d082e88]" name="SETUP" is-config="true" duration-ms="13971" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:07:21 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[192.168.189.134]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8881]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SETUP -->
+        <test-method status="PASS" signature="doAnExam(int, java.lang.String)[pri:0, instance:DoExam.goToDoTest@1d082e88]" name="doAnExam" duration-ms="58772" started-at="2019-12-31T16:07:21 ICT" finished-at="2019-12-31T16:08:20 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8881]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doAnExam -->
+      </class> <!-- DoExam.goToDoTest -->
+    </test> <!-- nodeChromeHanh2 -->
+    <test name="nodeChromeHien1" duration-ms="75823" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:08:23 ICT">
+      <class name="DoExam.goToDoTest">
+        <test-method status="PASS" signature="SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:DoExam.goToDoTest@b62fe6d]" name="SETUP" is-config="true" duration-ms="21772" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:07:29 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[192.168.190.164]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[4546]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SETUP -->
+        <test-method status="PASS" signature="doAnExam(int, java.lang.String)[pri:0, instance:DoExam.goToDoTest@b62fe6d]" name="doAnExam" duration-ms="53982" started-at="2019-12-31T16:07:29 ICT" finished-at="2019-12-31T16:08:23 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4546]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doAnExam -->
+      </class> <!-- DoExam.goToDoTest -->
+    </test> <!-- nodeChromeHien1 -->
+    <test name="nodeChromeHa1" duration-ms="81628" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:08:29 ICT">
+      <class name="DoExam.goToDoTest">
+        <test-method status="PASS" signature="SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:DoExam.goToDoTest@7f010382]" name="SETUP" is-config="true" duration-ms="18264" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:07:25 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[192.168.191.127]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8888]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SETUP -->
+        <test-method status="PASS" signature="doAnExam(int, java.lang.String)[pri:0, instance:DoExam.goToDoTest@7f010382]" name="doAnExam" duration-ms="63324" started-at="2019-12-31T16:07:25 ICT" finished-at="2019-12-31T16:08:29 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8888]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doAnExam -->
+      </class> <!-- DoExam.goToDoTest -->
+    </test> <!-- nodeChromeHa1 -->
+    <test name="nodeChromeChauXit2" duration-ms="86317" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:08:33 ICT">
+      <class name="DoExam.goToDoTest">
+        <test-method status="PASS" signature="SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:DoExam.goToDoTest@54c562f7]" name="SETUP" is-config="true" duration-ms="49449" started-at="2019-12-31T16:07:07 ICT" finished-at="2019-12-31T16:07:57 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[192.168.191.228]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8886]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SETUP -->
+        <test-method status="PASS" signature="doAnExam(int, java.lang.String)[pri:0, instance:DoExam.goToDoTest@54c562f7]" name="doAnExam" duration-ms="36682" started-at="2019-12-31T16:07:57 ICT" finished-at="2019-12-31T16:08:33 ICT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8886]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doAnExam -->
+      </class> <!-- DoExam.goToDoTest -->
+    </test> <!-- nodeChromeChauXit2 -->
+  </suite> <!-- TestSuite -->
+</testng-results>

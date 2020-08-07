@@ -1,0 +1,17 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class ArticlePage {
+	
+	/*===================================Static Elements===================================*/
+	public static final By txtArticleTitle = By.xpath("//*[@id='jform_title']");
+	public static final By ddlArticleCategory = By.xpath("//div[@id='jform_catid_chzn']/a");
+	public static final By ddlArticleStatus = By.xpath("//div[@id='jform_state_chzn']/a");
+	public static final By ddlArticleAccess = By.xpath("//div[@id='jform_access_chzn']/a");
+	public static final By iFrameArticleText = By.xpath("//iframe[@id='jform_articletext_ifr']");
+	public static final By txtArticleText = By.xpath("//*[@id='tinymce']");
+	public static final By btnArticleImage = By.xpath("//button/span[text()='Image']");
+	public static final By messageContainer = By.xpath("//div[@id='system-message-container']/div/div");	
+	
+}

@@ -1,0 +1,139 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import common.Constant;
+import joomla.BannerClientPage;
+import pages.BannerClientManagerPageAction;
+
+public class BannerClientPageAction extends AbstractPageAction {
+ WebDriver driver;
+ BannerClientManagerPageAction bannerClientManagerPage = new BannerClientManagerPageAction(driver);
+ 
+ public BannerClientPageAction (WebDriver driver){
+	 this.driver = driver;
+ }
+
+ /**
+  * 
+  * @param driver
+  * @param clientname
+  * @param contactname
+  * @param contactemail
+  * @param button
+  */
+ public void addNewBannerClient (WebDriver driver, String clientname, String contactname, String contactemail, String button){
+	 clickToolbarButton(driver, Constant.BUTTON_NEW);
+	 enterText(driver, BannerClientPage.txtClientName, clientname);
+	 enterText(driver, BannerClientPage.txtContactName, contactname);
+	 enterText(driver, BannerClientPage.txtContactEmail, contactemail);
+	 clickToolbarButton(driver, button);
+ }
+
+ /**
+  * 
+  * @param driver
+  * @param clientname
+  * @param contactname
+  * @param contactemail
+  * @param status
+  * @param button
+  */
+ public void addNewBannerClient (WebDriver driver, String clientname, String contactname, String contactemail, String status, String button){
+	 clickToolbarButton(driver, Constant.BUTTON_NEW);
+	 enterText(driver, BannerClientPage.txtClientName, clientname);
+	 enterText(driver, BannerClientPage.txtContactName, contactname);
+	 enterText(driver, BannerClientPage.txtContactEmail, contactemail);
+	 selectDropDownList(driver, BannerClientPage.ddlBannerClientStatus, status);
+	 clickToolbarButton(driver, button);
+ }
+ 
+ /**
+  * 
+  * @param driver
+  * @param contactname
+  * @param contactemail
+  * @param button
+  */
+ public void addNewBannerClient (WebDriver driver, String contactname, String contactemail, String button){
+	 clickToolbarButton(driver, Constant.BUTTON_NEW);
+	 enterText(driver, BannerClientPage.txtContactName, contactname);
+	 enterText(driver, BannerClientPage.txtContactEmail, contactemail);
+	 clickToolbarButton(driver, button);
+ }
+ 
+ /**
+  * 
+  * @param driver
+  * @param clientname
+  * @param contactname
+  * @param contactemail
+  * @param button
+  */
+ public void editBannerClient (WebDriver driver, String clientname, String contactname, String contactemail, String button){
+	 enterText(driver, BannerClientPage.txtClientName, clientname);
+	 enterText(driver, BannerClientPage.txtContactName, contactname);
+	 enterText(driver, BannerClientPage.txtContactEmail, contactemail);
+	 clickToolbarButton(driver, button);
+ }
+ 
+ /**
+  * 
+  * @param driver
+  * @param clientname
+  * @param contactname
+  * @param contactemail
+  * @return
+  */
+public boolean verifyDataCorrectly(WebDriver driver, String clientname, String contactname, String contactemail){
+	bannerClientManagerPage.openBannerClient(driver, Constant.SEARCH_STATUS_YES, clientname);
+	waitForControl(driver, BannerClientPage.txtClientName, Constant.LONG_TIME);
+	String getclientname = driver.findElement(BannerClientPage.txtClientName).getAttribute("value");
+	String getcontactname = driver.findElement(BannerClientPage.txtContactName).getAttribute("value");
+	String getcontactemail = driver.findElement(BannerClientPage.txtContactEmail).getAttribute("value");
+	
+	if((getclientname.equals(clientname))&&(getcontactname.equals(contactname))&&(getcontactemail.equals(contactemail))){
+		return true;
+	}
+	
+	return false;
+}
+ 
+/**
+ * 
+ * @param driver
+ * @param titlepage
+ * @return
+ */
+public boolean verifyCorrectPageDisplayed (WebDriver driver, String titlepage){
+	String gettitlepage = driver.findElement(BannerClientPage.hderPageTitle).getText();
+	if (gettitlepage.equals(titlepage)){
+		return true;
+	}
+	
+	return false;
+}
+
+/**
+ * 
+ * @param driver
+ * @param control
+ * @param color
+ * @return
+ */
+public boolean verifyBorderColorBannerClient (WebDriver driver, By control, String color){
+	String colorcode = driver.findElement(control).getCssValue("border-bottom-color");
+	
+	 // Convert rgb to hex  
+	String colorrgb[];
+	colorrgb = colorcode.replace("rgba(", "").split(",");       
+	String hex = String.format("#%02x%02x%02x", Integer.parseInt(colorrgb[0].trim()), Integer.parseInt(colorrgb[1].trim()), Integer.parseInt(colorrgb[2].trim()));  
+	if(hex.equals(color)){
+		return true;
+	}
+	
+	return false;
+}
+
+}

@@ -1,0 +1,27 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class CategoryManagerPage {
+ 
+	/*===================================Dynamic Elements===================================*/
+	public static final String dynamiclnkCategory = "//table[@id='categoryList']//a[contains(text(),'%s')]";
+	public static final String dynamicbtnCheckoutStatus = "//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td//a/span[@class='%s']";
+	public static final String dynamicNumberCategoryDisplay = ("//div[@id='list_limit_chzn']//li[.='%s']");
+	public static final String dynamicCategorychkRow = "//span[@title='%s']/preceding-sibling::a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td[@class='center']/input";
+	public static final String dynamicCategoryRow = "//span[@title='%s']/preceding-sibling::a[contains(text(),'%s')]";
+	public static final String dynamiciconCategoryStatus = "//div[@id='j-main-container']//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td//span[@class='%s']";
+	public static final String dynamiciconCategoryAccess = "//div[@id='j-main-container']//a[contains(text(),'%s')]/ancestor::td/following-sibling::td[contains(text(),'%s')]";
+	
+	/*===================================Static Elements===================================*/
+	public static final By ddlSortCategoryByID = By.xpath("//div[@id='list_fullordering_chzn']/a");
+	public static final By btnSortCategoryByID = By.xpath("//div[@id='j-main-container']/table//following-sibling::thead/tr/descendant::a[contains(text(),'ID')]");
+	public static final By ddlNumberCategoryDisplay = By.xpath("//div[@id='list_limit_chzn']/a");
+	public static final By btnCategoryEndPage = By.xpath("//div[@id='j-main-container']//a[@data-original-title='End']");
+	public static final By btnCategoryNumberEndPage = By.xpath("//div[@id='j-main-container']//span[@class='icon-next']/../../preceding-sibling::li[1]/a");
+	public static final By txtCategorySearch = By.xpath("//input[@id='filter_search']");
+	public static final By txtSearchNumberCategoryDisplay = By.xpath("//div[@id='list_limit_chzn']//input");
+	public static final By btnCategorySearch = By.xpath("//div[@id='j-main-container']//button/span[@class='icon-search']");
+	
+	
+}

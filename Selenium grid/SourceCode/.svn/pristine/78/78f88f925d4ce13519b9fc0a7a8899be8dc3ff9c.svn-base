@@ -1,0 +1,237 @@
+<h2>Reporter output</h2><table><tr><td>2016-11-28 17:47:53,963 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</td></tr>
+<tr><td>2016-11-28 17:48:00,214 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+</td></tr>
+<tr><td>2016-11-28 17:48:00,214 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+</td></tr>
+<tr><td>2016-11-28 17:48:07,220 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+</td></tr>
+<tr><td>2016-11-28 17:48:10,218 INFO  JoomlaArticle_003 - Step5: Click on 'Help' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:48:14,963 INFO  JoomlaArticle_003 - VP1: Verify the article's help window is displayed
+</td></tr>
+<tr><td>2016-11-28 17:48:18,202 INFO  JoomlaArticle_003 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:48:18,208 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</td></tr>
+<tr><td>2016-11-28 17:48:18,208 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+</td></tr>
+<tr><td>2016-11-28 17:48:18,208 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+</td></tr>
+<tr><td>2016-11-28 17:48:18,208 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+</td></tr>
+<tr><td>2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step5: Click on 'New' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step6: Enter a title on 'Title' field
+</td></tr>
+<tr><td>2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step7: Select an item from the 'Category' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step8: Enter value on 'Article Text' text area
+</td></tr>
+<tr><td>2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step9: Select 'Public' item from the 'Access' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:48:18,209 INFO  JoomlaArticle_003 - Step10: Click on 'Save & Close' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:48:35,147 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+</td></tr>
+<tr><td>2016-11-28 17:48:35,148 INFO  JoomlaArticle_003 - VP1: 'Article successfully saved' message is displayed
+</td></tr>
+<tr><td>2016-11-28 17:48:36,440 INFO  JoomlaArticle_003 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:48:36,440 INFO  JoomlaArticle_003 - VP2: Created article is displayed on the articles table
+</td></tr>
+<tr><td>2016-11-28 17:48:40,411 INFO  JoomlaArticle_003 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:48:40,411 INFO  JoomlaArticle_003 - VP3: The Access Level of the article is displayed as 'Public'
+</td></tr>
+<tr><td>2016-11-28 17:48:40,436 INFO  JoomlaArticle_003 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:48:40,440 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</td></tr>
+<tr><td>2016-11-28 17:48:40,440 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+</td></tr>
+<tr><td>2016-11-28 17:48:40,440 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+</td></tr>
+<tr><td>2016-11-28 17:48:40,440 INFO  JoomlaArticle_003 - Step4: Click on the Header link of ID column
+</td></tr>
+<tr><td>2016-11-28 17:48:46,498 INFO  JoomlaArticle_003 - VP1: Verify the articles is sorted by ID in ascending order
+</td></tr>
+<tr><td>2016-11-28 17:48:47,781 INFO  JoomlaArticle_003 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:48:47,781 INFO  JoomlaArticle_003 - Step5: Click on the Header link of ID column
+</td></tr>
+<tr><td>2016-11-28 17:48:51,031 INFO  JoomlaArticle_003 - VP2: Verify the articles is sorted by ID in descending order
+</td></tr>
+<tr><td>2016-11-28 17:48:52,352 INFO  JoomlaArticle_003 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:48:52,356 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</td></tr>
+<tr><td>2016-11-28 17:48:52,356 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+</td></tr>
+<tr><td>2016-11-28 17:48:52,356 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+</td></tr>
+<tr><td>2016-11-28 17:48:52,356 INFO  JoomlaArticle_003 - Step4: Select '5' item of the 'Display' dropdown list at the footer section of the article table
+</td></tr>
+<tr><td>2016-11-28 17:49:13,543 INFO  JoomlaArticle_003 - VP1: Verify the article table is paging into 5 articles per page
+</td></tr>
+<tr><td>2016-11-28 17:49:13,616 INFO  JoomlaArticle_003 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:49:13,616 INFO  JoomlaArticle_003 - Step5: Select 'All' item of the 'Display' dropdown list at the footer section of the article table
+</td></tr>
+<tr><td>2016-11-28 17:49:19,733 INFO  JoomlaArticle_003 - VP2: All articles are displayed in one page
+</td></tr>
+<tr><td>2016-11-28 17:49:58,053 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</td></tr>
+<tr><td>2016-11-28 17:50:00,778 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+</td></tr>
+<tr><td>2016-11-28 17:50:00,778 INFO  JoomlaArticle_004 - Step3: Click on 'Log in' button
+</td></tr>
+<tr><td>2016-11-28 17:50:06,624 INFO  JoomlaArticle_004 - Step4: Select Content > Article Manager
+</td></tr>
+<tr><td>2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step5: Click on 'New' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step6: Enter a title on 'Title' field
+</td></tr>
+<tr><td>2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step7: Select an item from the 'Category' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step8: Select 'Published' item from 'Status' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:50:08,977 INFO  JoomlaArticle_004 - Step9: Enter value on 'Article Text' text area
+</td></tr>
+<tr><td>2016-11-28 17:50:08,978 INFO  JoomlaArticle_004 - Step10: Click on 'Save & Close' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:50:31,293 INFO  JoomlaArticle_004 - Step 11: Check on the recently added article's checkbox
+</td></tr>
+<tr><td>2016-11-28 17:50:31,293 INFO  JoomlaArticle_004 - Step 12: Click on the status icon of the selected article in the Status column
+</td></tr>
+<tr><td>2016-11-28 17:51:08,190 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+</td></tr>
+<tr><td>2016-11-28 17:51:08,190 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unpublish'
+</td></tr>
+<tr><td>2016-11-28 17:51:08,257 INFO  JoomlaArticle_004 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:51:08,258 INFO  JoomlaArticle_004 - VP2:The '1 article unpublished' message is displayed
+</td></tr>
+<tr><td>2016-11-28 17:51:09,382 INFO  JoomlaArticle_004 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:51:09,382 INFO  JoomlaArticle_004 - Step 13: Check on the recently added article's checkbox
+</td></tr>
+<tr><td>2016-11-28 17:51:09,382 INFO  JoomlaArticle_004 - Step 14: Click on the status icon of the selected article in the Status column
+</td></tr>
+<tr><td>2016-11-28 17:51:14,762 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+</td></tr>
+<tr><td>2016-11-28 17:51:14,763 INFO  JoomlaArticle_004 - VP3: The icon of the selected item is showed as 'Unpublish'
+</td></tr>
+<tr><td>2016-11-28 17:51:14,878 INFO  JoomlaArticle_004 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:51:14,879 INFO  JoomlaArticle_004 - VP4:The '1 article unpublished' message is displayed
+</td></tr>
+<tr><td>2016-11-28 17:51:16,014 INFO  JoomlaArticle_004 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step8:Select 'Published' item from 'Status' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:51:16,017 INFO  JoomlaArticle_004 - Step9:Enter value on 'Article Text' text area
+</td></tr>
+<tr><td>2016-11-28 17:51:16,018 INFO  JoomlaArticle_004 - Step10:Click on 'Save & Close' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:51:16,018 INFO  JoomlaArticle_004 - Step11:Verify the article is saved successfully
+</td></tr>
+<tr><td>2016-11-28 17:51:16,018 INFO  JoomlaArticle_004 - Step12:Check on the recently added article's checkbox
+</td></tr>
+<tr><td>2016-11-28 17:51:16,018 INFO  JoomlaArticle_004 - Step13:Click on the status icon of the selected article in the Featured column
+</td></tr>
+<tr><td>2016-11-28 17:51:21,120 INFO  JoomlaArticle_004 - Verify the article is unfeatured successfully
+</td></tr>
+<tr><td>2016-11-28 17:51:21,120 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unfeatured'
+</td></tr>
+<tr><td>2016-11-28 17:51:21,225 INFO  JoomlaArticle_004 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:51:21,226 INFO  JoomlaArticle_004 - Step14:Check on the recently added article's checkbox
+</td></tr>
+<tr><td>2016-11-28 17:51:21,226 INFO  JoomlaArticle_004 - Step15:Click on the status icon of the selected article in the Featured column
+</td></tr>
+<tr><td>2016-11-28 17:51:26,001 INFO  JoomlaArticle_004 - Verify the article is featured successfully
+</td></tr>
+<tr><td>2016-11-28 17:51:26,001 INFO  JoomlaArticle_004 - VP2: The icon of the selected item is showed as 'Featured'
+</td></tr>
+<tr><td>2016-11-28 17:51:26,047 INFO  JoomlaArticle_004 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:51:26,190 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+</td></tr>
+<tr><td>2016-11-28 17:51:26,190 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+</td></tr>
+<tr><td>2016-11-28 17:51:26,196 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+</td></tr>
+<tr><td>2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+</td></tr>
+<tr><td>2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+</td></tr>
+<tr><td>2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step8:Enter value on 'Article Text' text area
+</td></tr>
+<tr><td>2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step9:Click on 'Save & Close' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step10:Click on 'New' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:51:26,197 INFO  JoomlaArticle_004 - Step11:Enter a title on 'Title' field
+</td></tr>
+<tr><td>2016-11-28 17:51:26,198 INFO  JoomlaArticle_004 - Step12:Select an item from the 'Category' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:51:26,198 INFO  JoomlaArticle_004 - Step13:Enter value on 'Article Text' text area
+</td></tr>
+<tr><td>2016-11-28 17:51:26,198 INFO  JoomlaArticle_004 - Step14:Click on 'Save & Close' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:51:39,350 INFO  JoomlaArticle_004 - Step15:Click on the Header link of Ordering column
+</td></tr>
+<tr><td>2016-11-28 17:51:42,567 INFO  JoomlaArticle_004 - Step16:Click on the Header link of Ordering column
+</td></tr>
+<tr><td>2016-11-28 17:51:42,567 INFO  JoomlaArticle_004 - VP1: Verify the first article changes its position with the second article
+</td></tr>
+<tr><td>2016-11-28 17:52:47,977 INFO  JoomlaArticle_004 - ===PASSED===
+</td></tr>
+<tr><td>2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+</td></tr>
+<tr><td>2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+</td></tr>
+<tr><td>2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step3:Click on 'Log in' button
+</td></tr>
+<tr><td>2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step4:Select Content > Article Manager
+</td></tr>
+<tr><td>2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step5:Click on 'New' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step6:Enter a title on 'Title' field
+</td></tr>
+<tr><td>2016-11-28 17:52:47,980 INFO  JoomlaArticle_004 - Step7:Select an item from the 'Category' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:52:47,981 INFO  JoomlaArticle_004 - Step8:Enter value on 'Article Text' text area
+</td></tr>
+<tr><td>2016-11-28 17:52:47,981 INFO  JoomlaArticle_004 - Step9:Click on 'Save & Close' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:52:47,981 INFO  JoomlaArticle_004 - Step10: Check on the recently added article's checkbox
+</td></tr>
+<tr><td>2016-11-28 17:52:47,981 INFO  JoomlaArticle_004 - Step11: Click on 'Trash' icon of the top right toolbar
+</td></tr>
+<tr><td>2016-11-28 17:53:08,794 INFO  JoomlaArticle_004 - VP1: Verify the confirm message is displayed
+</td></tr>
+<tr><td>2016-11-28 17:53:09,900 INFO  JoomlaArticle_004 - Step12: Select 'Trash' item of 'Status' dropdown list
+</td></tr>
+<tr><td>2016-11-28 17:53:23,333 INFO  JoomlaArticle_004 - VP2: Verify the deleted article is displayed on the table grid
+</td></tr>
+</table>

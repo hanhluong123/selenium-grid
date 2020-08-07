@@ -1,0 +1,371 @@
+package common;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.UnhandledAlertException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AutomationActions {
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 * @param value
+	 */
+	
+	public void enterText(WebDriver driver, By control, String value) {
+		waitForControl(driver, control, Constant.LONG_TIME);
+		WebElement element = driver.findElement(control);
+		element.clear();
+		element.sendKeys(value);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 * @param value
+	 */
+	
+	public void select(WebDriver driver, By control, String value) {
+		WebElement element = driver.findElement(control);
+		Select oSelect = new Select(element);
+		oSelect.deselectByValue(value);
+	}
+
+	/**
+	 * click
+	 * @param driver
+	 * @param control
+	 */
+	public void click(WebDriver driver, By control) {
+		dependableWaitForControl(driver, control, Constant.LONG_TIME);
+		waitForControl(driver, control, Constant.LONG_TIME);
+		WebElement element = driver.findElement(control);
+		try {
+			element.click();
+		} catch (UnhandledAlertException e) {
+
+		}
+	}
+
+	/**
+	 * click on a control on specific browser
+	 * @param driver
+	 * @param control
+	 */
+	public void click(WebDriver driver, By control, String javaScriptOnBrowser) {
+		/*get current browser name*/
+		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+	    String browserName = cap.getBrowserName().toLowerCase();
+	    
+		waitForControl(driver, control, Constant.LONG_TIME);
+		dependableWaitForControl(driver, control, Constant.LONG_TIME);
+		WebElement element = driver.findElement(control);
+		if (browserName.equals(javaScriptOnBrowser)){
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click()",element);
+	    }
+		else {
+			hoverOverElement(driver, control);
+			element.click();
+		}
+	}
+    
+	
+	public void clickAndWaitReload(WebDriver driver, By control) {
+		dependableWaitForControl(driver, control, Constant.LONG_TIME);
+		waitForControl(driver, control, Constant.LONG_TIME);
+		WebElement element = driver.findElement(control);
+		hoverOverElement(driver, control);
+		element.click();
+		boolean staleError = true;
+		final int MAX_CLICK_RETRIES = 5;
+		int timecount = 0;
+		try
+		{
+			do {
+				element.click();
+		        timecount++;
+		        if (timecount > MAX_CLICK_RETRIES) {
+		            break;
+		        }
+			}
+			while (staleError);
+		}
+		catch (StaleElementReferenceException e)
+		{
+			staleError = false;
+		}
+	}
+	/**
+	 * 
+	 * @param driver
+	 * @param Control
+	 * @param Value
+	 * @param option
+	 */
+
+	public void selectDropDownList(WebDriver driver, By Control, String Value, String option) {
+		WebElement element = driver.findElement(Control);
+		WebElement element2 = null;
+		if (Value != null) {
+			By itemXpath = null;
+			if (option == "exact") {
+				itemXpath = By.xpath("./following-sibling::div//li[(text()='" + Value + "')]");
+			} else if (option == "contains") {
+				itemXpath = By.xpath("./following-sibling::div//li[contains(text(),'" + Value + "')]");
+			}
+			clickAndWaitFor(driver,Control,itemXpath,true);
+			
+			element2 = element.findElement(itemXpath);
+			element2.click();
+		}
+	}
+	
+	/**
+	 * select DropDown List by using filtering feature
+	 * @param driver
+	 * @param Control
+	 * @param Value
+	 * @param performSearch
+	 * @param searchOption
+	 */
+	public void selectDropDownList(WebDriver driver, By Control, String Value, boolean performSearch) {
+		if (!performSearch){
+			selectDropDownList(driver,Control,Value);
+		}
+		else {
+			if (Value != null) {
+				WebElement element = driver.findElement(Control);
+				WebElement elementTextbox = null;
+				WebElement elementItem = null;	
+				By xpathTextbox = By.xpath("./following-sibling::div//input");
+				clickAndWaitFor(driver,Control,xpathTextbox,true);
+				elementTextbox = element.findElement(xpathTextbox);
+				elementTextbox.sendKeys(Value);
+				sleep(1);
+				elementItem = element.findElement(By.xpath("./following-sibling::div//li[not(text())]/em[text()='" + Value + "']"));
+				elementItem.click();
+			}
+		}
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param Control
+	 * @param Value
+	 */
+
+	public void selectDropDownList(WebDriver driver, By Control, String Value) {	
+		WebElement element = driver.findElement(Control);
+		WebElement element2 = null;
+		if (Value != null) {
+			By itemXpath = null;
+			itemXpath = By.xpath("./following-sibling::div//li[contains(text(),'" + Value + "')]");
+			clickAndWaitFor(driver,Control,itemXpath,true);
+			element2 = element.findElement(itemXpath);
+			element2.click();
+		}
+	}
+
+	/**
+	 * Switch iframe by element
+	 * 
+	 * @param driver
+	 * @param control
+	 */
+
+	public void switchIFrame(WebDriver driver, By control) {
+		WebElement fr = driver.findElement(control);
+		driver.switchTo().frame(fr);
+	}
+
+	/**
+	 * Switch iframe by ID or Name
+	 * 
+	 * @param driver
+	 * @param id
+	 */
+
+	public void switchIFrame(WebDriver driver, String id) {
+		driver.switchTo().frame(id);
+	}
+
+	/**
+	 * Switch back from iframe
+	 * 
+	 * @param driver
+	 */
+	
+	public void switchbackWindow(WebDriver driver) {
+		driver.switchTo().defaultContent();
+	}
+
+	/**
+	 * 
+	 * @param seconds
+	 */
+	public static void sleep(int seconds) {
+		try {
+			Thread.sleep(seconds * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 * @param timeWait
+	 * @return 
+	 */
+
+	public static void waitForControl(WebDriver driver, By control, int timeWait) {
+		WebDriverWait wait = new WebDriverWait(driver, timeWait);
+		WebElement element = driver.findElement(control);
+		wait.until(ExpectedConditions.visibilityOf(element));
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	
+    /**
+     * Attempts to wait on an element multiple times (to avoid stale element exceptions caused by rapid DOM refreshes)
+     * @param driver
+     * @param control
+     * @param timeWait
+     */
+	public static void dependableWaitForControl(WebDriver driver, By control, int timeWait)
+    {
+        /*final int MAXIMUM_WAIT_TIME = 10;*/
+        final int MAX_STALE_ELEMENT_RETRIES = 5;
+
+        WebDriverWait wait = new WebDriverWait(driver, timeWait);
+        int retries = 0;
+        while (true)
+        {
+            try
+            {
+                wait.until(ExpectedConditions.elementToBeClickable(control));
+                return;
+            }
+            catch (StaleElementReferenceException e)
+            {
+            	System.out.println("StaleElementReferenceException error");
+                if (retries < MAX_STALE_ELEMENT_RETRIES)
+                {
+                    retries++;
+                    continue;
+                }
+                else
+                {
+                    throw e;
+                }
+            }
+        }
+    }
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 */
+
+	public void hoverOverElement(WebDriver driver, By control) {
+		dependableWaitForControl(driver, control, Constant.LONG_TIME);
+		WebElement button = driver.findElement(control);
+		Actions builder = new Actions(driver);
+		builder.moveToElement(button).build().perform();
+	}
+
+	/**
+	 * wait for a new window is displayed
+	 * @param driver
+	 * @param numberWindowHandles
+	 * @param timeOut
+	 */
+	public void waitNewWindow(WebDriver driver, int numberWindowHandles, int timeOut) {
+        int timecount = 1;
+        do {
+            driver.getWindowHandles();
+            sleep(1);
+            timecount++;
+            if (timecount > timeOut) {
+                break;
+            }
+        } while (driver.getWindowHandles().size() != numberWindowHandles);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 * @return
+	 */
+	public boolean isControlExist(WebDriver driver, By control) {
+		WebElement controlFound;
+		try {
+			controlFound = driver.findElement(control);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+		try {
+			return controlFound.isDisplayed();
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param element
+	 * @param control
+	 * @return
+	 */
+	public boolean isChildControlExist(WebElement element, By control) {
+		WebElement controlFound;
+		try {
+			controlFound = element.findElement(control);
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+		try {
+			return controlFound.isDisplayed();
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+	}
+	
+	
+	public void clickAndWaitFor(WebDriver driver, By clickControl, By waitControl, boolean childControl) {
+		final int MAX_CLICK_RETRIES = 5;
+		int timecount = 0;
+		boolean exitCondition;
+		do {
+			click(driver, clickControl);
+			sleep(1);
+	        timecount++;
+	        if (timecount > MAX_CLICK_RETRIES) {
+	            break;
+	        }
+	        if (childControl) {
+	        	exitCondition = isChildControlExist(driver.findElement(clickControl), waitControl);
+	        }
+	        else {
+	        	exitCondition = isControlExist(driver, waitControl);
+	        }
+		} while (!exitCondition);
+	}
+}

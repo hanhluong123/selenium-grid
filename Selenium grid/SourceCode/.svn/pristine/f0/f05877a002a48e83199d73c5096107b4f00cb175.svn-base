@@ -1,0 +1,366 @@
+package pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import common.CommonActions;
+import common.Constant;
+import joomla.AbstractPage;
+import joomla.ContactManagerPage;
+import joomla.LoginPage;
+
+
+public class ContactManagerPageAction extends AbstractPageAction{
+	WebDriver driver;
+	
+	public ContactManagerPageAction (WebDriver driver){
+		this.driver = driver;
+		
+	}
+	
+	/**
+	 * Check the checkbox of a Contact title 
+	 * @param driver
+	 * @param title
+	 */
+	
+	public void selectAnContact(WebDriver driver,String title){
+		By checkboxXpath = By.xpath(String.format(ContactManagerPage.dynamicchkContactRow, title));
+		dependableWaitForControl(driver, checkboxXpath, Constant.LONG_TIME);
+		click(driver, checkboxXpath);
+		WebElement checkbox = driver.findElement(checkboxXpath);
+		if (!checkbox.isSelected()){
+			click(driver, checkboxXpath);
+		}
+		sleep(1);
+	}
+	
+	public void selectAnContact(WebDriver driver,String title, String searchOption){
+		if (searchOption.toLowerCase().equals("yes")){
+			searchContactByTitle(driver, title);
+		}
+		By checkboxXpath = By.xpath(String.format(ContactManagerPage.dynamicchkContactRow, title));
+		dependableWaitForControl(driver, checkboxXpath, Constant.LONG_TIME);
+		click(driver, checkboxXpath);
+		WebElement checkbox = driver.findElement(checkboxXpath);
+		if (!checkbox.isSelected()){
+			click(driver, checkboxXpath);
+		}
+		sleep(1);
+	}
+	
+	/**
+	 * Search a contact on Contact tables by title
+	 * @param driver
+	 * @param title
+	 */
+	public void searchContactByTitle(WebDriver driver, String title){
+		enterText(driver,ContactManagerPage.txtContactSearch, title);
+		click (driver,ContactManagerPage.btnContactSearch);
+		
+	}
+	
+	/**
+	 * Select item of the 'Display' dropdown list at the footer section of the
+	 * table
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 */
+	public void selectNumberOfContactDisplay(WebDriver driver, String numberOfItems) {
+		String currentNumberOfItemDisplay = driver.findElement(ContactManagerPage.ddlNumberContactDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			selectDropDownList(driver, ContactManagerPage.ddlNumberContactDisplay, numberOfItems);
+		}
+	}
+	
+		/**
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 * @param performSearch
+	 */
+	public void selectNumberOfContactDisplay(WebDriver driver, String numberOfItems, boolean performSearch) {
+		String currentNumberOfItemDisplay = driver.findElement(ContactManagerPage.ddlNumberContactDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			selectDropDownList(driver, ContactManagerPage.ddlNumberContactDisplay, numberOfItems, performSearch);
+		}
+	} 
+	/**
+	 * Get index of contact based on its title
+	 * @param driver
+	 * @param title
+	 * @return
+	 */
+
+	public int getContactIndexOfTitle(WebDriver driver, String title) {
+		int i;
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		int colID = rows.get(2).findElements(By.xpath("td")).size() - 5;
+		for (i = 2; i < rows.size() - 1; i++) {
+			String getTitle = rows.get(i).findElements(By.xpath("td")).get(colID).getText();
+			if (getTitle.contains(title)) {
+				break;
+			}
+		}
+		return i;
+	}
+	
+	
+	/**
+	 * Delete a contact on Contact table
+	 * @param driver
+	 * @param searchOption
+	 * @param title
+	 */
+	
+	public void deleteContact(WebDriver driver, String searchOption, String title) {
+		if (searchOption.toLowerCase().equals("yes")) {
+			searchContactByTitle(driver, title);
+		}
+		selectAnContact(driver, title);
+		click(driver, AbstractPage.btnTrash);
+	}
+	
+	/**
+	 * Select Search Tools
+	 * @param driver
+	 * @param status
+	 * @param category
+	 * @param access
+	 * @param language
+	 * @param tag
+	 */
+	public void selectSearchTools(WebDriver driver, String status, String category, String access, String language, String tag, String maxlevels) {
+		clearSearchTools(driver);
+		click(driver, ContactManagerPage.btnContactSearchTools);
+		if (status != null) {
+			selectDropDownList(driver, ContactManagerPage.ddlStatus, status, "contains");
+		}
+		if (category != null) {
+			selectDropDownList(driver, ContactManagerPage.ddlCategory, category, "contains");
+		}
+
+		if (access != null) {
+			selectDropDownList(driver, ContactManagerPage.ddlAccess, access, "contains");
+		}
+
+		if (language != null) {
+			selectDropDownList(driver, ContactManagerPage.ddlLanguage, language, "contains");
+		}
+
+		if (tag != null) {
+			selectDropDownList(driver, ContactManagerPage.ddlTag, tag, "contains");
+		}
+		
+		if (maxlevels != null) {
+			selectDropDownList(driver, ContactManagerPage.ddlMaxLevels, maxlevels, "contains");
+		}
+	}
+	
+	/**
+	 * Click on the Header link of ID column
+	 * @param driver
+	 * @param typeSort
+	 */
+
+	public void sortContactByID(WebDriver driver, String typeOfSort) {
+		String typeOfSortInDropdownlist = driver.findElement(ContactManagerPage.ddlSortTableBy).getText();
+		if (typeOfSortInDropdownlist != typeOfSort) {
+			click(driver, ContactManagerPage.btnSortByID);
+			/*handle for IE, sometimes, user is navigated to login page
+			 get current browser name*/
+			Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+		    String browserName = cap.getBrowserName().toLowerCase();
+		    if (browserName.equals("internet explorer")){
+				if(isControlDisplayed(driver, LoginPage.btnLogin)) {
+					LoginPageAction loginPage = new LoginPageAction(driver);
+					String password = CommonActions.readDataFromXML("pass");
+					String username = CommonActions.readDataFromXML("user");
+					loginPage.loginToJoomla(driver, username, password);
+				}
+		    }
+		}
+	}
+	
+	/**
+	 * Change publish/unpublish status icon of any contact in table
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param typeOfStatus
+	 */
+
+	public void changeContactStatus(WebDriver driver, String title, String typeOfStatus) {
+		selectAnContact(driver, title);
+		click(driver, By.xpath(String.format(ContactManagerPage.dynamicbtnContactSatusByTitle, title, typeOfStatus)));
+	}
+	
+	/**
+	 * Verify contacts in table are paging correctly or not
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 * @return
+	 */
+
+	public boolean verifyContactPagingCorrectly(WebDriver driver, String numberOfItems) {
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		int numberOfRows = rows.size() - 2;
+
+		if (!numberOfItems.equals("All")) {
+			int numberOfItems1 = Integer.parseInt(numberOfItems);
+			if (isControlDisplayed(driver, ContactManagerPage.btnContactEndPage)) {
+				if (numberOfRows != numberOfItems1) {
+					return false;
+				} 
+				return true;
+			} else if (numberOfItems1 >= numberOfRows) {
+				return true;
+			}
+			return false;
+		} else {
+			selectNumberOfContactDisplay(driver, "5",true);
+			if (isControlDisplayed(driver, ContactManagerPage.btnContactEndPage)) {
+				click(driver, ContactManagerPage.btnContactEndPage);
+				int numberOfPage = Integer.parseInt(driver.findElement(ContactManagerPage.btnContactNumberEndPage).getText());
+				WebElement tableEndPAge = driver.findElement(AbstractPage.tblTable);
+				List<WebElement> rowsEndPage = tableEndPAge.findElements(AbstractPage.rowsTable);
+				int numberOfItemsInEndPage = rowsEndPage.size() - 2;
+				int totalOfItems = 5 * (numberOfPage - 1) + numberOfItemsInEndPage;
+				if (totalOfItems != numberOfRows) {
+					return false;
+				}
+
+				return true;
+			}
+
+			else if (numberOfRows <= 5) {
+				return true;
+			}
+
+			return false;
+		}
+	}
+	
+	/**
+	 * Verify the created contact is displayed on the contacts table
+	 * @param driver
+	 * @param dynamiclnkContactTitle
+	 * @param title
+	 * @return
+	 */
+	
+	public Boolean verifyContactDisplayed (WebDriver driver, String title){
+		searchContactByTitle (driver, title);
+		return (isControlDisplayed(driver, By.xpath(String.format(ContactManagerPage.dynamiclnkContact, title))));
+			
+	}
+	
+	/**
+	 * Verify checkouted icon of contact displays
+	 * @param driver
+	 * @param title
+	 * @param checkinstatus
+	 * @return
+	 */
+
+	public boolean verifyCheckoutIconDisplayed(WebDriver driver, String title) {
+		return (isControlDisplayed(driver, By.xpath(String.format(ContactManagerPage.dynamicbtnCheckoutStatus, title))));
+	}
+	
+	/**
+	 * Verify the first item changes its position with the second item after ordering
+	 * 
+	 * @param driver
+	 * @param firstIem
+	 * @param secondItem
+	 * @return
+	 */
+
+	public boolean verifyContactSortInOrdering(WebDriver driver, String firstItem, String secondItem) {
+		selectNumberOfContactDisplay(driver, "All",true);
+		int firstIndex = getContactIndexOfTitle(driver, firstItem);
+		int secondIndex = getContactIndexOfTitle(driver, secondItem);
+		clickHeaderLinkOfOrdering (driver);
+		int firstIndex1 = getContactIndexOfTitle(driver, firstItem);
+		int secondIndex1 = getContactIndexOfTitle(driver, secondItem);
+		if (firstIndex > secondIndex) {
+			if (firstIndex1 < secondIndex1) {
+				return true;
+			}
+			return false;
+		}
+		if (firstIndex1 > secondIndex1) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Verify the status of Contact in each row is correct or not
+	 * @param driver
+	 * @param status
+	 * @param noRow
+	 * @return
+	 */
+	
+	public boolean isStatusCorrectByRow(WebDriver driver, String status, int noRow) {
+		return isDynamicControlDisplayed(driver, ContactManagerPage.dynamicbtnContactSatusByRow, noRow + "", status);
+	}
+	
+	/**
+	 * Verify the category info of Contact in each row is correct or not
+	 * @param driver
+	 * @param category
+	 * @param noRow
+	 * @return
+	 */
+	
+	public boolean isCategoryCorrectByRow(WebDriver driver, String category, int noRow) {
+		return isDynamicControlDisplayed(driver, ContactManagerPage.dynamicContactCategory, noRow + "", category);
+	}
+	
+	/**
+	 * Verify the contacts are filtered based on the Search Tools option correctly or not 
+	 * @param status
+	 * @param category
+	 * @return
+	 */
+	
+	public boolean verifySearchToolsFilterCorrect(WebDriver driver, String status, String category) {
+		int count = 0;
+		if (isControlDisplayed(driver, ContactManagerPage.rowContact)) {
+			List<WebElement> rows = driver.findElements(ContactManagerPage.rowContact);
+			for (int i = 1; i <= rows.size(); i++) {
+				if (isStatusCorrectByRow(driver, status, i)) count++;
+				if (isCategoryCorrectByRow(driver, category, i)) count++;
+			}
+			if(count == (rows.size() * 2)) return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Verify status icon of of any contact in table
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param typeOfStatus
+	 * @return
+	 */
+
+	public boolean verifyStatusOfContact(WebDriver driver, String title, String typeOfStatus) {
+		return (isControlDisplayed(driver, By.xpath(String.format(ContactManagerPage.dynamicbtnContactSatusByTitle, title, typeOfStatus))));
+	}
+		
+	
+	
+}

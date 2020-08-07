@@ -1,0 +1,154 @@
+package pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import joomla.AbstractPage;
+import joomla.WeblinkManagerPage;
+
+public class WeblinkManagerPageAction extends AbstractPageAction {
+	WebDriver driver;
+
+	public WeblinkManagerPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param typeSort
+	 */
+
+	public void sortWeblinkByID(WebDriver driver, String typeSort) {
+		String typeSortInDropdownlist = driver.findElement(WeblinkManagerPage.ddlSortWeblinkByID).getText();
+		if (typeSortInDropdownlist != typeSort) {
+			click(driver, WeblinkManagerPage.btnSortWeblinkByID);
+		}
+	}
+
+	/**
+	 * Select item of the 'Display' dropdown list at the footer section of the
+	 * table
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 */
+
+	public void selectNumberOfWeblinkDisplay(WebDriver driver, String numberOfItems) {
+		String currentNumberOfItemDisplay = driver.findElement(WeblinkManagerPage.ddlNumberWeblinkDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			click(driver, WeblinkManagerPage.ddlNumberWeblinkDisplay);
+			click(driver, By.xpath(String.format(WeblinkManagerPage.dynamicNumberWeblinkDisplay, numberOfItems)));
+		}
+	}
+
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+
+	public void selectWeblink(WebDriver driver, String title) {
+		selectNumberOfWeblinkDisplay(driver, "All");
+		waitForControl(driver, By.xpath(String.format(WeblinkManagerPage.dynamicWeblinkchkRow, title)), 10);
+		click(driver, By.xpath(String.format(WeblinkManagerPage.dynamicWeblinkchkRow, title)));
+	}
+
+	/**
+	 * 
+	 * @param title
+	 */
+
+	public void searchWeblink(String title) {
+		searchByTitle(driver, WeblinkManagerPage.btnWeblinkSearch, title);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+
+	public void openWeblink(WebDriver driver, String title) {
+		click(driver, By.linkText(title));
+	}
+	
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param checkinstatus
+	 * @return
+	 */
+
+	public boolean verifyCheckoutIconDisplayed(WebDriver driver, String title) {
+		return (isControlDisplayed(driver, By.xpath(String.format(WeblinkManagerPage.dynamicbtnCheckoutStatus, title))));
+	}
+
+	/**
+	 * Verify items in table are paging correctly
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 * @return
+	 */
+
+	public boolean verifyWeblinkPagingCorrectly(WebDriver driver, String numberOfItems) {
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		int numberOfRows = rows.size() - 2;
+
+		if (numberOfItems != "All") {
+			int numberOfItems1 = Integer.parseInt(numberOfItems);
+			if (isControlDisplayed(driver, WeblinkManagerPage.btnWeblinkEndPage)) {
+				if (numberOfRows != numberOfItems1) {
+					return false;
+				}
+				return true;
+			} else if (numberOfItems1 <= numberOfRows) {
+				return true;
+			}
+			return false;
+		} else {
+			selectNumberOfWeblinkDisplay(driver, "5");
+			if (isControlDisplayed(driver, WeblinkManagerPage.btnWeblinkEndPage)) {
+				click(driver, WeblinkManagerPage.btnWeblinkEndPage);
+				int numberOfPage = Integer
+						.parseInt(driver.findElement(WeblinkManagerPage.btnWeblinkNumberEndPage).getText());
+				WebElement tableEndPAge = driver.findElement(AbstractPage.tblTable);
+				List<WebElement> rowsEndPage = tableEndPAge.findElements(AbstractPage.rowsTable);
+				int numberOfItemsInEndPage = rowsEndPage.size() - 2;
+				int totalOfItems = 5 * (numberOfPage - 1) + numberOfItemsInEndPage;
+				if (totalOfItems != numberOfRows) {
+					return false;
+				}
+
+				return true;
+			}
+
+			else if (numberOfRows <= 5) {
+				return true;
+			}
+
+			return false;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @return
+	 */
+	public boolean verifyWeblinkDisplayed(WebDriver driver, String title) {
+		searchWeblink (title);
+		return (isControlDisplayed(driver, By.xpath(String.format(WeblinkManagerPage.dynamiclnkWeblink, title))));
+		
+	}
+
+}

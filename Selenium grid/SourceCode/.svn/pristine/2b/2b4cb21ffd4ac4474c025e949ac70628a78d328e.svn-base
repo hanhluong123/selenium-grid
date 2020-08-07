@@ -1,0 +1,181 @@
+package article;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import pages.LoginPageAction;
+import pages.ArticlePageAction;
+import pages.ArticleManagerPageAction;
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+
+public class JoomlaArticle_004 extends AbstractTest {
+	WebDriver driver;
+
+	@BeforeClass
+	@Parameters({ "browser", "port", "ip" })
+	public void SETUP(String browser, String port, String ip) {
+		driver = openBrowser(driver, browser, ip, port);
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		navigateBrowser(driver, url);
+		loginPage = new LoginPageAction(driver);
+		articlePage = new ArticlePageAction(driver);
+		articleManagerPage = new ArticleManagerPageAction(driver);
+	}
+
+	@Test(description = "Verify user can change the status of articles using the Status column")
+	public void RUN_01_TC_JOOMLA_ARTICLE_015() {
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		loginPage.loginToJoomla(driver, username, password);
+		
+		log.info("Step4: Select Content > Article Manager");
+		articleManagerPage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_ARTICLES);
+
+		log.info("Step5: Click on 'New' icon of the top right toolbar");
+		log.info("Step6: Enter a title on 'Title' field");
+		log.info("Step7: Select an item from the 'Category' dropdown list");
+		log.info("Step8: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step9: Enter value on 'Article Text' text area");
+		log.info("Step10: Click on 'Save & Close' icon of the top right toolbar");
+		articlePage.addNewArticle(driver, titleOrder1, category, status, null, articleText, Constant.BUTTON_SAVEANDCLOSE);
+
+		log.info("Step 11: Check on the recently added article's checkbox");
+		log.info("Step 12: Click on the status icon of the selected article in the Status column");
+		articleManagerPage.changeArticleStatus(driver, titleOrder1, Constant.ICON_PUBLISH);
+		
+		log.info("Verify the article is unpublished successfully");
+		log.info("VP1: The icon of the selected item is showed as 'Unpublish'");
+		verifyTrue(articleManagerPage.verifyStatusOfArticle(driver, titleOrder1, Constant.ICON_UNPUBLISH));
+		
+		log.info("VP2:The '1 article unpublished' message is displayed");
+		verifyTrue(articleManagerPage.verifyMessageDisplayed(driver, expectedMessage_unpublish));
+		
+		log.info("Step 13: Check on the recently added article's checkbox");
+		log.info("Step 14: Click on the status icon of the selected article in the Status column");
+		articleManagerPage.changeArticleStatus(driver, titleOrder1, Constant.ICON_UNPUBLISH);
+		
+		log.info("Verify the article is unpublished successfully");
+		log.info("VP3: The icon of the selected item is showed as 'Unpublish'");
+		verifyTrue(articleManagerPage.verifyStatusOfArticle(driver, titleOrder1, Constant.ICON_PUBLISH));
+		
+		log.info("VP4:The '1 article unpublished' message is displayed");
+		verifyTrue(articleManagerPage.verifyMessageDisplayed(driver, expectedMessage_publish));
+	}
+
+	@Test(description = "Verify user can change the feature property of articles using the Featured column")
+	public void RUN_02_TC_JOOMLA_ARTICLE_016() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3:Click on 'Log in' button");
+		log.info("Step4:Select Content > Article Manager");
+		log.info("Step5:Click on 'New' icon of the top right toolbar");
+		log.info("Step6:Enter a title on 'Title' field");
+		log.info("Step7:Select an item from the 'Category' dropdown list");
+		log.info("Step8:Select 'Published' item from 'Status' dropdown list");
+		log.info("Step9:Enter value on 'Article Text' text area");
+		log.info("Step10:Click on 'Save & Close' icon of the top right toolbar");
+		log.info("Step11:Verify the article is saved successfully");
+		log.info("Step12:Check on the recently added article's checkbox");
+		log.info("Step13:Click on the status icon of the selected article in the Featured column");
+		articleManagerPage.changeArticleStatus(driver, titleOrder1, Constant.ICON_UNFEATURED);
+		
+		log.info("Verify the article is unfeatured successfully");
+		log.info("VP1: The icon of the selected item is showed as 'Unfeatured'");
+		verifyTrue(articleManagerPage.verifyStatusOfArticle(driver, titleOrder1, Constant.ICON_FEATURED));
+		
+		log.info("Step14:Check on the recently added article's checkbox");
+		log.info("Step15:Click on the status icon of the selected article in the Featured column");
+		articleManagerPage.changeArticleStatus(driver, titleOrder1, Constant.ICON_FEATURED);
+		
+		log.info("Verify the article is featured successfully");
+		log.info("VP2: The icon of the selected item is showed as 'Featured'");
+		verifyTrue(articleManagerPage.verifyStatusOfArticle(driver, titleOrder1, Constant.ICON_UNFEATURED));
+	}
+
+	@Test(description = "Verify user can change the order of articles using the Ordering column")
+	public void RUN_03_TC_JOOMLA_ARTICLE_014() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3:Click on 'Log in' button");
+		log.info("Step4:Select Content > Article Manager");
+		log.info("Step5:Click on 'New' icon of the top right toolbar");
+		log.info("Step6:Enter a title on 'Title' field");
+		log.info("Step7:Select an item from the 'Category' dropdown list");
+		log.info("Step8:Enter value on 'Article Text' text area");
+		log.info("Step9:Click on 'Save & Close' icon of the top right toolbar");
+		log.info("Step10:Click on 'New' icon of the top right toolbar");
+		log.info("Step11:Enter a title on 'Title' field");
+		log.info("Step12:Select an item from the 'Category' dropdown list");
+		log.info("Step13:Enter value on 'Article Text' text area");
+		log.info("Step14:Click on 'Save & Close' icon of the top right toolbar");
+		articlePage.addNewArticle(driver, titleOrder2, category, status, null, articleText, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("Step15:Click on the Header link of Ordering column");
+		articleManagerPage.clickHeaderLinkOfOrdering(driver);
+		
+		log.info("Step16:Click on the Header link of Ordering column");
+		log.info("VP1: Verify the first article changes its position with the second article");
+		verifyTrue(articleManagerPage.verifyArticleSortInOrdering(driver, titleOrder2, titleOrder1));
+	}
+
+	@Test(description = "Verify user can move an article to trash section")
+	public void RUN_04_TC_JOOMLA_ARTICLE_007() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3:Click on 'Log in' button");
+		log.info("Step4:Select Content > Article Manager");
+		log.info("Step5:Click on 'New' icon of the top right toolbar");
+		log.info("Step6:Enter a title on 'Title' field");
+		log.info("Step7:Select an item from the 'Category' dropdown list");
+		log.info("Step8:Enter value on 'Article Text' text area");
+		log.info("Step9:Click on 'Save & Close' icon of the top right toolbar");
+		log.info("Step10: Check on the recently added article's checkbox");
+		log.info("Step11: Click on 'Trash' icon of the top right toolbar");
+		articleManagerPage.deleteArticle(driver, Constant.SEARCH_STATUS_YES, titleOrder1);
+		
+		log.info("VP1: Verify the confirm message is displayed");
+		articleManagerPage.verifyMessageDisplayed(driver, expectedMessage_trashed);
+		
+		log.info("Step12: Select 'Trash' item of 'Status' dropdown list");
+		articleManagerPage.selectSearchTools(driver, search_status, null, null, null, null, null, null);
+		
+		log.info("VP2: Verify the deleted article is displayed on the table grid");
+		articleManagerPage.verifyArticleDisplayed(driver, Constant.SEARCH_STATUS_YES, titleOrder1);
+		
+		log.info("post condition 1: Delete Article" );
+		articleManagerPage.deleteArticle(driver, Constant.SEARCH_STATUS_YES, titleOrder2);
+		
+		log.info("post condition 2: Log out Joomla" );
+		articleManagerPage.logoutJoomla(driver);
+	}
+
+	@AfterClass
+	public void CLEAN() {
+		closeBrowser(driver);
+	}
+
+	/* Initialize Objects */
+	LoginPageAction loginPage;
+	ArticlePageAction articlePage;
+	ArticleManagerPageAction articleManagerPage;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("urlBap");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	String titleOrder1 = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaArticle_004", "title")  + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String titleOrder2 = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaArticle_004", "title")  + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String category = CommonActions.readDataFromJson("JoomlaArticle_004", "category");
+	String status = CommonActions.readDataFromJson("JoomlaArticle_004", "status");	
+	String articleText = CommonActions.readDataFromJson("JoomlaArticle_004", "articleText");
+	String expectedMessage_unpublish = CommonActions.readDataFromJson("JoomlaArticle_004", "expectedMessage_unpublish");
+	String expectedMessage_publish = CommonActions.readDataFromJson("JoomlaArticle_004", "expectedMessage_publish");
+	String expectedMessage_trashed = CommonActions.readDataFromJson("JoomlaArticle_004", "expectedMessage_trashed");
+	String search_status = CommonActions.readDataFromJson("JoomlaArticle_004", "search_status");
+
+}

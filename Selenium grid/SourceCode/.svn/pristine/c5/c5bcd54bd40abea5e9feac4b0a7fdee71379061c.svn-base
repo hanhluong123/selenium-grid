@@ -1,0 +1,11 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class BannerClientPage {
+
+	public static final By txtClientName = By.xpath("//input[@id='jform_name']");
+	public static final By txtContactName = By.xpath("//input[@id='jform_contact']");
+	public static final By txtContactEmail = By.xpath("//input[@id='jform_email']");
+	public static final By hderPageTitle = By.xpath("//h1[@class='page-title']");
+}

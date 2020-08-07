@@ -1,0 +1,49 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import joomla.LoginPage;
+
+public class LoginPageAction extends pages.AbstractPageAction {
+
+	WebDriver driver;
+
+	public LoginPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param username
+	 * @param password
+	 */
+	public void loginToJoomla(WebDriver driver, String username, String password) {
+		final int MAX_RETRIES = 5;
+		int timecount = 0;
+		do {
+			click(driver, LoginPage.txtUsername);
+			enterText(driver, LoginPage.txtUsername, username);
+			enterText(driver, LoginPage.txtPassword, password);
+			clickAndWaitReload(driver, LoginPage.btnLogin);
+			
+	        timecount++;
+	        if (timecount > MAX_RETRIES) {
+	            break;
+	        }
+		}
+		while (isControlDisplayed(driver, LoginPage.btnLogin));
+	}
+	
+	public void loginToJoomla(WebDriver driver, String username, String password, boolean notRetry) {
+		if (notRetry) {
+			click(driver, LoginPage.txtUsername);
+			enterText(driver, LoginPage.txtUsername, username);
+			enterText(driver, LoginPage.txtPassword, password);
+			clickAndWaitReload(driver, LoginPage.btnLogin);
+		}
+		else { 
+			loginToJoomla(driver, username, password);
+		}
+	}
+}

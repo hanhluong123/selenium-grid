@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="443.272" tests="36" errors="0" skipped="16" failures="18">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
+    <property name="java.vm.version" value="25.111-b14"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\duyen.ngoc.nguyen\Downloads\11172016"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 1"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\duyen.ngoc.nguyen\Downloads\11172016"/>
+    <property name="java.runtime.version" value="1.8.0_111-b14"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="basedir" value="C:\Users\duyen.ngoc.nguyen\Downloads\11172016"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\DUYENN~1.NGU\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="C:\Users\duyen.ngoc.nguyen\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf8397718175584589487.tmp"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_111/bin/server;C:/Program Files/Java/jre1.8.0_111/bin;C:/Program Files/Java/jre1.8.0_111/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Apache\apache-maven-3.3.9\bin;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Java\jre1.8.0_111\bin;C:\Program Files\VisualSVN Server\bin;E:\SELENIUM\Document\Files cài\eclipse-jee-mars-2-win32-x86_64\eclipse;;."/>
+    <property name="surefire.test.class.path" value="C:\Users\duyen.ngoc.nguyen\Downloads\11172016\target\test-classes;C:\Users\duyen.ngoc.nguyen\Downloads\11172016\target\classes;C:\Users\duyen.ngoc.nguyen\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\testng\testng\6.9.9\testng-6.9.9.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\com\beust\jcommander\1.48\jcommander-1.48.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\ant\ant\1.7.0\ant-1.7.0.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\ant\ant-launcher\1.7.0\ant-launcher-1.7.0.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\yaml\snakeyaml\1.15\snakeyaml-1.15.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\beanshell\bsh\2.0b4\bsh-2.0b4.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-java\2.53.1\selenium-java-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\2.53.1\selenium-chrome-driver-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\2.53.1\selenium-remote-driver-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\cglib\cglib-nodep\2.1_3\cglib-nodep-2.1_3.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\com\google\code\gson\gson\2.3.1\gson-2.3.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-api\2.53.1\selenium-api-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\httpcomponents\httpclient\4.5.1\httpclient-4.5.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\httpcomponents\httpcore\4.4.3\httpcore-4.4.3.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\com\google\guava\guava\19.0\guava-19.0.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\2.53.1\selenium-edge-driver-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\commons-io\commons-io\2.4\commons-io-2.4.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\htmlunit-driver\2.21\htmlunit-driver-2.21.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\net\sourceforge\htmlunit\htmlunit\2.21\htmlunit-2.21.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\httpcomponents\httpmime\4.5.2\httpmime-4.5.2.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\net\sourceforge\htmlunit\htmlunit-core-js\2.17\htmlunit-core-js-2.17.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\net\sourceforge\htmlunit\neko-htmlunit\2.21\neko-htmlunit-2.21.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\net\sourceforge\cssparser\cssparser\0.9.18\cssparser-0.9.18.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\w3c\css\sac\1.3\sac-1.3.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\eclipse\jetty\websocket\websocket-client\9.2.15.v20160210\websocket-client-9.2.15.v20160210.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\eclipse\jetty\jetty-util\9.2.15.v20160210\jetty-util-9.2.15.v20160210.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\eclipse\jetty\jetty-io\9.2.15.v20160210\jetty-io-9.2.15.v20160210.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\eclipse\jetty\websocket\websocket-common\9.2.15.v20160210\websocket-common-9.2.15.v20160210.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\eclipse\jetty\websocket\websocket-api\9.2.15.v20160210\websocket-api-9.2.15.v20160210.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\2.53.1\selenium-firefox-driver-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\2.53.1\selenium-ie-driver-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\net\java\dev\jna\jna\4.1.0\jna-4.1.0.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\net\java\dev\jna\jna-platform\4.1.0\jna-platform-4.1.0.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\2.53.1\selenium-safari-driver-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\io\netty\netty\3.5.7.Final\netty-3.5.7.Final.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-support\2.53.1\selenium-support-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\seleniumhq\selenium\selenium-leg-rc\2.53.1\selenium-leg-rc-2.53.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\com\googlecode\json-simple\json-simple\1.1\json-simple-1.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\xml-apis\xml-apis\1.0.b2\xml-apis-1.0.b2.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\jaxen\jaxen\1.1.1\jaxen-1.1.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\jdom\jdom\1.0\jdom-1.0.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\xerces\xercesImpl\2.6.2\xercesImpl-2.6.2.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\xom\xom\1.0\xom-1.0.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\xerces\xmlParserAPIs\2.6.2\xmlParserAPIs-2.6.2.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\xalan\xalan\2.6.0\xalan-2.6.0.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\com\ibm\icu\icu4j\2.6.1\icu4j-2.6.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\maven\surefire\surefire-testng-utils\2.19.1\surefire-testng-utils-2.19.1.jar;C:\Users\duyen.ngoc.nguyen\.m2\repository\org\apache\maven\surefire\surefire-grouper\2.19.1\surefire-grouper-2.19.1.jar;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\duyen.ngoc.nguyen"/>
+    <property name="user.timezone" value="Asia/Bangkok"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="duyen.ngoc.nguyen"/>
+    <property name="java.class.path" value="/E:/SELENIUM/Document/Files cài/eclipse-jee-mars-2-win32-x86_64/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.7.0.20160603-1931/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_111\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_111"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\classes"/>
+    <property name="webdriver.chrome.driver" value="driver\chromedriver.exe"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\duyen.ngoc.nguyen\Downloads\11172016\EMBEDDED"/>
+    <property name="localRepository" value="C:\Users\duyen.ngoc.nguyen\.m2\repository"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="TC_JOOMLA_ARTICLE_013" classname="article.JoomlaArticle_002" time="17.688">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_013(JoomlaArticle_002.java:72)
+</failure>
+    <system-out><![CDATA[2016-11-23 19:09:16,611 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+2016-11-23 19:09:16,611 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+2016-11-23 19:09:16,612 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+2016-11-23 19:09:16,612 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+2016-11-23 19:09:16,612 INFO  JoomlaArticle_002 - Step 5: Select Content > Article Manager
+2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+2016-11-23 19:09:16,889 INFO  JoomlaArticle_002 - Step 11: Click on 'Image' button
+2016-11-23 19:09:16,889 INFO  JoomlaArticle_002 - Step 12: Select image from the 'Image' dialog
+2016-11-23 19:09:16,889 INFO  JoomlaArticle_002 - Step 13: Click on 'Insert' button
+2016-11-23 19:09:16,889 INFO  JoomlaArticle_002 - Step 14: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:09:34,296 INFO  JoomlaArticle_002 - VP1: Verify the article is saved successfully
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_013" classname="article.JoomlaArticle_002" time="14.997">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_013(JoomlaArticle_002.java:72)
+</failure>
+    <system-out><![CDATA[2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 5: Select Content > Article Manager
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 11: Click on 'Image' button
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 12: Select image from the 'Image' dialog
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 13: Click on 'Insert' button
+2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 14: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:14:03,028 INFO  JoomlaArticle_002 - VP1: Verify the article is saved successfully
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed) on port 26389
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_004" classname="article.JoomlaArticle_002" time="2.769">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_004(JoomlaArticle_002.java:96)
+</failure>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_013 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:09:34,649 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+2016-11-23 19:09:34,649 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+2016-11-23 19:09:34,649 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article's checkbox
+2016-11-23 19:09:34,778 INFO  JoomlaArticle_002 - Step 14: Click on 'Unpublish' icon of the top right toolbar
+2016-11-23 19:09:37,417 INFO  JoomlaArticle_002 - VP1: Verify the article is unpublished successfully 
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_004" classname="article.JoomlaArticle_002" time="3.335">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_004(JoomlaArticle_002.java:96)
+</failure>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_013 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article's checkbox
+2016-11-23 19:14:06,741 INFO  JoomlaArticle_002 - Step 14: Click on 'Unpublish' icon of the top right toolbar
+2016-11-23 19:14:10,024 INFO  JoomlaArticle_002 - VP1: Verify the article is unpublished successfully 
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_003" classname="article.JoomlaArticle_002" time="2.703">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_003(JoomlaArticle_002.java:121)
+</failure>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_004 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+2016-11-23 19:09:37,767 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+2016-11-23 19:09:37,767 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+2016-11-23 19:09:37,767 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 9: Select 'Unpublished' item from 'Status' dropdown list
+2016-11-23 19:09:37,769 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+2016-11-23 19:09:37,769 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article's checkbox
+2016-11-23 19:09:37,909 INFO  JoomlaArticle_002 - Step 12: Click on 'Publish' icon of the top right toolbar
+2016-11-23 19:09:40,469 INFO  JoomlaArticle_002 - VP1: Verify the article is published successfully 
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_003" classname="article.JoomlaArticle_002" time="3.144">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_003(JoomlaArticle_002.java:121)
+</failure>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_004 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:14:10,191 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:14:10,191 INFO  JoomlaArticle_002 - Step 9: Select 'Unpublished' item from 'Status' dropdown list
+2016-11-23 19:14:10,191 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+2016-11-23 19:14:10,191 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article's checkbox
+2016-11-23 19:14:10,259 INFO  JoomlaArticle_002 - Step 12: Click on 'Publish' icon of the top right toolbar
+2016-11-23 19:14:13,333 INFO  JoomlaArticle_002 - VP1: Verify the article is published successfully 
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_006" classname="article.JoomlaArticle_002" time="10.09">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_006(JoomlaArticle_002.java:148)
+</failure>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_003 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+2016-11-23 19:09:40,767 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+2016-11-23 19:09:40,767 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+2016-11-23 19:09:40,767 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+2016-11-23 19:09:40,768 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+2016-11-23 19:09:40,768 INFO  JoomlaArticle_002 - Step 5: Select Content > Article Manager
+2016-11-23 19:09:41,032 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:09:41,032 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:09:41,032 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:09:41,032 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+2016-11-23 19:09:41,033 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+2016-11-23 19:09:41,033 INFO  JoomlaArticle_002 - Step 11: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:09:50,857 INFO  JoomlaArticle_002 - VP1: Verify the article is saved successfully
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_006" classname="article.JoomlaArticle_002" time="32.207">
+    <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;jform_title&apos;]&quot;}&#10;  (Session info: chrome=54.0.2840.99)&#10;  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 30.06 seconds&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;&#10;System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir6140_25201}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: 53ce6f32e21e56a8b13dabcefaefa113&#10;*** Element info: {Using=xpath, value=//*[@id=&apos;jform_title&apos;]}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='jform_title']"}
+  (Session info: chrome=54.0.2840.99)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.06 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LGDN14552-W7D01', ip: '192.168.189.93', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir6140_25201}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 53ce6f32e21e56a8b13dabcefaefa113
+*** Element info: {Using=xpath, value=//*[@id='jform_title']}
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_006(JoomlaArticle_002.java:145)
+</failure>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_003 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+2016-11-23 19:14:13,504 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+2016-11-23 19:14:13,504 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+2016-11-23 19:14:13,504 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+2016-11-23 19:14:13,505 INFO  JoomlaArticle_002 - Step 4: Click on 'Log in' button
+2016-11-23 19:14:13,505 INFO  JoomlaArticle_002 - Step 5: Select Content > Article Manager
+2016-11-23 19:14:13,645 INFO  JoomlaArticle_002 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:14:13,645 INFO  JoomlaArticle_002 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:14:13,646 INFO  JoomlaArticle_002 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:14:13,646 INFO  JoomlaArticle_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+2016-11-23 19:14:13,646 INFO  JoomlaArticle_002 - Step 10: Enter value on 'Article Text' text area
+2016-11-23 19:14:13,646 INFO  JoomlaArticle_002 - Step 11: Click on 'Save & Close' icon of the top right toolbar
+]]></system-out>
+  </testcase>
+  <testcase name="clean" classname="article.JoomlaArticle_002" time="40.484">
+    <failure message="Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logout&apos;)]&quot;}&#10;Command duration or timeout: 30.11 seconds&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;&#10;System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: b1bd8456-fb2f-4748-b4d1-e77e6f583b7d&#10;*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Logout&apos;)]}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'Logout')]"}
+Command duration or timeout: 30.11 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LGDN14552-W7D01', ip: '192.168.189.93', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b1bd8456-fb2f-4748-b4d1-e77e6f583b7d
+*** Element info: {Using=xpath, value=//a[contains(text(),'Logout')]}
+	at article.JoomlaArticle_002.clean(JoomlaArticle_002.java:185)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'Logout')]"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LGDN14552-W7D01', ip: '192.168.189.93', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_111'
+Driver info: driver.version: unknown
+</failure>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_006 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+]]></system-out>
+  </testcase>
+  <testcase name="clean" classname="article.JoomlaArticle_002" time="62.386">
+    <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li/a/div[contains(text(),&apos;User Menu&apos;)]&quot;}&#10;  (Session info: chrome=54.0.2840.99)&#10;  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 30.03 seconds&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;&#10;System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir6140_25201}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: 53ce6f32e21e56a8b13dabcefaefa113&#10;*** Element info: {Using=xpath, value=//li/a/div[contains(text(),&apos;User Menu&apos;)]}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":"//li/a/div[contains(text(),'User Menu')]"}
+  (Session info: chrome=54.0.2840.99)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LGDN14552-W7D01', ip: '192.168.189.93', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir6140_25201}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 53ce6f32e21e56a8b13dabcefaefa113
+*** Element info: {Using=xpath, value=//li/a/div[contains(text(),'User Menu')]}
+	at article.JoomlaArticle_002.clean(JoomlaArticle_002.java:185)
+</failure>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_006 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_008" classname="article.JoomlaArticle_003" time="16.871"/>
+  <testcase name="TC_JOOMLA_ARTICLE_008" classname="article.JoomlaArticle_003" time="14.726"/>
+  <testcase name="TO_JOOMLA_ARTICLE_017" classname="article.JoomlaArticle_003" time="28.248">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017(JoomlaArticle_003.java:65)
+</failure>
+    <system-out><![CDATA[2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step5: Click on 'New' icon of the top right toolbar
+2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step6: Enter a title on 'Title' field
+2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step7: Select an item from the 'Category' dropdown list
+2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step8: Enter value on 'Article Text' text area
+2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step9: Select 'Public' item from the 'Access' dropdown list
+2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step10: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:11:12,056 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+2016-11-23 19:11:12,056 INFO  JoomlaArticle_003 - VP1: 'Article successfully saved' message is displayed
+]]></system-out>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_017" classname="article.JoomlaArticle_003" time="6.579">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017(JoomlaArticle_003.java:65)
+</failure>
+    <system-out><![CDATA[2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step5: Click on 'New' icon of the top right toolbar
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step6: Enter a title on 'Title' field
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step7: Select an item from the 'Category' dropdown list
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step8: Enter value on 'Article Text' text area
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step9: Select 'Public' item from the 'Access' dropdown list
+2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step10: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:15:44,133 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+2016-11-23 19:15:44,134 INFO  JoomlaArticle_003 - VP1: 'Article successfully saved' message is displayed
+]]></system-out>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_011" classname="article.JoomlaArticle_003" time="0">
+    <skipped message="Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()[pri:0, instance:article.JoomlaArticle_003@7ce7e83c] depends on not successfully finished methods"/>
+    <system-out><![CDATA[***** Error TO_JOOMLA_ARTICLE_017 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+]]></system-out>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_011" classname="article.JoomlaArticle_003" time="0">
+    <skipped message="Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()[pri:0, instance:article.JoomlaArticle_003@43034809] depends on not successfully finished methods"/>
+    <system-out><![CDATA[***** Error TO_JOOMLA_ARTICLE_017 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+]]></system-out>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_012" classname="article.JoomlaArticle_003" time="0">
+    <skipped message="Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()[pri:0, instance:article.JoomlaArticle_003@7ce7e83c] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_012" classname="article.JoomlaArticle_003" time="0">
+    <skipped message="Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()[pri:0, instance:article.JoomlaArticle_003@43034809] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_015" classname="article.JoomlaArticle_004" time="23.233">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_015(JoomlaArticle_004.java:56)
+</failure>
+    <system-out><![CDATA[2016-11-23 19:11:21,836 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+2016-11-23 19:11:25,009 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+2016-11-23 19:11:25,010 INFO  JoomlaArticle_004 - Step3: Click on 'Log in' button
+2016-11-23 19:11:33,671 INFO  JoomlaArticle_004 - Step4: Select Content > Article Manager
+2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step5: Click on 'New' icon of the top right toolbar
+2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step6: Enter a title on 'Title' field
+2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step7: Select an item from the 'Category' dropdown list
+2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step8: Select 'Published' item from 'Status' dropdown list
+2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step9: Enter value on 'Article Text' text area
+2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step10: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:11:45,177 INFO  JoomlaArticle_004 - Step 11: Check on the recently added article's checkbox
+2016-11-23 19:11:45,178 INFO  JoomlaArticle_004 - Step 12: Click on the status icon of the selected article in the Status column
+2016-11-23 19:11:48,165 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+2016-11-23 19:11:48,166 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unpublish'
+2016-11-23 19:11:48,241 INFO  JoomlaArticle_004 - ===PASSED===
+2016-11-23 19:11:48,241 INFO  JoomlaArticle_004 - VP2:The '1 article unpublished' message is displayed
+]]></system-out>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_015" classname="article.JoomlaArticle_004" time="20.067">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_015(JoomlaArticle_004.java:56)
+</failure>
+    <system-out><![CDATA[2016-11-23 19:15:56,768 INFO  JoomlaArticle_004 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+2016-11-23 19:15:59,456 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+2016-11-23 19:15:59,456 INFO  JoomlaArticle_004 - Step3: Click on 'Log in' button
+2016-11-23 19:15:59,745 INFO  JoomlaArticle_004 - Step4: Select Content > Article Manager
+2016-11-23 19:16:05,037 INFO  JoomlaArticle_004 - Step5: Click on 'New' icon of the top right toolbar
+2016-11-23 19:16:05,037 INFO  JoomlaArticle_004 - Step6: Enter a title on 'Title' field
+2016-11-23 19:16:05,038 INFO  JoomlaArticle_004 - Step7: Select an item from the 'Category' dropdown list
+2016-11-23 19:16:05,038 INFO  JoomlaArticle_004 - Step8: Select 'Published' item from 'Status' dropdown list
+2016-11-23 19:16:05,038 INFO  JoomlaArticle_004 - Step9: Enter value on 'Article Text' text area
+2016-11-23 19:16:05,038 INFO  JoomlaArticle_004 - Step10: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:16:13,071 INFO  JoomlaArticle_004 - Step 11: Check on the recently added article's checkbox
+2016-11-23 19:16:13,071 INFO  JoomlaArticle_004 - Step 12: Click on the status icon of the selected article in the Status column
+2016-11-23 19:16:19,469 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+2016-11-23 19:16:19,469 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as 'Unpublish'
+2016-11-23 19:16:19,522 INFO  JoomlaArticle_004 - ===PASSED===
+2016-11-23 19:16:19,522 INFO  JoomlaArticle_004 - VP2:The '1 article unpublished' message is displayed
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed) on port 47828
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_016" classname="article.JoomlaArticle_004" time="0">
+    <skipped message="Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_016()[pri:0, instance:article.JoomlaArticle_004@4eb30d44] depends on not successfully finished methods"/>
+    <system-out><![CDATA[***** Error TO_JOOMLA_ARTICLE_015 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+]]></system-out>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_016" classname="article.JoomlaArticle_004" time="0">
+    <skipped message="Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_016()[pri:0, instance:article.JoomlaArticle_004@4bb003e9] depends on not successfully finished methods"/>
+    <system-out><![CDATA[***** Error TO_JOOMLA_ARTICLE_015 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+]]></system-out>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_014" classname="article.JoomlaArticle_004" time="0">
+    <skipped message="Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_014()[pri:0, instance:article.JoomlaArticle_004@4eb30d44] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_014" classname="article.JoomlaArticle_004" time="0">
+    <skipped message="Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_014()[pri:0, instance:article.JoomlaArticle_004@4bb003e9] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_007" classname="article.JoomlaArticle_004" time="0">
+    <skipped message="Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_007()[pri:0, instance:article.JoomlaArticle_004@4eb30d44] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="TO_JOOMLA_ARTICLE_007" classname="article.JoomlaArticle_004" time="0">
+    <skipped message="Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_007()[pri:0, instance:article.JoomlaArticle_004@4bb003e9] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="CLEAN_ENVIRONMENT" classname="article.JoomlaArticle_004" time="57.74">
+    <failure message="Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;null&apos;)]/ancestor::td/preceding-sibling::td[@class=&apos;center&apos;]/input&quot;}&#10;Command duration or timeout: 30.13 seconds&#10;For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;&#10;System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: e37790f0-85bb-47b3-86ee-fd6d357c426e&#10;*** Element info: {Using=xpath, value=//a[contains(text(),&apos;null&apos;)]/ancestor::td/preceding-sibling::td[@class=&apos;center&apos;]/input}" type="org.openqa.selenium.NoSuchElementException">org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'null')]/ancestor::td/preceding-sibling::td[@class='center']/input"}
+Command duration or timeout: 30.13 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LGDN14552-W7D01', ip: '192.168.189.93', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: e37790f0-85bb-47b3-86ee-fd6d357c426e
+*** Element info: {Using=xpath, value=//a[contains(text(),'null')]/ancestor::td/preceding-sibling::td[@class='center']/input}
+	at article.JoomlaArticle_004.CLEAN_ENVIRONMENT(JoomlaArticle_004.java:156)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: {"method":"xpath","selector":"//a[contains(text(),'null')]/ancestor::td/preceding-sibling::td[@class='center']/input"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LGDN14552-W7D01', ip: '192.168.189.93', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_111'
+Driver info: driver.version: unknown
+</failure>
+  </testcase>
+  <testcase name="CLEAN_ENVIRONMENT" classname="article.JoomlaArticle_004" time="22.132">
+    <failure message="unknown error: keys should be a string&#10;  (Session info: chrome=54.0.2840.99)&#10;  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)&#10;Command duration or timeout: 76 milliseconds&#10;Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;&#10;System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir8660_965}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]&#10;Session ID: 6cb143f00b522ed9292bb3b65b24f443" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: 
+unknown error: keys should be a string
+  (Session info: chrome=54.0.2840.99)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 76 milliseconds
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'LGDN14552-W7D01', ip: '192.168.189.93', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir8660_965}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 6cb143f00b522ed9292bb3b65b24f443
+	at article.JoomlaArticle_004.CLEAN_ENVIRONMENT(JoomlaArticle_004.java:156)
+</failure>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_001" classname="article.JoomlaArticle_001" time="20.26">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_001(JoomlaArticle_001.java:64)
+</failure>
+    <system-out><![CDATA[2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 9: Enter value on 'Article Text' text area
+2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - VP: Verify the article is saved successfully
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_001" classname="article.JoomlaArticle_001" time="10.694">
+    <failure message="Unresolved compilation problem: &#10;	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)&#10;" type="java.lang.Error">java.lang.Error: 
+Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_001(JoomlaArticle_001.java:64)
+</failure>
+    <system-out><![CDATA[2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 4: Click on 'Log in' button
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 5: Select Content > Articles
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 6: Click on 'New' icon of the top right toolbar
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 7: Enter a title on 'Title' field
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 8: Select an item from the 'Category' dropdown list
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 9: Enter value on 'Article Text' text area
+2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+2016-11-23 19:13:12,894 INFO  JoomlaArticle_001 - VP: Verify the article is saved successfully
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed) on port 34648
+Only local connections are allowed.
+]]></system-err>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_002" classname="article.JoomlaArticle_001" time="0">
+    <skipped message="Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_002()[pri:0, instance:article.JoomlaArticle_001@57a48985] depends on not successfully finished methods"/>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_001 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_002" classname="article.JoomlaArticle_001" time="0">
+    <skipped message="Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_002()[pri:0, instance:article.JoomlaArticle_001@6eaa21d8] depends on not successfully finished methods"/>
+    <system-out><![CDATA[***** Error TC_JOOMLA_ARTICLE_001 test has failed *****
+***Placed screen shot in src\screenshot\ ***
+]]></system-out>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_010" classname="article.JoomlaArticle_001" time="0">
+    <skipped message="Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_010()[pri:0, instance:article.JoomlaArticle_001@57a48985] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_010" classname="article.JoomlaArticle_001" time="0">
+    <skipped message="Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_010()[pri:0, instance:article.JoomlaArticle_001@6eaa21d8] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_005" classname="article.JoomlaArticle_001" time="0">
+    <skipped message="Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_005()[pri:0, instance:article.JoomlaArticle_001@57a48985] depends on not successfully finished methods"/>
+  </testcase>
+  <testcase name="TC_JOOMLA_ARTICLE_005" classname="article.JoomlaArticle_001" time="0">
+    <skipped message="Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_005()[pri:0, instance:article.JoomlaArticle_001@6eaa21d8] depends on not successfully finished methods"/>
+  </testcase>
+</testsuite>

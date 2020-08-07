@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" thread-count="4" parallel="false">
+	<listeners>
+		<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+	<test name="FirefoxTestDuyen">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.92" />
+		<parameter name="port" value="8881" />
+		<classes>
+<!-- 			<class name="bannerclient.JoomlaBannerClient_001"></class> -->
+			<class name="bannerclient.JoomlaBannerClient_002"></class>
+<!-- 			<class name="bannerclient.JoomlaBannerClient_003"></class> -->
+<!-- 			<class name="weblink.JoomlaWeblink_003"></class> -->
+<!-- 			<class name="article.JoomlaArticle_004"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 		<test name="ChromeTestDuyen"> -->
+<!-- 		<parameter name="browser" value="firefox" /> -->
+<!-- 		<parameter name="ip" value="192.168.189.93" /> -->
+<!-- 		<parameter name="port" value="8881" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="article.JoomlaArticle_001"></class> -->
+<!-- 			<class name="article.JoomlaArticle_003"></class> -->
+<!-- 			<class name="article.JoomlaArticle_004"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+<!-- 	<test name="ieTestDuyen"> -->
+<!-- 		<parameter name="browser" value="chrome" /> -->
+<!-- 		<parameter name="ip" value="192.168.189.93" /> -->
+<!-- 		<parameter name="port" value="8881" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="article.JoomlaArticle_003"></class> -->
+<!-- 			<class name="article.JoomlaArticle_004"></class> -->
+		</classes>
+	</test>
+</suite>

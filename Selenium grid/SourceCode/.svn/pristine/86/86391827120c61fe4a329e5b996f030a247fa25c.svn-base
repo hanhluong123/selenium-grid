@@ -1,0 +1,98 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import common.Constant;
+import joomla.AbstractPage;
+import joomla.BannerClientManagerPage;
+
+public class BannerClientManagerPageAction extends AbstractPageAction{
+	WebDriver driver;
+	
+	public BannerClientManagerPageAction (WebDriver driver){
+		this.driver = driver;
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+	public void openBannerClient(WebDriver driver, String title) {
+		click(driver, By.linkText(title));
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+	public void selectBannerClient(WebDriver driver, String title) {
+		waitForControl(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientchkRow, title)), Constant.LONG_TIME);
+		if(isControlDisplayed(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientchkRow, title)))){
+		click(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientchkRow, title)));
+		}
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+	public void searchBannerClientByTitle (WebDriver driver, String title){
+		enterText(driver, BannerClientManagerPage.txtBannerClientSearch, title);
+		click(driver, BannerClientManagerPage.btnBannerClientSearch);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param status
+	 */
+	public void selectBannerClientSearchTools(WebDriver driver, String status){
+		clearSearchTools(driver);
+		click(driver, AbstractPage.btnSearchTools);
+		sleep(1);
+		if (status != null) {
+			selectDropDownList(driver, BannerClientManagerPage.ddlBannerClientStatusSearch, status, "contains");
+		}
+	}
+	 
+	/**
+	 * 
+	 * @param driver
+	 * @param searchStatus
+	 * @param title
+	 */
+	public void deleteBannerClient(WebDriver driver, String searchStatus, String title) {
+		if (searchStatus == "YES") {
+			searchBannerClientByTitle(driver, title);
+		}
+		selectBannerClient(driver, title);
+		click(driver, AbstractPage.btnTrash);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param typeOfStatus
+	 */
+	public boolean verifyStatusOfBannerClient(WebDriver driver, String title, String typeOfStatus) {
+		return (isControlDisplayed(driver, By.xpath(String.format(BannerClientManagerPage.dynamicBannerClientStatus, title, typeOfStatus))));
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @return
+	 */
+	public boolean verifyBannerClientDisplayed(WebDriver driver, String title) {
+		searchBannerClientByTitle(driver, title);
+		return (isControlDisplayed(driver, By.xpath(String.format(BannerClientManagerPage.dynamiclnkBannerClient, title))));
+		
+	}
+
+}

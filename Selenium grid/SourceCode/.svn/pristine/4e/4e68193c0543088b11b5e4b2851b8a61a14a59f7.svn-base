@@ -1,0 +1,113 @@
+package zDraft;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.Constant;
+import joomla.LoginPage;
+import joomla.ArticlePage;
+import common.CommonActions;
+import common.AutomationActions;
+import pages.LoginPageAction;
+import pages.ArticleManagerPageAction;
+import pages.ArticlePageAction;
+
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class tuan extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void SETUP(String browser, String ip, String port) {
+			
+		driver = openBrowser(driver, browser, ip, port);
+		navigateBrowser(driver, url);
+ 
+
+		/*loginPage = new LoginPageAction(driver);
+		loginPage.loginToJoomla(driver, username, password);
+
+		articlePage = new ArticlePageAction(driver);*/
+
+	}
+
+	@Test(description = "Verify user can create new article with valid information")
+	public void RUN_01_TC_JOOMLA_ARTICLE_001() {
+		/*WebElement btn = driver.findElement(LoginPage.btnLogin);
+		
+
+		btn.click();
+		try
+		{
+			System.out.println("click lan 2");
+			btn.click();
+		}
+		catch (StaleElementReferenceException e)
+		{
+			System.out.println("catch ne");
+		}*/
+		
+
+		
+	}
+	
+	@AfterClass
+	public void CLEAN() {
+//		closeBrowser(driver);
+	}
+	
+	public static void waitnao(WebDriver driver, By control, int timeWait)
+    {
+        /*final int MAXIMUM_WAIT_TIME = 10;*/
+        final int MAX_STALE_ELEMENT_RETRIES = 5;
+
+        WebDriverWait wait = new WebDriverWait(driver, timeWait);
+        int retries = 0;
+        while (true)
+        {
+            try
+            {
+                wait.until(ExpectedConditions.elementToBeClickable(control));
+                return;
+            }
+            catch (StaleElementReferenceException e)
+            {
+            	System.out.println("StaleElementReferenceException error");
+                if (retries < MAX_STALE_ELEMENT_RETRIES)
+                {
+                    retries++;
+                    continue;
+                }
+                else
+                {
+                    throw e;
+                }
+            }
+        }
+    }
+	/* Initialize Objects */
+	WebDriver driver;
+	LoginPageAction loginPage;
+	ArticlePageAction articlePage;
+	ArticleManagerPageAction articleManagerPage;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("urlBap");
+	String password = CommonActions.readDataFromXML("pass");
+	String username = CommonActions.readDataFromXML("user");
+	
+}

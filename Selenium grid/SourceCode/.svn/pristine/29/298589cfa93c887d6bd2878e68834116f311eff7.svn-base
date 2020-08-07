@@ -1,0 +1,68 @@
+<h2>Methods run, sorted chronologically</h2><h3>&gt;&gt; means before, &lt;&lt; means after</h3><p/><br/><em>TestSuite</em><p/><small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table border="1">
+<tr><th>Time</th><th>Delta (ms)</th><th>Suite<br>configuration</th><th>Test<br>configuration</th><th>Class<br>configuration</th><th>Groups<br>configuration</th><th>Method<br>configuration</th><th>Test<br>method</th><th>Thread</th><th>Instances</th></tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:08:59</td>   <td>0</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;JoomlaArticle_002.setup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:article.JoomlaArticle_002@6df3e44c]">&gt;&gt;setup</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:09:16</td>   <td>17226</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_002.TC_JOOMLA_ARTICLE_013()[pri:1, instance:article.JoomlaArticle_002@6df3e44c]">TC_JOOMLA_ARTICLE_013</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:09:34</td>   <td>35265</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_002.TC_JOOMLA_ARTICLE_004()[pri:2, instance:article.JoomlaArticle_002@6df3e44c]">TC_JOOMLA_ARTICLE_004</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:09:37</td>   <td>38384</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_002.TC_JOOMLA_ARTICLE_003()[pri:3, instance:article.JoomlaArticle_002@6df3e44c]">TC_JOOMLA_ARTICLE_003</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:09:40</td>   <td>41384</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_002.TC_JOOMLA_ARTICLE_006(java.lang.String, java.lang.String, java.lang.String)[pri:4, instance:article.JoomlaArticle_002@6df3e44c]">TC_JOOMLA_ARTICLE_006</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:09:51</td>   <td>51634</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;JoomlaArticle_002.clean()[pri:0, instance:article.JoomlaArticle_002@6df3e44c]">&lt;&lt;clean</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="977ed9">  <td>16/11/23 19:10:21</td>   <td>81870</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;JoomlaArticle_003.SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:article.JoomlaArticle_003@7ce7e83c]">&gt;&gt;SETUP</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="977ed9">  <td>16/11/23 19:10:26</td>   <td>87553</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_003.TC_JOOMLA_ARTICLE_008()[pri:0, instance:article.JoomlaArticle_003@7ce7e83c]">TC_JOOMLA_ARTICLE_008</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="977ed9">  <td>16/11/23 19:10:43</td>   <td>104425</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_003.TO_JOOMLA_ARTICLE_017()[pri:0, instance:article.JoomlaArticle_003@7ce7e83c]">TO_JOOMLA_ARTICLE_017</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="977ed9">  <td>16/11/23 19:11:12</td>   <td>132984</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;JoomlaArticle_003.CLEAN_ENVIRONMENT()[pri:0, instance:article.JoomlaArticle_003@7ce7e83c]">&lt;&lt;CLEAN_ENVIRONMENT</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="7fcb6f">  <td>16/11/23 19:11:18</td>   <td>139324</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;JoomlaArticle_004.SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:article.JoomlaArticle_004@4eb30d44]">&gt;&gt;SETUP</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="7fcb6f">  <td>16/11/23 19:11:25</td>   <td>145626</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_004.TO_JOOMLA_ARTICLE_015()[pri:0, instance:article.JoomlaArticle_004@4eb30d44]">TO_JOOMLA_ARTICLE_015</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="7fcb6f">  <td>16/11/23 19:11:48</td>   <td>169180</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;JoomlaArticle_004.CLEAN_ENVIRONMENT()[pri:0, instance:article.JoomlaArticle_004@4eb30d44]">&lt;&lt;CLEAN_ENVIRONMENT</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="cd7bc3">  <td>16/11/23 19:12:22</td>   <td>203367</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;JoomlaArticle_001.SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:article.JoomlaArticle_001@57a48985]">&gt;&gt;SETUP</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="cd7bc3">  <td>16/11/23 19:12:36</td>   <td>217190</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_001.TC_JOOMLA_ARTICLE_001()[pri:0, instance:article.JoomlaArticle_001@57a48985]">TC_JOOMLA_ARTICLE_001</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="cd7bc3">  <td>16/11/23 19:12:57</td>   <td>237794</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;JoomlaArticle_001.TEARDOWN()[pri:0, instance:article.JoomlaArticle_001@57a48985]">&lt;&lt;TEARDOWN</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="cd7bc3">  <td>16/11/23 19:12:57</td>   <td>237894</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;JoomlaArticle_001.SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:article.JoomlaArticle_001@6eaa21d8]">&gt;&gt;SETUP</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="cd7bc3">  <td>16/11/23 19:13:12</td>   <td>253510</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_001.TC_JOOMLA_ARTICLE_001()[pri:0, instance:article.JoomlaArticle_001@6eaa21d8]">TC_JOOMLA_ARTICLE_001</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="cd7bc3">  <td>16/11/23 19:13:26</td>   <td>267069</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;JoomlaArticle_001.TEARDOWN()[pri:0, instance:article.JoomlaArticle_001@6eaa21d8]">&lt;&lt;TEARDOWN</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:13:28</td>   <td>269430</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;JoomlaArticle_002.setup(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:article.JoomlaArticle_002@7c1812b3]">&gt;&gt;setup</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:13:48</td>   <td>288648</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_002.TC_JOOMLA_ARTICLE_013()[pri:1, instance:article.JoomlaArticle_002@7c1812b3]">TC_JOOMLA_ARTICLE_013</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:14:06</td>   <td>307306</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_002.TC_JOOMLA_ARTICLE_004()[pri:2, instance:article.JoomlaArticle_002@7c1812b3]">TC_JOOMLA_ARTICLE_004</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:14:10</td>   <td>310807</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_002.TC_JOOMLA_ARTICLE_003()[pri:3, instance:article.JoomlaArticle_002@7c1812b3]">TC_JOOMLA_ARTICLE_003</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:14:13</td>   <td>314121</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_002.TC_JOOMLA_ARTICLE_006(java.lang.String, java.lang.String, java.lang.String)[pri:4, instance:article.JoomlaArticle_002@7c1812b3]">TC_JOOMLA_ARTICLE_006</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="9790cf">  <td>16/11/23 19:14:45</td>   <td>346474</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;JoomlaArticle_002.clean()[pri:0, instance:article.JoomlaArticle_002@7c1812b3]">&lt;&lt;clean</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="977ed9">  <td>16/11/23 19:15:15</td>   <td>376507</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;JoomlaArticle_003.SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:article.JoomlaArticle_003@43034809]">&gt;&gt;SETUP</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="977ed9">  <td>16/11/23 19:15:22</td>   <td>383446</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_003.TC_JOOMLA_ARTICLE_008()[pri:0, instance:article.JoomlaArticle_003@43034809]">TC_JOOMLA_ARTICLE_008</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="977ed9">  <td>16/11/23 19:15:37</td>   <td>398172</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_003.TO_JOOMLA_ARTICLE_017()[pri:0, instance:article.JoomlaArticle_003@43034809]">TO_JOOMLA_ARTICLE_017</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="977ed9">  <td>16/11/23 19:15:46</td>   <td>407234</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;JoomlaArticle_003.CLEAN_ENVIRONMENT()[pri:0, instance:article.JoomlaArticle_003@43034809]">&lt;&lt;CLEAN_ENVIRONMENT</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="7fcb6f">  <td>16/11/23 19:15:53</td>   <td>413816</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&gt;&gt;JoomlaArticle_004.SETUP(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:article.JoomlaArticle_004@4bb003e9]">&gt;&gt;SETUP</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="7fcb6f">  <td>16/11/23 19:15:59</td>   <td>420073</td> <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td title="JoomlaArticle_004.TO_JOOMLA_ARTICLE_015()[pri:0, instance:article.JoomlaArticle_004@4bb003e9]">TO_JOOMLA_ARTICLE_015</td> 
+  <td>main@1168924571</td>   <td></td> </tr>
+<tr bgcolor="7fcb6f">  <td>16/11/23 19:16:19</td>   <td>440339</td> <td>&nbsp;</td><td>&nbsp;</td><td title="&lt;&lt;JoomlaArticle_004.CLEAN_ENVIRONMENT()[pri:0, instance:article.JoomlaArticle_004@4bb003e9]">&lt;&lt;CLEAN_ENVIRONMENT</td> 
+<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>  <td>main@1168924571</td>   <td></td> </tr>
+</table>

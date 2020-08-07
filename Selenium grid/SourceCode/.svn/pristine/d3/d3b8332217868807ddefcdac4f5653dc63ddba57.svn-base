@@ -1,0 +1,211 @@
+package weblink;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import common.JsonHelper;
+import pages.LoginPageAction;
+import pages.WeblinkPageAction;
+import pages.WeblinkManagerPageAction;
+import pages.HelpPageAction;
+
+public class JoomlaWeblink_002 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void SETUP(String browser, String ip, String port) {
+
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		weblinkPage = new WeblinkPageAction(driver);
+		weblinkManagerPage = new WeblinkManagerPageAction (driver);
+		helpPage = new HelpPageAction(driver);
+		
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+	}
+
+	@Test(description= "Verify user can publish an unpublished web link")
+	public void TC_JOOMLA_WEBLINKS_003() {
+		log.info("Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");
+		weblinkManagerPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_WEBLINKS);
+		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Select 'Unpublished' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");
+		weblinkPage.addNewWeblink(driver, title, weblinkUrl, unpublishStatus, category, null, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP1: Verify the web link is saved successfully");
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed (driver,expectedSaveMessage));
+		verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver, title));
+		
+		log.info("Step 12: Check on the recently added web link's checkbox");
+		weblinkManagerPage.selectWeblink(driver, title);
+		
+		log.info("Step 13: Click on 'Publish' icon of the top right toolbar");
+		weblinkManagerPage.clickToolbarButton(driver,Constant.BUTTON_PUBLISH);
+		
+		log.info("VP2: Verify the web link is published successfully");
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed (driver,expectedPublishMessage));
+		verifyTrue(weblinkManagerPage.verifyStatusOfWeblink(driver, title, Constant.ICON_PUBLISH));	
+	}
+		
+	@Test(description= "Verify user can unpublish a published web link", dependsOnMethods = { "TC_JOOMLA_WEBLINKS_003" })
+	public void TC_JOOMLA_WEBLINKS_004() {
+		log.info("Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("VP 11: Verify the web link is saved successfully");
+		log.info("Step 12: Check on the recently added web link's checkbox");
+		weblinkManagerPage.selectWeblink (driver, title);
+		
+		log.info("Step 13: Click on 'Unpublish' icon of the top right toolbar");
+		weblinkManagerPage.clickToolbarButton(driver,Constant.BUTTON_UNPUBLISH);
+		
+		log.info("VP 14: Verify the web link is unpublished successfully"); 
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed (driver, expectedUnpublishMessage));
+		verifyTrue(weblinkManagerPage.verifyStatusOfWeblink (driver, title, Constant.ICON_UNPUBLISH));
+	}
+	
+	@Test(description = "Verify user can access weblink's help section", dependsOnMethods = { "TC_JOOMLA_WEBLINKS_004" })
+	public void TC_JOOMLA_WEBLINKS_008() {
+		log.info("Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");
+		log.info("Step 6: Click on 'Help' icon of the top right toolbar");
+		weblinkManagerPage.clickToolbarButton(driver, Constant.BUTTON_HELP);
+		
+		log.info("VP: Verify the weblink's help window is displayed");
+		verifyTrue(helpPage.verifyHelpPageDisplayed(driver, Constant.TITLE_HELP));
+	}
+	
+	@Test(description= "Verify user can search for weblinks using the filter text field", dependsOnMethods = { "TC_JOOMLA_WEBLINKS_008" })
+	@Parameters({"browser","ip","port"})
+	public void TC_JOOMLA_WEBLINKS_009(String browser, String ip, String port) {
+					
+		log.info("Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");			
+		log.info("Step 5: Select Content > Weblink Manager");		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Enter value on 'Weblink Text' text area");
+		log.info("Step 11: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("Step 12: Enter a title on 'Filter' text field");
+		log.info("Step 13: Click on 'Search' button");
+		weblinkManagerPage.searchWeblinkByTitle(driver, title);
+		
+		log.info("VP: Verify the titles of displayed weblinks are partially matched with the entered keyword");
+		verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver,Constant.SEARCH_STATUS_YES, title));		
+	}
+	
+	@Test(description= "Verify user can search for weblinks using the filter dropdown lists", dependsOnMethods = { "TC_JOOMLA_WEBLINKS_009"})
+	public void TC_JOOMLA_WEBLINKS_010() {
+		
+		log.info("Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Select an item from 'Category' dropdown list");
+		log.info("Step 10: Select 'Unpublished' item from 'Status' dropdown list");
+		log.info("Step 11: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP 1: Verify the web link is saved successfully");
+		log.info("Step 13: Select an item from the 'Category' filter dropdown list");
+		log.info("Step 14: Select an item from the 'Status' filter dropdown list");
+		weblinkManagerPage.selectSearchTools(driver, unpublishStatus, category, null, null, null);
+		
+		log.info("VP 2: Verify the property of displayed weblinks are matched with the selected criteria from the filter dropdown lists");
+		verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver, Constant.SEARCH_STATUS_YES, title));
+		
+	}
+	@Test(description = "Verify user can move a web link to trash section", dependsOnMethods = { "TC_JOOMLA_WEBLINKS_010" })
+	public void TC_JOOMLA_WEBLINKS_007() {
+		log.info("Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("VP 11: Verify the web link is saved successfully");
+		log.info("Step 12: Check on the recently added weblink's checkbox");
+		log.info("Step 13: Click on 'Trash' icon of the top right toolbar");
+		weblinkManagerPage.deleteWeblink(driver, Constant.SEARCH_STATUS_YES, title);
+		
+		log.info("VP 14: Verify the confirm message is displayed");
+		weblinkManagerPage.verifyMessageDisplayed(driver, expedtedTrashMessage);
+		
+		log.info("Step 15: Select 'Trash' item of 'Status' dropdown list");
+		weblinkManagerPage.selectSearchTools(driver, trashStatus, "Select Category", null, null, null);
+		
+		log.info("VP 16: Verify the deleted weblink is displayed on the table grid");
+		weblinkManagerPage.verifyWeblinkDisplayed(driver, Constant.SEARCH_STATUS_YES, title);
+		
+		log.info ("Post-precondition: Log out Joomla");
+		weblinkManagerPage.logoutJoomla(driver);
+	}
+	@AfterClass
+	public void CLEAN() {
+		
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects*/
+	WebDriver driver;
+	LoginPageAction loginPage;
+	WeblinkPageAction weblinkPage;
+	WeblinkManagerPageAction weblinkManagerPage;
+	HelpPageAction helpPage;
+	JsonHelper json;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+
+	/* Test Case Variables */
+	String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaWeblink_002", "title") + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String category = CommonActions.readDataFromJson("JoomlaWeblink_002", "category");
+	String status = CommonActions.readDataFromJson("JoomlaWeblink_002", "status");
+	String weblinkUrl = CommonActions.readDataFromJson("JoomlaWeblink_002", "weblinkUrl");
+	String weblinkText = CommonActions.readDataFromJson("JoomlaWeblink_002", "weblinkText");
+	String publishStatus = CommonActions.readDataFromJson("JoomlaWeblink_002", "publishStatus");
+	String unpublishStatus = CommonActions.readDataFromJson("JoomlaWeblink_002", "unpublishStatus");
+	String trashStatus = CommonActions.readDataFromJson("JoomlaWeblink_002", "trashStatus");
+	String expectedSaveMessage = "Web link successfully saved";
+	String expectedPublishMessage = "1 web link successfully published.";	                                           
+	String expectedUnpublishMessage = "1 web link successfully unpublished.";
+	String expedtedTrashMessage = "1 web link successfully trashed.";
+}

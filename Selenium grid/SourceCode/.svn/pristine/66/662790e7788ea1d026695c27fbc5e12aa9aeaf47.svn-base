@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="TestSuite" parallel="false" thread-count="10"> -->
+<suite name="TestSuite" parallel="false" verbose="10">
+	<listeners>
+		<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+	<!-- <test name="TestTuanIE ar">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="article"/>
+		</packages>
+	</test>
+	<test name="TestTuanIE ca">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="category"/>
+		</packages>
+	</test>
+	<test name="TestTuanIE we">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="weblink"/>
+		</packages>
+	</test>
+	<test name="TestTuanIE">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="article"/>
+			<package name="category"/>
+			<package name="weblink"/>
+		</packages>
+	</test>
+	<test name="TestTuanFF">
+		<parameter name="browser" value="firefox" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="article"/>
+			<package name="category"/>
+			<package name="weblink"/>
+		</packages>
+	</test> -->
+	
+	<!-- <test name="TestTuanCR">
+		<parameter name="browser" value="chrome" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="article"/>
+			<package name="category"/>
+			<package name="weblink"/>
+		</packages>
+	</test> -->
+	
+	<test name="TestTuanDraft">
+		<parameter name="browser" value="chrome"/>
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<class name="zDraft.tuan"></class>
+			<!-- <class name="bannerclient.JoomlaBannerClient_002"></class>
+			<class name="category.JoomlaCategory_001"></class>
+			<class name="category.JoomlaCategory_002"></class>
+			<class name="category.JoomlaCategory_003"></class>
+			<class name="category.JoomlaCategory_004"></class>
+			<class name="weblink.JoomlaWeblink_003"></class>
+			<class name="contact.JoomlaContact_002"></class>
+			<class name="article.JoomlaArticle_002"></class> -->
+		</classes>
+	</test>
+</suite>

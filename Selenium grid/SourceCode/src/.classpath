@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Actions"/>
+	<classpathentry kind="src" path="Interfaces"/>
+	<classpathentry kind="src" path="Testcases"/>
+	<classpathentry kind="lib" path="Resources/batch/selenium-server-standalone-3.8.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

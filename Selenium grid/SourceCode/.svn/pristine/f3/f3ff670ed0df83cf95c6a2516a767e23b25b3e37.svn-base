@@ -1,0 +1,141 @@
+package article;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import pages.LoginPageAction;
+import pages.ArticlePageAction;
+import pages.ArticleManagerPageAction;
+import pages.HelpPageAction;
+
+public class JoomlaArticle_003 extends AbstractTest {
+	WebDriver driver;
+
+	@BeforeClass
+	@Parameters({ "browser", "port", "ip" })
+	public void SETUP(String browser, String port, String ip) {
+		driver = openBrowser(driver, browser, ip, port);
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		navigateBrowser(driver, url);
+		loginPage = new LoginPageAction(driver);
+		articlePage = new ArticlePageAction(driver);
+		articleManagerPage = new ArticleManagerPageAction(driver);
+		helpPage = new HelpPageAction(driver);
+	}
+
+	@Test(description = "Verify user can access article's help section")
+	public void TC_JOOMLA_ARTICLE_008() {
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		loginPage.loginToJoomla(driver, username, password);
+		
+		log.info("Step4: Select Content > Article Manager");
+		articleManagerPage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_ARTICLES);
+		
+		log.info("Step5: Click on 'Help' icon of the top right toolbar");
+		articleManagerPage.clickToolbarButton(driver, Constant.BUTTON_HELP);
+		
+		log.info("VP1: Verify the article's help window is displayed");
+		verifyTrue(helpPage.verifyHelpPageDisplayed(driver, Constant.TITLE_HELP));
+	}
+
+	@Test(description = "Verify user can create a new article with 'Public' Access Level property", dependsOnMethods = { "TC_JOOMLA_ARTICLE_008" })
+	public void TO_JOOMLA_ARTICLE_017() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select Content > Article Manager");
+		log.info("Step5: Click on 'New' icon of the top right toolbar");
+		log.info("Step6: Enter a title on 'Title' field");
+		log.info("Step7: Select an item from the 'Category' dropdown list");
+		log.info("Step8: Enter value on 'Article Text' text area");
+		log.info("Step9: Select 'Public' item from the 'Access' dropdown list");
+		log.info("Step10: Click on 'Save & Close' icon of the top right toolbar");
+		articlePage.addNewArticle(driver, title, category, null, Constant.ACCESS_PUBLIC, articleText, Constant.BUTTON_SAVEANDCLOSE);
+ 
+		log.info("Verify the article is saved successfully");
+		log.info("VP1: 'Article successfully saved' message is displayed");
+		verifyTrue(articleManagerPage.verifyMessageDisplayed(driver, expectedMessage));
+
+		log.info("VP2: Created article is displayed on the articles table");
+		verifyTrue(articleManagerPage.verifyArticleDisplayed(driver, Constant.SEARCH_STATUS_YES, title));
+
+		log.info("VP3: The Access Level of the article is displayed as 'Public'");
+		verifyTrue(articleManagerPage.verifyAccessLevel(driver, title, Constant.ACCESS_PUBLIC));
+	}
+
+	@Test(description = "Verify user can sort the article table by ID column", dependsOnMethods = { "TO_JOOMLA_ARTICLE_017" })
+	public void TO_JOOMLA_ARTICLE_011() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Click on the Header link of ID column");
+		articlePage.click(driver, joomla.AbstractPage.btnClear);
+		articleManagerPage.sortArticleByID(driver, Constant.SORT_ASCENDING);
+
+		log.info("VP1: Verify the articles is sorted by ID in ascending order");
+		verifyTrue(articleManagerPage.verifySortInAscending(driver));
+
+		log.info("Step5: Click on the Header link of ID column");
+		articleManagerPage.sortArticleByID(driver, Constant.SORT_DESCENDING);
+
+		log.info("VP2: Verify the articles is sorted by ID in descending order");
+		verifyTrue(articleManagerPage.verifySortInDescending(driver));
+	}
+
+	@Test(description = "Verify user can paging the articles using the paging control", dependsOnMethods = { "TO_JOOMLA_ARTICLE_011" })
+	public void TO_JOOMLA_ARTICLE_012() {
+		log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+		log.info("Step2: Enter valid username into Username field and valid password into Password field");
+		log.info("Step3: Click on 'Log in' button");
+		log.info("Step4: Select '5' item of the 'Display' dropdown list at the footer section of the article table");
+		articleManagerPage.hoverOverElement(driver, joomla.AbstractPage.btnHelp);
+		articleManagerPage.selectNumberOfArticleDisplay(driver, numberOfItemsDisplay5);
+
+		log.info("VP1: Verify the article table is paging into 5 articles per page");
+		verifyTrue(articleManagerPage.verifyArticlePagingCorrectly(driver, numberOfItemsDisplay5));
+
+		log.info("Step5: Select 'All' item of the 'Display' dropdown list at the footer section of the article table");
+		articleManagerPage.selectNumberOfArticleDisplay(driver, numberOfItemsDisplayAll);
+
+		log.info("VP2: All articles are displayed in one page");
+		verifyTrue(articleManagerPage.verifyArticlePagingCorrectly(driver, numberOfItemsDisplayAll));
+		
+		log.info("post condition 1: Delete Article" );
+		articleManagerPage.deleteArticle(driver, Constant.SEARCH_STATUS_YES, title);
+		
+		log.info("post condition 2: Log out Joomla" );
+		articleManagerPage.logoutJoomla(driver);
+	}
+
+	@AfterClass
+	public void CLEAN() {
+		closeBrowser(driver);
+	}
+
+	/* Initialize Objects */
+
+	LoginPageAction loginPage;
+	ArticlePageAction articlePage;
+	ArticleManagerPageAction articleManagerPage;
+	HelpPageAction helpPage;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String password = CommonActions.readDataFromXML("pass");
+	String username = CommonActions.readDataFromXML("user");
+	String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaArticle_003", "title") + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();		
+	String category = CommonActions.readDataFromJson("JoomlaArticle_003", "category");
+	String articleText = CommonActions.readDataFromJson("JoomlaArticle_003", "articleText");
+	String expectedMessage = CommonActions.readDataFromJson("JoomlaArticle_003", "expectedMessage");
+	String numberOfItemsDisplay5 = CommonActions.readDataFromJson("JoomlaArticle_003", "numberOfItemsDisplay5");
+	String numberOfItemsDisplayAll = CommonActions.readDataFromJson("JoomlaArticle_003", "numberOfItemsDisplayAll");
+
+
+}

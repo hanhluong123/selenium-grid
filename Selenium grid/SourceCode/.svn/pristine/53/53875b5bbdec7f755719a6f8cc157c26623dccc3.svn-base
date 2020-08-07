@@ -1,0 +1,151 @@
+package category;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import pages.LoginPageAction;
+import pages.CategoryPageAction;
+import pages.CategoryManagerPageAction;
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import joomla.CategoryPage;
+
+public class JoomlaCategory_004 extends AbstractTest {
+	WebDriver driver;
+
+	@BeforeClass
+	@Parameters({ "browser", "port", "ip" })
+	public void SETUP(String browser, String port, String ip) {
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		categoryPage = new CategoryPageAction(driver);
+		categoryManagerPage = new CategoryManagerPageAction (driver);
+		
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+	}
+
+	@Test(description = "Verify that user can cancel adding action while adding a new create")
+	public void RUN_01_TC_JOOMLA_CATEGORY_012() {
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		categoryPage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_CATEGORIES);
+		
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Click 'Cancel' button");
+		categoryPage.addNewCategory(driver, title, Constant.BUTTON_CANCEL);
+		
+		log.info("VP 1: Category Manager' page displays and category is not added to data");
+		verifyTrue(categoryPage.verifyPageDisplayed(driver, Constant.TITLE_CATEGORY_MANAGER, false));
+		verifyFalse(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, title));
+		
+	}
+	
+	@Test(description= "Verify that user can edit a category")
+	public void RUN_02_TC_JOOMLA_CATEGORY_002() {
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");	
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Click 'Save' button");
+		categoryPage.addNewCategory(driver, title, Constant.BUTTON_SAVE);
+		
+		log.info("VP 8: A message : 'Category successfully saved' shows and 'Edit an Aritical Category' page displays");
+		verifyTrue(categoryPage.verifyPageDisplayed(driver, Constant.TITLE_CATEGORY_EDIT, false));
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		
+		log.info("Step 9: Enter valid Title Name to Title Name textbox");
+		log.info("Step 10: Click 'Save & Close' button");
+		categoryPage.editCurrentCategory(driver, titleUpdate, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP 11: A message : 'Category successfully saved' shows and new category is created");
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, titleUpdate));
+		verifyFalse(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, title));
+	}
+	
+	@Test(description = "Verify that user can creat a new category by using 'Save as Copy' button")
+	public void RUN_03_TC_JOOMLA_CATEGORY_013() {
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Click 'Save' button");
+		categoryPage.addNewCategory(driver, title2, Constant.BUTTON_SAVE);
+		
+		log.info("VP 1: A message : 'Category successfully saved' shows and 'Edit an Aritical Category' page displays");
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		verifyTrue(categoryPage.verifyPageDisplayed(driver, Constant.TITLE_CATEGORY_EDIT, false));
+		
+		log.info("Step 9: Enter valid Title Name to Title Name textbox");
+		log.info("Step 10: Click 'Save as Copy' button");
+		categoryPage.editCurrentCategory(driver, title2Update, Constant.BUTTON_SAVEASCOPY);
+		
+		log.info("VP 11: _ A message : 'Category successfully saved' shows");
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		
+		log.info("Step 12: Click 'Close' button");
+		categoryPage.clickToolbarButton(driver, Constant.BUTTON_CLOSE);
+		
+		log.info("VP 13: _ A new category is created without replacing the old client");
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, title2));
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, title2Update));
+	}
+
+	@Test(description = "Verify that user cannot create a new Category without entering the title of the category")
+	public void RUN_04_TC_JOOMLA_CATEGORY_017() {
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 7: Click 'Save & Close' button");
+		categoryPage.addNewCategory(driver, Constant.BLANK_STRING, Constant.BUTTON_SAVEANDCLOSE);
+ 
+		log.info("VP 8: _ The color of Title textbox changes to red _ New category is not created");
+		verifyTrue(categoryPage.verifyBorderColor(driver, CategoryPage.txtCategoryTitle, Constant.COLOR_RED));
+		verifyTrue(categoryManagerPage.verifyMessageDisplayed(driver, expectedErrorMessage));
+		
+		log.info ("Post-condition: Delete categpories that has been created");
+		categoryPage.clickToolbarButton(driver, Constant.BUTTON_CLOSE);
+		categoryManagerPage.deleteCategory(driver,  titleUpdate, title, true, true);
+		categoryManagerPage.clearSearchTools(driver);
+		categoryManagerPage.deleteCategory(driver,  title2, true, true);
+		categoryManagerPage.clearSearchTools(driver);
+		categoryManagerPage.deleteCategory(driver,  title2Update, true, true);
+	}
+	
+	@AfterClass
+	public void CLEAN() {
+		closeBrowser(driver);
+	}
+
+	/* Initialize Objects */
+	LoginPageAction loginPage;
+	CategoryPageAction categoryPage;
+	CategoryManagerPageAction categoryManagerPage;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("urlBap");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_004", "title")  + " " + CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String title2 = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_004", "title2")  + " " + CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String titleUpdate = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_004", "titleUpdate")  + " " + CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String title2Update = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_004", "title2Update")  + " " + CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+
+	String expectedSaveMessage = "Category successfully saved.";
+	String expectedErrorMessage = "Invalid field:  Title ";
+
+}

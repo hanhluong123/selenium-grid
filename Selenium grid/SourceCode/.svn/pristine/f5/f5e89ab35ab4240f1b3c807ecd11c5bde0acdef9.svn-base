@@ -1,0 +1,12 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class WeblinkPage {
+	
+	/*===================================Static Elements===================================*/
+	public static final By txtWeblinkTitle = By.xpath("//input[@id='jform_title']");
+	public static final By txtWeblinkUrl = By.xpath("//input[@id='jform_url']");
+	public static final By ddlWeblinkStatus = By.xpath("//div[@id='jform_state_chzn']/a");
+	public static final By btnWeblinkImage = By.xpath("//button/span[text()='Image']");
+}

@@ -1,0 +1,30 @@
+package zDraft;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+
+public class Duyen extends AbstractTest {
+	WebDriver driver;
+	
+	 @BeforeClass
+	 @Parameters({"browser", "port", "ip"})
+	 public void SETUP(String browser, String port, String ip){
+	  driver = openBrowser(driver, browser, ip, port);
+	  log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+	  navigateBrowser(driver, url);
+	
+	 }
+
+@Test
+public void CLOSE(){
+	closeBrowser(driver);
+}
+	 
+	 /* Class Variables */
+	 String url = CommonActions.readDataFromXML("url");
+}

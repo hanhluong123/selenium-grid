@@ -1,0 +1,225 @@
+package article;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import common.JsonHelper;
+import pages.LoginPageAction;
+import pages.ArticlePageAction;
+import pages.ArticleManagerPageAction;
+
+
+public class JoomlaArticle_002 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void setup(String browser, String ip, String port) {
+
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		articlePage = new ArticlePageAction(driver);
+		articleManagerPage = new ArticleManagerPageAction (driver);
+		json = new JsonHelper();
+				
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+	}
+
+		/* Test Case Variables */
+		String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("TC_JOOMLA_ARTICLE_013", "title")+ CommonActions.getDateTime();
+		String title1 = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("TC_JOOMLA_ARTICLE_013", "title1")+ CommonActions.getDateTime();
+		String category = CommonActions.readDataFromJson("TC_JOOMLA_ARTICLE_013", "category");
+		String articleText = CommonActions.readDataFromJson("TC_JOOMLA_ARTICLE_013", "articleText");
+		String publishStatus = CommonActions.readDataFromJson("TC_JOOMLA_ARTICLE_003_004", "publishStatus");
+		String unpublishStatus = CommonActions.readDataFromJson("TC_JOOMLA_ARTICLE_003_004", "unpublishStatus");
+		String imageFolder = CommonActions.readDataFromJson("TC_JOOMLA_ARTICLE_013", "imageFolder");
+		String imageName = CommonActions.readDataFromJson("TC_JOOMLA_ARTICLE_013", "imageName");
+		String createArticleSuccessfulMessage = "Article successfully saved.";
+		String publishArticleSuccessfulMessage = "1 article published.";	                                           
+		String unpublishArticleSuccessfulMessage = "1 article unpublished.";
+		String checkinSuccessfulMessage = "1 article successfully checked in.";
+	
+		
+		@Test(priority = 1)
+		public void TC_JOOMLA_ARTICLE_013() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		
+		log.info("Step 5: Select Content > Article Manager");
+		articlePage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_ARTICLES);
+		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Enter value on 'Article Text' text area");
+		log.info("Step 11: Click on 'Image' button");
+		log.info("Step 12: Select image from the 'Image' dialog");
+		log.info("Step 13: Click on 'Insert' button");
+		log.info("Step 14: Click on 'Save & Close' icon of the top right toolbar");
+		articlePage.addNewArticle(driver, title, category, publishStatus, articleText, imageFolder, imageName, Constant.BUTTON_SAVEANDCLOSE);
+			
+		log.info("VP1: Verify the article is saved successfully");
+		verifyTrue(articlePage.verifyMessageDisplayed (driver,createArticleSuccessfulMessage));
+		
+		log.info("VP2: Created article is displayed on the articles table");
+		verifyTrue(articleManagerPage.verifyArticleDisplayed(driver,"Yes", title));
+		}
+		
+		@Test(priority = 2)
+		public void TC_JOOMLA_ARTICLE_004() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Enter value on 'Article Text' text area");
+		log.info("Step 11: Check on the recently added article's checkbox");
+		articleManagerPage.selectAnArticle (driver, title);
+		
+		log.info("Step 14: Click on 'Unpublish' icon of the top right toolbar");
+		articleManagerPage.clickToolbarButton(driver,"Unpublish");
+		
+		log.info("VP1: Verify the article is unpublished successfully "); 
+		verifyTrue(articleManagerPage.verifyMessageDisplayed (driver, unpublishArticleSuccessfulMessage));
+		
+		log.info("VP2: The icon of the selected item is showed as 'Unpublish'");
+		verifyTrue(articleManagerPage.verifyStatusOfArticle (driver, title, Constant.ICON_UNPUBLISH));
+				
+		}
+		
+		@Test(priority = 3)
+		public void TC_JOOMLA_ARTICLE_003() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Unpublished' item from 'Status' dropdown list");
+		log.info("Step 10: Enter value on 'Article Text' text area");
+		log.info("Step 11: Check on the recently added article's checkbox");
+		articleManagerPage.selectAnArticle(driver, title);
+		
+		log.info("Step 12: Click on 'Publish' icon of the top right toolbar");
+		articleManagerPage.clickToolbarButton(driver,"Publish");
+		
+		log.info("VP1: Verify the article is published successfully "); 
+		verifyTrue(articleManagerPage.verifyMessageDisplayed (driver,publishArticleSuccessfulMessage));
+		
+		log.info("VP2: The icon of the selected item is showed as 'Publish'");
+		verifyTrue(articleManagerPage.verifyStatusOfArticle(driver, title, Constant.ICON_PUBLISH));
+			
+		}
+		
+		
+		@Test(priority = 4)
+		@Parameters({"browser","ip","port"})
+		public void TC_JOOMLA_ARTICLE_006(String browser, String ip, String port) {
+						
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");			
+		log.info("Step 5: Select Content > Article Manager");
+		articlePage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_ARTICLES);
+		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Enter value on 'Article Text' text area");
+		log.info("Step 11: Click on 'Save' icon of the top right toolbar");
+		articlePage.addNewArticle(driver, title1, category, publishStatus, articleText, Constant.BUTTON_SAVE);
+				
+		log.info("VP1: Verify the article is saved successfully");
+		verifyTrue(articlePage.verifyMessageDisplayed (driver,createArticleSuccessfulMessage));
+						
+		log.info("Step 12: Close the browser window");
+		closeBrowser(driver);
+		
+		log.info("Step 13: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		driver = openBrowser(driver, browser, ip, port);
+		navigateBrowser(driver, url);
+		
+		log.info("Step 14: Enter valid username into Username field");
+		log.info("Step 15: Enter valid password into Password field");
+		log.info("Step 16: Click on 'Log in' button");
+		loginPage.loginToJoomla(driver, username, password);
+		
+		log.info("Step 17: Select Content > Article Manager");
+		articlePage.selectMenuItems2(driver, "Content", "Articles");
+		
+		log.info("Step 18: Check on the recently added article's checkbox");
+		articleManagerPage.selectAnArticle(driver, title1);
+				
+		log.info("Step 19: Click on 'Check In' icon of the top right toolbar");
+		articleManagerPage.clickToolbarButton(driver,Constant.BUTTON_CHECKIN);
+		
+		log.info("VP2: The '1 article successfully checked in' message is displayed");
+		verifyTrue(articleManagerPage.verifyMessageDisplayed (driver,checkinSuccessfulMessage));
+		
+		log.info("VP3: The lock icon next to the article is removed");
+		verifyFalse(articleManagerPage.isCheckoutIConDisplayed(driver, title1, Constant.ICON_CHECKOUT));
+				
+		}
+		
+		@Test(priority = 4)
+		@Parameters({"browser","ip","port"})
+		public void TC_JOOMLA_ARTICLE_009(String browser, String ip, String port) {
+						
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");			
+		log.info("Step 5: Select Content > Article Manager");		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Enter value on 'Article Text' text area");
+		log.info("Step 11: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("Step 12: Enter a title on 'Filter' text field");
+		log.info("Step 13: Click on 'Search' button");
+		articleManagerPage.searchArticle(title1);
+		
+		log.info("VP: Verify the titles of displayed articles are partially matched with the entered keyword");
+		verifyTrue(articleManagerPage.verifyArticleDisplayed(driver,"Yes", title1));
+				
+		}
+	
+	@AfterClass
+	public void clean() {
+		
+		//articleManagerPage.deleteArticle(driver, "yes", title);
+		//articleManagerPage.deleteArticle(driver, "yes", title1);
+		articleManagerPage.logoutJoomla(driver);
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects*/
+	WebDriver driver;
+	LoginPageAction loginPage;
+	ArticlePageAction articlePage;
+	ArticleManagerPageAction articleManagerPage;
+	JsonHelper json;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	
+}

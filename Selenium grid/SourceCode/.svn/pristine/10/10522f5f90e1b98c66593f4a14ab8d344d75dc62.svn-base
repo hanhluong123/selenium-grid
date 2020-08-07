@@ -1,0 +1,39 @@
+package common;
+
+import org.openqa.selenium.WebDriver;
+
+public class Constant{
+	public static String JSON_FILE = "src\\Resources\\test.data.json";
+	public static String XML_FILE = "src\\Resources\\automation.configuration.xml";
+	public static String TEAM_PREFIX = "Team 1: ";
+	public static String UPDATE_TEAM_PREFIX = "Update_Team 1: ";
+	public static String NODE1_CONTENT = "Content";
+	public static String NODE1_COMPONENTS ="Components";
+	public static String NODE2_ARTICLES = "Articles";
+	public static String NODE2_WEBLINKS = "Weblinks";
+	public static String HELP = "Help";
+	public static String TITLE_HELP = "Joomla! Help Screens";
+	public static String NEW_BUTTON = "New";
+	public static String SAVEANDCLOSE = "SaveAndClose";
+	public static String SAVE = "Save";
+	public static String TRASH = "Trash";
+	public static String CHECKIN = "CheckIn";
+	public static String SORT_ASCENDING = "ID ascending";
+	public static String SORT_DESCENDING = "ID descending";
+	public static String SEARCH_STATUS_YES = "YES";
+	public static String ICON_PUBLISH = "icon-publish";
+	public static String ICON_UNPUBLISH = "icon-unpublish";
+	public static String ICON_FEATURED = "icon-featured";
+	public static String ICON_UNFEATURED =	"icon-unfeatured";
+	public static String ICON_CHECKOUT = "icon-checkedout";
+	public static String ACCESS_PUBLIC = "Public";
+	public static String ACCESS_GUEST = "Guest";
+	public static String ACCESS_REGISTERED = "Registered";
+	public static String ACCESS_SPECIAL = "Special";
+	public static String ACCESS_SUPERUSERS = "Super Users";
+	public static WebDriver driver = null;
+	
+	
+	public static Integer SHORT_TIME = 5;
+	public static Integer LONG_TIME = 8;
+}

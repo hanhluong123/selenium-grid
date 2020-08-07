@@ -1,0 +1,148 @@
+
+
+	<!--=================a Do's PC =================-->
+<!--  		<test name="nodeChromeDo1">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.190.83" />
+			<parameter name="port" value="8882" />
+			<parameter name="pinIndex" value="3" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>
+		<test name="nodeChromeDo2">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.190.83" />
+			<parameter name="port" value="8882" />
+			<parameter name="pinIndex" value="4" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>		
+ 		<test name="nodeChromeDo3">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.190.83" />
+			<parameter name="port" value="8882" />
+			<parameter name="pinIndex" value="5" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test> -->	
+
+
+
+	<!-- =================Vien Do's PC ================= -->		
+		<test name="nodeChromeVien1">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.188.27" />
+			<parameter name="port" value="8887" />
+			<parameter name="pinIndex" value="13" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>
+		<test name="nodeChromeVien2">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.188.27" />
+			<parameter name="port" value="8887" />
+			<parameter name="pinIndex" value="14" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>
+		<test name="nodeChromeVien3">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.188.27" />
+			<parameter name="port" value="8887" />
+			<parameter name="pinIndex" value="15" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>
+		
+	<!-- =================Tan's PC ================= -->		
+ 		<test name="nodeChromeTan1">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.188.114" />
+			<parameter name="port" value="8894" />
+			<parameter name="pinIndex" value="16" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>
+  		 <test name="nodeChromeTan2">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.188.114" />
+			<parameter name="port" value="8894" />
+			<parameter name="pinIndex" value="17" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>  
+		
+	<!-- =================Ha's PC =================	 -->	
+  		<test name="nodeChromeHa1">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.191.127" />
+			<parameter name="port" value="8888" />
+			<parameter name="pinIndex" value="18" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>  
+		<test name="nodeChromeHa2">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.191.127" />
+			<parameter name="port" value="8888" />
+			<parameter name="pinIndex" value="19" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>  
+
+	<!-- =================Nguyen's PC =================		-->
+ 		<!-- <test name="nodeChromeNguyen1">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.191.144" />
+			<parameter name="port" value="8895" />
+			<parameter name="pinIndex" value="20" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>
+		<test name="nodeChromeNguyen2">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.191.144" />
+			<parameter name="port" value="8895" />
+			<parameter name="pinIndex" value="21" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test> -->
+
+	<!-- =================Loc's PC ================= -->		
+<!-- 		<test name="nodeChromeLoc1">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.188.23" />
+			<parameter name="port" value="8892" />
+			<parameter name="pinIndex" value="22" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test>
+		 <test name="nodeChromeLoc2">
+			<parameter name="browser" value="chrome" />
+			<parameter name="ip" value="192.168.188.38" />
+			<parameter name="port" value="8892" />
+			<parameter name="pinIndex" value="23" />
+			<classes>
+				<class name="DoExam.goToDoTest" />
+			</classes>
+		</test> -->
+
+
+
+
+
+	
+			

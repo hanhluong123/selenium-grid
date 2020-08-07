@@ -1,0 +1,22 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import joomla.LoginPage;
+
+public class LoginPageAction extends pages.AbstractPageAction {
+
+	WebDriver driver;
+
+	public LoginPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void loginToJoomla(WebDriver driver, String username, String password) {
+
+		enterText(driver, LoginPage.txtUsername, username);
+		enterText(driver, LoginPage.txtPassword, password);
+		click(driver, LoginPage.btnLogin);
+	}
+
+}

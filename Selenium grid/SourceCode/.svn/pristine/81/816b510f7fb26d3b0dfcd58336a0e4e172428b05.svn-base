@@ -1,0 +1,15 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class BannerClientManagerPage {
+	
+	/*===================================Dynamic Elements===================================*/
+	public static final String dynamiclnkBannerClient = "//div[@id='j-main-container']//a[contains(text(),'%s')]";
+	public static final String dynamicBannerClientchkRow = "//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td/input";
+
+	/*===================================Static Elements===================================*/
+	public static final By txtBannerClientSearch = By.id("filter_search");
+	public static final By btnBannerClientSearch = By.xpath("//button[@data-original-title='Search']");
+	public static final By ddlBannerClientStatusSearch = By.xpath("//div[@id='filter_state_chzn']/a");
+}

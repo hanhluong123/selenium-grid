@@ -1,0 +1,64 @@
+package zDraft;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.Constant;
+import joomla.ArticlePage;
+import common.CommonActions;
+import pages.LoginPageAction;
+import pages.ArticleManagerPageAction;
+import pages.ArticlePageAction;
+
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class tuan extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void SETUP(String browser, String ip, String port) {
+			
+		driver = openBrowser(driver, browser, ip, port);
+		navigateBrowser(driver, url);
+ 
+
+		/*loginPage = new LoginPageAction(driver);
+		loginPage.loginToJoomla(driver, username, password);
+
+		articlePage = new ArticlePageAction(driver);*/
+
+	}
+
+	@Test(description = "Verify user can create new article with valid information")
+	public void RUN_01_TC_JOOMLA_ARTICLE_001() {
+		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+	    String browserName = cap.getBrowserName().toLowerCase();
+	    System.out.println(browserName);
+	}
+	
+	@AfterClass
+	public void CLEAN() {
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects */
+	WebDriver driver;
+	LoginPageAction loginPage;
+	ArticlePageAction articlePage;
+	ArticleManagerPageAction articleManagerPage;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String password = CommonActions.readDataFromXML("pass");
+	String username = CommonActions.readDataFromXML("user");
+	
+}

@@ -1,0 +1,56 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import common.Constant;
+import joomla.WeblinkPage;;
+
+public class WeblinkPageAction extends pages.AbstractPageAction {
+	WebDriver driver;
+
+	public WeblinkPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	
+	
+	public void addNewWeblink(WebDriver driver, String title, String url_weblink,String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, title);
+		enterText(driver, WeblinkPage.txtUrl, url_weblink);
+		clickToolbarButton(driver, button);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param url_weblink
+	 * @param status
+	 * @param button
+	 */
+	
+	public void addNewWeblink(WebDriver driver, String title, String url_weblink, String status, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, title);
+		enterText(driver, WeblinkPage.txtUrl, url_weblink);
+		selectDropDownList(driver, WeblinkPage.ddlStatus, status, "contains");
+		clickToolbarButton(driver, button);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param newTitle
+	 * @param url_weblink
+	 * @param button
+	 */
+	public void editWeblink(WebDriver driver, String newTitle, String url_weblink, String button) {
+		clickToolbarButton (driver, Constant.BUTTON_EDIT);
+		enterText(driver,WeblinkPage.txtWeblinkTitle, newTitle);
+		enterText(driver, WeblinkPage.txtUrl, url_weblink);
+		clickToolbarButton(driver, button);
+				   
+		}
+
+}

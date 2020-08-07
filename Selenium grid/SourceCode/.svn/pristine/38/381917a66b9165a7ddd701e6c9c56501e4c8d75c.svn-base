@@ -1,0 +1,123 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import common.Constant;
+import joomla.CategoryPage;
+import joomla.ImageDialog;
+
+public class CategoryPageAction extends pages.AbstractPageAction {
+
+	WebDriver driver;
+
+	public CategoryPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param button
+	 */
+	public void addNewCategory(WebDriver driver, String title, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, CategoryPage.txtCategoryTitle, title);
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param status
+	 * @param access
+	 * @param categoryText
+	 * @param button
+	 */
+	public void addNewCategory(WebDriver driver, String title, String status, String access, String language, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, CategoryPage.txtCategoryTitle, title);
+		sleep(1);
+		selectDropDownList(driver, CategoryPage.ddlCategoryStatus, status, "contains");
+		selectDropDownList(driver, CategoryPage.ddlCategoryAccess, access, "contains");
+		selectDropDownList(driver, CategoryPage.ddlCategoryLanguage, language, "contains");
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param category
+	 * @param status
+	 * @param categoryText
+	 * @param filepath
+	 * @param filename
+	 * @param button
+	 */
+	public void addNewCategory(WebDriver driver, String title, String status, String access, String language, String filepath, String filename, String button) {
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, CategoryPage.txtCategoryTitle, title);
+		sleep(1);
+		selectDropDownList(driver, CategoryPage.ddlCategoryStatus, status, "contains");
+		selectDropDownList(driver, CategoryPage.ddlCategoryAccess, access, "contains");
+		selectDropDownList(driver, CategoryPage.ddlCategoryLanguage, language, "contains");
+		addImageToCategory(driver, filepath, filename);
+		clickToolbarButton(driver, button);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param filepath
+	 * @param filename
+	 */
+	public void addImageToCategory(WebDriver driver, String filepath, String filename) {
+		click(driver, CategoryPage.btnCategoryImage);
+		try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		switchIFrame(driver, ImageDialog.iFrameCategoryImage);
+		selectDropDownList(driver, ImageDialog.dllFolder, filepath, "exact");
+		switchIFrame(driver, ImageDialog.iFrameImageSelectionID);
+		click(driver, By.xpath(String.format(ImageDialog.imgFilename, filename)));
+		driver.switchTo().parentFrame();
+		click(driver, ImageDialog.btnInsert);
+		switchbackWindow(driver);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param newTitle
+	 * @param newStatus
+	 * @param newAccess
+	 * @param newLanguage
+	 * @param button
+	 */
+	public void editCategory(WebDriver driver,String newTitle, String newStatus,
+			String newAccess, String newLanguage, String button) {
+		clickToolbarButton (driver, Constant.BUTTON_EDIT);
+		enterText(driver, CategoryPage.txtCategoryTitle, newTitle);
+		sleep(1);
+		selectDropDownList(driver, CategoryPage.ddlCategoryStatus, newStatus, "contains");
+		selectDropDownList(driver, CategoryPage.ddlCategoryAccess, newAccess, "contains");
+		selectDropDownList(driver, CategoryPage.ddlCategoryLanguage, newLanguage, "contains");
+		clickToolbarButton(driver, button);
+	}
+	
+	/**
+	 * edit current Category
+	 * @param driver
+	 * @param newTitle
+	 * @param button
+	 */
+	public void editCurrentCategory(WebDriver driver,String newTitle, String button) {
+		enterText(driver, CategoryPage.txtCategoryTitle, newTitle);
+		clickToolbarButton(driver, button);
+	}
+	
+}

@@ -1,0 +1,186 @@
+package contact;
+
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import common.JsonHelper;
+import pages.LoginPageAction;
+import pages.ContactManagerPageAction;
+import pages.ContactPageAction;
+
+
+
+public class JoomlaContact_001 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void setup(String browser, String ip, String port) {
+
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		contactPage = new ContactPageAction (driver);
+		contactManagerPage = new ContactManagerPageAction (driver);
+		json = new JsonHelper();
+				
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+	}
+
+	
+		@Test(description = "Verify user can create new contact with valid information")
+		public void RUN_01_TC_JOOMLA_CONTACTS_001() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Contacts");
+		contactManagerPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_CONTACTS);
+		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");
+		contactPage.addNewContact(driver, name, category, Constant.BUTTON_SAVEANDCLOSE);
+				
+		log.info("VP1: Verify 'Contact successfully saved' message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, saveContactSuccessfulMessage));
+					
+		log.info("VP2: Verify Created contact is displayed on the contacts table");
+		verifyTrue(contactManagerPage.verifyContactDisplayed(driver, name));
+		
+		}
+		
+		@Test(description = "Verify user can edit a contact")
+		public void RUN_02_TC_JOOMLA_contactS_002() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("Step 10: Check on the recently added article's checkbox");
+		contactManagerPage.selectAnContact(driver, name);
+	
+		log.info("Step 11: Click on 'Edit' icon of the top right toolbar");
+		log.info("Step 12: Enter a new name on 'Name' field");
+		log.info("Step 13: Select an item from the 'Category' dropdown list");
+		log.info("Step 14: Click on 'Save & Close' icon of the top right toolbar");
+		contactPage.editNewContact(driver, updateName, updateCategory, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP1: Verify 'Contact successfully saved' message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, saveContactSuccessfulMessage));
+		
+		log.info("VP2: Edited contact is displayed on the contacts table");
+		verifyTrue(contactManagerPage.verifyContactDisplayed(driver, updateName));
+					
+		}
+		
+		
+		@Test(description = "Verify user can move a contact to the archive")
+		@Parameters({"browser","ip","port"})
+		public void RUN_03_TC_JOOMLA_contactS_005(String browser, String ip, String port) {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify 'contact successfully saved' message is displayed");
+		log.info("VP2: Created contact is displayed on the contacts table");
+		log.info("Step 10: Check on the recently added contact's checkbox");
+		contactManagerPage.selectAnContact(driver, updateName);
+		
+		log.info("Step 11: Click on 'Archive' icon of the top right toolbar");
+		contactManagerPage.clickToolbarButton(driver, Constant.BUTTON_ARCHIVE);
+		
+		log.info("VP3: Verify the confirm message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, archivedContactSuccessfulMessage));
+		
+		log.info("Step 12: Select 'Archived' item of 'Status' dropdown list");
+		contactManagerPage.selectSearchTools(driver, archivedStatus, null, null, null, null, null, null);
+				
+		log.info("VP4: Verify the archived web link is displayed on the table grid");
+		verifyTrue(contactManagerPage.verifyContactDisplayed(driver, updateName));
+		
+		}
+		
+		@Test(description = "Verify user can move a contact to trash section")
+		@Parameters({"browser","ip","port"})
+		public void RUN_04_TC_JOOMLA_CONTACTS_007(String browser, String ip, String port) {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify the web link is saved successfully");
+		log.info("Step 11: Check on the recently added article's checkbox");
+		contactManagerPage.selectAnContact(driver, updateName);
+		
+		log.info("Step 12: Click on 'Trash' icon of the top right toolbar");
+		contactManagerPage.clickToolbarButton(driver, Constant.BUTTON_TRASH);
+		
+		log.info("VP2: Verify the confirm message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, trashContactSuccessfulMessage));
+		
+		log.info("Step 13: Select 'Trash' item of 'Status' dropdown list");
+		contactManagerPage.selectSearchTools(driver, trashStatus, null, null, null, null, null, null);
+		
+		log.info("VP3: Verify the deleted contact is displayed on the table grid");
+		verifyTrue(contactManagerPage.verifyContactDisplayed(driver,updateName));
+		
+		log.info("Post-conditions: Logout Joomla");
+		contactManagerPage.logoutJoomla(driver);
+		
+		}
+			
+		
+		
+	@AfterClass
+	public void clean() {
+			
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects*/
+	WebDriver driver;
+	LoginPageAction loginPage;
+	ContactPageAction contactPage;
+	ContactManagerPageAction contactManagerPage;
+	JsonHelper json;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	
+	/* Test Case Variables */
+	String name = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaContact_001", "name")+ CommonActions.getDateTime();
+	String updateName = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaContact_001", "updateName")+ CommonActions.getDateTime();
+	String category = CommonActions.readDataFromJson("JoomlaContact_001", "category");
+	String updateCategory = CommonActions.readDataFromJson("JoomlaContact_001", "updateCategory");
+	String archivedStatus = CommonActions.readDataFromJson("JoomlaContact_001", "archivedStatus");
+	String trashStatus = CommonActions.readDataFromJson("JoomlaContact_001", "trashStatus");
+	String saveContactSuccessfulMessage = "Contact successfully saved.";
+	String archivedContactSuccessfulMessage = "1 contact successfully archived.";
+	String trashContactSuccessfulMessage = "1 contact successfully trashed.";
+	
+}

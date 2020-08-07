@@ -1,0 +1,344 @@
+<html>
+<head>
+<title>TestNG:  article</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>article</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/17</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Apr 18 13:53:48 ICT 2017</td>
+</tr>
+<tr><td>Total time:</td><td>4 seconds (4106 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_001.SETUP()'><b>SETUP</b><br>Test class: article.JoomlaArticle_001<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td><div><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at article.JoomlaArticle_001.SETUP(JoomlaArticle_001.java:23)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace231311211", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace231311211'><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at article.JoomlaArticle_001.SETUP(JoomlaArticle_001.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>article.JoomlaArticle_001@143640d5</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.SETUP()'><b>SETUP</b><br>Test class: article.JoomlaArticle_002<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td><div><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at article.JoomlaArticle_002.SETUP(JoomlaArticle_002.java:23)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace884603232", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace884603232'><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at article.JoomlaArticle_002.SETUP(JoomlaArticle_002.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>article.JoomlaArticle_002@6295d394</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.SETUP()'><b>SETUP</b><br>Test class: article.JoomlaArticle_003<br>Parameters: firefox, 8881, 192.168.189.60</td>
+<td><div><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at article.JoomlaArticle_003.SETUP(JoomlaArticle_003.java:23)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace648936749", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace648936749'><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at article.JoomlaArticle_003.SETUP(JoomlaArticle_003.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>article.JoomlaArticle_003@475e586c</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.SETUP()'><b>SETUP</b><br>Test class: article.JoomlaArticle_004<br>Parameters: firefox, 8881, 192.168.189.60</td>
+<td><div><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at article.JoomlaArticle_004.SETUP(JoomlaArticle_004.java:22)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1579280783", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1579280783'><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at article.JoomlaArticle_004.SETUP(JoomlaArticle_004.java:22)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>article.JoomlaArticle_004@657c8ad9</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_001.CLEAN()'><b>CLEAN</b><br>Test class: article.JoomlaArticle_001</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_001@143640d5</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.CLEAN()'><b>CLEAN</b><br>Test class: article.JoomlaArticle_002</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_002@6295d394</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.CLEAN()'><b>CLEAN</b><br>Test class: article.JoomlaArticle_003</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_003@475e586c</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.CLEAN()'><b>CLEAN</b><br>Test class: article.JoomlaArticle_004</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_004@657c8ad9</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_001.RUN_01_TC_JOOMLA_ARTICLE_001()'><b>RUN_01_TC_JOOMLA_ARTICLE_001</b><br>Test class: article.JoomlaArticle_001<br>Test method: Verify user can create new article with valid information</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_001@143640d5</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.RUN_01_TC_JOOMLA_ARTICLE_008()'><b>RUN_01_TC_JOOMLA_ARTICLE_008</b><br>Test class: article.JoomlaArticle_003<br>Test method: Verify user can access article's help section</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_003@475e586c</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.RUN_01_TC_JOOMLA_ARTICLE_013()'><b>RUN_01_TC_JOOMLA_ARTICLE_013</b><br>Test class: article.JoomlaArticle_002<br>Test method: Verify user can add image to article's content</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_002@6295d394</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.RUN_01_TC_JOOMLA_ARTICLE_015()'><b>RUN_01_TC_JOOMLA_ARTICLE_015</b><br>Test class: article.JoomlaArticle_004<br>Test method: Verify user can change the status of articles using the Status column</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_004@657c8ad9</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.RUN_02_TC_JOOMLA_ARTICLE_002()'><b>RUN_02_TC_JOOMLA_ARTICLE_002</b><br>Test class: article.JoomlaArticle_001<br>Test method: Verify user can edit an article</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_001@143640d5</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.RUN_02_TC_JOOMLA_ARTICLE_004()'><b>RUN_02_TC_JOOMLA_ARTICLE_004</b><br>Test class: article.JoomlaArticle_002<br>Test method: Verify user can unpublish a published article</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_002@6295d394</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.RUN_02_TC_JOOMLA_ARTICLE_016()'><b>RUN_02_TC_JOOMLA_ARTICLE_016</b><br>Test class: article.JoomlaArticle_004<br>Test method: Verify user can change the feature property of articles using the Featured column</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_004@657c8ad9</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.RUN_02_TC_JOOMLA_ARTICLE_017()'><b>RUN_02_TC_JOOMLA_ARTICLE_017</b><br>Test class: article.JoomlaArticle_003<br>Test method: Verify user can create a new article with 'Public' Access Level property</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_003@475e586c</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.RUN_03_TC_JOOMLA_ARTICLE_003()'><b>RUN_03_TC_JOOMLA_ARTICLE_003</b><br>Test class: article.JoomlaArticle_002<br>Test method: Verify user can publish an unpublished article</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_002@6295d394</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.RUN_03_TC_JOOMLA_ARTICLE_010()'><b>RUN_03_TC_JOOMLA_ARTICLE_010</b><br>Test class: article.JoomlaArticle_001<br>Test method: Verify user can search for articles using the filter dropdown lists</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_001@143640d5</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.RUN_03_TC_JOOMLA_ARTICLE_011()'><b>RUN_03_TC_JOOMLA_ARTICLE_011</b><br>Test class: article.JoomlaArticle_003<br>Test method: Verify user can sort the article table by ID column</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_003@475e586c</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.RUN_03_TC_JOOMLA_ARTICLE_014()'><b>RUN_03_TC_JOOMLA_ARTICLE_014</b><br>Test class: article.JoomlaArticle_004<br>Test method: Verify user can change the order of articles using the Ordering column</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_004@657c8ad9</td></tr>
+<tr>
+<td title='article.JoomlaArticle_001.RUN_04_TC_JOOMLA_ARTICLE_005()'><b>RUN_04_TC_JOOMLA_ARTICLE_005</b><br>Test class: article.JoomlaArticle_001<br>Test method: Verify user can move an article to the archive</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_001@143640d5</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.RUN_04_TC_JOOMLA_ARTICLE_006()'><b>RUN_04_TC_JOOMLA_ARTICLE_006</b><br>Test class: article.JoomlaArticle_002<br>Test method: Verify user can check-in an article<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_002@6295d394</td></tr>
+<tr>
+<td title='article.JoomlaArticle_004.RUN_04_TC_JOOMLA_ARTICLE_007()'><b>RUN_04_TC_JOOMLA_ARTICLE_007</b><br>Test class: article.JoomlaArticle_004<br>Test method: Verify user can move an article to trash section</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_004@657c8ad9</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.RUN_04_TC_JOOMLA_ARTICLE_012()'><b>RUN_04_TC_JOOMLA_ARTICLE_012</b><br>Test class: article.JoomlaArticle_003<br>Test method: Verify user can paging the articles using the paging control</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_003@475e586c</td></tr>
+<tr>
+<td title='article.JoomlaArticle_002.RUN_05_TC_JOOMLA_ARTICLE_009()'><b>RUN_05_TC_JOOMLA_ARTICLE_009</b><br>Test class: article.JoomlaArticle_002<br>Test method: Verify user can search for articles using the filter text field<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_002@6295d394</td></tr>
+</table><p>
+</body>
+</html>

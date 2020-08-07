@@ -1,0 +1,99 @@
+package common;
+
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import common.CommonActions;
+
+public class BrowserManagement {
+
+	/**
+	 * 
+	 * @param driver
+	 * @param browser
+	 * @param ip
+	 * @param port
+	 * @return
+	 */
+
+	public WebDriver openBrowser(WebDriver driver, String browser, String ip, String port) {
+		String grid = CommonActions.readDataFromXML("runmode/grid");
+		try {
+			if (grid.equals("no")) {
+				if (browser.equals("ie")) {
+					System.setProperty("webdriver.ie.driver", "driver\\IEDriverServer.exe");
+					DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
+					ieCapabilities.setCapability("unexpectedAlertBehaviour", "accept");
+					ieCapabilities.setCapability("ignoreProtectedModeSettings", true);
+					ieCapabilities.setCapability("disable-popup-blocking", true);
+					ieCapabilities.setCapability("enablePersistentHover", true);
+					ieCapabilities.setCapability(InternetExplorerDriver.ENABLE_PERSISTENT_HOVERING, false);
+					ieCapabilities.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, false);
+					driver = new InternetExplorerDriver(ieCapabilities);
+				} else if (browser.equals("chrome")) {
+					System.setProperty("webdriver.chrome.driver", "driver\\chromedriver.exe");
+					driver = new ChromeDriver();
+				} else
+					driver = new FirefoxDriver();
+			} else if (grid.equals("yes")) {
+				String Node = "http://" + ip + ":" + port + "/wd/hub";
+				if (browser.equals("chrome")) {
+					System.setProperty("webdriver.chrome.driver", "driver\\chromedriver.exe");
+					DesiredCapabilities capability = DesiredCapabilities.chrome();
+					capability.setBrowserName("chrome");
+					driver = new RemoteWebDriver(new URL(Node), capability);
+				}
+
+				else if (browser.equals("ie")) {
+					System.setProperty("webdriver.ie.driver", "driver\\IEDriverServer.exe");
+					DesiredCapabilities capability = DesiredCapabilities.internetExplorer();   
+				    capability.setCapability("unexpectedAlertBehaviour", "accept");
+				    capability.setCapability("ignoreProtectedModeSettings", true);
+				    capability.setCapability("disable-popup-blocking", true);
+				    capability.setCapability("enablePersistentHover", true);
+				    capability.setCapability(InternetExplorerDriver.ENABLE_PERSISTENT_HOVERING, false);
+				    capability.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, false);
+					capability.setBrowserName("internetExplorer");
+					driver = new RemoteWebDriver(new URL(Node), capability);
+
+				} else {
+					new DesiredCapabilities();
+					DesiredCapabilities capability = DesiredCapabilities.firefox();
+					capability.setBrowserName("firefox");
+					driver = new RemoteWebDriver(new URL(Node), capability);
+				}
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		driver.manage().timeouts().implicitlyWait(Constant.LONG_TIME, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		Constant.driver = driver;
+		return driver;
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param url
+	 */
+	
+	public void navigateBrowser(WebDriver driver, String url) {
+		driver.get(url);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 */
+	
+	public void closeBrowser(WebDriver driver) {
+		driver.quit();
+	}
+}

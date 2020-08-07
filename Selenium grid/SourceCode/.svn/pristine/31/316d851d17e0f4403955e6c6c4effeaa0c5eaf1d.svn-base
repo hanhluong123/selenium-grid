@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="50" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [TestSuite]">
+  <parameter name="port" value="8881"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="ip" value="192.168.189.93"/>
+  <listeners>
+    <listener class-name="configuration.TestNGITestListener"/>
+  </listeners>
+  <test name="FirefoxTest(failed)">
+    <parameter name="port" value="8881"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="ip" value="192.168.189.93"/>
+    <classes>
+      <class name="article.JoomlaArticle_004">
+        <methods>
+          <include name="TO_JOOMLA_ARTICLE_014"/>
+          <include name="SETUP"/>
+          <include name="SETUP"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="TO_JOOMLA_ARTICLE_007"/>
+          <include name="TO_JOOMLA_ARTICLE_016"/>
+          <include name="TO_JOOMLA_ARTICLE_015"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_004 -->
+      <class name="article.JoomlaArticle_002">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="TC_JOOMLA_ARTICLE_006" invocation-numbers="0"/>
+          <include name="clean"/>
+          <include name="clean"/>
+          <include name="TC_JOOMLA_ARTICLE_004"/>
+          <include name="TC_JOOMLA_ARTICLE_013"/>
+          <include name="TC_JOOMLA_ARTICLE_003"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_002 -->
+      <class name="article.JoomlaArticle_001">
+        <methods>
+          <include name="TEARDOWN"/>
+          <include name="TEARDOWN"/>
+          <include name="SETUP"/>
+          <include name="SETUP"/>
+          <include name="TC_JOOMLA_ARTICLE_005"/>
+          <include name="TC_JOOMLA_ARTICLE_002"/>
+          <include name="TC_JOOMLA_ARTICLE_001"/>
+          <include name="TC_JOOMLA_ARTICLE_010"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_001 -->
+      <class name="article.JoomlaArticle_003">
+        <methods>
+          <include name="TC_JOOMLA_ARTICLE_008"/>
+          <include name="TO_JOOMLA_ARTICLE_011"/>
+          <include name="TO_JOOMLA_ARTICLE_017"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="TO_JOOMLA_ARTICLE_012"/>
+          <include name="SETUP"/>
+          <include name="SETUP"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_003 -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+  <test name="ChromeTest(failed)">
+    <parameter name="port" value="8881"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="ip" value="192.168.189.93"/>
+    <classes>
+      <class name="article.JoomlaArticle_004">
+        <methods>
+          <include name="TO_JOOMLA_ARTICLE_014"/>
+          <include name="SETUP"/>
+          <include name="SETUP"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="TO_JOOMLA_ARTICLE_007"/>
+          <include name="TO_JOOMLA_ARTICLE_016"/>
+          <include name="TO_JOOMLA_ARTICLE_015"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_004 -->
+      <class name="article.JoomlaArticle_002">
+        <methods>
+          <include name="setup"/>
+          <include name="setup"/>
+          <include name="TC_JOOMLA_ARTICLE_006" invocation-numbers="0"/>
+          <include name="clean"/>
+          <include name="clean"/>
+          <include name="TC_JOOMLA_ARTICLE_004"/>
+          <include name="TC_JOOMLA_ARTICLE_013"/>
+          <include name="TC_JOOMLA_ARTICLE_003"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_002 -->
+      <class name="article.JoomlaArticle_001">
+        <methods>
+          <include name="TEARDOWN"/>
+          <include name="TEARDOWN"/>
+          <include name="SETUP"/>
+          <include name="SETUP"/>
+          <include name="TC_JOOMLA_ARTICLE_005"/>
+          <include name="TC_JOOMLA_ARTICLE_002"/>
+          <include name="TC_JOOMLA_ARTICLE_001"/>
+          <include name="TC_JOOMLA_ARTICLE_010"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_001 -->
+      <class name="article.JoomlaArticle_003">
+        <methods>
+          <include name="TC_JOOMLA_ARTICLE_008"/>
+          <include name="TO_JOOMLA_ARTICLE_011"/>
+          <include name="TO_JOOMLA_ARTICLE_017"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="CLEAN_ENVIRONMENT"/>
+          <include name="TO_JOOMLA_ARTICLE_012"/>
+          <include name="SETUP"/>
+          <include name="SETUP"/>
+        </methods>
+      </class> <!-- article.JoomlaArticle_003 -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [TestSuite] -->

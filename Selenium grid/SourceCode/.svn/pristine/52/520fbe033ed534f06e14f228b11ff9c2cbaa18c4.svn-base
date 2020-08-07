@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations>
+	<configuration tag="Joomla">
+		<urlBap>https://baptraining.joomla.com/administrator/index.php</urlBap>
+		<url>http://ltrc.automationvids.com/administrator/</url>
+		<user>Team1TrainingSelenium20161019</user>
+		<pass>admin</pass>
+		<runmode>
+			<grid>no</grid>
+			<close>no</close>
+			<saucelab>no</saucelab>
+			<saucelabUser>TEAM1</saucelabUser>
+			<saucelabKey>d40e8f73-8bae-4554-b9a6-27cb3978f9ab</saucelabKey>
+		</runmode>
+	</configuration>
+</configurations>

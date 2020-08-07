@@ -1,0 +1,298 @@
+package pages;
+
+import java.util.List;
+import java.util.NoSuchElementException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import joomla.AbstractPage;
+import common.AbstractTest;
+import common.Constant;
+
+public class AbstractPageAction extends common.AutomationActions {
+
+	AbstractTest abstractTest = new AbstractTest();
+
+	/**
+	 * 
+	 * @param driver
+	 * @param node1
+	 * @param node2
+	 */
+
+	public void selectMenuItems2(WebDriver driver, String node1, String node2) {
+		String xpath;
+		for (int i = 1; i < 3; i++) {
+			if (i == 1) {
+				xpath = String.format(AbstractPage.dynamiclnkMenuItemNote1, node1);
+			} else {
+				xpath = String.format(AbstractPage.dynamiclnkMenuItemNote2, node2);
+
+			}
+			click(driver, By.xpath(xpath));
+		}
+
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param node1
+	 * @param node2
+	 * @param node3
+	 */
+	public void selectMenuItems3(WebDriver driver, String node1, String node2, String node3) {
+		click(driver, By.xpath(String.format(AbstractPage.dynamiclnkMenuItemNote1, node1)));
+		hoverOverElement(driver, By.xpath(String.format(AbstractPage.dynamiclnkMenuItemNote2, node2)));
+		click(driver, By.xpath(String.format(AbstractPage.dynamiclnkMenuItemNote3, node3)));	
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param toolbarButton
+	 */
+
+	public void clickToolbarButton(WebDriver driver, String toolbarButton) {
+		if (toolbarButton.equals("Save")) {
+			click(driver, AbstractPage.btnSave);
+		} else if (toolbarButton.equals("SaveAndNew")) {
+			click(driver, AbstractPage.btnSaveNew);
+		} else if (toolbarButton.equals("SaveAndClose")) {
+			click(driver, AbstractPage.btnSaveClose);
+		} else if (toolbarButton.equals("Cancel")) {
+			click(driver, AbstractPage.btnCancel);
+		} else if (toolbarButton.equals("Help")) {
+			click(driver, AbstractPage.btnHelp);
+		} else if (toolbarButton.equals("New")) {
+			click(driver, AbstractPage.btnNew);
+		} else if (toolbarButton.equals("Trash")) {
+			click(driver, AbstractPage.btnTrash);
+		} else if (toolbarButton.equals("Archive")) {
+			click(driver, AbstractPage.btnArchive);
+		} else if (toolbarButton.equals("Unpublish")) {
+			click(driver, AbstractPage.btnUnpublish);
+		} else if (toolbarButton.equals("Publish")) {
+			click(driver, AbstractPage.btnPublish);
+		} else if (toolbarButton.equals("CheckIn")) {
+			click(driver, AbstractPage.btnCheckin);
+		} else if (toolbarButton.equals("Edit")) {
+			click(driver, AbstractPage.btnEdit);
+		}
+		
+	}
+
+	/**
+	 * Click on the Header link of Ordering column
+	 * 
+	 * @param driver
+	 */
+
+	public void clickHeaderLinkOfOrdering(WebDriver driver) {
+		click(driver, AbstractPage.lnkHeaderOrdering);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+
+	public void searchByTitle(WebDriver driver,By control, String title) {
+		enterText(driver, control, title);
+		click(driver, control);
+	}
+
+	/**
+	 * select Search Tools
+	 * 
+	 * @param driver
+	 * @param status
+	 * @param category
+	 * @param access
+	 * @param author
+	 * @param language
+	 * @param tag
+	 * @param max_levels
+	 */
+
+	public void selectSearchTools(WebDriver driver, String status, String category, String access, String author,
+			String language, String tag, String max_levels) {
+		clearSearchTools(driver);
+		click(driver, AbstractPage.btnSearchTools);
+		sleep(1);
+		if (status != null) {
+			selectDropDownList(driver, AbstractPage.ddlStatus, status, "contains");
+		}
+		if (category != null) {
+			selectDropDownList(driver, AbstractPage.ddlCategory, category, "contains");
+		}
+
+		if (access != null) {
+			selectDropDownList(driver, AbstractPage.ddlAccess, access, "contains");
+		}
+
+		if (author != null) {
+			selectDropDownList(driver, AbstractPage.ddlAuthor, author, "contains");
+		}
+
+		if (language != null) {
+			selectDropDownList(driver, AbstractPage.ddlLanguage, language, "contains");
+		}
+
+		if (tag != null) {
+			selectDropDownList(driver, AbstractPage.ddlTag, tag, "contains");
+		}
+
+		if (max_levels != null) {
+			selectDropDownList(driver, AbstractPage.ddlMaxLevels, max_levels, "contains");
+		}
+
+	}
+
+	/**
+	 * clear Search Tools
+	 * 
+	 * @param driver
+	 */
+
+	public void clearSearchTools(WebDriver driver) {
+		click(driver, AbstractPage.btnClear);
+	}
+
+	
+	/**
+	 * 
+	 * @param driver
+	 */
+
+	public void logoutJoomla(WebDriver driver) {
+		click(driver, AbstractPage.btnUserMenu);
+		click(driver, AbstractPage.btnLogout);
+	}
+	
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @return
+	 */
+
+	public int getIndexOfTitle(WebDriver driver, String title) {
+		int i;
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		int colID = rows.get(2).findElements(By.xpath("td")).size() - 7;
+		for (i = 2; i < rows.size() - 1; i++) {
+			String getTitle = rows.get(i).findElements(By.xpath("td")).get(colID).getText();
+			if (getTitle.contains(title)) {
+				break;
+			}
+		}
+		return i;
+	}
+
+	
+	/**
+	 * Verify the Access Level of the item in table
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param access
+	 * @return
+	 */
+
+	public boolean verifyAccessLevel(WebDriver driver, String title, String access) {
+		return (isControlDisplayed(driver, By.xpath(String.format(AbstractPage.dynamiclnkAccess, title, access))));
+	}
+
+	
+	/**
+	 * Verify control displaying successfully
+	 * 
+	 * @param driver
+	 * @param control
+	 * @return
+	 */
+
+	public boolean isControlDisplayed(WebDriver driver, By control) {
+
+		WebElement controlFound = driver.findElement(control);
+		try {
+			return controlFound.isDisplayed();
+		} catch (NoSuchElementException e) {
+			return false;
+		}
+	}
+	
+	/**
+	 * verify Message Displayed
+	 * 
+	 * @param driver
+	 * @param message
+	 * @return
+	 */
+
+	public boolean verifyMessageDisplayed(WebDriver driver, String message) {
+		waitForControl(driver, AbstractPage.messageContainer, Constant.LONG_TIME);
+		if (isControlDisplayed(driver, AbstractPage.messageContainer)) {
+			String messageGotten = driver.findElement(AbstractPage.messageContainer).getText();
+			if (messageGotten.equals(message)) {
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
+
+
+	/**
+	 * Verify items sorted by ID in ascending order
+	 * 
+	 * @param driver
+	 * @return
+	 */
+
+	public boolean verifySortInAscending(WebDriver driver) {
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		System.out.println(rows.size());
+		int colID = rows.get(2).findElements(By.xpath("td")).size() - 1;
+		for (int i = 2; i < rows.size() - 1; i++) {
+			int firsID = Integer.parseInt(rows.get(i).findElements(By.xpath("td")).get(colID).getText());
+			int nextID = Integer.parseInt(rows.get(i + 1).findElements(By.xpath("td")).get(colID).getText());
+			if (firsID > nextID) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Verify items sorted by ID in descending order
+	 * 
+	 * @param driver
+	 * @return
+	 */
+
+	public boolean verifySortInDescending(WebDriver driver) {
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		int colID = rows.get(2).findElements(By.xpath("td")).size() - 1;
+		for (int i = 2; i < rows.size() - 1; i++) {
+			int firstID = Integer.parseInt(rows.get(i).findElements(By.xpath("td")).get(colID).getText());
+			int nextID = Integer.parseInt(rows.get(i + 1).findElements(By.xpath("td")).get(colID).getText());
+			if (firstID < nextID) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+
+}

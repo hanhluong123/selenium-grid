@@ -1,0 +1,19 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class WeblinkManagerPage {
+	
+	/*===================================Dynamic Elements===================================*/
+	public static final String dynamicbtnCheckoutStatus = "//a[contains(text(),'%s')]/preceding-sibling::a/span[@class='icon-checkedout']";
+	public static final String dynamicNumberWeblinkDisplay = "//div[@id='limit_chzn']//li[.='%s']";
+	public static final String dynamicWeblinkchkRow = "//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td/input";
+	
+	/*===================================Static Elements===================================*/
+	public static final By ddlSortWeblinkByID = By.xpath("//div[@id='directionTable_chzn']/a");
+	public static final By btnSortWeblinkByID = By.xpath("//div[@id='j-main-container']/table//following-sibling::thead/tr/descendant::a[contains(text(),'ID')]");	
+	public static final By ddlNumberWeblinkDisplay = By.xpath("//div[@id='limit_chzn']/a");
+	public static final By btnWeblinkEndPage = By.xpath("//div[@id='j-main-container']//a[@data-original-title='End']");
+	public static final By btnWeblinkNumberEndPage = By.xpath("//div[@id='j-main-container']//span[@class='icon-next']/../../preceding-sibling::li[1]/a");
+}
+

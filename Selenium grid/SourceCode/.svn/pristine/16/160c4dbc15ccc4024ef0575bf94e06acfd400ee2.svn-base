@@ -1,0 +1,33 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class ContactManagerPage {
+
+	/*=================================Static elements==================================*/
+	public static final By txtContactSearch = By.id("filter_search");
+	public static final By btnContactSearch = By.xpath("//span[@class='icon-search']");
+	public static final By btnContactSearchTools = By.xpath ("//button[contains(text(),'Search Tools')]");
+	public static final By btnSearchClear = By.xpath ("//button[contains(text(),'Clear')]");
+	public static final By btnOrdering = By.xpath("//table[@id='contactList']//span[@class='icon-menu-2']");
+	public static final By ddlNumberContactDisplay = By.xpath("//div[@id='list_limit_chzn']/a");
+	public static final By ddlStatus = By.xpath("/div[@id='filter_published_chzn']/a");
+	public static final By ddlCategory = By.xpath("//div[@id='filter_category_id_chzn']/a");
+	public static final By ddlAccess = By.xpath("//div[@id='filter_access_chzn']/a");
+	public static final By ddlLanguage = By.xpath("//div[@id='filter_language_chzn']/a");
+	public static final By ddlTag = By.xpath("//div[@id='filter_tag_chzn']/a");
+	public static final By ddlMaxLevels = By.xpath("//div[@id='filter_level_chzn']/a");
+	public static final By tblContact = By.id("contactList");
+	public static final By rowContact = By.xpath("//table[@id='contactList']/tbody/tr");
+	public static final By colTitle = By.xpath("//table[@id='contactList']//a[@data-name='Title']");
+
+	
+	/*=================================Dynamic elements==================================*/
+	public static final String dynamiclnkContact = "//table[@id='contactList']//a[text()='%s']";
+	public static final String dynamicchkContactRow = "//a[text()='%s']/ancestor::td/preceding-sibling::td[@class='center']/input";
+	public static final String dynamicbtnCheckoutStatus = "//a[contains(text(),'%s')]/preceding-sibling::a/span[@class='icon-checkedout']";
+	public static final String dynamicNumberContactDisplay = "//div[@id='list_limit_chzn']//li[.='%s']";
+	public static final String dynamicbtnContactSatus = "//table[@id='contactList']/tbody/tr[%s]//span[@class = '%s']";
+	public static final String dynamicContactCategory = "//table[@id='contactList']/tbody/tr[%s]//div/div[contains(text(),'%s')]";
+
+}

@@ -1,0 +1,165 @@
+package category;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import common.JsonHelper;
+import pages.LoginPageAction;
+import pages.CategoryPageAction;
+import pages.CategoryManagerPageAction;
+
+
+public class JoomlaCategory_002 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void SETUP(String browser, String ip, String port) {
+
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		categoryPage = new CategoryPageAction(driver);
+		categoryManagerPage = new CategoryManagerPageAction (driver);
+				
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+	}
+
+	
+	@Test(description= "Verify that user can publish a category")
+	public void RUN_01_TC_JOOMLA_CATEGORY_003() {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		categoryPage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_CATEGORIES);
+		
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Select 'Unpublished' in Status dropdown list");
+		log.info("Step 8: Click 'Save & Close' button");
+		categoryPage.addNewCategory(driver, title, status, null, null, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP 9: A message : 'Category successfully saved' shows and new category is created");
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, title));
+		
+		log.info("Step 10: Check the Category recently created");
+		categoryManagerPage.selectAnCategory(driver, title);
+		
+		log.info("Step 11: Click 'Publish' button in the right top corner");
+		categoryManagerPage.clickToolbarButton(driver,Constant.BUTTON_PUBLISH);
+		
+		log.info("VP 12: A message : '1 Category successfully saved' shows and Category is published"); 
+		verifyTrue(categoryManagerPage.verifyMessageDisplayed (driver,expectedPublishMessage));
+		verifyTrue(categoryManagerPage.verifyStatusOfCategory(driver, title, Constant.ICON_PUBLISH));
+	}
+	
+	@Test(description= "Verify that user can unpublish a category")
+	public void RUN_02_TC_JOOMLA_CATEGORY_004() {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Click 'Save & Close' button");
+		log.info("VP 8: A message : 'Category successfully saved' shows and new category is created");
+		log.info("Step 9: Check the Category recently created");
+		categoryManagerPage.selectAnCategory (driver, title);
+		
+		log.info("Step 10: Click 'unpublish' button in the right top corner");
+		categoryManagerPage.clickToolbarButton(driver,Constant.BUTTON_UNPUBLISH);
+		
+		log.info("VP 11: A message : '1 Category successfully saved' shows and Category is unpublished"); 
+		verifyTrue(categoryManagerPage.verifyMessageDisplayed (driver,expectedUnpublishMessage));
+		verifyTrue(categoryManagerPage.verifyStatusOfCategory(driver, title, Constant.ICON_UNPUBLISH));	
+	}
+
+	@Test(description = "Verify that user can search a category  by using filter textbox")
+	public void RUN_03_TC_JOOMLA_CATEGORY_008() {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Click 'Save & Close' button");
+		log.info("VP 8: A message : 'Category successfully saved' shows and new category is created");
+		log.info("Step 9: Enter valid Category Name to Filter textbox");
+		log.info("Step 10: Click 'Search' button");
+		categoryManagerPage.searchCategoryByTitle(driver, title);
+		
+		log.info("VP 11: Recently created category displays");
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver,Constant.SEARCH_STATUS_NO, title));
+	}
+	
+	@Test(description= "Verify that user can search a category by using filter dropdown lists")
+	@Parameters({"browser","ip","port"})
+	public void RUN_04_TC_JOOMLA_CATEGORY_009(String browser, String ip, String port) {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Select 'Unpublished' in 'Status' dropdown list");
+		log.info("Step 8: Select 'Registered' in 'Access' dropdown list");
+		log.info("Step 9: Select 'English (UK)' in 'Language' dropdown list");
+		log.info("Step 10: Click 'Save & Close' button");
+		categoryManagerPage.selectAnCategory(driver, title);
+		categoryPage.editCategory(driver, title, status, access, language, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP 11: A message : 'Category successfully saved' shows and new category is created");
+		log.info("Step 12: Select 'Unpublished' in 'Status' dropdown list");
+		log.info("Step 13: Select 'Registered' in 'Access' dropdown list");
+		log.info("Step 14: Select 'English (UK)' in 'Language' dropdown list");
+		categoryPage.selectSearchTools(driver, status, null, access, null, language, null, null);
+		
+		log.info("VP 15: Recently created category displays");
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_NO, title));			
+			
+		log.info ("Post-precondition: Delete categpories that has been created");
+		categoryManagerPage.deleteCategory(driver, Constant.SEARCH_STATUS_YES, title);
+		
+		log.info ("Post-precondition: Log out Joomla");
+		categoryManagerPage.logoutJoomla(driver);
+	}
+	
+	@AfterClass
+	public void CLEAN() {
+		
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects*/
+	WebDriver driver;
+	LoginPageAction loginPage;
+	CategoryPageAction categoryPage;
+	CategoryManagerPageAction categoryManagerPage;
+	JsonHelper json;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+
+	/* Test Case Variables */
+	String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_002", "title") + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String status = CommonActions.readDataFromJson("JoomlaCategory_002", "status");
+	String access = CommonActions.readDataFromJson("JoomlaCategory_002", "access");
+	String language = CommonActions.readDataFromJson("JoomlaCategory_002", "language");
+	String expectedPublishMessage = "1 category successfully published.";	                                           
+	String expectedUnpublishMessage = "1 category successfully unpublished.";
+	String expectedSaveMessage = "Category successfully saved.";
+}

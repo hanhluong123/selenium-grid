@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" parallel="tests" thread-count="10">
+	<listeners>
+		<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+	<test name="FirefoxTestTuan">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<class name="category.JoomlaCategory_001"></class>
+			<class name="category.JoomlaCategory_002"></class>
+			<class name="category.JoomlaCategory_003"></class>
+			<class name="category.JoomlaCategory_004"></class>
+			
+		</classes>
+	</test>
+	
+	<!-- <test name="FirefoxTestTuan">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<class name="zDraft.tuan"></class>
+			<class name="bannerclient.JoomlaBannerClient_002"></class>
+		</classes>
+	</test> -->
+</suite>

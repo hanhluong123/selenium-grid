@@ -1,0 +1,310 @@
+package pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import joomla.AbstractPage;
+import joomla.CategoryManagerPage;
+import pages.AbstractPageAction;
+import common.AbstractTest;
+import common.Constant;
+
+public class CategoryManagerPageAction extends AbstractPageAction {
+
+	WebDriver driver;
+	AbstractTest abstractTest = new AbstractTest();
+
+	public CategoryManagerPageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	/**
+	 * Change status icon of any item in table
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param typeOfStatus
+	 */
+
+	public void changeCategoryStatus(WebDriver driver, String title, String typeOfStatus) {
+		selectAnCategory(driver, title);
+		click(driver, By.xpath(String.format(CategoryManagerPage.dynamiciconCategoryStatus, title, typeOfStatus)));
+	}
+
+	/**
+	 * Check on/off the recently added item's checkbox
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+
+	public void selectAnCategory(WebDriver driver, String title) {
+		String alias = title.toLowerCase().trim().replace(":", "-").replace(" ", "-").replace("--", "-");
+		dependableWaitForControl(driver, By.xpath(String.format(CategoryManagerPage.dynamicCategoryRow, alias, title)), Constant.LONG_TIME);
+		click(driver, By.xpath(String.format(CategoryManagerPage.dynamicCategorychkRow, alias, title)));
+		sleep(1);
+	}
+	
+	/**
+	 * select An Child Category that belongs to another parent category
+	 * @param driver
+	 * @param title
+	 */
+	public void selectAnCategory(WebDriver driver, String title, String alias) {
+		String aliasConvert = alias.toLowerCase().trim().replace(":", "-").replace(" ", "-").replace("--", "-");
+		dependableWaitForControl(driver, By.xpath(String.format(CategoryManagerPage.dynamicCategoryRow, aliasConvert, title)), Constant.LONG_TIME);
+		click(driver, By.xpath(String.format(CategoryManagerPage.dynamicCategorychkRow, aliasConvert, title)));
+		sleep(1);
+	}
+	
+	public void selectAnCategory(WebDriver driver, String childTitle, String alias, String parentTitle) {
+		String parentAlias = parentTitle.toLowerCase().trim().replace(":", "-").replace(" ", "-").replace("--", "-");
+		String aliasFinal;
+		if (alias != null) {
+			String aliasConvert = alias.toLowerCase().trim().replace(":", "-").replace(" ", "-").replace("--", "-");
+			aliasFinal= parentAlias + "/" + aliasConvert;
+		}
+		else {
+			String aliasConvert = childTitle.toLowerCase().trim().replace(":", "-").replace(" ", "-").replace("--", "-");
+			aliasFinal= parentAlias + "/" + aliasConvert;
+		}
+		dependableWaitForControl(driver, By.xpath(String.format(CategoryManagerPage.dynamicCategoryRow, aliasFinal, childTitle)), Constant.LONG_TIME);
+		click(driver, By.xpath(String.format(CategoryManagerPage.dynamicCategorychkRow, aliasFinal, childTitle)));
+		sleep(1);
+	}
+	
+	/**
+	 * select multiple categories
+	 * @param driver
+	 * @param title
+	 */
+	public void selectCategories(WebDriver driver, String title1, String title2) {
+		clearSearchTools(driver);
+		selectNumberOfCategoryDisplay(driver, "All",true);
+		selectAnCategory(driver, title1);
+		selectAnCategory(driver, title2);
+	}
+	
+
+	/**
+	 * Search for a title
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+
+	public void searchCategoryByTitle(WebDriver driver, String title) {
+		enterText(driver, CategoryManagerPage.txtCategorySearch, title);
+		click(driver, CategoryManagerPage.btnCategorySearch);
+		sleep(1);
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param searchStatus
+	 * @param title
+	 */
+	public void deleteCategory(WebDriver driver, String title, boolean searchOption) {
+//		clearSearchTools(driver);
+		if (searchOption) {
+			searchCategoryByTitle(driver, title);
+		}
+		selectAnCategory(driver, title);
+		click(driver, AbstractPage.btnTrash);
+	} 
+	
+	/**
+	 * delete Child Category that belongs to another parent category
+	 * @param driver
+	 * @param searchStatus
+	 * @param title
+	 */
+	public void deleteCategory(WebDriver driver, String title, String alias, boolean searchOption) {
+//		clearSearchTools(driver);
+		if (searchOption) {
+			searchCategoryByTitle(driver, title);
+		}
+		selectAnCategory(driver, title, alias);
+		click(driver, AbstractPage.btnTrash);
+	}
+	
+	public void deleteCategory(WebDriver driver, String childTitle, String alias, String parentTitle, boolean searchOption) {
+//		clearSearchTools(driver);
+		if (searchOption) {
+			searchCategoryByTitle(driver, childTitle);
+		}
+		selectAnCategory(driver, childTitle, alias, parentTitle);
+		click(driver, AbstractPage.btnTrash);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 */
+	public void openCategory(WebDriver driver, String title) {
+		click(driver, By.linkText(title));
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param typeSort
+	 */
+
+	public void sortCategoryByID(WebDriver driver, String typeSort) {
+		String typeSortInDropdownlist = driver.findElement(CategoryManagerPage.ddlSortCategoryByID).getText();
+		if (typeSortInDropdownlist != typeSort) {
+			click(driver, CategoryManagerPage.btnSortCategoryByID);
+		}
+	}
+	
+	/**
+	 * Select item of the 'Display' dropdown list at the footer section of the
+	 * table
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 */
+
+	public void selectNumberOfCategoryDisplay(WebDriver driver, String numberOfItems) {
+		String currentNumberOfItemDisplay = driver.findElement(CategoryManagerPage.ddlNumberCategoryDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			selectDropDownList(driver, CategoryManagerPage.ddlNumberCategoryDisplay, numberOfItems,"exact");
+		}
+	} 
+	
+	/**
+	 * Select Number Of Category Display by using filter feature
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 * @param performSearch
+	 */
+	public void selectNumberOfCategoryDisplay(WebDriver driver, String numberOfItems, boolean performSearch) {
+		String currentNumberOfItemDisplay = driver.findElement(CategoryManagerPage.ddlNumberCategoryDisplay).getText();
+		if (numberOfItems != currentNumberOfItemDisplay) {
+			selectDropDownList(driver, CategoryManagerPage.ddlNumberCategoryDisplay, numberOfItems, performSearch);
+		}
+	} 
+	
+	/**
+	 * Verify category is displayed on the categorys table
+	 * 
+	 * @param driver
+	 * @param searchStatus
+	 * @param title
+	 * @return
+	 */
+
+	public boolean verifyCategoryDisplayed(WebDriver driver, String searchStatus, String title) {
+		if (searchStatus.toLowerCase().equals("yes")) {
+			searchCategoryByTitle(driver, title);
+		}
+		return (isControlDisplayed(driver, By.xpath(String.format(CategoryManagerPage.dynamiclnkCategory, title))));
+	}
+
+	/**
+	 * Verify status icon of of any item in table
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param typeOfStatus
+	 * @return
+	 */
+
+	public boolean verifyStatusOfCategory(WebDriver driver, String title, String typeOfStatus) {
+		return (isControlDisplayed(driver, By.xpath(String.format(CategoryManagerPage.dynamiciconCategoryStatus, title, typeOfStatus))));
+	}
+
+	/**
+	 * The first item changes its position with the second item after ordering
+	 * 
+	 * @param driver
+	 * @param firstIem
+	 * @param secondItem
+	 * @return
+	 */
+
+	public boolean verifyCategorySortInOrdering(WebDriver driver, String firstIem, String secondItem) {
+		selectNumberOfCategoryDisplay(driver, "All");
+		int firstIndex = getIndexOfTitle(driver, firstIem);
+		int secondIndex = getIndexOfTitle(driver, secondItem);
+		clickHeaderLinkOfOrdering(driver);
+		int firstIndex1 = getIndexOfTitle(driver, firstIem);
+		int secondIndex1 = getIndexOfTitle(driver, secondItem);
+		if (firstIndex > secondIndex) {
+			if (firstIndex1 < secondIndex1) {
+				return true;
+			}
+			return false;
+		}
+		if (firstIndex1 > secondIndex1) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Verify items in table are paging correctly
+	 * 
+	 * @param driver
+	 * @param numberOfItems
+	 * @return
+	 */
+
+	public boolean verifyCategoryPagingCorrectly(WebDriver driver, String numberOfItems) {
+		WebElement table = driver.findElement(AbstractPage.tblTable);
+		List<WebElement> rows = table.findElements(AbstractPage.rowsTable);
+		int numberOfRows = rows.size() - 2;
+
+		if (!numberOfItems.equals("All")) {
+			int numberOfItems1 = Integer.parseInt(numberOfItems);
+			if (isControlDisplayed(driver, CategoryManagerPage.btnCategoryEndPage)) {
+				if (numberOfRows != numberOfItems1) {
+					return false;
+				} 
+				return true;
+			} else if (numberOfItems1 >= numberOfRows) {
+				return true;
+			}
+			return false;
+		} else {
+			selectNumberOfCategoryDisplay(driver, "5",true);
+			if (isControlDisplayed(driver, CategoryManagerPage.btnCategoryEndPage)) {
+				click(driver, CategoryManagerPage.btnCategoryEndPage);
+				int numberOfPage = Integer.parseInt(driver.findElement(CategoryManagerPage.btnCategoryNumberEndPage).getText());
+				WebElement tableEndPAge = driver.findElement(AbstractPage.tblTable);
+				List<WebElement> rowsEndPage = tableEndPAge.findElements(AbstractPage.rowsTable);
+				int numberOfItemsInEndPage = rowsEndPage.size() - 2;
+				int totalOfItems = 5 * (numberOfPage - 1) + numberOfItemsInEndPage;
+				if (totalOfItems != numberOfRows) {
+					return false;
+				}
+
+				return true;
+			}
+
+			else if (numberOfRows <= 5) {
+				return true;
+			}
+
+			return false;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param title
+	 * @param checkinstatus
+	 * @return
+	 */
+	public boolean isCheckoutIConDisplayed(WebDriver driver, String title, String checkinstatus){
+		return(isControlDisplayed(driver, By.xpath(String.format(CategoryManagerPage.dynamicbtnCheckoutStatus, title, checkinstatus))));
+	}
+}

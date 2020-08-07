@@ -1,0 +1,168 @@
+package common;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AutomationActions {
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 * @param value
+	 */
+	
+	public void enterText(WebDriver driver, By control, String value) {
+		waitForControl(driver, control, Constant.LONG_TIME);
+		WebElement element = driver.findElement(control);
+		element.clear();
+		element.sendKeys(value);
+
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 * @param value
+	 */
+	
+	public void select(WebDriver driver, By control, String value) {
+		WebElement element = driver.findElement(control);
+		Select oSelect = new Select(element);
+		oSelect.deselectByValue(value);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 */
+	
+	public void click(WebDriver driver, By control) {
+		waitForControl(driver, control, Constant.LONG_TIME);
+		WebElement element = driver.findElement(control);
+		element.click();
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param Control
+	 * @param Value
+	 * @param option
+	 */
+
+	public void selectDropDownList(WebDriver driver, By Control, String Value, String option) {
+		if (Value != null) {
+			WebElement element = driver.findElement(Control);
+			click(driver, Control);
+			WebElement element2 = null;
+			if (option == "exact") {
+				element2 = element.findElement(By.xpath("./following-sibling::div//li[(text()='" + Value + "')]"));
+			} else if (option == "contains") {
+				element2 = element
+						.findElement(By.xpath("./following-sibling::div//li[contains(text(),'" + Value + "')]"));
+			}
+			element2.click();
+		}
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param Control
+	 * @param Value
+	 */
+
+	public void selectDropDownList(WebDriver driver, By Control, String Value) {
+		if (Value != null) {
+			WebElement element = driver.findElement(Control);
+			element.click();
+
+			WebElement element2 = element.findElement(By.xpath("./following-sibling::div//li[contains(text(),'" + Value + "')]"));
+			element2.click();
+		}
+	}
+
+	/**
+	 * Switch iframe by element
+	 * 
+	 * @param driver
+	 * @param control
+	 */
+
+	public void switchIFrame(WebDriver driver, By control) {
+		WebElement fr = driver.findElement(control);
+		driver.switchTo().frame(fr);
+	}
+
+	/**
+	 * Switch iframe by ID or Name
+	 * 
+	 * @param driver
+	 * @param id
+	 */
+
+	public void switchIFrame(WebDriver driver, String id) {
+		driver.switchTo().frame(id);
+	}
+
+	/**
+	 * Switch back from iframe
+	 * 
+	 * @param driver
+	 */
+	
+	public void switchbackWindow(WebDriver driver) {
+		driver.switchTo().defaultContent();
+	}
+
+	/**
+	 * 
+	 * @param seconds
+	 */
+	public static void sleep(int seconds) {
+		try {
+			Thread.sleep(seconds * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 * @param timeWait
+	 * @return 
+	 */
+
+	public static void waitForControl(WebDriver driver, By control, int timeWait) {
+		WebDriverWait wait = new WebDriverWait(driver, timeWait);
+		WebElement element = driver.findElement(control);
+		sleep(1);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param control
+	 */
+
+	public void hoverOverElement(WebDriver driver, By control) {
+		WebElement button = driver.findElement(control);
+		Actions builder = new Actions(driver);
+		builder.moveToElement(button).build().perform();
+		sleep(Constant.SHORT_TIME);
+	}
+
+}

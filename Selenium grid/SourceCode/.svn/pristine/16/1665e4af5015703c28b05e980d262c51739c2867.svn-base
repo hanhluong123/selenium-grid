@@ -1,0 +1,170 @@
+package article;
+
+import org.openqa.selenium.WebDriver;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.Constant;
+import common.CommonActions;
+import pages.LoginPageAction;
+import pages.ArticleManagerPageAction;
+import pages.ArticlePageAction;
+
+public class JoomlaArticle_001 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void SETUP(String browser, String ip, String port) {
+			
+		driver = openBrowser(driver, browser, ip, port);
+		navigateBrowser(driver, url);
+ 
+		loginPage = new LoginPageAction(driver);
+		loginPage.loginToJoomla(driver, username, password);
+
+		articlePage = new ArticlePageAction(driver);
+		articleManagerPageAction = new ArticleManagerPageAction(driver);
+
+	}
+
+	@Test
+	public void TC_JOOMLA_ARTICLE_001() {
+
+		log.info("Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Content > Articles");
+		articlePage.selectMenuItems2(driver, "Content", "Articles");
+		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Enter value on 'Article Text' text area");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");
+		articlePage.addNewArticle(driver, title, category, status, access, articleText, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP: Verify the article is saved successfully");
+		verifyTrue(articlePage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		verifyTrue(articleManagerPageAction.verifyArticleDisplayed(driver, Constant.SEARCH_STATUS_YES, title));
+
+	}
+
+	
+	@Test(dependsOnMethods = { "TC_JOOMLA_ARTICLE_001" })
+	public void TC_JOOMLA_ARTICLE_002() {
+		
+		log.info("Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Content > Articles");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' text field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Enter value on 'Article Text' text area");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("VP 11: Verify the article is saved successfully");
+		log.info("Step 12: Select Content > Articles");
+		log.info("Step 13: Check on the recently added article's checkbox");
+		log.info("Step 14: Click on 'Edit' icon of the top right toolbar");
+		log.info("Step 15: Enter a new title on 'Title' text field");
+		log.info("Step 16: Select a new item from the 'Category' dropdown list");
+		log.info("Step 17: Enter value on 'Article Text' text area");
+		log.info("Step 18: Click on 'Save & Close' icon of the top right toolbar");
+		articleManagerPageAction.editNewArticle(driver, title, titleUpdate, categoryUpdate, null, articleTextUpdate, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP 19: Verify the article is saved successfully");
+		verifyTrue(articlePage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		verifyTrue(articleManagerPageAction.verifyArticleDisplayed(driver, Constant.SEARCH_STATUS_YES, titleUpdate));
+	}
+
+
+	@Test(dependsOnMethods = { "TC_JOOMLA_ARTICLE_002" })
+	public void TC_JOOMLA_ARTICLE_010() {
+		
+		log.info("Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Content > Articles");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' text field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Select an item from the 'Access' dropdown list");
+		log.info("Step 11: Enter value on 'Article Text' text area");
+		log.info("Step 12: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("VP 13: Verify the article is saved successfully");
+		log.info("Step 14: Select an item from the 'Status' filter dropdown list");
+		log.info("Step 15: Select an item from the 'Category' filter dropdown list");
+		log.info("Step 16: Select an item from the 'Access' filter dropdown list");
+		log.info("Step 17: Select an item from the 'Author' filter dropdown list");
+		articlePage.selectSearchTools(driver, status, categoryUpdate, access, username, null, null, null);
+		
+		log.info("VP 18: Verify the property of displayed articles are matched with the selected criteria from the filter dropdown lists");
+		verifyTrue(articleManagerPageAction.verifyArticleDisplayed(driver, Constant.SEARCH_STATUS_YES, titleUpdate));
+		
+	}
+	
+	@Test(dependsOnMethods = { "TC_JOOMLA_ARTICLE_010" })
+	public void TC_JOOMLA_ARTICLE_005() {
+		
+		log.info("Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Content > Articles");
+		log.info("Step 6: Click on 'New' icon of the top right toolbar");
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Enter value on 'Article Text' text area");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("VP: Verify the article is saved successfully");
+		log.info("Step 12: Check on the recently added article's checkbox");
+		articleManagerPageAction.selectAnArticle(driver, titleUpdate);
+		
+		log.info("Step 13: Click on 'Archive' icon of the top right toolbar");
+		articlePage.clickToolbarButton(driver, Constant.ARCHIVE);
+		
+		log.info("VP1: Verify the confirm message is displayed");
+		verifyTrue(articlePage.verifyMessageDisplayed(driver, expedtedArchiveMessage));
+				
+		log.info("Step 15: Select 'Archived' item of 'Status' dropdown list");
+		articlePage.selectSearchTools(driver, "Archived", null, null, null, null, null, null);
+		
+		log.info("VP2: Verify the archived article is displayed on the table grid");
+		verifyTrue(articleManagerPageAction.verifyArticleDisplayed(driver, Constant.SEARCH_STATUS_YES, titleUpdate));
+	}
+	
+	@AfterClass
+	public void TEARDOWN() {
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects */
+	WebDriver driver;
+	LoginPageAction loginPage;
+	ArticlePageAction articlePage;
+	ArticleManagerPageAction articleManagerPageAction;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String password = CommonActions.readDataFromXML("pass");
+	String username = CommonActions.readDataFromXML("user");
+	String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaArticle_001", "title") + CommonActions.getDateTime();
+	String titleUpdate = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaArticle_001", "titleUpdate") + CommonActions.getDateTime();
+	String category = CommonActions.readDataFromJson("JoomlaArticle_001", "category");
+	String categoryUpdate = CommonActions.readDataFromJson("JoomlaArticle_001", "categoryUpdate");
+	String articleText = CommonActions.readDataFromJson("JoomlaArticle_001", "articleText");
+	String articleTextUpdate = CommonActions.readDataFromJson("JoomlaArticle_001", "articleTextUpdate");
+	String status = CommonActions.readDataFromJson("JoomlaArticle_001", "status");
+	String access = CommonActions.readDataFromJson("JoomlaArticle_001", "access");
+	String expectedSaveMessage = CommonActions.readDataFromJson("JoomlaArticle_001", "expectedSaveMessage");
+	String expedtedArchiveMessage = CommonActions.readDataFromJson("JoomlaArticle_001", "expedtedArchiveMessage");
+	
+}

@@ -1,0 +1,104 @@
+package bannerclient;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import pages.BannerClientManagerPageAction;
+import pages.BannerClientPageAction;
+import pages.LoginPageAction;
+
+public class JoomlaBannerClient_002 extends AbstractTest {
+		WebDriver driver;
+		
+		@BeforeClass
+		@Parameters({"browser", "port", "ip" })
+		public void SETUP(String browser, String port, String ip) {
+			driver = openBrowser(driver, browser, ip, port);
+			log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+			navigateBrowser(driver, url);
+			loginPage = new LoginPageAction(driver);
+			bannerClientPage = new BannerClientPageAction(driver);
+			bannerClientManagerPage = new BannerClientManagerPageAction(driver);
+		}
+		
+		@Test
+		public void TC_JOOMLA_BANNERS_CLIENTS_003(){
+			log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+			log.info("Step2: Enter valid username into Username field and valid password into Password field");
+			log.info("Step3: Click on 'Log in' button");
+			loginPage.loginToJoomla(driver, username, password);
+			
+			log.info("Step4: Select Components -> Banners -> Clients");
+			bannerClientManagerPage.selectMenuItems3(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_BANNERS, Constant.MENUITEM_CLIENTS);
+			
+			log.info("Step5: Click 'New' button in the right top corner");
+			log.info("Step6: Enter valid Client Name to Client Name textbox");
+			log.info("Step7: Enter valid Contact Name to Contact Name textbox");
+			log.info("Step8: Enter valid Contact Email to Contact Email textbox");
+			log.info("Step9: Select 'Unpublished' in Status dropdown list");
+			log.info("Step10: Click 'Save & Close' button");
+			bannerClientPage.addNewBannerClient(driver, clientname, contactname, contactemail, status_unpublished, Constant.BUTTON_SAVEANDCLOSE);
+			
+			log.info("VP: A message : 'Client successfully saved' shows and new client is created");
+			log.info("Step11: Check the Client recently created");	
+			bannerClientManagerPage.selectBannerClient(driver, clientname);
+			
+			log.info("Step12: Click 'Publish' button in the right top corner");
+			bannerClientManagerPage.clickToolbarButton(driver, Constant.BUTTON_PUBLISH);
+			
+			log.info("VP: A message : '1 client successfully published' shows and Client is published");		
+			log.info("VP1: A message : '1 client successfully published' shows.");
+			verifyTrue(bannerClientManagerPage.verifyMessageDisplayed(driver, expectedMessage_published));
+			
+			log.info("VP2: Client is published");
+			verifyTrue(bannerClientManagerPage.verifyStatusOfBannerClient(driver, clientname, Constant.ICON_PUBLISH));
+}
+		
+		@Test(dependsOnMethods = {"TC_JOOMLA_BANNERS_CLIENTS_003"})
+		public void TC_JOOMLA_BANNERS_CLIENTS_004(){
+			log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+			log.info("Step2: Enter valid username into Username field and valid password into Password field");
+			log.info("Step3: Click on 'Log in' button");
+			log.info("Step4: Select Components -> Banners -> Clients");
+			log.info("Step5: Click 'New' button in the right top corner");
+			log.info("Step6: Enter valid Client Name to Client Name textbox");
+			log.info("Step7: Enter valid Contact Name to Contact Name textbox");
+			log.info("Step8: Enter valid Contact Email to Contact Email textbox");
+			log.info("Step9: Click 'Save & Close' button");
+			log.info("VP: A message : 'Client successfully saved' shows and new client is created");
+			log.info("Step10: Check the Client recently created");
+			bannerClientManagerPage.selectBannerClient(driver, clientname);
+			
+			log.info("Step11: Click 'Unpublish' button in the right top corner");
+			bannerClientManagerPage.clickToolbarButton(driver, Constant.BUTTON_UNPUBLISH);
+			
+			log.info("VP: A message : '1 client successfully unpublished' shows and Client is unpublished");
+			log.info("VP1: A message : '1 client successfully unpublished' shows.");
+			verifyTrue(bannerClientManagerPage.verifyMessageDisplayed(driver, expectedMessage_unpublished));
+			
+			log.info("VP2: Client is unpublished");
+			verifyTrue(bannerClientManagerPage.verifyStatusOfBannerClient(driver, clientname, Constant.ICON_UNPUBLISH));
+		}
+		
+		/* Initialize Objects */
+
+		LoginPageAction loginPage;
+		BannerClientPageAction bannerClientPage;
+		BannerClientManagerPageAction bannerClientManagerPage;
+
+		/* Class Variables */
+		String url = CommonActions.readDataFromXML("url");
+		String username = CommonActions.readDataFromXML("user");
+		String password = CommonActions.readDataFromXML("pass");
+		String clientname = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaBannerClient_002", "title") + CommonActions.getDateTime();
+		String contactname = CommonActions.readDataFromJson("JoomlaBannerClient_002", "contactname");
+		String contactemail = CommonActions.readDataFromJson("JoomlaBannerClient_002", "contactemail");
+		String status_unpublished = CommonActions.readDataFromJson("JoomlaBannerClient_002", "status_unpublished");
+		String expectedMessage_published = CommonActions.readDataFromJson("JoomlaBannerClient_002", "expectedMessage_published");
+		String expectedMessage_unpublished = CommonActions.readDataFromJson("JoomlaBannerClient_002", "expectedMessage_unpublished");
+}

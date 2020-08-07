@@ -1,0 +1,55 @@
+package joomla;
+
+	import org.openqa.selenium.By;
+
+	public class AbstractPage {
+
+		/*====================================General=======================================*/
+		public static final By btnUserMenu = By.xpath("//li/a/div[contains(text(),'User Menu')]");
+		public static final By btnLogout = By.xpath("//a[contains(text(),'Logout')]");
+		public static final By messageContainer = By.xpath("//div[@id='system-message-container']/div/div");
+		
+		/*=====================================Menu toolbar=====================================*/
+		public static final String dynamiclnkMenuItemNote1 = "//ul[@id='menu']//*[contains(text(),'%s')]";
+		public static final String dynamiclnkMenuItemNote2 = "//li[@class='dropdown open']//li[@class='dropdown-submenu']//*[contains(text(),'%s')]";
+		public static final String dynamiclnkMenuItemNote3 = "//ul[@id='nav-empty']//a[contains(text(),'%s')]";
+		public static final String dynamiclnkSubMenu = "//ul[@id='submenu']//a[contains(text(),'%s')]";
+		
+		/*=============================Toolbar in Manager page==================================*/
+		public static final By btnNew = By.xpath("//div[@id='toolbar-new']/button");
+		public static final By btnEdit = By.xpath("//div[@id='toolbar-edit']/button");
+		public static final By btnPublish = By.xpath("//div[@id='toolbar-publish']/button");
+		public static final By btnUnpublish = By.xpath("//div[@id='toolbar-unpublish']/button");
+		public static final By btnCheckin = By.xpath("//div[@id='toolbar-checkin']/button");
+		public static final By btnTrash = By.xpath("//div[@id='toolbar-trash']/button");
+		public static final By btnArchive = By.xpath("//div[@id='toolbar-archive']/button");
+		public static final By btnBatch = By.xpath("//div[@id='toolbar-batch']/button");
+		public static final By btnHelp = By.xpath("//div[@id='toolbar-help']/button");
+		public static final By btnClear = By.xpath("//div[@id='j-main-container']//button[@data-original-title='Clear']");
+		public static final By btnSearchTools = By.xpath("//button[@data-original-title='Filter the list items.']");	
+		
+		public static final By ddlSortByID = By.xpath("//div[@id='list_fullordering_chzn']/a");
+		public static final By btnSortByID = By.xpath(".//div[@id='j-main-container']/table//following-sibling::thead/tr/descendant::a[contains(text(),'ID')]");		
+		public static final By tblTable = By.xpath("//div[@id='j-main-container']/table");
+		public static final By rowsTable = By.xpath("//div[@id='j-main-container']/table//tr");	
+		public static final By ddlStatus = By.xpath("//div[@id='filter_published_chzn']/a");
+		public static final By ddlCategory = By.xpath("//div[@id='filter_category_id_chzn']/a");
+		public static final By ddlAccess = By.xpath("//div[@id='filter_access_chzn']/a");
+		public static final By ddlAuthor = By.xpath("//div[@id='filter_author_id_chzn']/a");
+		public static final By ddlLanguage = By.xpath("//div[@id='filter_language_chzn']/a");
+		public static final By ddlTag = By.xpath("//div[@id='filter_tag_chzn']/a");
+		public static final By ddlMaxLevels = By.xpath("//div[@id='filter_level_chzn']/a");
+		public static final By btnOrdering = By.xpath("//div[@id='j-main-container']//span[@class='icon-menu-2']");
+		
+		/*=====================================Dynamic Elements=================================*/;
+		public static final String dynamiclnkAccess = "//div[@id='j-main-container']//a[contains(text(),'%s')]/ancestor::td/following-sibling::td[contains(text(),'%s')]";
+	
+		/*==========================Toolbar in Create Article/Edit Article page=====================*/
+		public static final By btnSave = By.xpath("//div[@id='toolbar-apply']/button");
+		public static final By btnSaveClose = By.xpath("//div[@id='toolbar-save']/button");
+		public static final By btnSaveNew = By.xpath("//div[@id='toolbar-save-new']/button");
+		public static final By btnSaveAsCopy = By.xpath("//div[@id='toolbar-save-copy']/button");
+		public static final By btnClose = By.xpath("//div[@id='toolbar-cancel']/button");
+		public static final By btnCancel = By.xpath("//div[@id='toolbar-cancel']/button");
+
+	}

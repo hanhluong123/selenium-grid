@@ -1,0 +1,81 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import common.Constant;
+import pages.AbstractPageAction;
+
+import joomla.ContactPage;
+
+public class ContactPageAction extends AbstractPageAction{
+	
+	WebDriver driver;
+	
+	public ContactPageAction (WebDriver driver){
+		this.driver = driver;
+	}
+	
+	/**
+	 * Add new contact without Status field
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+	
+	public void addNewContact (WebDriver driver, String name, String category, String button){
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		clickToolbarButton (driver, button);
+		
+	}
+	
+	/**
+	 * Add new contact with Status field
+	 * @param driver
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+		
+	public void addNewContact (WebDriver driver, String name, String category, String status, String button){
+		clickToolbarButton(driver, Constant.BUTTON_NEW);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		selectDropDownList(driver, ContactPage.ddlContactStatus, category, "contains");
+		clickToolbarButton (driver, button);
+		
+	}
+	
+	/**
+	 * Edit an existing contact without editing Status field
+	 * @param driver
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+	
+	public void editNewContact (WebDriver driver, String name, String category, String button){
+		clickToolbarButton(driver, Constant.BUTTON_EDIT);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		clickToolbarButton (driver, button);
+		
+	}
+	
+	/**
+	 * Edit an existing contact with editing Status field
+	 * @param driver
+	 * @param name
+	 * @param category
+	 * @param button
+	 */
+	public void editNewContact (WebDriver driver, String name, String category, String status, String button){
+		clickToolbarButton(driver, Constant.BUTTON_EDIT);
+		enterText(driver, ContactPage.txtContactName, name);
+		selectDropDownList(driver, ContactPage.ddlContactCategory, category, "contains");
+		selectDropDownList(driver, ContactPage.ddlContactStatus, category, "contains");
+		clickToolbarButton (driver, button);
+		
+	}
+}

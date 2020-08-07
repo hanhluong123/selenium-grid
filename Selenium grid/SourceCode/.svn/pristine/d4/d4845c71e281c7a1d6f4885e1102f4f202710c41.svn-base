@@ -1,0 +1,182 @@
+package category;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import pages.LoginPageAction;
+import pages.CategoryPageAction;
+import pages.BatchProcessAction;
+import pages.CategoryManagerPageAction;
+import pages.HelpPageAction;
+
+public class JoomlaCategory_003 extends AbstractTest {
+	WebDriver driver;
+
+	@BeforeClass
+	@Parameters({ "browser", "port", "ip" })
+	public void SETUP(String browser, String port, String ip) {
+		
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		categoryPage = new CategoryPageAction(driver);
+		categoryManagerPage = new CategoryManagerPageAction (driver);
+		helpPage = new HelpPageAction(driver);
+		batchProcessDialog = new BatchProcessAction(driver);
+		
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+	}
+
+	@Test(description = "Verify that user can browse 'New Category help' page")
+	public void RUN_01_TC_JOOMLA_CATEGORY_011() {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		categoryPage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_CATEGORIES);
+		
+		log.info("Step 5: Click 'New' button in the right top corner");
+		categoryPage.clickToolbarButton(driver, Constant.BUTTON_NEW);
+		
+		log.info("Step 6: Click 'Help' button in the right top corner");
+		categoryPage.clickToolbarButton(driver, Constant.BUTTON_HELP);
+		
+		log.info("VP 7: New Categor help' page appears");
+		verifyTrue(helpPage.verifyHelpPageDisplayed(driver, Constant.TITLE_HELP));
+	}
+	
+	@Test(description= "Verify that user can create many categories by using 'Save & New' button")
+	public void RUN_02_TC_JOOMLA_CATEGORY_010() {
+	
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 5: Select Content -> Categories ");
+		log.info("Step 6: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 8: Click 'Save & New' button");
+		categoryPage.editCurrentCategory(driver, categoryTitle, Constant.BUTTON_SAVEANDNEW);
+		
+		log.info("VP 9: A message : 'Category successfully saved' shows");
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 10: Click 'Save & Close' button");
+		categoryPage.editCurrentCategory(driver, categoryTitleNew, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP 11: A message : 'Category successfully saved' shows and two new categories are created");
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, categoryTitle));
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, categoryTitleNew));
+	}
+
+	@Test(description = "Verify that user can change access level to many categories")
+	public void RUN_03_TC_JOOMLA_CATEGORY_016() {
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Check many categories");
+		categoryManagerPage.clearSearchTools(driver);
+		categoryManagerPage.selectCategories(driver, categoryTitle, categoryTitleNew);
+		
+		log.info("Step 6: Click Batch button");		
+		log.info("Step 7: Select Access level in Access level dropdown list in the left bottom");
+		log.info("Step 8: Click 'Process' button");
+		batchProcessDialog.setBatchProcess(null, access, null, null, null);
+		
+		log.info("VP 9: The access level of these selected articles are changed");
+		categoryManagerPage.verifyAccessOfCategory(driver, categoryTitle, access);
+		categoryManagerPage.verifyAccessOfCategory(driver, categoryTitleNew, access);
+		
+	}
+	@Test(description = "Verify that user can copy may categories to another parent category")
+	public void RUN_04_TC_JOOMLA_CATEGORY_015() {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Check many categories");
+		categoryManagerPage.clearSearchTools(driver);
+		categoryManagerPage.selectCategories(driver, categoryTitle, categoryTitleNew);
+		
+		log.info("Step 6: Click Batch button");
+		log.info("Step 7: Select destination category in Category dropdown list in the left bottom");
+		log.info("Step 8: Check 'Copy' radio button");
+		log.info("Step 9: Click 'Process' button");
+		batchProcessDialog.setBatchProcess(null, null, destinationCategory, copyOption, null);
+		
+		log.info("VP 10: Selected categories are copied to destination category");
+		verifyTrue(categoryManagerPage.verifyCategoryContent(driver, categoryTitle, destinationCategory));
+		verifyTrue(categoryManagerPage.verifyCategoryContent(driver, categoryTitleNew, destinationCategory));
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, categoryTitle));
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, categoryTitleNew));
+		
+		log.info ("Post-condition: Delete categpories that has been created");
+		categoryManagerPage.deleteCategory(driver,  categoryTitle, null, destinationCategory, true, true);
+		categoryManagerPage.deleteCategory(driver,  categoryTitleNew, null, destinationCategory, true, true);
+		
+	}
+	@Test(description = "Verify that user can move may categories to another parent category")
+	public void RUN_05_TC_JOOMLA_CATEGORY_014() {
+
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Check many categories");
+		categoryManagerPage.clearSearchTools(driver);
+		categoryManagerPage.selectCategories(driver, categoryTitle, categoryTitleNew);
+		
+		log.info("Step 6: Click Batch button");
+		log.info("Step 7: Select destination category in Category dropdown list in the left bottom");
+		log.info("Step 8: Check 'Move' radio button");
+		log.info("Step 9: Click 'Process' button");
+		batchProcessDialog.setBatchProcess(null, null, destinationCategory, moveOption, null);
+		
+		log.info("VP 10: Selected categories are moved to destination category");
+		verifyTrue(categoryManagerPage.verifyCategoryContent(driver, categoryTitle, destinationCategory));
+		verifyTrue(categoryManagerPage.verifyCategoryContent(driver, categoryTitleNew, destinationCategory));
+//		verifyFalse(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, categoryTitle));
+//		verifyFalse(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, categoryTitleNew));
+
+		log.info ("Post-condition: Delete categpories that has been created");
+		categoryManagerPage.deleteCategory(driver, categoryTitle, null, destinationCategory, true, true);
+		categoryManagerPage.deleteCategory(driver, categoryTitleNew, null, destinationCategory, true, true);
+	}
+	
+	@AfterClass
+	public void CLEAN() {
+		closeBrowser(driver);
+	}
+
+	/* Initialize Objects */
+
+	LoginPageAction loginPage;
+	CategoryPageAction categoryPage;
+	CategoryManagerPageAction categoryManagerPage;
+	HelpPageAction helpPage;
+	BatchProcessAction batchProcessDialog;
+
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("urlBap");
+	String password = CommonActions.readDataFromXML("pass");
+	String username = CommonActions.readDataFromXML("user");
+	String categoryTitle = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_003", "categoryTitle") + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String categoryTitleNew = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_003", "categoryTitleNew") + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String destinationCategory = CommonActions.readDataFromJson("JoomlaCategory_003", "destinationCategory");
+	String moveOption = CommonActions.readDataFromJson("JoomlaCategory_003", "moveOption");
+	String copyOption = CommonActions.readDataFromJson("JoomlaCategory_003", "copyOption");
+	String access = CommonActions.readDataFromJson("JoomlaCategory_003", "access");
+	String language = CommonActions.readDataFromJson("JoomlaCategory_003", "language");
+	String expectedSaveMessage = "Category successfully saved.";
+	
+}

@@ -1,0 +1,13 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class BatchProcessDialog {
+	public static final By dllLanguage = By.xpath("//div[@id='batch_language_id_chzn']/a");
+	public static final By dllAccess = By.xpath("//div[@id='batch_access_chzn']/a");
+	public static final By dllCategory = By.xpath("//div[@id='batch_category_id_chzn']/a");
+	public static final By rdoCopy = By.xpath("//input[@id='batch[move_copy]c']");
+	public static final By rdoMove = By.xpath("//input[@id='batch[move_copy]m']");
+	public static final By dllTag = By.xpath("//div[@id='batch_tag_id_chzn']/a");
+	public static final By btnProcess= By.xpath("//button[@class='btn btn-success']");
+}

@@ -1,0 +1,67 @@
+package common;
+
+import org.openqa.selenium.WebDriver;
+
+public class Constant{
+
+		/*===============Menu Bar level 1===============*/
+		public static final String MENUITEM_EXTENSIONS = "Extensions";
+		public static final String MENUITEM_LANGUAGES = "Language(s)";
+		public static final String MENUITEM_HELP = "Help";
+		public static final String MENUITEM_CONTENT = "Content";
+		public static final String MENUITEM_COMPONENTS = "Components";
+		
+		/*===============Menu Bar level 2===============*/
+		public static final String MENUITEM_ARTICLES = "Articles";
+		public static final String MENUITEM_WEBLINKS = "Weblinks";
+		
+		
+		/*=================Button name==================*/
+		public static final String BUTTON_NEW = "New";
+		public static final String BUTTON_EDIT = "Edit";
+		public static final String BUTTON_CHECKIN = "CheckIn";
+		public static final String BUTTON_TRASH= "Trash";
+		public static final String BUTTON_SAVEANDCLOSE = "SaveAndClose";
+		public static final String BUTTON_SAVE = "Save";
+		
+		
+		/*==============Icon status value===============*/
+		public static final String ICON_PUBLISH = "icon-publish";
+		public static final String ICON_UNPUBLISH = "icon-unpublish";
+		public static final String ICON_FEATURED = "icon-featured";
+		public static final String ICON_UNFEATURED = "icon-unfeatured";
+		public static final String ICON_CHECKOUT = "icon-checkedout";
+		
+		/*==============Access level value==============*/
+		public static final String ACCESS_PUBLIC = "Public";
+		public static final String ACCESS_GUEST = "Guest";
+		public static final String ACCESS_REGISTERED = "Registered";
+		public static final String ACCESS_SPECIAL = "Special";
+		public static final String ACCESS_SUPERUSERS = "Super Users";
+		
+		/*===================Sort value=================*/
+		public static final String SORT_ASCENDING = "ID ascending";
+		public static final String SORT_DESCENDING = "ID descending";
+		
+		/*====================Files=====================*/
+		public static final String JSON_FILE = "src\\Resources\\test.data.json";
+		public static final String XML_FILE = "src\\Resources\\automation.configuration.xml";
+		
+		
+		/*==================Title pages=================*/
+		public static final String TITLE_HELP = "Joomla! Help Screens";
+		
+
+		/*====================General===================*/
+		public static final String TEAM_PREFIX = "Team 1: ";
+		public static final String UPDATE_TEAM_PREFIX = "Update_Team 1: ";
+		public static final String SEARCH_STATUS_YES = "YES";
+
+		/*=====================Time=====================*/
+		public static final Integer SHORT_TIME = 5;
+		public static final Integer LONG_TIME = 8;
+		
+		/*=====================WebDriver=====================*/
+		public static WebDriver driver = null;
+
+}

@@ -1,0 +1,141 @@
+package common;
+
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import common.CommonActions;
+import common.AutomationActions;
+
+public class BrowserManagement {
+
+	/**
+	 * 
+	 * @param driver
+	 * @param browser
+	 * @param ip
+	 * @param port
+	 * @return
+	 */
+
+	public WebDriver openBrowser(WebDriver driver, String browser, String ip, String port) {
+		String grid = CommonActions.readDataFromXML("runmode/grid");
+		String saucelab = CommonActions.readDataFromXML("runmode/saucelab");
+		try {
+			if (saucelab.equals("no")) {
+				if (grid.equals("no")) {
+					if (browser.equals("ie")) {
+						System.setProperty("webdriver.ie.driver", "driver\\IEDriverServer.exe");
+						DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
+						ieCapabilities.setCapability(InternetExplorerDriver.ENABLE_PERSISTENT_HOVERING, false);
+						ieCapabilities.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, false);
+						driver = new InternetExplorerDriver(ieCapabilities);
+					} else if (browser.equals("chrome")) {
+						System.setProperty("webdriver.chrome.driver", "driver\\chromedriver.exe");
+						driver = new ChromeDriver();
+					} else
+						driver = new FirefoxDriver();
+				} else if (grid.equals("yes")) {
+					String Node = "http://" + ip + ":" + port + "/wd/hub";
+					if (browser.equals("chrome")) {
+						System.setProperty("webdriver.chrome.driver", "driver\\chromedriver.exe");
+						DesiredCapabilities capability = DesiredCapabilities.chrome();
+						capability.setBrowserName("chrome");
+						driver = new RemoteWebDriver(new URL(Node), capability);
+					}
+	
+					else if (browser.equals("ie")) {
+						System.setProperty("webdriver.ie.driver", "driver\\IEDriverServer.exe");
+						DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+					    capability.setCapability(InternetExplorerDriver.ENABLE_PERSISTENT_HOVERING, false);
+					    capability.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, false);
+//						capability.setBrowserName("internetExplorer");
+						capability.setBrowserName("internet explorer");
+						driver = new RemoteWebDriver(new URL(Node), capability);
+	
+					} else {
+						new DesiredCapabilities();
+						DesiredCapabilities capability = DesiredCapabilities.firefox();
+						capability.setBrowserName("firefox");
+						driver = new RemoteWebDriver(new URL(Node), capability);
+					}
+				}
+			}
+			else {
+				String sauceUser = CommonActions.readDataFromXML("runmode/saucelabUser");
+				String sauceKey = CommonActions.readDataFromXML("runmode/saucelabKey");
+				String saucelabURL = "http://" + sauceUser + ":" + sauceKey + "@ondemand.saucelabs.com:80/wd/hub";
+				DesiredCapabilities capability = new DesiredCapabilities();
+				capability.setCapability(CapabilityType.BROWSER_NAME, browser);
+				capability.setCapability(CapabilityType.PLATFORM, ip);
+				capability.setCapability(CapabilityType.VERSION, port);
+				capability.setCapability("name", " (" + ip + "-" + browser + " " + port + ")");
+				capability.setCapability("idleTimeout", 3600);
+				capability.setCapability("maxDuration", 3600);
+				try {
+					driver = new RemoteWebDriver(new URL(saucelabURL), capability);
+					Constant.sessionID = (((RemoteWebDriver) driver).getSessionId()).toString();
+			        
+				} catch (MalformedURLException e) {
+					e.printStackTrace();
+				}
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		driver.manage().timeouts().implicitlyWait(Constant.LONG_TIME, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		Constant.driver = driver;
+		return driver;
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 * @param url
+	 */
+	
+	public void navigateBrowser(WebDriver driver, String url) {
+		driver.get(url);
+	}
+
+	/**
+	 * 
+	 * @param driver
+	 */
+	
+	public void closeBrowser(WebDriver driver) {
+		driver.quit();
+		/*kill browser's driver*/
+		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+	    String browserName = cap.getBrowserName().toLowerCase();
+		try {
+		    if (browserName.equals("internet explorer")){
+		    	Runtime.getRuntime().exec("taskkill /F /IM IEDriverServer.exe");
+//		    	Runtime.getRuntime().exec("taskkill /F /IM iexplore.exe");
+		    	AutomationActions.sleep(Constant.SHORT_TIME);
+		    }
+		    else if (browserName.equals("chrome")){
+		    	Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
+		    	Runtime.getRuntime().exec("taskkill /F /IM chrome.exe");
+		    	AutomationActions.sleep(Constant.QUICK_SLEEP);
+		    }
+		    else if (browserName.equals("firefox")){
+//		    	Runtime.getRuntime().exec("taskkill /F /IM firefox.exe");
+		    	AutomationActions.sleep(Constant.QUICK_SLEEP);
+		    }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,830 @@
+<html>
+<head>
+<title>TestNG:  FirefoxTestDuyen</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>FirefoxTestDuyen</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>17/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Dec 16 11:41:34 ICT 2016</td>
+</tr>
+<tr><td>Total time:</td><td>1289 seconds (1289448 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='weblink.JoomlaWeblink_001.RUN_01_TC_JOOMLA_WEBLINKS_001()'><b>RUN_01_TC_JOOMLA_WEBLINKS_001</b><br>Test class: weblink.JoomlaWeblink_001<br>Test method: Verify user can create new weblink with valid information<br/>
+<a href="#Output-65488937" onClick='toggleBox("Output-65488937", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-65488937" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-65488937">
+2016-12-16 11:41:49,029 INFO  JoomlaWeblink_001 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-12-16 11:41:49,029 INFO  JoomlaWeblink_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:41:49,029 INFO  JoomlaWeblink_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:41:49,029 INFO  JoomlaWeblink_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:41:49,029 INFO  JoomlaWeblink_001 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:41:50,530 INFO  JoomlaWeblink_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:41:50,531 INFO  JoomlaWeblink_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:41:50,531 INFO  JoomlaWeblink_001 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:41:50,531 INFO  JoomlaWeblink_001 - Step 9: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:43:02,100 INFO  JoomlaWeblink_001 - VP1: Verify the web link is saved successfully
+<br/>
+2016-12-16 11:43:02,248 INFO  JoomlaWeblink_001 - ===PASSED===
+<br/>
+2016-12-16 11:43:02,250 INFO  JoomlaWeblink_001 - VP2: Verify Created weblink is displayed on the weblinks table
+<br/>
+2016-12-16 11:43:10,940 INFO  JoomlaWeblink_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>81</td>
+<td>weblink.JoomlaWeblink_001@6e38921c</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_002.RUN_01_TC_JOOMLA_WEBLINKS_003()'><b>RUN_01_TC_JOOMLA_WEBLINKS_003</b><br>Test class: weblink.JoomlaWeblink_002<br>Test method: Verify user can publish an unpublished web link<br/>
+<a href="#Output-1601935322" onClick='toggleBox("Output-1601935322", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1601935322" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1601935322">
+2016-12-16 11:49:24,515 INFO  JoomlaWeblink_002 - Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:49:24,516 INFO  JoomlaWeblink_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:49:24,516 INFO  JoomlaWeblink_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:49:24,516 INFO  JoomlaWeblink_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:49:24,516 INFO  JoomlaWeblink_002 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:49:25,956 INFO  JoomlaWeblink_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:49:25,957 INFO  JoomlaWeblink_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:49:25,957 INFO  JoomlaWeblink_002 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:49:25,957 INFO  JoomlaWeblink_002 - Step 9: Select 'Unpublished' item from 'Status' dropdown list
+<br/>
+2016-12-16 11:49:25,957 INFO  JoomlaWeblink_002 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:50:43,265 INFO  JoomlaWeblink_002 - VP1: Verify the web link is saved successfully
+<br/>
+2016-12-16 11:50:43,462 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+2016-12-16 11:50:51,624 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+2016-12-16 11:50:51,624 INFO  JoomlaWeblink_002 - Step 12: Check on the recently added web link's checkbox
+<br/>
+2016-12-16 11:50:57,818 INFO  JoomlaWeblink_002 - Step 13: Click on 'Publish' icon of the top right toolbar
+<br/>
+2016-12-16 11:51:30,829 INFO  JoomlaWeblink_002 - VP2: Verify the web link is published successfully
+<br/>
+2016-12-16 11:51:30,983 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+2016-12-16 11:51:31,029 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>126</td>
+<td>weblink.JoomlaWeblink_002@64d7f7e0</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_003.RUN_01_TC_JOOMLA_WEBLINKS_006()'><b>RUN_01_TC_JOOMLA_WEBLINKS_006</b><br>Test class: weblink.JoomlaWeblink_003<br>Test method: Verify user can check in a web link<br>Parameters: firefox, 8881, 192.168.189.92<br/>
+<a href="#Output-1623060829" onClick='toggleBox("Output-1623060829", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1623060829" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1623060829">
+2016-12-16 11:55:57,996 INFO  JoomlaWeblink_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-12-16 11:55:57,996 INFO  JoomlaWeblink_003 - Step3: Click on 'Log in' button
+<br/>
+2016-12-16 11:56:01,503 INFO  JoomlaWeblink_003 - Step4: Select Components > Weblinks
+<br/>
+2016-12-16 11:56:02,999 INFO  JoomlaWeblink_003 - Step5: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:56:02,999 INFO  JoomlaWeblink_003 - Step6: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:56:02,999 INFO  JoomlaWeblink_003 - Step7: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:56:02,999 INFO  JoomlaWeblink_003 - Step8: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-12-16 11:56:02,999 INFO  JoomlaWeblink_003 - Step9: Click on 'Save' icon of the top right toolbar
+<br/>
+2016-12-16 11:57:17,776 INFO  JoomlaWeblink_003 - Step10: Close the browser window
+<br/>
+2016-12-16 11:57:18,996 INFO  JoomlaWeblink_003 - Step11: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:57:18,996 INFO  JoomlaWeblink_003 - Step12: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-12-16 11:57:18,996 INFO  JoomlaWeblink_003 - Step13: Click on 'Log in' button
+<br/>
+2016-12-16 11:57:28,805 INFO  JoomlaWeblink_003 - Step14: Select Components > Weblinks
+<br/>
+2016-12-16 11:57:30,394 INFO  JoomlaWeblink_003 - Step15: Check on the recently added weblink's checkbox
+<br/>
+2016-12-16 11:57:40,792 INFO  JoomlaWeblink_003 - Step16: Click on 'Check In' icon of the top right toolbar
+<br/>
+2016-12-16 11:58:13,235 INFO  JoomlaWeblink_003 - VP: Verify the weblink is checked in successfully
+<br/>
+2016-12-16 11:58:13,235 INFO  JoomlaWeblink_003 - VP1: The '1 weblink successfully checked in' message is displayed
+<br/>
+2016-12-16 11:58:13,378 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+2016-12-16 11:58:13,378 INFO  JoomlaWeblink_003 - VP2: The lock icon next to the weblink is removed
+<br/>
+2016-12-16 11:58:16,538 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>170</td>
+<td>weblink.JoomlaWeblink_003@27c6e487</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_001.RUN_02_TC_JOOMLA_WEBLINKS_002()'><b>RUN_02_TC_JOOMLA_WEBLINKS_002</b><br>Test class: weblink.JoomlaWeblink_001<br>Test method: Verify user can edit a weblink<br/>
+<a href="#Output-1958680465" onClick='toggleBox("Output-1958680465", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1958680465" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1958680465">
+2016-12-16 11:43:10,942 INFO  JoomlaWeblink_001 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-12-16 11:43:10,942 INFO  JoomlaWeblink_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:43:10,942 INFO  JoomlaWeblink_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:43:10,943 INFO  JoomlaWeblink_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:43:10,943 INFO  JoomlaWeblink_001 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:43:10,943 INFO  JoomlaWeblink_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:43:10,943 INFO  JoomlaWeblink_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:43:10,943 INFO  JoomlaWeblink_001 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:43:10,943 INFO  JoomlaWeblink_001 - Step 9: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:43:10,943 INFO  JoomlaWeblink_001 - Step 10: Check on the recently added article's checkbox
+<br/>
+2016-12-16 11:43:17,176 INFO  JoomlaWeblink_001 - Step 11: Click on 'Edit' icon of the top right toolbar
+<br/>
+2016-12-16 11:43:17,176 INFO  JoomlaWeblink_001 - Step 12: Enter a new title on 'Title' field
+<br/>
+2016-12-16 11:43:17,176 INFO  JoomlaWeblink_001 - Step 13: Enter new valid URL into 'URL' text field
+<br/>
+2016-12-16 11:43:17,176 INFO  JoomlaWeblink_001 - Step 14: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:44:26,444 INFO  JoomlaWeblink_001 - VP1: Verify 'Weblink successfully saved' message is displayed
+<br/>
+2016-12-16 11:44:26,589 INFO  JoomlaWeblink_001 - ===PASSED===
+<br/>
+2016-12-16 11:44:26,589 INFO  JoomlaWeblink_001 - VP2: Edited weblink is displayed on the weblinks table
+<br/>
+2016-12-16 11:44:34,677 INFO  JoomlaWeblink_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>83</td>
+<td>weblink.JoomlaWeblink_001@6e38921c</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_002.RUN_02_TC_JOOMLA_WEBLINKS_004()'><b>RUN_02_TC_JOOMLA_WEBLINKS_004</b><br>Test class: weblink.JoomlaWeblink_002<br>Test method: Verify user can unpublish a published web link<br/>
+<a href="#Output-1614133563" onClick='toggleBox("Output-1614133563", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1614133563" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1614133563">
+2016-12-16 11:51:31,032 INFO  JoomlaWeblink_002 - Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:51:31,032 INFO  JoomlaWeblink_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:51:31,032 INFO  JoomlaWeblink_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:51:31,032 INFO  JoomlaWeblink_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:51:31,032 INFO  JoomlaWeblink_002 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:51:31,032 INFO  JoomlaWeblink_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:51:31,032 INFO  JoomlaWeblink_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:51:31,032 INFO  JoomlaWeblink_002 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:51:31,033 INFO  JoomlaWeblink_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-12-16 11:51:31,033 INFO  JoomlaWeblink_002 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:51:31,033 INFO  JoomlaWeblink_002 - VP 11: Verify the web link is saved successfully
+<br/>
+2016-12-16 11:51:31,033 INFO  JoomlaWeblink_002 - Step 12: Check on the recently added web link's checkbox
+<br/>
+2016-12-16 11:51:37,282 INFO  JoomlaWeblink_002 - Step 13: Click on 'Unpublish' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:10,487 INFO  JoomlaWeblink_002 - VP 14: Verify the web link is unpublished successfully
+<br/>
+2016-12-16 11:52:10,642 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+2016-12-16 11:52:10,683 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>39</td>
+<td>weblink.JoomlaWeblink_002@64d7f7e0</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_003.RUN_02_TC_JOOMLA_WEBLINKS_011()'><b>RUN_02_TC_JOOMLA_WEBLINKS_011</b><br>Test class: weblink.JoomlaWeblink_003<br>Test method: Verify user can sort the weblink table by ID column<br/>
+<a href="#Output-2113243119" onClick='toggleBox("Output-2113243119", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2113243119" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2113243119">
+2016-12-16 11:58:48,440 INFO  JoomlaWeblink_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:58:48,440 INFO  JoomlaWeblink_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-12-16 11:58:48,441 INFO  JoomlaWeblink_003 - Step3: Click on 'Log in' button
+<br/>
+2016-12-16 11:58:48,441 INFO  JoomlaWeblink_003 - Step4:Click on the Header link of ID column
+<br/>
+2016-12-16 11:58:50,394 INFO  JoomlaWeblink_003 - VP1: Verify the weblinks is sorted by ID in ascending order
+<br/>
+2016-12-16 11:58:51,360 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+2016-12-16 11:58:51,361 INFO  JoomlaWeblink_003 - Step5:Click on the Header link of ID column
+<br/>
+2016-12-16 11:58:53,187 INFO  JoomlaWeblink_003 - VP: Verify the weblinks is sorted by ID in descending order
+<br/>
+2016-12-16 11:58:54,180 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>5</td>
+<td>weblink.JoomlaWeblink_003@27c6e487</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_001.RUN_03_TC_JOOMLA_WEBLINKS_005()'><b>RUN_03_TC_JOOMLA_WEBLINKS_005</b><br>Test class: weblink.JoomlaWeblink_001<br>Test method: Verify user can move a weblink to the archive<br>Parameters: firefox, 192.168.189.92, 8881<br/>
+<a href="#Output-369347944" onClick='toggleBox("Output-369347944", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-369347944" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-369347944">
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 9: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - VP1: Verify 'Weblink successfully saved' message is displayed
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - VP2: Created weblink is displayed on the weblinks table
+<br/>
+2016-12-16 11:44:34,679 INFO  JoomlaWeblink_001 - Step 10: Check on the recently added weblink's checkbox
+<br/>
+2016-12-16 11:44:40,928 INFO  JoomlaWeblink_001 - Step 11: Click on 'Archive' icon of the top right toolbar
+<br/>
+2016-12-16 11:45:13,895 INFO  JoomlaWeblink_001 - VP3: Verify the confirm message is displayed
+<br/>
+2016-12-16 11:45:14,060 INFO  JoomlaWeblink_001 - ===PASSED===
+<br/>
+2016-12-16 11:45:14,060 INFO  JoomlaWeblink_001 - Step 12: Select 'Archived' item of 'Status' dropdown list
+<br/>
+2016-12-16 11:45:18,170 INFO  JoomlaWeblink_001 - VP4: Verify the archived web link is displayed on the table grid
+<br/>
+2016-12-16 11:45:20,155 INFO  JoomlaWeblink_001 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>45</td>
+<td>weblink.JoomlaWeblink_001@6e38921c</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_002.RUN_03_TC_JOOMLA_WEBLINKS_008()'><b>RUN_03_TC_JOOMLA_WEBLINKS_008</b><br>Test class: weblink.JoomlaWeblink_002<br>Test method: Verify user can access weblink's help section<br/>
+<a href="#Output-588449070" onClick='toggleBox("Output-588449070", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-588449070" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-588449070">
+2016-12-16 11:52:10,685 INFO  JoomlaWeblink_002 - Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:52:10,685 INFO  JoomlaWeblink_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:52:10,685 INFO  JoomlaWeblink_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:52:10,685 INFO  JoomlaWeblink_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:52:10,685 INFO  JoomlaWeblink_002 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:52:10,685 INFO  JoomlaWeblink_002 - Step 6: Click on 'Help' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:12,092 INFO  JoomlaWeblink_002 - VP: Verify the weblink's help window is displayed
+<br/>
+2016-12-16 11:52:17,007 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>weblink.JoomlaWeblink_002@64d7f7e0</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_003.RUN_03_TC_JOOMLA_WEBLINKS_012()'><b>RUN_03_TC_JOOMLA_WEBLINKS_012</b><br>Test class: weblink.JoomlaWeblink_003<br>Test method: Verify user can paging the weblinks using the paging control<br/>
+<a href="#Output-318794136" onClick='toggleBox("Output-318794136", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-318794136" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-318794136">
+2016-12-16 11:58:54,182 INFO  JoomlaWeblink_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:58:54,182 INFO  JoomlaWeblink_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-12-16 11:58:54,182 INFO  JoomlaWeblink_003 - Step3: Click on 'Log in' button
+<br/>
+2016-12-16 11:58:54,182 INFO  JoomlaWeblink_003 - Step4: Select '5' item of the 'Display' dropdown list at the footer section of the weblink table
+<br/>
+2016-12-16 11:58:58,073 INFO  JoomlaWeblink_003 - VP1: Verify the weblink table is paging into 5 weblinks per page
+<br/>
+2016-12-16 11:58:58,149 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+2016-12-16 11:58:58,149 INFO  JoomlaWeblink_003 - Step5: Select 'All' item of the 'Display' dropdown list at the footer section of the weblink table
+<br/>
+2016-12-16 11:59:02,171 INFO  JoomlaWeblink_003 - VP2: Verify all weblinks are displayed in one page
+<br/>
+2016-12-16 11:59:07,798 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>13</td>
+<td>weblink.JoomlaWeblink_003@27c6e487</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_002.RUN_04_TC_JOOMLA_WEBLINKS_009()'><b>RUN_04_TC_JOOMLA_WEBLINKS_009</b><br>Test class: weblink.JoomlaWeblink_002<br>Test method: Verify user can search for weblinks using the filter text field<br>Parameters: firefox, 192.168.189.92, 8881<br/>
+<a href="#Output-379121284" onClick='toggleBox("Output-379121284", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-379121284" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-379121284">
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 5: Select Content > Weblink Manager
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 8: Select an item from the 'Category' dropdown list
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 10: Enter value on 'Weblink Text' text area
+<br/>
+2016-12-16 11:52:17,008 INFO  JoomlaWeblink_002 - Step 11: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:17,009 INFO  JoomlaWeblink_002 - Step 12: Enter a title on 'Filter' text field
+<br/>
+2016-12-16 11:52:17,009 INFO  JoomlaWeblink_002 - Step 13: Click on 'Search' button
+<br/>
+2016-12-16 11:52:19,116 INFO  JoomlaWeblink_002 - VP: Verify the titles of displayed weblinks are partially matched with the entered keyword
+<br/>
+2016-12-16 11:52:21,046 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>4</td>
+<td>weblink.JoomlaWeblink_002@64d7f7e0</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_003.RUN_04_TC_JOOMLA_WEBLINKS_013()'><b>RUN_04_TC_JOOMLA_WEBLINKS_013</b><br>Test class: weblink.JoomlaWeblink_003<br>Test method: Verify user can add image to weblink's description<br/>
+<a href="#Output-127356954" onClick='toggleBox("Output-127356954", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-127356954" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-127356954">
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step3: Click on 'Log in' button
+<br/>
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step4: Select Components > Weblinks
+<br/>
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step5: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step6: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step7: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step8: Click on 'Image' button
+<br/>
+2016-12-16 11:59:07,800 INFO  JoomlaWeblink_003 - Step9: Select 'powered_by.pnj' image from the 'Image' dialog
+<br/>
+2016-12-16 11:59:07,802 INFO  JoomlaWeblink_003 - Step10: Click on 'Insert' button
+<br/>
+2016-12-16 11:59:07,802 INFO  JoomlaWeblink_003 - Step11: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 12:00:33,662 INFO  JoomlaWeblink_003 - VP: Verify the weblink is saved successfully
+<br/>
+2016-12-16 12:00:33,662 INFO  JoomlaWeblink_003 - VP1: 'Weblink successfully saved'message is displayed
+<br/>
+2016-12-16 12:00:33,798 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+2016-12-16 12:00:33,798 INFO  JoomlaWeblink_003 - VP2: Created weblink is displayed on the weblinks table
+<br/>
+2016-12-16 12:00:41,907 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>94</td>
+<td>weblink.JoomlaWeblink_003@27c6e487</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_001.RUN_04_TC_JOOMLA_WEBLINKS_016()'><b>RUN_04_TC_JOOMLA_WEBLINKS_016</b><br>Test class: weblink.JoomlaWeblink_001<br>Test method: Verify user can create a copied version of an existed weblink<br/>
+<a href="#Output-966966167" onClick='toggleBox("Output-966966167", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-966966167" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-966966167">
+2016-12-16 11:45:20,157 INFO  JoomlaWeblink_001 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-12-16 11:45:20,157 INFO  JoomlaWeblink_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:45:20,157 INFO  JoomlaWeblink_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:45:20,157 INFO  JoomlaWeblink_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:45:20,157 INFO  JoomlaWeblink_001 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:45:20,158 INFO  JoomlaWeblink_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:45:20,158 INFO  JoomlaWeblink_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:45:20,158 INFO  JoomlaWeblink_001 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:45:20,158 INFO  JoomlaWeblink_001 - Step 9: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:45:20,158 INFO  JoomlaWeblink_001 - VP1: Verify 'Weblink successfully saved' message is displayed
+<br/>
+2016-12-16 11:45:20,158 INFO  JoomlaWeblink_001 - VP2: Created weblink is displayed on the weblinks table
+<br/>
+2016-12-16 11:45:20,158 INFO  JoomlaWeblink_001 - Step 10: Check on the recently added article's checkbox
+<br/>
+2016-12-16 11:45:26,381 INFO  JoomlaWeblink_001 - Step 11: Click on 'Edit' icon of the top right toolbar
+<br/>
+2016-12-16 11:45:26,381 INFO  JoomlaWeblink_001 - Step 12: Enter a new title on 'Title' field
+<br/>
+2016-12-16 11:45:26,381 INFO  JoomlaWeblink_001 - Step 13: Enter new valid URL into 'URL' text field
+<br/>
+2016-12-16 11:45:26,381 INFO  JoomlaWeblink_001 - Step 14: Click on 'Save as Copy' icon of the top right toolbar
+<br/>
+2016-12-16 11:46:34,866 INFO  JoomlaWeblink_001 - VP3: Verify 'Weblink successfully saved' message is displayed
+<br/>
+2016-12-16 11:46:35,010 INFO  JoomlaWeblink_001 - ===PASSED===
+<br/>
+2016-12-16 11:46:35,011 INFO  JoomlaWeblink_001 - Step 15: Click on 'Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:47:10,273 INFO  JoomlaWeblink_001 - VP4: The copied weblink is displayed on the weblinks table
+<br/>
+2016-12-16 11:47:22,427 INFO  JoomlaWeblink_001 - ===PASSED===
+<br/>
+2016-12-16 11:47:22,427 INFO  JoomlaWeblink_001 - Post-condition: Edit weblinks
+<br/>
+</div>
+</td>
+<td></td>
+<td>164</td>
+<td>weblink.JoomlaWeblink_001@6e38921c</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_002.RUN_05_TC_JOOMLA_WEBLINKS_010()'><b>RUN_05_TC_JOOMLA_WEBLINKS_010</b><br>Test class: weblink.JoomlaWeblink_002<br>Test method: Verify user can search for weblinks using the filter dropdown lists<br/>
+<a href="#Output-1976602906" onClick='toggleBox("Output-1976602906", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1976602906" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1976602906">
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 9: Select an item from 'Category' dropdown list
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 10: Select 'Unpublished' item from 'Status' dropdown list
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 11: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - VP 1: Verify the web link is saved successfully
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 13: Select an item from the 'Category' filter dropdown list
+<br/>
+2016-12-16 11:52:21,048 INFO  JoomlaWeblink_002 - Step 14: Select an item from the 'Status' filter dropdown list
+<br/>
+2016-12-16 11:52:29,009 INFO  JoomlaWeblink_002 - VP 2: Verify the property of displayed weblinks are matched with the selected criteria from the filter dropdown lists
+<br/>
+2016-12-16 11:52:30,951 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>9</td>
+<td>weblink.JoomlaWeblink_002@64d7f7e0</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_003.RUN_05_TC_JOOMLA_WEBLINKS_017()'><b>RUN_05_TC_JOOMLA_WEBLINKS_017</b><br>Test class: weblink.JoomlaWeblink_003<br>Test method: Verify user can edit the Publish Date of a weblink<br/>
+<a href="#Output-539240764" onClick='toggleBox("Output-539240764", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-539240764" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-539240764">
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - Step3: Click on 'Log in' button
+<br/>
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - Step4: Select Components > Weblinks
+<br/>
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - Step5: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - Step6: Enter a title on 'Title' field
+<br/>
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - Step7: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - Step8: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 12:00:41,908 INFO  JoomlaWeblink_003 - VP: Verify the web link is saved successfully
+<br/>
+2016-12-16 12:00:41,909 INFO  JoomlaWeblink_003 - Step9: Check on the recently added weblink's checkbox
+<br/>
+2016-12-16 12:00:48,105 INFO  JoomlaWeblink_003 - Step10: Click on 'Edit' icon of the top right toolbar
+<br/>
+2016-12-16 12:01:21,528 INFO  JoomlaWeblink_003 - Step11: Click on the calendar icon of the Start Publishing Date
+<br/>
+2016-12-16 12:01:21,529 INFO  JoomlaWeblink_003 - Step12: Select a date from the popup calendar
+<br/>
+2016-12-16 12:01:21,529 INFO  JoomlaWeblink_003 - Step13: Click on the calendar icon of the Finish Publishing Date
+<br/>
+2016-12-16 12:01:21,529 INFO  JoomlaWeblink_003 - Step14: Select a date from the popup calendar
+<br/>
+2016-12-16 12:01:21,529 INFO  JoomlaWeblink_003 - Step15: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 12:01:54,689 INFO  JoomlaWeblink_003 - VP: Verify the web link is saved successfully
+<br/>
+2016-12-16 12:01:54,689 INFO  JoomlaWeblink_003 - 'Weblink successfully saved' message is displayed
+<br/>
+2016-12-16 12:01:54,827 INFO  JoomlaWeblink_003 - Edited weblink is displayed on the weblinks table
+<br/>
+2016-12-16 12:02:02,927 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+2016-12-16 12:02:02,927 INFO  JoomlaWeblink_003 - Step16: Click on the recently added weblink's title
+<br/>
+2016-12-16 12:02:03,889 INFO  JoomlaWeblink_003 - VP: Verify the publish date of web link is saved successfully
+<br/>
+2016-12-16 12:02:06,945 INFO  JoomlaWeblink_003 - ===PASSED===
+<br/>
+2016-12-16 12:02:06,945 INFO  JoomlaWeblink_003 - post condition 1: Delete Article
+<br/>
+2016-12-16 12:03:01,045 INFO  JoomlaWeblink_003 - post condition 2: Log out Joomla
+<br/>
+</div>
+</td>
+<td></td>
+<td>140</td>
+<td>weblink.JoomlaWeblink_003@27c6e487</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_002.RUN_06_TC_JOOMLA_WEBLINKS_007()'><b>RUN_06_TC_JOOMLA_WEBLINKS_007</b><br>Test class: weblink.JoomlaWeblink_002<br>Test method: Verify user can move a web link to trash section<br/>
+<a href="#Output-1805443519" onClick='toggleBox("Output-1805443519", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1805443519" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1805443519">
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:30,952 INFO  JoomlaWeblink_002 - VP 11: Verify the web link is saved successfully
+<br/>
+2016-12-16 11:52:30,953 INFO  JoomlaWeblink_002 - Step 12: Check on the recently added weblink's checkbox
+<br/>
+2016-12-16 11:52:30,953 INFO  JoomlaWeblink_002 - Step 13: Click on 'Trash' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:41,782 INFO  JoomlaWeblink_002 - VP 14: Verify the confirm message is displayed
+<br/>
+2016-12-16 11:52:41,937 INFO  JoomlaWeblink_002 - Step 15: Select 'Trash' item of 'Status' dropdown list
+<br/>
+2016-12-16 11:52:49,488 INFO  JoomlaWeblink_002 - VP 16: Verify the deleted weblink is displayed on the table grid
+<br/>
+2016-12-16 11:52:51,570 INFO  JoomlaWeblink_002 - Post-precondition: Set default category filter
+<br/>
+</div>
+</td>
+<td></td>
+<td>26</td>
+<td>weblink.JoomlaWeblink_002@64d7f7e0</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_001.RUN_06_TC_JOOMLA_WEBLINKS_015()'><b>RUN_06_TC_JOOMLA_WEBLINKS_015</b><br>Test class: weblink.JoomlaWeblink_001<br>Test method: Verify user can change the status of weblinks using the Status column<br>Parameters: firefox, 192.168.189.92, 8881<br/>
+<a href="#Output-1195942137" onClick='toggleBox("Output-1195942137", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1195942137" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1195942137">
+2016-12-16 11:48:04,317 INFO  JoomlaWeblink_001 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-12-16 11:48:04,317 INFO  JoomlaWeblink_001 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:48:04,317 INFO  JoomlaWeblink_001 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:48:04,317 INFO  JoomlaWeblink_001 - Step 4: Click on 'Log in' button
+<br/>
+2016-12-16 11:48:04,317 INFO  JoomlaWeblink_001 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:48:04,318 INFO  JoomlaWeblink_001 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:48:04,318 INFO  JoomlaWeblink_001 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:48:04,318 INFO  JoomlaWeblink_001 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:48:04,318 INFO  JoomlaWeblink_001 - Step 9: Select 'Published' item from 'Status' dropdown list
+<br/>
+2016-12-16 11:48:04,318 INFO  JoomlaWeblink_001 - Step 10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:48:04,318 INFO  JoomlaWeblink_001 - VP1: Verify the web link is saved successfully
+<br/>
+2016-12-16 11:48:04,318 INFO  JoomlaWeblink_001 - Step 11: Check on the recently added article's checkbox
+<br/>
+2016-12-16 11:48:12,740 INFO  JoomlaWeblink_001 - Step 12: Click on the status icon of the selected weblink in the Status column
+<br/>
+2016-12-16 11:48:22,394 INFO  JoomlaWeblink_001 - VP2: Verify the icon of the selected item is showed as 'Publish'
+<br/>
+2016-12-16 11:48:22,458 INFO  JoomlaWeblink_001 - VP3: Verify the '1 weblink successfully unpublished' message is displayed
+<br/>
+2016-12-16 11:48:22,595 INFO  JoomlaWeblink_001 - Step 13: Check on the recently added article's checkbox
+<br/>
+2016-12-16 11:48:28,805 INFO  JoomlaWeblink_001 - Step 14: Click on the status icon of the selected weblink in the Status column
+<br/>
+2016-12-16 11:48:37,998 INFO  JoomlaWeblink_001 - VP4: Verify the icon of the selected item is showed as 'Publish'
+<br/>
+2016-12-16 11:48:38,072 INFO  JoomlaWeblink_001 - VP5: Verify the '1 weblink successfully published' message is displayed
+<br/>
+2016-12-16 11:48:38,189 INFO  JoomlaWeblink_001 - Post-condition: Delete weblinks
+<br/>
+2016-12-16 11:49:10,269 INFO  JoomlaWeblink_001 - Post-condition: Logout Joomla
+<br/>
+</div>
+</td>
+<td></td>
+<td>69</td>
+<td>weblink.JoomlaWeblink_001@6e38921c</td></tr>
+<tr>
+<td title='weblink.JoomlaWeblink_002.RUN_07_TC_JOOMLA_WEBLINKS_014()'><b>RUN_07_TC_JOOMLA_WEBLINKS_014</b><br>Test class: weblink.JoomlaWeblink_002<br>Test method: Verify user can change the order of weblinks using the Ordering column<br>Parameters: firefox, 192.168.189.92, 8881<br/>
+<a href="#Output-2076249476" onClick='toggleBox("Output-2076249476", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2076249476" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2076249476">
+2016-12-16 11:52:57,367 INFO  JoomlaWeblink_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-12-16 11:52:57,367 INFO  JoomlaWeblink_002 - Step 2: Enter valid username into Username field
+<br/>
+2016-12-16 11:52:57,367 INFO  JoomlaWeblink_002 - Step 3: Enter valid password into Password field
+<br/>
+2016-12-16 11:52:57,367 INFO  JoomlaWeblink_002 - Step 5: Select Components > Weblinks
+<br/>
+2016-12-16 11:52:57,367 INFO  JoomlaWeblink_002 - Step 6: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:52:57,367 INFO  JoomlaWeblink_002 - Step 7: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:52:57,367 INFO  JoomlaWeblink_002 - Step 8: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:52:57,367 INFO  JoomlaWeblink_002 - Step 9: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:54:04,314 INFO  JoomlaWeblink_002 - VP1: Verify 'Weblink successfully saved' message is displayed
+<br/>
+2016-12-16 11:54:04,314 INFO  JoomlaWeblink_002 - VP2: Created weblink is displayed on the weblinks table
+<br/>
+2016-12-16 11:54:04,314 INFO  JoomlaWeblink_002 - Step 10: Click on 'New' icon of the top right toolbar
+<br/>
+2016-12-16 11:54:04,314 INFO  JoomlaWeblink_002 - Step 11: Enter a title on 'Title' field
+<br/>
+2016-12-16 11:54:04,314 INFO  JoomlaWeblink_002 - Step 12: Enter valid URL into 'URL' text field
+<br/>
+2016-12-16 11:54:04,315 INFO  JoomlaWeblink_002 - Step 13: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-12-16 11:55:11,244 INFO  JoomlaWeblink_002 - VP3: Verify 'Weblink successfully saved' message is displayed
+<br/>
+2016-12-16 11:55:11,245 INFO  JoomlaWeblink_002 - VP4: Created weblink is displayed on the weblinks table
+<br/>
+2016-12-16 11:55:11,245 INFO  JoomlaWeblink_002 - Step 14: Click on the Header link of Ordering column
+<br/>
+2016-12-16 11:55:18,147 INFO  JoomlaWeblink_002 - VP5:Verify the first weblink changes its position with the second weblink
+<br/>
+2016-12-16 11:55:25,974 INFO  JoomlaWeblink_002 - ===PASSED===
+<br/>
+2016-12-16 11:55:25,974 INFO  JoomlaWeblink_002 - Post-condition: Delete weblinks
+<br/>
+2016-12-16 11:55:47,019 INFO  JoomlaWeblink_002 - Post-condition: Logout Joomla
+<br/>
+</div>
+</td>
+<td></td>
+<td>172</td>
+<td>weblink.JoomlaWeblink_002@64d7f7e0</td></tr>
+</table><p>
+</body>
+</html>

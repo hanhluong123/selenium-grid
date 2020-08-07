@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" thread-count="2" parallel="tests">
+	<listeners>
+		<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+	<test name="FirefoxTest">
+		<parameter name="browser" value="Firefox" />
+		<parameter name="ip" value="192.168.191.52" />
+		<parameter name="port" value="8881" />
+		<classes>
+			<!-- <class name="article.JoomlaArticle_002"></class> -->
+			<class name="weblink.JoomlaWeblink_001"></class>
+		</classes>
+	</test> 
+<!-- 		<test name="ChromeTest"> -->
+<!-- 		<parameter name="browser" value="chrome" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="article.JoomlaArticle_003"></class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+</suite>

@@ -1,0 +1,25 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class ArticleManagerPage {
+ 
+	/*===================================Dynamic Elements===================================*/
+	public static final String dynamiclnkArticle = "//table[@id='articleList']//a[contains(text(),'%s')]";
+	public static final String dynamicbtnCheckoutStatus = "//a[contains(text(),'%s')]/preceding-sibling::a/span[@class='icon-checkedout']";
+	public static final String dynamicNumberArtileDisplay = "//div[@id='list_limit_chzn']//li[.='%s']";
+	public static final String dynamicArtilechkRow = "//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td[@class='center']/input[@type='checkbox']";
+	public static final String dynamicArtileRow = "//a[contains(text(),'%s')]";
+	public static final String dynamiciconArtileStatus = "//div[@id='j-main-container']//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td//span[@class='%s']";
+	
+	/*===================================Static Elements===================================*/
+	public static final By ddlSortArticleByID = By.xpath("//div[@id='list_fullordering_chzn']/a");
+	public static final By btnSortArticleByID = By.xpath("//div[@id='j-main-container']/table//following-sibling::thead/tr/descendant::a[contains(text(),'ID')]");
+	public static final By ddlNumberArtileDisplay = By.xpath("//div[@id='list_limit_chzn']/a");
+	public static final By btnArticleEndPage = By.xpath("//div[@id='j-main-container']//a[@data-original-title='End']");
+	public static final By btnArticleNumberEndPage = By.xpath("//div[@id='j-main-container']//span[@class='icon-next']/../../preceding-sibling::li[1]/a");
+	public static final By txtArticleSearch = By.xpath("//input[@id='filter_search']");
+	public static final By txtSearchNumberArticleDisplay = By.xpath("//div[@id='list_limit_chzn']//input");
+	public static final By btnArticleSearch = By.xpath("//div[@id='j-main-container']//button/span[@class='icon-search']");
+	
+}

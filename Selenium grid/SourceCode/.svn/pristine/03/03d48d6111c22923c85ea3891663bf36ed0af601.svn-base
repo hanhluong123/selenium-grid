@@ -1,0 +1,143 @@
+package category;
+
+import org.openqa.selenium.WebDriver;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.Constant;
+import common.CommonActions;
+import pages.LoginPageAction;
+import pages.CategoryManagerPageAction;
+import pages.CategoryPageAction;
+import pages.HelpPageAction;
+
+public class JoomlaCategory_001 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void SETUP(String browser, String ip, String port) {
+		driver = openBrowser(driver, browser, ip, port);
+		navigateBrowser(driver, url);
+ 
+		loginPage = new LoginPageAction(driver);
+		loginPage.loginToJoomla(driver, username, password);
+
+		categoryPage = new CategoryPageAction(driver);
+		categoryManagerPage = new CategoryManagerPageAction(driver);
+		helpPage = new HelpPageAction(driver);
+		Constant.className = this.getClass().getName();
+	}
+
+	@Test(description = "Verify that user can browse 'Category help' page")
+	public void RUN_01_TC_JOOMLA_CATEGORY_007() {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		categoryPage.selectMenuItems2(driver, Constant.MENUITEM_CONTENT, Constant.MENUITEM_CATEGORIES);
+		
+		log.info("Step 5: Click 'Help' button in the right top corner");
+		categoryPage.clickToolbarButton(driver, Constant.BUTTON_HELP);
+		
+		log.info("VP 6: Categor help' page appears");
+		verifyTrue(helpPage.verifyHelpPageDisplayed(driver, Constant.TITLE_HELP));
+	}
+	
+	@Test(description = "Verify that user can create a new category")
+	public void RUN_02_TC_JOOMLA_CATEGORY_001() {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories");		
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Click 'Save & Close' button");
+		categoryPage.addNewCategory(driver, title, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP 8: A message : 'Category successfully saved' shows and new category is created");
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expectedSaveMessage));
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, title));
+	}
+
+	@Test(description = "Verify that user can archive a category")
+	public void RUN_03_TC_JOOMLA_CATEGORY_005() {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Click 'Save & Close' button");
+		log.info("VP 8: A message : 'Category successfully saved' shows and new category is created");
+		log.info("Step 9: Check the Category recently created");
+		categoryManagerPage.selectCategoryBySearch(driver, Constant.SEARCH_STATUS_NO, title);
+		
+		log.info("Step 10: Click 'archive' button in the right top corner");
+		categoryPage.clickToolbarButton(driver, Constant.BUTTON_ARCHIVE);
+		
+		log.info("VP 11: A message : '1 Category successfully archived' shows");
+		verifyTrue(categoryPage.verifyMessageDisplayed(driver, expedtedArchiveMessage));
+				
+		log.info("Step 12: Select 'Archive' in Status dropdown list");
+		categoryPage.selectSearchTools(driver, archiveStatus, null, null, null, null, null, null);
+		
+		log.info("VP 13: Category is archived");
+		verifyTrue(categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, title));
+	}
+	
+
+	@Test(description= "Verify that user can send a category to trash")
+	@Parameters({"browser","ip","port"})
+	public void RUN_04_TC_JOOMLA_CATEGORY_006(String browser, String ip, String port) {
+		
+		log.info("Step 1: Navigate Joomla login page");
+		log.info("Step 2: Login with User Name : 'lctp' and password : 'lctp'");
+		log.info("Step 3: Click 'Login in' button");
+		log.info("Step 4: Select Content -> Categories ");
+		log.info("Step 5: Click 'New' button in the right top corner");
+		log.info("Step 6: Enter valid Title Name to Title Name textbox");
+		log.info("Step 7: Click 'Save & Close' button");
+		log.info("VP 8: A message : 'Category successfully saved' shows and new category is created");
+		log.info("Step 9: Check the Category recently created");
+		log.info("VP 10: A message : '1 Category successfully saved' shows");
+		log.info("Step 11: Click 'Trash' button in the right top corner");
+		categoryPage.selectSearchTools(driver, archiveStatus, null, null, null, null, null, null);
+		categoryManagerPage.deleteCategory(driver, title, true, true);
+		
+		log.info("VP 12: Category is sent to trash");
+		categoryManagerPage.selectSearchTools(driver, trashStatus, null, null, null, null, null, null);
+		categoryManagerPage.verifyCategoryDisplayed(driver, Constant.SEARCH_STATUS_YES, title);
+				
+		log.info("post condition 2: Log out Joomla" );
+		categoryManagerPage.logoutJoomla(driver);
+	}
+	@AfterClass
+	public void CLEAN() {
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects */
+	WebDriver driver;
+	LoginPageAction loginPage;
+	CategoryPageAction categoryPage;
+	CategoryManagerPageAction categoryManagerPage;
+	HelpPageAction helpPage;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("urlBap");
+	String password = CommonActions.readDataFromXML("pass");
+	String username = CommonActions.readDataFromXML("user");
+	String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaCategory_001", "title") + " " +CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String trashStatus = CommonActions.readDataFromJson("JoomlaCategory_001", "trashStatus");
+	String archiveStatus = CommonActions.readDataFromJson("JoomlaCategory_001", "archiveStatus");
+	String expectedSaveMessage = "Category successfully saved.";
+	String expedtedArchiveMessage = "1 category successfully archived.";
+	String expedtedTrashMessage = "1 category successfully trashed.";
+}

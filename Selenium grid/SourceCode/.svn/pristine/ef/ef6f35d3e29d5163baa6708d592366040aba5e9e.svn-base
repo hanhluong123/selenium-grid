@@ -1,0 +1,20 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class BannerClientManagerPage {
+	
+	/*===================================Dynamic Elements===================================*/
+	public static final String dynamiclnkBannerClient = "//a[contains(text(),'%s')]";
+	public static final String dynamicBannerClientchkRow = "//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td/input";
+	public static final String dynamicBannerClientStatus = "//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td//span[@class='%s']";
+	public static final String dynamicBannerClientLockedStatus = "//span[@class='icon-checkedout']/ancestor::a/following-sibling::a[contains(text(),'%s')]";
+
+	/*===================================Static Elements===================================*/
+	public static final By txtBannerClientSearch = By.id("filter_search");
+	public static final By btnBannerClientSearch = By.xpath("//button[@data-original-title='Search']");
+	public static final By ddlBannerClientStatusSearch = By.xpath("//div[@id='filter_state_chzn']/a");
+	public static final By ddlNumberBannerClientDisplay = By.xpath("//div[@id='list_limit_chzn']/a");
+	public static final By btnBannerClientEndPage = By.xpath("//div[@id='j-main-container']//a[@data-original-title='End']");
+	public static final By btnBannerClientNumberEndPage = By.xpath("//div[@id='j-main-container']//span[@class='icon-next']/../../preceding-sibling::li[1]/a");
+}

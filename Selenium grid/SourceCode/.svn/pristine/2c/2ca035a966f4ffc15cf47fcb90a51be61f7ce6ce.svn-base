@@ -1,0 +1,54 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import joomla.ContactManagerPage;
+
+public class ContactManagerPageAction extends AbstractPageAction{
+	WebDriver driver;
+	
+	public ContactManagerPageAction (WebDriver driver){
+		this.driver = driver;
+		
+	}
+	
+	/**
+	 * Check the checkbox of a Contact title 
+	 * @param driver
+	 * @param title
+	 */
+	
+	public void selectContact(WebDriver driver,String title){
+		click(driver, By.xpath(String.format(ContactManagerPage.dynamicchkContactRow, title)));
+		
+	}
+	
+	/**
+	 * Search a contact on Contact tables by title
+	 * @param driver
+	 * @param title
+	 */
+	public void searchContactByTitle(WebDriver driver, String title){
+		enterText(driver,ContactManagerPage.txtContactSearch, title);
+		click (driver,ContactManagerPage.btnContactSearch);
+		
+	}
+	
+	/**
+	 * Verify the created contact is displayed on the contacts table
+	 * @param driver
+	 * @param dynamiclnkContactTitle
+	 * @param title
+	 * @return
+	 */
+	
+	public Boolean verifyContactDisplayed (WebDriver driver, String title){
+		searchContactByTitle (driver, title);
+		return (isControlDisplayed(driver, By.xpath(String.format(ContactManagerPage.dynamiclnkContact, title))));
+			
+	}
+		
+	
+	
+}

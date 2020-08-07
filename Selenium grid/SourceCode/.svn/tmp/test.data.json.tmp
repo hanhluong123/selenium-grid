@@ -1,0 +1,84 @@
+{
+	"JoomlaArticle_001":
+		{
+		"title": "Test Article",
+		"titleUpdate": "Test Article Update",
+		"category" : "Sample Data-Articles",
+		"categoryUpdate" : "Team 1",
+		"status" : "Published",
+		"access" : "Public",
+		"articleText" : "this is article content",
+		"articleTextUpdate" : "this is modified article content"
+		},	
+			
+	"TC_JOOMLA_ARTICLE_013":
+		{
+		"title": "Test Article",
+		"category": "Sample Data-Articles",
+		"articleText": "This is article content",
+		"imageFolder": "/",
+		"imageName": "powered_by.png"
+		}
+		
+	"TC_JOOMLA_ARTICLE_003_004":
+		{
+		"publishStatus": "Publish",
+		"unpublishStatus": "Unpublish",
+		"publishIcon": "publish",
+		"unpublishIcon": "unpublish",
+		"imageFolder": "/",
+		"imageName": "powered_by.png"
+		}
+		
+	"JoomlaArticle_003":
+		{
+		"title": "Test Article",
+		"category" : "- Sample Data-Articles",
+		"articleText" : "this is article content",
+		"expectedMessage" : "Article successfully saved.",
+		"numberOfItemsDisplay5" : "5",
+		"numberOfItemsDisplayAll" : "All"
+		},	
+		
+	"JoomlaArticle_004":
+		{	
+		"title": "Test Article",
+		"category" : "- Sample Data-Articles",
+		"status" : "Published",
+		"articleText" : "this is article content",
+		"expectedMessage_unpublish" : "1 article unpublished.",
+		"expectedMessage_publish" : "1 article published.",
+		"expectedMessage_trashed" : "1 article trashed.",
+		"search_status" : "Trashed"
+		},
+		
+	"WEBLINK":
+		{
+		"title": "Test Weblink",
+		"titleUpdate":"Test Weblink Update"
+		},
+		
+	"TC_JOOMLA_WEBLINKS_001":
+		{
+		"title": "Test Weblink",
+		"weblinkURL": "http://www.joomla.org",
+		},
+		
+	"TC_JOOMLA_WEBLINKS_002":
+		{
+		"updateTitle": "Test Weblink 1",
+		"updatedWeblinkURL": "http://www.google.com",
+		},
+			
+	"JoomlaWeblink_003":
+		{	
+		"url_weblink" : "https://www.google.com/",
+		"status" : "Published",
+		"expectedMessage_checkin" : "1 web link successfully checked in."
+		"expectedMessage_save" : "Web link successfully saved",
+		"numberOfItemsDisplay5" : "5",
+		"numberOfItemsDisplayAll" : "All",
+		"imageFolder": "/",
+		"imageName": "powered_by.png"
+		}
+}

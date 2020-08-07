@@ -1,0 +1,25 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class CategoryManagerPage {
+ 
+	/*===================================Dynamic Elements===================================*/
+	public static final String dynamiclnkCategory = "//table[@id='categoryList']//a[contains(text(),'%s')]";
+	public static final String dynamicbtnCheckoutStatus = "//a[contains(text(),'%s')]/preceding-sibling::a/span[@class='%s']";
+	public static final String dynamicNumberArtileDisplay = ("//div[@id='list_limit_chzn']//li[.='%s']");
+	public static final String dynamicArtilechkRow = "//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td[@class='center']/input";
+	public static final String dynamicArtileRow = "//a[contains(text(),'%s')]";
+	public static final String dynamiciconArtileStatus = "//div[@id='j-main-container']//a[contains(text(),'%s')]/ancestor::td/preceding-sibling::td//span[@class='%s']";
+	
+	/*===================================Static Elements===================================*/
+	public static final By ddlSortCategoryByID = By.xpath("//div[@id='list_fullordering_chzn']/a");
+	public static final By btnSortCategoryByID = By.xpath("//div[@id='j-main-container']/table//following-sibling::thead/tr/descendant::a[contains(text(),'ID')]");
+	public static final By ddlNumberArtileDisplay = By.xpath("//div[@id='list_limit_chzn']/a");
+	public static final By btnCategoryEndPage = By.xpath("//div[@id='j-main-container']//a[@data-original-title='End']");
+	public static final By btnCategoryNumberEndPage = By.xpath("//div[@id='j-main-container']//span[@class='icon-next']/../../preceding-sibling::li[1]/a");
+	public static final By txtCategorySearch = By.xpath("//input[@id='filter_search']");
+	public static final By txtSearchNumberCategoryDisplay = By.xpath("//div[@id='list_limit_chzn']//input");
+	public static final By btnCategorySearch = By.xpath("//div[@id='j-main-container']//button/span[@class='icon-search']");
+	
+}

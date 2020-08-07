@@ -1,0 +1,193 @@
+<html>
+<head>
+<title>TestNG:  ChromeTest</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>ChromeTest</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Nov 15 17:36:33 ICT 2016</td>
+</tr>
+<tr><td>Total time:</td><td>39 seconds (39959 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='article.JoomlaArticle_003.TC_JOOMLA_ARTICLE_008()'><b>TC_JOOMLA_ARTICLE_008</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-3969819" onClick='toggleBox("Output-3969819", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-3969819" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-3969819">
+2016-11-15 17:36:40,945 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-15 17:36:40,946 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-15 17:36:41,264 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+<br/>
+2016-11-15 17:36:46,420 INFO  JoomlaArticle_003 - Step5: Click on 'Help' icon of the top right toolbar
+<br/>
+2016-11-15 17:36:51,224 INFO  JoomlaArticle_003 - Verify the article's help window is displayed
+<br/>
+2016-11-15 17:36:52,388 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>article.JoomlaArticle_003@59717824</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()'><b>TO_JOOMLA_ARTICLE_011</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-179000192" onClick='toggleBox("Output-179000192", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-179000192" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-179000192">
+2016-11-15 17:37:03,782 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-15 17:37:03,782 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-15 17:37:03,782 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-15 17:37:03,782 INFO  JoomlaArticle_003 - Step4: Click on the Header link of ID column
+<br/>
+2016-11-15 17:37:06,762 INFO  JoomlaArticle_003 - 1. Verify the articles is sorted by ID in ascending order
+<br/>
+2016-11-15 17:37:07,975 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+2016-11-15 17:37:07,976 INFO  JoomlaArticle_003 - Step5: Click on the Header link of ID column
+<br/>
+2016-11-15 17:37:09,455 INFO  JoomlaArticle_003 - 2. Verify the articles is sorted by ID in descending order
+<br/>
+2016-11-15 17:37:10,677 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>6</td>
+<td>article.JoomlaArticle_003@59717824</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()'><b>TO_JOOMLA_ARTICLE_012</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-1144592793" onClick='toggleBox("Output-1144592793", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1144592793" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1144592793">
+2016-11-15 17:37:10,681 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-15 17:37:10,681 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-15 17:37:10,681 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+</div>
+</td>
+<td></td>
+<td>0</td>
+<td>article.JoomlaArticle_003@59717824</td></tr>
+<tr>
+<td title='article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017()'><b>TO_JOOMLA_ARTICLE_017</b><br>Test class: article.JoomlaArticle_003<br/>
+<a href="#Output-1068092442" onClick='toggleBox("Output-1068092442", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1068092442" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1068092442">
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step3: Click on 'Log in' button
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step4: Select Content > Article Manager
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step5: Click on 'New' icon of the top right toolbar
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step6: Enter a title on 'Title' field
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step7: Select an item from the 'Category' dropdown list
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step8: Enter value on 'Article Text' text area
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step9: Select 'Public' item from the 'Access' dropdown list
+<br/>
+2016-11-15 17:36:52,392 INFO  JoomlaArticle_003 - Step10: Click on 'Save & Close' icon of the top right toolbar
+<br/>
+2016-11-15 17:36:58,646 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+<br/>
+2016-11-15 17:36:58,646 INFO  JoomlaArticle_003 - 1. 'Article successfully saved' message is displayed
+<br/>
+2016-11-15 17:37:01,915 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+2016-11-15 17:37:01,915 INFO  JoomlaArticle_003 - 2. Created article is displayed on the articles table
+<br/>
+2016-11-15 17:37:03,748 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+2016-11-15 17:37:03,748 INFO  JoomlaArticle_003 - 3. The Access Level of the article is displayed as 'Public'
+<br/>
+2016-11-15 17:37:03,779 INFO  JoomlaArticle_003 - ===PASSED===
+<br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>article.JoomlaArticle_003@59717824</td></tr>
+</table><p>
+</body>
+</html>

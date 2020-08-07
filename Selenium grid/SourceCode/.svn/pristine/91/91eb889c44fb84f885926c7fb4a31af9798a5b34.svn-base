@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations>
+	<configuration tag="Joomla">
+		<urlWeblink>http://ltrc.automationvids.com/administrator/</urlWeblink>
+				<url>http://ltrc.automationvids.com/administrator/</url>
+<!-- 		<url>https://baptraining.joomla.com/administrator/index.php</url> -->
+		<user>Team1TrainingSelenium20161019</user>
+		<pass>admin</pass>
+		<runmode>
+			<grid>no</grid>
+			<close>no</close>
+		</runmode>
+	</configuration>
+</configurations>

@@ -1,0 +1,278 @@
+package contact;
+
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import common.JsonHelper;
+import pages.LoginPageAction;
+import pages.ContactManagerPageAction;
+import pages.ContactPageAction;
+import pages.HelpPageAction;
+
+
+
+
+public class JoomlaContact_002 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void setup(String browser, String ip, String port) {
+
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		contactPage = new ContactPageAction (driver);
+		contactManagerPage = new ContactManagerPageAction (driver);
+		helpPage = new HelpPageAction (driver);
+		json = new JsonHelper();
+				
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+	}
+
+	@Test(description = "Verify user can access contact's help section")
+	public void RUN_01_TC_JOOMLA_CONTACTS_008() {
+		
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");
+		contactManagerPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_CONTACTS);
+		
+		log.info("Step 6: Click on 'Help' icon of the top right toolbar" );
+		contactManagerPage.clickToolbarButton(driver, Constant.BUTTON_HELP);
+				
+		log.info("VP: Verify the contact's help window is displayed");
+		verifyTrue(helpPage.verifyHelpPageDisplayed(driver, Constant.TITLE_HELP));
+					
+	}
+	
+	@Test(description = "Verify user can add image to contact's information")
+	public void RUN_02_TC_JOOMLA_CONTACTS_013() {
+			
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Click on 'Image' button");	
+		log.info("Step 10: Select 'powered_by.pnj' image from the 'Image' dialog");
+		log.info("Step 11: Click on 'Insert' button");
+		log.info("Step 14: Click on 'Save & Close' icon of the top right toolbar");
+		contactPage.addNewContact(driver, name, category, imageFolder, imageName, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP1: Verify 'Contact successfully saved' message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, saveContactSuccessfulMessage));
+					
+		log.info("VP2: Verify Created contact is displayed on the contacts table");
+		verifyTrue(contactManagerPage.verifyContactDisplayed(driver, name));
+		
+	}
+	
+	
+	@Test(description = "Verify user can check in a contact")
+	@Parameters({"browser","ip","port"})
+	public void RUN_03_TC_JOOMLA_CONTACTS_006(String browser, String ip, String port) {
+			
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save' icon of the top right toolbar");	
+		contactPage.addNewContact(driver, name1, category, publishStatus, Constant.BUTTON_SAVE);
+		
+		log.info("VP1: Verify 'Contact successfully saved' message is displayed");
+		verifyTrue(contactPage.verifyMessageDisplayed(driver, saveContactSuccessfulMessage));
+			
+		log.info("Step 11: Close the browser window");
+		closeBrowser(driver);
+		
+		log.info("Step 12: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		driver = openBrowser(driver, browser, ip, port);
+		navigateBrowser(driver, url);
+		
+		log.info("Step 13: Enter valid username into Username field");
+		log.info("Step 14: Enter valid password into Password field");
+		log.info("Step 15: Click on 'Log in' button");
+		loginPage.loginToJoomla(driver, username, password);
+		
+		log.info("Step 16: Select Components > contacts");
+		contactManagerPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_CONTACTS);
+		
+		log.info("Step 17: Check on the recently added contact's checkbox");
+		contactManagerPage.selectAnContact(driver, name1);
+		
+		log.info("Step 17: Click on 'Check In' icon of the top right toolbar");	
+		contactManagerPage.clickToolbarButton(driver, Constant.BUTTON_CHECKIN);
+		
+		log.info("VP3: The '1 contact successfully checked in' message is displayed");
+		verifyTrue(contactManagerPage.verifyMessageDisplayed(driver, checkedinContactSuccessfulMessage));
+		
+		log.info("VP4: The lock icon next to the contact is removed");
+		verifyFalse(contactManagerPage.verifyCheckoutIconDisplayed(driver, name1));
+		
+		log.info("Post-test cases: Clear search result");
+		contactManagerPage.clearSearchTools(driver);
+		
+	}
+	
+	@Test(description = "Verify user can change the order of contacts using the Ordering column")
+	@Parameters({"browser","ip","port"})
+	public void RUN_04_TC_JOOMLA_CONTACTS_014(String browser, String ip, String port) { 
+			
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify 'Contact successfully saved' message is displayed");
+		log.info("VP2: Verify created contact is displayed on the contacts table");
+		log.info("Step 10: Select Components > contacts");			
+		log.info("Step 11: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 12: Enter a title on 'Name' field");
+		log.info("Step 13: Select an item from the 'Category' dropdown list");
+		log.info("Step 14: Click on 'Save & Close' icon of the top right toolbar");
+		log.info("VP3: Verify 'Contact successfully saved' message is displayed");
+		log.info("VP4: Verify created contact is displayed on the contacts table");
+		log.info("Step 15: Click on the Header link of Ordering column");
+		contactManagerPage.clickHeaderLinkOfOrdering(driver);
+		
+		log.info("Step 15: Verify the first contact changes its position with the second contact");
+		verifyTrue(contactManagerPage.verifyContactSortInOrdering(driver, name, name1));
+		
+	}	
+	
+	@Test(description = "Verify user can search for contacts using the filter text field")
+	@Parameters({"browser","ip","port"})
+	public void RUN_05_TC_JOOMLA_CONTACTS_009(String browser, String ip, String port) {
+			
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify the contact is saved successfully");
+		log.info("Step 11: Enter a title on 'Filter' text field");
+		log.info("Step 11: Click on 'Search' button");
+		contactManagerPage.searchContactByTitle(driver, name1);
+		
+		log.info("VP2: Verify the titles of displayed contacts are partially matched with the entered keyword");
+		verifyTrue(contactManagerPage.verifyContactDisplayed(driver, name1));
+		
+	}
+					
+	
+	@Test(description = "Verify user can search for contacts using the filter dropdown lists")
+	@Parameters({"browser","ip","port"})
+	public void RUN_06_TC_JOOMLA_CONTACTS_010(String browser, String ip, String port) {
+		
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Name' field");
+		log.info("Step 8: Select an item from the 'Category' dropdown list");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify the contact is saved successfully");
+		log.info("Step 11: Select an item from the 'Category' filter dropdown list");
+		log.info("Step 12: Select an item from the 'Status' filter dropdown list");	
+		contactManagerPage.selectSearchTools(driver, publishStatus, category, null, null, null, null, null);
+		
+		log.info("VP2: Verify the property of displayed contacts are matched with the selected criteria from the filter dropdown lists");
+		verifyTrue(contactManagerPage.verifySearchToolsFilterCorrect(driver, Constant.ICON_PUBLISH, category));
+		
+		log.info("Post-test cases: Clear search result");
+		contactManagerPage.clearSearchTools(driver);
+		
+	}
+		
+		
+	@Test(description = "Verify user can paging the contacts using the paging control")
+	@Parameters({"browser","ip","port"})
+	public void RUN_07_TC_JOOMLA_CONTACTS_012(String browser, String ip, String port) {
+		
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > contacts");			
+		log.info("Step 6: Select '5' item of the 'Display' dropdown list at the footer section of the contact table" );
+		contactManagerPage.selectNumberOfContactDisplay(driver, "5");
+				
+		log.info("VP1: Verify the contact table is paging into 5 contacts per page");
+		verifyTrue(contactManagerPage.verifyContactPagingCorrectly(driver, "5"));
+		
+		log.info("Step 7: Select 'All' item of the 'Display' dropdown list at the footer section of the contact table");
+		contactManagerPage.selectNumberOfContactDisplay(driver, "All");	
+		
+		log.info("VP2: Verify all contacts are displayed in one page");
+		verifyTrue(contactManagerPage.verifyContactPagingCorrectly(driver, "All"));
+		
+		log.info("Post-Test case: Delete contact");
+		contactManagerPage.deleteContact(driver, Constant.SEARCH_STATUS_YES, name);
+		contactManagerPage.deleteContact(driver, Constant.SEARCH_STATUS_YES, name1);
+		
+		log.info("Post-Test case: Log out Joomla");
+		contactManagerPage.logoutJoomla(driver);
+		
+		}
+		
+		
+	@AfterClass
+	public void clean() {
+			
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects*/
+	WebDriver driver;
+	LoginPageAction loginPage;
+	ContactPageAction contactPage;
+	ContactManagerPageAction contactManagerPage;
+	HelpPageAction helpPage;
+	JsonHelper json;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("urlBap");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	
+	/* Test Case Variables */
+	String name = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaContact_002", "name")+ CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String name1 = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaContact_002", "name1")+ CommonActions.getDateTime() + " " + CommonActions.generateRandomNumber();
+	String category = CommonActions.readDataFromJson("JoomlaContact_002", "category");
+	String publishStatus = CommonActions.readDataFromJson("JoomlaContact_002", "publishStatus");
+	String imageFolder = CommonActions.readDataFromJson("JoomlaContact_002", "imageFolder");
+	String imageName = CommonActions.readDataFromJson("JoomlaContact_002", "imageName");
+	String saveContactSuccessfulMessage = "Contact successfully saved.";
+	String checkedinContactSuccessfulMessage = "1 contact successfully checked in.";
+	
+}

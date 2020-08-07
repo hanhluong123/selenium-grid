@@ -1,0 +1,14 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class CategoryPage {
+	
+	/*===================================Static Elements===================================*/
+	public static final By txtCategoryTitle = By.xpath("//*[@id='jform_title']");
+	public static final By ddlCategoryStatus = By.xpath("//div[@id='jform_published_chzn']/a");
+	public static final By ddlCategoryAccess = By.xpath("//div[@id='jform_access_chzn']/a");
+	public static final By iFrameCategoryText = By.xpath("//iframe[@id='jform_description_ifr']");
+	public static final By txtCategoryText = By.xpath("//*[@id='tinymce']");
+	public static final By btnCategoryImage = By.xpath("//button/span[text()='Image']");
+}

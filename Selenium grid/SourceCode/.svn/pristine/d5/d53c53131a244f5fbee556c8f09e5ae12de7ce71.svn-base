@@ -1,0 +1,269 @@
+package weblink;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import common.JsonHelper;
+import joomla.WeblinkManagerPage;
+import pages.LoginPageAction;
+import pages.WeblinkManagerPageAction;
+import pages.WeblinkPageAction;
+
+
+
+
+public class JoomlaWeblink_001 extends AbstractTest {
+
+	@BeforeClass
+	@Parameters({"browser","ip","port"})
+	public void setup(String browser, String ip, String port) {
+
+		driver = openBrowser(driver, browser, ip, port);
+		loginPage = new LoginPageAction(driver);
+		weblinkPage = new WeblinkPageAction (driver);
+		weblinkManagerPage = new WeblinkManagerPageAction (driver);
+		json = new JsonHelper();
+				
+		navigateBrowser(driver, url);
+		loginPage.loginToJoomla(driver, username, password);
+
+	}
+
+		/* Test Case Variables */
+		String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaWeblink_001", "title")+ CommonActions.getDateTime();
+		String updateTitle = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaWeblink_001", "updateTitle")+ CommonActions.getDateTime();
+		String copyTitle = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("JoomlaWeblink_001","copyTitle")+ CommonActions.getDateTime();
+		String weblinkUrl = CommonActions.readDataFromJson("JoomlaWeblink_001", "URL");
+		String updateWeblinkUrl = CommonActions.readDataFromJson("JoomlaWeblink_001", "updateURL");
+		String copyWeblinkUrl = CommonActions.readDataFromJson("JoomlaWeblink_001", "copyURL");
+		String publishStatus = CommonActions.readDataFromJson("JoomlaWeblink_001", "publishStatus");
+		String unpublishStatus = CommonActions.readDataFromJson("JoomlaWeblink_001", "unpublishStatus");
+		String archivedStatus = CommonActions.readDataFromJson("JoomlaWeblink_001", "archivedStatus");
+		String saveWeblinkSuccessfulMessage = "Web link successfully saved";
+		String unpublishWeblinkSuccessfulMessage = "1 web link successfully unpublished.";
+		String publishWeblinkSuccessfulMessage = "1 web link successfully published.";
+		String archiveWeblinkSuccessfulMessage = "1 web link successfully archived.";
+	
+	
+		@Test(description = "Verify user can create new weblink with valid information")
+		public void TC_JOOMLA_WEBLINKS_001() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");
+		weblinkPage.selectMenuItems2(driver, Constant.MENUITEM_COMPONENTS, Constant.MENUITEM_WEBLINKS);
+		
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");
+		weblinkPage.addNewWeblink(driver, title, weblinkUrl, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP1: Verify the web link is saved successfully");
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed(driver, saveWeblinkSuccessfulMessage));
+					
+		log.info("VP2: Verify Created weblink is displayed on the weblinks table");
+		verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver, title));
+		
+		}
+		
+		@Test(description = "Verify user can edit a weblink")
+		public void TC_JOOMLA_WEBLINKS_002() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("Step 10: Check on the recently added article's checkbox");
+		weblinkManagerPage.selectWeblink(driver, title);
+		
+		log.info("Step 11: Click on 'Edit' icon of the top right toolbar");
+		log.info("Step 12: Enter a new title on 'Title' field");
+		log.info("Step 13: Enter new valid URL into 'URL' text field");
+		log.info("Step 14: Click on 'Save & Close' icon of the top right toolbar");
+		weblinkPage.editWeblink(driver, updateTitle, updateWeblinkUrl, publishStatus, Constant.BUTTON_SAVEANDCLOSE);
+		
+		log.info("VP1: Verify 'Weblink successfully saved' message is displayed");
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed(driver, saveWeblinkSuccessfulMessage));
+		
+		log.info("VP2: Edited weblink is displayed on the weblinks table");
+		verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver, updateTitle));
+					
+		}
+		
+
+		
+		@Test(description = "Verify user can move a weblink to the archive")
+		@Parameters({"browser","ip","port"})
+		public void TC_JOOMLA_WEBLINKS_005(String browser, String ip, String port) {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify 'Weblink successfully saved' message is displayed");
+		log.info("VP2: Created weblink is displayed on the weblinks table");
+		log.info("Step 10: Check on the recently added weblink's checkbox");
+		weblinkManagerPage.selectWeblink(driver, updateTitle);
+		
+		log.info("Step 11: Click on 'Archive' icon of the top right toolbar");
+		weblinkManagerPage.clickToolbarButton(driver, Constant.BUTTON_ARCHIVE);
+		
+		log.info("VP3: Verify the confirm message is displayed");
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed(driver, archiveWeblinkSuccessfulMessage));
+		
+		log.info("Step 12: Select 'Archived' item of 'Status' dropdown list");
+		weblinkManagerPage.selectDropDownList(driver, WeblinkManagerPage.ddlWeblinkStatus, archivedStatus, "exact");
+		
+		log.info("VP4: Verify the archived web link is displayed on the table grid");
+		verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver, updateTitle));
+		
+		}
+		
+		@Test(description = "Verify user can change the status of weblinks using the Status column", dependsOnMethods = {"TC_JOOMLA_WEBLINKS_016"})
+		@Parameters({"browser","ip","port"})
+		public void TC_JOOMLA_WEBLINKS_015(String browser, String ip, String port) {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Select 'Published' item from 'Status' dropdown list");
+		log.info("Step 10: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify the web link is saved successfully");
+		log.info("Step 11: Check on the recently added article's checkbox");
+		weblinkManagerPage.selectWeblink(driver, copyTitle);
+		
+		log.info("Step 12: Click on the status icon of the selected weblink in the Status column");
+		weblinkManagerPage.changeWeblinkStatus(driver, copyTitle, Constant.ICON_PUBLISH);
+		
+		log.info("VP2: Verify the icon of the selected item is showed as 'Unpublish'");
+		weblinkManagerPage.verifyStatusOfWeblink(driver, copyTitle, Constant.ICON_UNPUBLISH);
+		
+		log.info("VP3: Verify the '1 weblink successfully unpublished' message is displayed");
+		weblinkManagerPage.verifyMessageDisplayed(driver, unpublishWeblinkSuccessfulMessage);
+		
+		log.info("Step 13: Check on the recently added article's checkbox");
+		weblinkManagerPage.selectWeblink(driver, copyTitle);
+		
+		log.info("Step 14: Click on the status icon of the selected weblink in the Status column");
+		weblinkManagerPage.changeWeblinkStatus(driver, copyTitle, Constant.ICON_UNPUBLISH);
+		
+		log.info("VP4: Verify the icon of the selected item is showed as 'Publish'");
+		weblinkManagerPage.verifyStatusOfWeblink(driver, copyTitle, Constant.ICON_PUBLISH);
+		
+		log.info("VP5: Verify the '1 weblink successfully published' message is displayed");	
+		weblinkManagerPage.verifyMessageDisplayed(driver, publishWeblinkSuccessfulMessage);
+		
+		log.info("Post-testcase: Clear search result");
+		weblinkManagerPage.clearWeblinkSearchResult(driver);
+		
+		}
+		
+		
+		@Test(description = "Verify user can create a copied version of an existed weblink")
+		public void TC_JOOMLA_WEBLINKS_016() {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 4: Click on 'Log in' button");
+		log.info("Step 5: Select Components > Weblinks");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify 'Weblink successfully saved' message is displayed");
+		log.info("VP2: Created weblink is displayed on the weblinks table");
+		log.info("Step 10: Check on the recently added article's checkbox");
+		weblinkManagerPage.selectWeblink(driver, updateTitle);
+		
+		log.info("Step 11: Click on 'Edit' icon of the top right toolbar");
+		log.info("Step 12: Enter a new title on 'Title' field");
+		log.info("Step 13: Enter new valid URL into 'URL' text field");
+		log.info("Step 14: Click on 'Save as Copy' icon of the top right toolbar");	
+		weblinkPage.copyWeblink(driver, copyTitle, copyWeblinkUrl);
+		
+		log.info("VP3: Verify 'Weblink successfully saved' message is displayed");
+		verifyTrue(weblinkManagerPage.verifyMessageDisplayed(driver, saveWeblinkSuccessfulMessage));
+		
+		log.info("Step 15: Click on 'Close' icon of the top right toolbar");
+		weblinkPage.clickToolbarButton(driver, Constant.BUTTON_CLOSE);
+		
+		log.info("VP4: The copied weblink is displayed on the weblinks table");
+		verifyTrue(weblinkManagerPage.verifyWeblinkDisplayed(driver, copyTitle));	
+		
+		}
+		
+		@Test(description = "Verify user can change the order of weblinks using the Ordering column", dependsOnMethods = {"TC_JOOMLA_WEBLINKS_015" })
+		@Parameters({"browser","ip","port"})
+		public void TC_JOOMLA_WEBLINKS_014 (String browser, String ip, String port) {
+		log.info("Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/");
+		log.info("Step 2: Enter valid username into Username field");
+		log.info("Step 3: Enter valid password into Password field");
+		log.info("Step 5: Select Components > Weblinks");			
+		log.info("Step 6: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 7: Enter a title on 'Title' field");
+		log.info("Step 8: Enter valid URL into 'URL' text field");
+		log.info("Step 9: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP1: Verify 'Weblink successfully saved' message is displayed");
+		log.info("VP2: Created weblink is displayed on the weblinks table");						
+		log.info("Step 10: Click on 'New' icon of the top right toolbar" );
+		log.info("Step 11: Enter a title on 'Title' field");
+		log.info("Step 12: Enter valid URL into 'URL' text field");
+		log.info("Step 13: Click on 'Save & Close' icon of the top right toolbar");	
+		log.info("VP3: Verify 'Weblink successfully saved' message is displayed");
+		log.info("VP4: Created weblink is displayed on the weblinks table");
+		log.info("Step 14: Click on the Header link of Ordering column");
+		weblinkManagerPage.click(driver, WeblinkManagerPage.btnOrdering);
+
+		log.info("VP5:Verify the first weblink changes its position with the second weblink");
+		verifyTrue(weblinkManagerPage.verifyWeblinkSortInOrdering(driver, updateTitle, copyTitle));
+		
+		log.info ("Post-condition: Delete weblinks");
+		weblinkManagerPage.deleteWeblink(driver, Constant.SEARCH_STATUS_YES, updateTitle);
+		weblinkManagerPage.deleteWeblink(driver, Constant.SEARCH_STATUS_YES, copyTitle);
+
+		log.info ("Post-condition: Logout Joomla");
+		weblinkManagerPage.logoutJoomla(driver);
+		
+		}
+			
+
+		
+	@AfterClass
+	public void clean() {
+				
+		closeBrowser(driver);
+	}
+	
+	/* Initialize Objects*/
+	WebDriver driver;
+	LoginPageAction loginPage;
+	WeblinkPageAction weblinkPage;
+	WeblinkManagerPageAction weblinkManagerPage;
+	JsonHelper json;
+	
+	/* Class Variables */
+	String url = CommonActions.readDataFromXML("url");
+	String username = CommonActions.readDataFromXML("user");
+	String password = CommonActions.readDataFromXML("pass");
+	
+}

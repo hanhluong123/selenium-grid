@@ -1,0 +1,1133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>TestNG Report</title><style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}</style></head><body><table><tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr><tr><th colspan="7">TestSuite</th></tr><tr><td><a href="#t0">FirefoxTest</a></td><td class="num">1</td><td class="num attn">8</td><td class="num attn">7</td><td class="num">237,817</td><td></td><td></td></tr><tr class="stripe"><td><a href="#t1">ChromeTest</a></td><td class="num">1</td><td class="num attn">8</td><td class="num attn">7</td><td class="num">204,314</td><td></td><td></td></tr><tr><th>Total</th><th class="num">2</th><th class="num attn">16</th><th class="num attn">14</th><th class="num">442,131</th><th colspan="2"></th></tr></table><table><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">TestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">FirefoxTest &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">article.JoomlaArticle_002</td><td><a href="#m0">clean</a></td><td rowspan="1">1479902991017</td><td rowspan="1">0</td></tr><tr class="failedodd"><td rowspan="1">article.JoomlaArticle_004</td><td><a href="#m1">CLEAN_ENVIRONMENT</a></td><td rowspan="1">1479903108563</td><td rowspan="1">0</td></tr><tr><th colspan="4">FirefoxTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">article.JoomlaArticle_001</td><td><a href="#m2">TC_JOOMLA_ARTICLE_001</a></td><td rowspan="1">1479903156573</td><td rowspan="1">20260</td></tr><tr class="failedodd"><td rowspan="4">article.JoomlaArticle_002</td><td><a href="#m3">TC_JOOMLA_ARTICLE_003</a></td><td rowspan="1">1479902977767</td><td rowspan="1">2702</td></tr><tr class="failedodd"><td><a href="#m4">TC_JOOMLA_ARTICLE_004</a></td><td rowspan="1">1479902974648</td><td rowspan="1">2769</td></tr><tr class="failedodd"><td><a href="#m5">TC_JOOMLA_ARTICLE_006</a></td><td rowspan="1">1479902980767</td><td rowspan="1">10090</td></tr><tr class="failedodd"><td><a href="#m6">TC_JOOMLA_ARTICLE_013</a></td><td rowspan="1">1479902956609</td><td rowspan="1">17688</td></tr><tr class="failedeven"><td rowspan="1">article.JoomlaArticle_003</td><td><a href="#m7">TO_JOOMLA_ARTICLE_017</a></td><td rowspan="1">1479903043808</td><td rowspan="1">28248</td></tr><tr class="failedodd"><td rowspan="1">article.JoomlaArticle_004</td><td><a href="#m8">TO_JOOMLA_ARTICLE_015</a></td><td rowspan="1">1479903085009</td><td rowspan="1">23233</td></tr><tr><th colspan="4">FirefoxTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="3">article.JoomlaArticle_001</td><td><a href="#m9">TC_JOOMLA_ARTICLE_002</a></td><td rowspan="1">1479903177177</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m10">TC_JOOMLA_ARTICLE_005</a></td><td rowspan="1">1479903177177</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m11">TC_JOOMLA_ARTICLE_010</a></td><td rowspan="1">1479903177177</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="2">article.JoomlaArticle_003</td><td><a href="#m12">TO_JOOMLA_ARTICLE_011</a></td><td rowspan="1">1479903072367</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td><a href="#m13">TO_JOOMLA_ARTICLE_012</a></td><td rowspan="1">1479903072367</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td rowspan="3">article.JoomlaArticle_004</td><td><a href="#m14">TO_JOOMLA_ARTICLE_007</a></td><td rowspan="1">1479903108563</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m15">TO_JOOMLA_ARTICLE_014</a></td><td rowspan="1">1479903108563</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m16">TO_JOOMLA_ARTICLE_016</a></td><td rowspan="1">1479903108562</td><td rowspan="1">0</td></tr><tr><th colspan="4">FirefoxTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">article.JoomlaArticle_003</td><td><a href="#m17">TC_JOOMLA_ARTICLE_008</a></td><td rowspan="1">1479903026936</td><td rowspan="1">16871</td></tr></tbody><tbody id="t1"><tr><th colspan="4">ChromeTest &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">article.JoomlaArticle_002</td><td><a href="#m18">clean</a></td><td rowspan="1">1479903285857</td><td rowspan="1">0</td></tr><tr class="failedodd"><td rowspan="1">article.JoomlaArticle_004</td><td><a href="#m19">CLEAN_ENVIRONMENT</a></td><td rowspan="1">1479903379721</td><td rowspan="1">0</td></tr><tr><th colspan="4">ChromeTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">article.JoomlaArticle_001</td><td><a href="#m20">TC_JOOMLA_ARTICLE_001</a></td><td rowspan="1">1479903192893</td><td rowspan="1">10694</td></tr><tr class="failedodd"><td rowspan="4">article.JoomlaArticle_002</td><td><a href="#m21">TC_JOOMLA_ARTICLE_003</a></td><td rowspan="1">1479903250190</td><td rowspan="1">3143</td></tr><tr class="failedodd"><td><a href="#m22">TC_JOOMLA_ARTICLE_004</a></td><td rowspan="1">1479903246689</td><td rowspan="1">3335</td></tr><tr class="failedodd"><td><a href="#m23">TC_JOOMLA_ARTICLE_006</a></td><td rowspan="1">1479903253504</td><td rowspan="1">32207</td></tr><tr class="failedodd"><td><a href="#m24">TC_JOOMLA_ARTICLE_013</a></td><td rowspan="1">1479903228030</td><td rowspan="1">14998</td></tr><tr class="failedeven"><td rowspan="1">article.JoomlaArticle_003</td><td><a href="#m25">TO_JOOMLA_ARTICLE_017</a></td><td rowspan="1">1479903337555</td><td rowspan="1">6579</td></tr><tr class="failedodd"><td rowspan="1">article.JoomlaArticle_004</td><td><a href="#m26">TO_JOOMLA_ARTICLE_015</a></td><td rowspan="1">1479903359456</td><td rowspan="1">20066</td></tr><tr><th colspan="4">ChromeTest &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="3">article.JoomlaArticle_001</td><td><a href="#m27">TC_JOOMLA_ARTICLE_002</a></td><td rowspan="1">1479903206451</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m28">TC_JOOMLA_ARTICLE_005</a></td><td rowspan="1">1479903206452</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m29">TC_JOOMLA_ARTICLE_010</a></td><td rowspan="1">1479903206451</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="2">article.JoomlaArticle_003</td><td><a href="#m30">TO_JOOMLA_ARTICLE_011</a></td><td rowspan="1">1479903346617</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td><a href="#m31">TO_JOOMLA_ARTICLE_012</a></td><td rowspan="1">1479903346617</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td rowspan="3">article.JoomlaArticle_004</td><td><a href="#m32">TO_JOOMLA_ARTICLE_007</a></td><td rowspan="1">1479903379721</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m33">TO_JOOMLA_ARTICLE_014</a></td><td rowspan="1">1479903379721</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m34">TO_JOOMLA_ARTICLE_016</a></td><td rowspan="1">1479903379721</td><td rowspan="1">0</td></tr><tr><th colspan="4">ChromeTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">article.JoomlaArticle_003</td><td><a href="#m35">TC_JOOMLA_ARTICLE_008</a></td><td rowspan="1">1479903322829</td><td rowspan="1">14726</td></tr></tbody></table><h2>FirefoxTest</h2><h3 id="m0">article.JoomlaArticle_002#clean</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logout&apos;)]&quot;}
+Command duration or timeout: 30.11 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: b1bd8456-fb2f-4748-b4d1-e77e6f583b7d
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Logout&apos;)]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at common.AutomationActions.click(AutomationActions.java:47)
+	at pages.AbstractPageAction.logoutJoomla(AbstractPageAction.java:428)
+	at article.JoomlaArticle_002.clean(JoomlaArticle_002.java:185)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;Logout&apos;)]&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/DUYENN~1.NGU/AppData/Local/Temp/anonymous826153021292912924webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/DUYENN~1.NGU/AppData/Local/Temp/anonymous826153021292912924webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m1">article.JoomlaArticle_004#CLEAN_ENVIRONMENT</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;null&apos;)]/ancestor::td/preceding-sibling::td[@class=&apos;center&apos;]/input&quot;}
+Command duration or timeout: 30.13 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=46.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: e37790f0-85bb-47b3-86ee-fd6d357c426e
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;null&apos;)]/ancestor::td/preceding-sibling::td[@class=&apos;center&apos;]/input}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at common.AutomationActions.click(AutomationActions.java:47)
+	at pages.AbstractPageAction.checkItemCheckbox(AbstractPageAction.java:114)
+	at pages.ArticleManagerPageAction.deleteArticle(ArticleManagerPageAction.java:25)
+	at article.JoomlaArticle_004.CLEAN_ENVIRONMENT(JoomlaArticle_004.java:156)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[contains(text(),&apos;null&apos;)]/ancestor::td/preceding-sibling::td[@class=&apos;center&apos;]/input&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: driver.version: unknown
+	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/DUYENN~1.NGU/AppData/Local/Temp/anonymous7493768781909877562webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/DUYENN~1.NGU/AppData/Local/Temp/anonymous7493768781909877562webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m2">article.JoomlaArticle_001#TC_JOOMLA_ARTICLE_001</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:12:36,573 INFO  JoomlaArticle_001 - Step 5: Select Content &gt; Articles
+<br/>2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 9: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - Step 10: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:12:36,574 INFO  JoomlaArticle_001 - VP: Verify the article is saved successfully
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_001(JoomlaArticle_001.java:64)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m3">article.JoomlaArticle_002#TC_JOOMLA_ARTICLE_003</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:09:37,767 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>2016-11-23 19:09:37,767 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:09:37,767 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:09:37,768 INFO  JoomlaArticle_002 - Step 9: Select &apos;Unpublished&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:09:37,769 INFO  JoomlaArticle_002 - Step 10: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:09:37,769 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article&apos;s checkbox
+<br/>2016-11-23 19:09:37,909 INFO  JoomlaArticle_002 - Step 12: Click on &apos;Publish&apos; icon of the top right toolbar
+<br/>2016-11-23 19:09:40,469 INFO  JoomlaArticle_002 - VP1: Verify the article is published successfully 
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_003(JoomlaArticle_002.java:121)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m4">article.JoomlaArticle_002#TC_JOOMLA_ARTICLE_004</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:09:34,648 INFO  JoomlaArticle_002 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:09:34,649 INFO  JoomlaArticle_002 - Step 9: Select &apos;Published&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:09:34,649 INFO  JoomlaArticle_002 - Step 10: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:09:34,649 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article&apos;s checkbox
+<br/>2016-11-23 19:09:34,778 INFO  JoomlaArticle_002 - Step 14: Click on &apos;Unpublish&apos; icon of the top right toolbar
+<br/>2016-11-23 19:09:37,417 INFO  JoomlaArticle_002 - VP1: Verify the article is unpublished successfully 
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_004(JoomlaArticle_002.java:96)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m5">article.JoomlaArticle_002#TC_JOOMLA_ARTICLE_006</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>firefox</td><td>192.168.189.93</td><td>8881</td></tr><tr><th colspan="3">Messages</th></tr><tr><td colspan="3"><div class="messages">2016-11-23 19:09:40,767 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>2016-11-23 19:09:40,767 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:09:40,767 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:09:40,768 INFO  JoomlaArticle_002 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:09:40,768 INFO  JoomlaArticle_002 - Step 5: Select Content &gt; Article Manager
+<br/>2016-11-23 19:09:41,032 INFO  JoomlaArticle_002 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:09:41,032 INFO  JoomlaArticle_002 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:09:41,032 INFO  JoomlaArticle_002 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:09:41,032 INFO  JoomlaArticle_002 - Step 9: Select &apos;Published&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:09:41,033 INFO  JoomlaArticle_002 - Step 10: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:09:41,033 INFO  JoomlaArticle_002 - Step 11: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:09:50,857 INFO  JoomlaArticle_002 - VP1: Verify the article is saved successfully
+</div></td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_006(JoomlaArticle_002.java:148)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m6">article.JoomlaArticle_002#TC_JOOMLA_ARTICLE_013</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:09:16,611 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>2016-11-23 19:09:16,611 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:09:16,612 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:09:16,612 INFO  JoomlaArticle_002 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:09:16,612 INFO  JoomlaArticle_002 - Step 5: Select Content &gt; Article Manager
+<br/>2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 9: Select &apos;Published&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:09:16,888 INFO  JoomlaArticle_002 - Step 10: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:09:16,889 INFO  JoomlaArticle_002 - Step 11: Click on &apos;Image&apos; button
+<br/>2016-11-23 19:09:16,889 INFO  JoomlaArticle_002 - Step 12: Select image from the &apos;Image&apos; dialog
+<br/>2016-11-23 19:09:16,889 INFO  JoomlaArticle_002 - Step 13: Click on &apos;Insert&apos; button
+<br/>2016-11-23 19:09:16,889 INFO  JoomlaArticle_002 - Step 14: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:09:34,296 INFO  JoomlaArticle_002 - VP1: Verify the article is saved successfully
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_013(JoomlaArticle_002.java:72)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m7">article.JoomlaArticle_003#TO_JOOMLA_ARTICLE_017</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step3: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step4: Select Content &gt; Article Manager
+<br/>2016-11-23 19:10:43,808 INFO  JoomlaArticle_003 - Step5: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step6: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step7: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step8: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step9: Select &apos;Public&apos; item from the &apos;Access&apos; dropdown list
+<br/>2016-11-23 19:10:43,812 INFO  JoomlaArticle_003 - Step10: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:11:12,056 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+<br/>2016-11-23 19:11:12,056 INFO  JoomlaArticle_003 - VP1: &apos;Article successfully saved&apos; message is displayed
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017(JoomlaArticle_003.java:65)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m8">article.JoomlaArticle_004#TO_JOOMLA_ARTICLE_015</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:11:25,009 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>2016-11-23 19:11:25,010 INFO  JoomlaArticle_004 - Step3: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:11:33,671 INFO  JoomlaArticle_004 - Step4: Select Content &gt; Article Manager
+<br/>2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step5: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step6: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step7: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step8: Select &apos;Published&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step9: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:11:33,950 INFO  JoomlaArticle_004 - Step10: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:11:45,177 INFO  JoomlaArticle_004 - Step 11: Check on the recently added article&apos;s checkbox
+<br/>2016-11-23 19:11:45,178 INFO  JoomlaArticle_004 - Step 12: Click on the status icon of the selected article in the Status column
+<br/>2016-11-23 19:11:48,165 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+<br/>2016-11-23 19:11:48,166 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as &apos;Unpublish&apos;
+<br/>2016-11-23 19:11:48,241 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>2016-11-23 19:11:48,241 INFO  JoomlaArticle_004 - VP2:The &apos;1 article unpublished&apos; message is displayed
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_015(JoomlaArticle_004.java:56)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m9">article.JoomlaArticle_001#TC_JOOMLA_ARTICLE_002</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_002()[pri:0, instance:article.JoomlaArticle_001@57a48985] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m10">article.JoomlaArticle_001#TC_JOOMLA_ARTICLE_005</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_005()[pri:0, instance:article.JoomlaArticle_001@57a48985] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m11">article.JoomlaArticle_001#TC_JOOMLA_ARTICLE_010</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_010()[pri:0, instance:article.JoomlaArticle_001@57a48985] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m12">article.JoomlaArticle_003#TO_JOOMLA_ARTICLE_011</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()[pri:0, instance:article.JoomlaArticle_003@7ce7e83c] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m13">article.JoomlaArticle_003#TO_JOOMLA_ARTICLE_012</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()[pri:0, instance:article.JoomlaArticle_003@7ce7e83c] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m14">article.JoomlaArticle_004#TO_JOOMLA_ARTICLE_007</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_007()[pri:0, instance:article.JoomlaArticle_004@4eb30d44] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m15">article.JoomlaArticle_004#TO_JOOMLA_ARTICLE_014</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_014()[pri:0, instance:article.JoomlaArticle_004@4eb30d44] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m16">article.JoomlaArticle_004#TO_JOOMLA_ARTICLE_016</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_016()[pri:0, instance:article.JoomlaArticle_004@4eb30d44] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m17">article.JoomlaArticle_003#TC_JOOMLA_ARTICLE_008</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:10:26,936 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>2016-11-23 19:10:26,937 INFO  JoomlaArticle_003 - Step3: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:10:35,658 INFO  JoomlaArticle_003 - Step4: Select Content &gt; Article Manager
+<br/>2016-11-23 19:10:35,939 INFO  JoomlaArticle_003 - Step5: Click on &apos;Help&apos; icon of the top right toolbar
+<br/>2016-11-23 19:10:38,871 INFO  JoomlaArticle_003 - VP1: Verify the article&apos;s help window is displayed
+<br/>2016-11-23 19:10:43,805 INFO  JoomlaArticle_003 - ===PASSED===
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h2>ChromeTest</h2><h3 id="m18">article.JoomlaArticle_002#clean</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//li/a/div[contains(text(),&apos;User Menu&apos;)]&quot;}
+  (Session info: chrome=54.0.2840.99)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.03 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir6140_25201}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 53ce6f32e21e56a8b13dabcefaefa113
+*** Element info: {Using=xpath, value=//li/a/div[contains(text(),&apos;User Menu&apos;)]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at common.AutomationActions.click(AutomationActions.java:47)
+	at pages.AbstractPageAction.logoutJoomla(AbstractPageAction.java:427)
+	at article.JoomlaArticle_002.clean(JoomlaArticle_002.java:185)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m19">article.JoomlaArticle_004#CLEAN_ENVIRONMENT</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.WebDriverException: unknown error: keys should be a string
+  (Session info: chrome=54.0.2840.99)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 76 milliseconds
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir8660_965}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 6cb143f00b522ed9292bb3b65b24f443
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:122)
+	at common.AutomationActions.enterText(AutomationActions.java:24)
+	at pages.AbstractPageAction.searchByTitle(AbstractPageAction.java:102)
+	at pages.ArticleManagerPageAction.deleteArticle(ArticleManagerPageAction.java:23)
+	at article.JoomlaArticle_004.CLEAN_ENVIRONMENT(JoomlaArticle_004.java:156)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m20">article.JoomlaArticle_001#TC_JOOMLA_ARTICLE_001</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 1: Navigate to the URL: https://baptraining.joomla.com/administrator/index.php
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 5: Select Content &gt; Articles
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 9: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:13:12,893 INFO  JoomlaArticle_001 - Step 10: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:13:12,894 INFO  JoomlaArticle_001 - VP: Verify the article is saved successfully
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_001.TC_JOOMLA_ARTICLE_001(JoomlaArticle_001.java:64)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m21">article.JoomlaArticle_002#TC_JOOMLA_ARTICLE_003</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:14:10,190 INFO  JoomlaArticle_002 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:14:10,191 INFO  JoomlaArticle_002 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:14:10,191 INFO  JoomlaArticle_002 - Step 9: Select &apos;Unpublished&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:14:10,191 INFO  JoomlaArticle_002 - Step 10: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:14:10,191 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article&apos;s checkbox
+<br/>2016-11-23 19:14:10,259 INFO  JoomlaArticle_002 - Step 12: Click on &apos;Publish&apos; icon of the top right toolbar
+<br/>2016-11-23 19:14:13,333 INFO  JoomlaArticle_002 - VP1: Verify the article is published successfully 
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_003(JoomlaArticle_002.java:121)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m22">article.JoomlaArticle_002#TC_JOOMLA_ARTICLE_004</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 9: Select &apos;Published&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 10: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:14:06,689 INFO  JoomlaArticle_002 - Step 11: Check on the recently added article&apos;s checkbox
+<br/>2016-11-23 19:14:06,741 INFO  JoomlaArticle_002 - Step 14: Click on &apos;Unpublish&apos; icon of the top right toolbar
+<br/>2016-11-23 19:14:10,024 INFO  JoomlaArticle_002 - VP1: Verify the article is unpublished successfully 
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_004(JoomlaArticle_002.java:96)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m23">article.JoomlaArticle_002#TC_JOOMLA_ARTICLE_006</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr><tr class="param stripe"><td>chrome</td><td>192.168.189.93</td><td>8881</td></tr><tr><th colspan="3">Messages</th></tr><tr><td colspan="3"><div class="messages">2016-11-23 19:14:13,504 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>2016-11-23 19:14:13,504 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:14:13,504 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:14:13,505 INFO  JoomlaArticle_002 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:14:13,505 INFO  JoomlaArticle_002 - Step 5: Select Content &gt; Article Manager
+<br/>2016-11-23 19:14:13,645 INFO  JoomlaArticle_002 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:14:13,645 INFO  JoomlaArticle_002 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:14:13,646 INFO  JoomlaArticle_002 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:14:13,646 INFO  JoomlaArticle_002 - Step 9: Select &apos;Published&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:14:13,646 INFO  JoomlaArticle_002 - Step 10: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:14:13,646 INFO  JoomlaArticle_002 - Step 11: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+</div></td></tr><tr><th colspan="3">Exception</th></tr><tr><td colspan="3"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;jform_title&apos;]&quot;}
+  (Session info: chrome=54.0.2840.99)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 30.06 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;2.53.1&apos;, revision: &apos;a36b8b1cd5757287168e54b817830adce9b0158d&apos;, time: &apos;2016-06-30 19:26:09&apos;
+System info: host: &apos;LGDN14552-W7D01&apos;, ip: &apos;192.168.189.93&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\DUYENN~1.NGU\AppData\Local\Temp\scoped_dir6140_25201}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=54.0.2840.99, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 53ce6f32e21e56a8b13dabcefaefa113
+*** Element info: {Using=xpath, value=//*[@id=&apos;jform_title&apos;]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at common.AutomationActions.enterText(AutomationActions.java:22)
+	at pages.ArticlePageAction.addNewArticle(ArticlePageAction.java:20)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_006(JoomlaArticle_002.java:145)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 39 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m24">article.JoomlaArticle_002#TC_JOOMLA_ARTICLE_013</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 1: Navigate to the URL: http://123.30.67.51/joomla/build1/administrator/
+<br/>2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 2: Enter valid username into Username field
+<br/>2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 3: Enter valid password into Password field
+<br/>2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 4: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:13:48,031 INFO  JoomlaArticle_002 - Step 5: Select Content &gt; Article Manager
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 6: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 7: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 8: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 9: Select &apos;Published&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 10: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 11: Click on &apos;Image&apos; button
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 12: Select image from the &apos;Image&apos; dialog
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 13: Click on &apos;Insert&apos; button
+<br/>2016-11-23 19:13:48,192 INFO  JoomlaArticle_002 - Step 14: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:14:03,028 INFO  JoomlaArticle_002 - VP1: Verify the article is saved successfully
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_002.TC_JOOMLA_ARTICLE_013(JoomlaArticle_002.java:72)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m25">article.JoomlaArticle_003#TO_JOOMLA_ARTICLE_017</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step3: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step4: Select Content &gt; Article Manager
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step5: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step6: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step7: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step8: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step9: Select &apos;Public&apos; item from the &apos;Access&apos; dropdown list
+<br/>2016-11-23 19:15:37,556 INFO  JoomlaArticle_003 - Step10: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:15:44,133 INFO  JoomlaArticle_003 - Verify the article is saved successfully
+<br/>2016-11-23 19:15:44,134 INFO  JoomlaArticle_003 - VP1: &apos;Article successfully saved&apos; message is displayed
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_003.TO_JOOMLA_ARTICLE_017(JoomlaArticle_003.java:65)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m26">article.JoomlaArticle_004#TO_JOOMLA_ARTICLE_015</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:15:59,456 INFO  JoomlaArticle_004 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>2016-11-23 19:15:59,456 INFO  JoomlaArticle_004 - Step3: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:15:59,745 INFO  JoomlaArticle_004 - Step4: Select Content &gt; Article Manager
+<br/>2016-11-23 19:16:05,037 INFO  JoomlaArticle_004 - Step5: Click on &apos;New&apos; icon of the top right toolbar
+<br/>2016-11-23 19:16:05,037 INFO  JoomlaArticle_004 - Step6: Enter a title on &apos;Title&apos; field
+<br/>2016-11-23 19:16:05,038 INFO  JoomlaArticle_004 - Step7: Select an item from the &apos;Category&apos; dropdown list
+<br/>2016-11-23 19:16:05,038 INFO  JoomlaArticle_004 - Step8: Select &apos;Published&apos; item from &apos;Status&apos; dropdown list
+<br/>2016-11-23 19:16:05,038 INFO  JoomlaArticle_004 - Step9: Enter value on &apos;Article Text&apos; text area
+<br/>2016-11-23 19:16:05,038 INFO  JoomlaArticle_004 - Step10: Click on &apos;Save &amp; Close&apos; icon of the top right toolbar
+<br/>2016-11-23 19:16:13,071 INFO  JoomlaArticle_004 - Step 11: Check on the recently added article&apos;s checkbox
+<br/>2016-11-23 19:16:13,071 INFO  JoomlaArticle_004 - Step 12: Click on the status icon of the selected article in the Status column
+<br/>2016-11-23 19:16:19,469 INFO  JoomlaArticle_004 - Verify the article is unpublished successfully
+<br/>2016-11-23 19:16:19,469 INFO  JoomlaArticle_004 - VP1: The icon of the selected item is showed as &apos;Unpublish&apos;
+<br/>2016-11-23 19:16:19,522 INFO  JoomlaArticle_004 - ===PASSED===
+<br/>2016-11-23 19:16:19,522 INFO  JoomlaArticle_004 - VP2:The &apos;1 article unpublished&apos; message is displayed
+</div></td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Error: Unresolved compilation problem: 
+	The method waitForControl(WebDriver, By, int) in the type AutomationActions is not applicable for the arguments (WebDriver, By)
+
+	at pages.AbstractPageAction.verifyMessageDisplayed(AbstractPageAction.java:251)
+	at article.JoomlaArticle_004.TO_JOOMLA_ARTICLE_015(JoomlaArticle_004.java:56)
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 35 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m27">article.JoomlaArticle_001#TC_JOOMLA_ARTICLE_002</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_002()[pri:0, instance:article.JoomlaArticle_001@6eaa21d8] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m28">article.JoomlaArticle_001#TC_JOOMLA_ARTICLE_005</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_005()[pri:0, instance:article.JoomlaArticle_001@6eaa21d8] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m29">article.JoomlaArticle_001#TC_JOOMLA_ARTICLE_010</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_001.TC_JOOMLA_ARTICLE_010()[pri:0, instance:article.JoomlaArticle_001@6eaa21d8] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m30">article.JoomlaArticle_003#TO_JOOMLA_ARTICLE_011</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_011()[pri:0, instance:article.JoomlaArticle_003@43034809] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m31">article.JoomlaArticle_003#TO_JOOMLA_ARTICLE_012</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_003.TO_JOOMLA_ARTICLE_012()[pri:0, instance:article.JoomlaArticle_003@43034809] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m32">article.JoomlaArticle_004#TO_JOOMLA_ARTICLE_007</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_007()[pri:0, instance:article.JoomlaArticle_004@4bb003e9] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m33">article.JoomlaArticle_004#TO_JOOMLA_ARTICLE_014</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_014()[pri:0, instance:article.JoomlaArticle_004@4bb003e9] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m34">article.JoomlaArticle_004#TO_JOOMLA_ARTICLE_016</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method JoomlaArticle_004.TO_JOOMLA_ARTICLE_016()[pri:0, instance:article.JoomlaArticle_004@4bb003e9] depends on not successfully finished methods
+	at org.apache.maven.plugin.surefire.InPluginVMSurefireStarter.runSuitesInProcess(InPluginVMSurefireStarter.java:82)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeProvider(AbstractSurefireMojo.java:1010)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.executeAfterPreconditionsChecked(AbstractSurefireMojo.java:862)
+	at org.apache.maven.plugin.surefire.AbstractSurefireMojo.execute(AbstractSurefireMojo.java:755)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:134)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:207)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:153)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:145)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:116)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:80)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:51)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:128)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:307)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:193)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:106)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:863)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:288)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:199)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:289)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:229)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:415)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p><h3 id="m35">article.JoomlaArticle_003#TC_JOOMLA_ARTICLE_008</h3><table class="result"><tr><th>Messages</th></tr><tr><td><div class="messages">2016-11-23 19:15:22,829 INFO  JoomlaArticle_003 - Step2: Enter valid username into Username field and valid password into Password field
+<br/>2016-11-23 19:15:22,830 INFO  JoomlaArticle_003 - Step3: Click on &apos;Log in&apos; button
+<br/>2016-11-23 19:15:29,696 INFO  JoomlaArticle_003 - Step4: Select Content &gt; Article Manager
+<br/>2016-11-23 19:15:29,848 INFO  JoomlaArticle_003 - Step5: Click on &apos;Help&apos; icon of the top right toolbar
+<br/>2016-11-23 19:15:32,496 INFO  JoomlaArticle_003 - VP1: Verify the article&apos;s help window is displayed
+<br/>2016-11-23 19:15:37,554 INFO  JoomlaArticle_003 - ===PASSED===
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p></body></html>

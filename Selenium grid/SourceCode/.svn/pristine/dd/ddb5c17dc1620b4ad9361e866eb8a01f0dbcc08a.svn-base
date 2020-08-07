@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="TestSuite" parallel="false" thread-count="10"> -->
+<suite name="TestSuite" parallel="false">
+	<listeners>
+		<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+	<test name="articlesaulab">
+		<parameter name="browser" value="firefox" />
+		<parameter name="ip" value="Windows 7" />
+		<parameter name="port" value="43" />
+		<packages>
+			<package name="article"/>
+		</packages>
+	</test>
+
+</suite>

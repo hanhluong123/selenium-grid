@@ -1,0 +1,47 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+import common.Constant;
+import joomla.BatchProcessDialog;
+
+public class BatchProcessAction extends AbstractPageAction{
+	WebDriver driver;
+	
+	public BatchProcessAction (WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	/**
+	 * set Batch Process
+	 * @param language
+	 * @param access
+	 * @param category
+	 * @param moveOrCopy
+	 * @param tag
+	 */
+	public void setBatchProcess (String language, String access, String category, String moveOrCopy, String tag) {
+		clickToolbarButton(driver, Constant.BUTTON_BATCH);
+		if (language != null) {
+			selectDropDownList(driver, BatchProcessDialog.dllLanguage, language);
+		}
+		if (access != null) {
+			selectDropDownList(driver, BatchProcessDialog.dllAccess, access);			
+		}
+		if (category != null) {
+			selectDropDownList(driver, BatchProcessDialog.dllCategory, category);
+			sleep(1);
+			if (moveOrCopy.equals("Move")) {
+				click(driver,BatchProcessDialog.rdoMove);
+			}
+			else if (moveOrCopy.equals("Copy")) {
+				click(driver,BatchProcessDialog.rdoCopy);
+			}
+		}
+		if (tag != null) {
+			selectDropDownList(driver, BatchProcessDialog.dllTag, tag);
+		}
+		click(driver, BatchProcessDialog.btnProcess);
+		sleep(1);
+	}
+}

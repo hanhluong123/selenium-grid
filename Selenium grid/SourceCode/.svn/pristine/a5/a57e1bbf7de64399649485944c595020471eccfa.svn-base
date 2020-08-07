@@ -1,0 +1,182 @@
+{
+	"JoomlaArticle_001":
+		{
+		"title": "Test Article 01",
+		"titleUpdate": "Test Article Update",
+		"category" : "Sample Data-Articles",
+		"categoryUpdate" : "Team 1",
+		"status" : "Published",
+		"access" : "Public",
+		"articleText" : "this is article content",
+		"articleTextUpdate" : "this is modified article content"
+		},	
+		
+	"JoomlaArticle_002":
+		{
+		"title": "Test Article 02",
+		"title1": "Test Article 02x",
+		"category": "Sample Data-Articles",
+		"articleText": "This is article content",
+		"imageFolder": "/",
+		"imageName": "powered_by.png",
+		"publishStatus": "Publish",
+		"unpublishStatus": "Unpublish",
+		"publishIcon": "publish",
+		"unpublishIcon": "unpublish"
+		},
+		
+	"JoomlaArticle_003":
+		{
+		"title": "Test Article 03",
+		"category" : "Sample Data-Articles",
+		"articleText" : "this is article content",
+		"expectedMessage" : "Article successfully saved.",
+		"numberOfItemsDisplay5" : "5",
+		"numberOfItemsDisplayAll" : "All"
+		},	
+		
+	"JoomlaArticle_004":
+		{	
+		"title": "Test Article 04",
+		"category" : "Sample Data-Articles",
+		"status" : "Published",
+		"articleText" : "this is article content",
+		"expectedMessage_unpublish" : "1 article unpublished.",
+		"expectedMessage_publish" : "1 article published.",
+		"expectedMessage_trashed" : "1 article trashed.",
+		"search_status" : "Trashed"
+		},
+		
+	"WEBLINK":
+		{
+		"title": "Test Weblink",
+		"titleUpdate":"Test Weblink Update"
+		},
+		
+
+	"JoomlaWeblink_001":
+		{
+		"title": "Test Weblink",
+		"URL": "http://www.joomla.org",
+		"updateTitle": "Test Weblink Update",
+		"updateURL": "http://www.google.com",
+		"copyTitle": "Test Weblink Copy",
+		"copyURL":"http://www.joomla.org",
+		"publishStatus" : "Published",
+		"unpublishStatus" : "Unpublished",
+		"archivedStatus": "Archived"
+		},
+
+	"JoomlaWeblink_002":
+		{	
+		"title": "Test Weblink",
+		"weblinkUrl" : "https://www.google.com/",
+		"category": "Sample Data-Weblinks",
+		"categoryUpdate": "Team 1",
+		"publishStatus" : "Published",
+		"unpublishStatus" : "Unpublished",
+		"trashStatus" : "Trashed",
+		"weblinkText" : "this is weblink content",
+		"weblinkTextUpdate" : "this is modified weblink content"
+		},				
+			
+	"JoomlaWeblink_003":
+		{	
+		"title": "Test Weblink",
+		"newTitle": "New Test Weblink",
+		"url_weblink" : "https://www.google.com/",
+		"status" : "Published",
+		"expectedMessage_checkin" : "1 web link successfully checked in."
+		"expectedMessage_save" : "Web link successfully saved",
+		"numberOfItemsDisplay5" : "5",
+		"numberOfItemsDisplayAll" : "All",
+		"imageFolder": "/",
+		"imageName": "powered_by.png",
+		"startpublishingdate" : "2016-12-03 00:00:00",
+		"finishpublishingdate" : "2016-12-04 00:00:00"
+		},
+		
+	"JoomlaContact_001":
+		{
+		"name": "Test Contact",
+		"updateName": "Test Contact Update",
+		"category": "Sample Data-Contact",
+		"updateCategory": "Park Site",
+		"publishStatus" : "Published",
+		"unpublishStatus" : "Unpublished",
+		"archivedStatus": "Archived"
+		},
+		
+	"JoomlaBannerClient_001":
+		{
+		"title": "Test BannerClient",
+		"title_new" : "Test New BannerClient",
+		"title_edit" : "Test Edit BannerClient",
+		"contactname" : "Duyen Nguyen",
+		"contactname_edit" : "Duyen Nguyen Edit",
+		"contactemail" : "dnguyen@gmail.com",
+		"contactemail_edit" : "editn@gmail.com",
+		"expectedMessage_saved" : "Client successfully saved.",
+		"expectedMessage_deleted" : "1 client successfully trashed.",
+		"search_status" : "Trashed",
+		"titlepage_edit" : "Banners: Edit Client"
+		},
+		
+	"JoomlaBannerClient_002":
+		{
+		"title": "Test BannerClient",
+		"contactname" : "Duyen Nguyen",
+		"contactemail" : "dnguyen@gmail.com",
+		"status_unpublished" : "Unpublished",
+		"expectedMessage_published" : "1 client successfully published.",
+		"expectedMessage_unpublished" : "1 client successfully unpublished."
+		},
+		
+	"JoomlaCategory_001":
+		{
+		"title": "Test Category 01",
+		"titleUpdate": "Test Category Update",
+		"category" : "Sample Data-Categorys",
+		"categoryUpdate" : "Team 1",
+		"status" : "Published",
+		"access" : "Public",
+		"categoryText" : "this is category content",
+		"categoryTextUpdate" : "this is modified category content"
+		},	
+		
+	"JoomlaCategory_002":
+		{
+		"title": "Test Category 02",
+		"title1": "Test Category 02x",
+		"category": "Sample Data-Categorys",
+		"categoryText": "This is category content",
+		"imageFolder": "/",
+		"imageName": "powered_by.png",
+		"publishStatus": "Publish",
+		"unpublishStatus": "Unpublish",
+		"publishIcon": "publish",
+		"unpublishIcon": "unpublish"
+		},
+		
+	"JoomlaCategory_003":
+		{
+		"title": "Test Category 03",
+		"category" : "Sample Data-Categorys",
+		"categoryText" : "this is category content",
+		"expectedMessage" : "Category successfully saved.",
+		"numberOfItemsDisplay5" : "5",
+		"numberOfItemsDisplayAll" : "All"
+		},	
+		
+	"JoomlaCategory_004":
+		{	
+		"title": "Test Category 04",
+		"category" : "Sample Data-Categorys",
+		"status" : "Published",
+		"categoryText" : "this is category content",
+		"expectedMessage_unpublish" : "1 category unpublished.",
+		"expectedMessage_publish" : "1 category published.",
+		"expectedMessage_trashed" : "1 category trashed.",
+		"search_status" : "Trashed"
+		},
+}

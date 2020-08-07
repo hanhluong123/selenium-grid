@@ -1,0 +1,14 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class ContactPage {
+	
+	public static final By txtContactName = By.id("jform_name");
+	public static final By ddlContactStatus = By.xpath ("//div[@id='jform_published_chzn']/a");
+	public static final By ddlContactCategory = By.xpath ("//div[@id='jform_catid_chzn']/a");
+	public static final By btnSelect = By.xpath("//a[@title='Select']");
+	public static final By messageContainer = By.xpath("//div[@id='system-message-container']/div/div");
+	
+	
+}

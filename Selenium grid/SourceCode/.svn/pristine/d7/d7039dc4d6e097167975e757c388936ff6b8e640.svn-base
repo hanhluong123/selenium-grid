@@ -1,0 +1,89 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import common.Constant;
+import joomla.ArticlePage;
+import joomla.ImageDialog;
+
+public class ArticlePageAction extends pages.AbstractPageAction {
+
+	WebDriver driver;
+
+	public ArticlePageAction(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	public void addNewArticle(WebDriver driver, String title, String category, String status, String articleText,
+			String button) {
+		clickToolbarButton(driver, Constant.NEW_BUTTON);
+		enterText(driver, ArticlePage.txtArticleTitle, title);
+		switchIFrame(driver, ArticlePage.iFrameArticleText);
+		enterText(driver, ArticlePage.txtArticleText, articleText);
+		switchbackWindow(driver);
+		selectDropDownList(driver, ArticlePage.ddlCategory, category, "contains");
+		selectDropDownList(driver, ArticlePage.ddlStatus, status, "contains");
+		clickToolbarButton(driver, button);
+	}
+
+	public void addNewArticle(WebDriver driver, String title, String category, String status, String access,
+			String articleText, String button) {
+		clickToolbarButton(driver, Constant.NEW_BUTTON);
+		enterText(driver, ArticlePage.txtArticleTitle, title);
+		switchIFrame(driver, ArticlePage.iFrameArticleText);
+		enterText(driver, ArticlePage.txtArticleText, articleText);
+		switchbackWindow(driver);
+		selectDropDownList(driver, ArticlePage.ddlCategory, category, "contains");
+		selectDropDownList(driver, ArticlePage.ddlStatus, status, "contains");
+		selectDropDownList(driver, ArticlePage.ddlAccess, access, "contains");
+		if (button != null) {
+			submitNewArticle(driver, button);
+		}
+	}
+
+	public void addNewArticle(WebDriver driver, String title, String category, String status, String articleText,
+			String filepath, String filename, String button) {
+		clickToolbarButton(driver, Constant.NEW_BUTTON);
+		enterText(driver, ArticlePage.txtArticleTitle, title);
+		switchIFrame(driver, ArticlePage.iFrameArticleText);
+		enterText(driver, ArticlePage.txtArticleText, articleText);
+		switchbackWindow(driver);
+		selectDropDownList(driver, ArticlePage.ddlCategory, category, "contains");
+		selectDropDownList(driver, ArticlePage.ddlStatus, status, "contains");
+		addImageToArticle(driver, filepath, filename);
+		clickToolbarButton(driver, button);
+	}
+
+	public void addImageToArticle(WebDriver driver, String filepath, String filename) {
+		click(driver, ArticlePage.btnImage);
+		try {
+			Thread.sleep(5000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		switchIFrame(driver, ImageDialog.iFrameImage);
+		selectDropDownList(driver, ImageDialog.dllFolder, filepath, "exact");
+		switchIFrame(driver, ImageDialog.iFrameImageSelectionID);
+		click(driver, By.xpath(String.format(ImageDialog.imgFilename, filename)));
+		driver.switchTo().parentFrame();
+		click(driver, ImageDialog.btnInsert);
+		switchbackWindow(driver);
+	}
+
+	public void submitNewArticle(WebDriver driver, String button) {
+		clickToolbarButton(driver, button);
+	}
+	
+	public boolean verifyMessageDisplayed(WebDriver driver, String message) {
+		waitForControl(driver, ArticlePage.messageContainer, Constant.LONG_TIME);
+		if (isControlDisplay(driver, ArticlePage.messageContainer)) {
+			String messageGotten = driver.findElement(ArticlePage.messageContainer).getText();
+			if (messageGotten.equals(message)) {
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
+
+}

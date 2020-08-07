@@ -1,0 +1,17 @@
+package joomla;
+
+import org.openqa.selenium.By;
+
+public class ContactManagerPage {
+
+	/*=================================Static elements==================================*/
+	public static final By txtContactSearch = By.id("filter_search");
+	public static final By btnContactSearch = By.xpath("//span[@class='icon-search']");
+	public static final By btnContactSearchTools = By.xpath ("//button[contains(text(),'Search Tools')]");
+	public static final By btnSearchClear = By.xpath ("//button[contains(text(),'Clear')]");
+	
+	/*=================================Dynamic elements==================================*/
+	public static final String dynamiclnkContact = "//table[@id='contactList']//a[text()='%s']";
+	public static final String dynamicchkContactRow = "//a[text()='%s']/ancestor::td/preceding-sibling::td[@class='center']/input";
+
+}

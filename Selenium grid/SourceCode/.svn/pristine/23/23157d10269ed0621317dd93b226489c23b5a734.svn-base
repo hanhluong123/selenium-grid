@@ -1,0 +1,88 @@
+package zDraft;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import common.AbstractTest;
+import common.CommonActions;
+import common.Constant;
+import pages.LoginPageAction;
+import pages.WeblinkPageAction;
+import pages.WeblinkManagerPageAction;
+
+public class Duyen extends AbstractTest {
+	WebDriver driver;
+	
+	 @BeforeClass
+	 @Parameters({"browser", "port", "ip"})
+	 public void SETUP(String browser, String port, String ip){
+	  driver = openBrowser(driver, browser, ip, port);
+	  log.info("Step1: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+	  navigateBrowser(driver, url);
+	  loginPage = new LoginPageAction(driver); 
+	  weblinkPage = new WeblinkPageAction(driver);
+	  weblinkManagerPage = new WeblinkManagerPageAction(driver);
+	 }
+	
+	 @Test
+	 @Parameters({"browser", "port", "ip"})
+	 public void TC_JOOMLA_WEBLINKS_013(String browser, String port, String ip){
+	  log.info("Step2: Enter valid username into Username field and valid password into Password field");
+	  log.info("Step3: Click on 'Log in' button");
+	  loginPage.loginToJoomla(driver, username, password);
+	  
+	  log.info("Step4: Select Components > Weblinks");
+	  weblinkPage.selectMenuItems2(driver, Constant.NODE1_COMPONENTS, Constant.NODE2_WEBLINKS);
+	  
+	  log.info("Step5: Click on 'New' icon of the top right toolbar");
+	  log.info("Step6: Enter a title on 'Title' field");
+	  log.info("Step7: Enter valid URL into 'URL' text field");
+	  log.info("Step8: Select 'Published' item from 'Status' dropdown list");
+	  log.info("Step9: Click on 'Save' icon of the top right toolbar");
+	  weblinkPage.addNewWeblink(driver, title, url_weblink, status, Constant.SAVEANDCLOSE);
+	  
+//	  log.info("Step10: Close the browser window");
+//	  closeBrowser(driver);
+//	  
+//	  log.info("Step11: Navigate to the URL: http://ltrc.automationvids.com/administrator/");
+//	  log.info("Step12: Enter valid username into Username field and valid password into Password field");
+//	  log.info("Step13: Click on 'Log in' button");
+//	  driver = openBrowser(driver, browser, ip, port);
+//	  navigateBrowser(driver, url);
+//	  loginPage.loginToJoomla(driver, username, password);
+//	  
+//	  log.info("Step14: Select Components > Weblinks");
+//	  weblinkPage.selectMenuItems2(driver, Constant.NODE1_COMPONENTS, Constant.NODE2_WEBLINKS);
+//	  
+	  log.info("Step15: Check on the recently added weblink's checkbox");
+	  weblinkManagerPage.selectAnItem(driver, title);
+	  
+	  log.info("Step16: Click on 'Check In' icon of the top right toolbar");
+	  weblinkManagerPage.clickToolbarButton(driver, Constant.CHECKIN);
+	  
+	  log.info("VP: Verify the weblink is checked in successfully");
+	  log.info("VP1: The '1 weblink successfully checked in' message is displayed");
+	  weblinkManagerPage.verifyMessageDisplayed(driver, expectedMessage_checkin);
+	  log.info("VP2: The lock icon next to the weblink is removed");
+	  verifyFalse(weblinkManagerPage.verifyCheckoutDisplayed(driver, title, Constant.ICON_CHECKOUT));
+	 }
+
+
+
+	 /* Initialize Objects */
+
+	 LoginPageAction loginPage;
+	 WeblinkPageAction weblinkPage;
+	 WeblinkManagerPageAction weblinkManagerPage;
+	 
+	 /* Class Variables */
+	 String url = CommonActions.readDataFromXML("url");
+	 String username = CommonActions.readDataFromXML("user");
+	 String password = CommonActions.readDataFromXML("pass");
+	 String title = Constant.TEAM_PREFIX + CommonActions.readDataFromJson("WEBLINK", "title") + CommonActions.getDateTime();
+	 String url_weblink = CommonActions.readDataFromJson("JoomlaWeblink_003", "url_weblink");
+	 String status = CommonActions.readDataFromJson("JoomlaWeblink_003", "status");
+	 String expectedMessage_checkin = CommonActions.readDataFromJson("JoomlaWeblink_003", "expectedMessage_checkin");
+}

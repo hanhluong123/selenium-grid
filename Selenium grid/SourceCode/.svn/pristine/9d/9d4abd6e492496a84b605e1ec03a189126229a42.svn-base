@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <suite name="TestSuite" parallel="false" thread-count="10"> -->
+<suite name="TestSuite" parallel="false">
+	<listeners>
+		<listener class-name="configuration.TestNGITestListener" />
+	</listeners>
+	<test name="article">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="article"/>
+		</packages>
+	</test>
+	<test name="category">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="category"/>
+		</packages>
+	</test>
+	<test name="weblink">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="weblink"/>
+		</packages>
+	</test>
+	<test name="contact">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="contact"/>
+		</packages>
+	</test>
+		<test name="bannerclient">
+		<parameter name="browser" value="ie" />
+		<parameter name="ip" value="192.168.189.60" />
+		<parameter name="port" value="8881" />
+		<packages>
+			<package name="bannerclient"/>
+		</packages>
+	</test>
+</suite>

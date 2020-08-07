@@ -1,0 +1,339 @@
+<html>
+<head>
+<title>TestNG:  contact</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>contact</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/16</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jul 25 12:13:23 ICT 2017</td>
+</tr>
+<tr><td>Total time:</td><td>188 seconds (188649 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='contact.JoomlaContact_001.setup()'><b>setup</b><br>Test class: contact.JoomlaContact_001<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td><div><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at contact.JoomlaContact_001.setup(JoomlaContact_001.java:26)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace485845532", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace485845532'><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at contact.JoomlaContact_001.setup(JoomlaContact_001.java:26)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>contact.JoomlaContact_001@f0f2775</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.setup()'><b>setup</b><br>Test class: contact.JoomlaContact_002<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td><div><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at contact.JoomlaContact_002.setup(JoomlaContact_002.java:28)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1192923170", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1192923170'><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at contact.JoomlaContact_002.setup(JoomlaContact_002.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_003.setup()'><b>setup</b><br>Test class: contact.JoomlaContact_003<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td><div><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at contact.JoomlaContact_003.setup(JoomlaContact_003.java:28)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2074658615", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2074658615'><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at contact.JoomlaContact_003.setup(JoomlaContact_003.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>contact.JoomlaContact_003@6591f517</td></tr>
+<tr>
+<td title='contact.JoomlaContact_004.setup()'><b>setup</b><br>Test class: contact.JoomlaContact_004<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td><div><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at contact.JoomlaContact_004.setup(JoomlaContact_004.java:28)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1923999715", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1923999715'><pre>java.lang.NullPointerException
+	at common.BrowserManagement.openBrowser(BrowserManagement.java:93)
+	at contact.JoomlaContact_004.setup(JoomlaContact_004.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:170)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:104)
+	at org.testng.TestRunner.privateRun(TestRunner.java:774)
+	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1215)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.run(TestNG.java:1048)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>contact.JoomlaContact_004@345965f2</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='contact.JoomlaContact_001.clean()'><b>clean</b><br>Test class: contact.JoomlaContact_001</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_001@f0f2775</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.clean()'><b>clean</b><br>Test class: contact.JoomlaContact_002</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_003.clean()'><b>clean</b><br>Test class: contact.JoomlaContact_003</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_003@6591f517</td></tr>
+<tr>
+<td title='contact.JoomlaContact_004.clean()'><b>clean</b><br>Test class: contact.JoomlaContact_004</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_004@345965f2</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='contact.JoomlaContact_001.RUN_01_TC_JOOMLA_CONTACTS_001()'><b>RUN_01_TC_JOOMLA_CONTACTS_001</b><br>Test class: contact.JoomlaContact_001<br>Test method: Verify user can create new contact with valid information</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_001@f0f2775</td></tr>
+<tr>
+<td title='contact.JoomlaContact_003.RUN_01_TC_JOOMLA_CONTACTS_004()'><b>RUN_01_TC_JOOMLA_CONTACTS_004</b><br>Test class: contact.JoomlaContact_003<br>Test method: Verify user can unpublish a published contact</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_003@6591f517</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.RUN_01_TC_JOOMLA_CONTACTS_008()'><b>RUN_01_TC_JOOMLA_CONTACTS_008</b><br>Test class: contact.JoomlaContact_002<br>Test method: Verify user can access contact's help section</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_003.RUN_02_TC_JOOMLA_CONTACTS_003()'><b>RUN_02_TC_JOOMLA_CONTACTS_003</b><br>Test class: contact.JoomlaContact_003<br>Test method: Verify user can publish an unpublished contact</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_003@6591f517</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.RUN_02_TC_JOOMLA_CONTACTS_013()'><b>RUN_02_TC_JOOMLA_CONTACTS_013</b><br>Test class: contact.JoomlaContact_002<br>Test method: Verify user can add image to contact's information</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_004.RUN_02_TC_JOOMLA_CONTACTS_016()'><b>RUN_02_TC_JOOMLA_CONTACTS_016</b><br>Test class: contact.JoomlaContact_004<br>Test method: Verify user can change the feature property of contacts using the Featured column<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_004@345965f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_001.RUN_02_TC_JOOMLA_contactS_002()'><b>RUN_02_TC_JOOMLA_contactS_002</b><br>Test class: contact.JoomlaContact_001<br>Test method: Verify user can edit a contact</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_001@f0f2775</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.RUN_03_TC_JOOMLA_CONTACTS_006()'><b>RUN_03_TC_JOOMLA_CONTACTS_006</b><br>Test class: contact.JoomlaContact_002<br>Test method: Verify user can check in a contact<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_003.RUN_03_TC_JOOMLA_CONTACTS_011()'><b>RUN_03_TC_JOOMLA_CONTACTS_011</b><br>Test class: contact.JoomlaContact_003<br>Test method: Verify user can sort the contact table by ID column<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_003@6591f517</td></tr>
+<tr>
+<td title='contact.JoomlaContact_004.RUN_03_TC_JOOMLA_CONTACTS_015()'><b>RUN_03_TC_JOOMLA_CONTACTS_015</b><br>Test class: contact.JoomlaContact_004<br>Test method: Verify user can change the status of contacts using the Status column<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_004@345965f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_001.RUN_03_TC_JOOMLA_contactS_005()'><b>RUN_03_TC_JOOMLA_contactS_005</b><br>Test class: contact.JoomlaContact_001<br>Test method: Verify user can move a contact to the archive<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_001@f0f2775</td></tr>
+<tr>
+<td title='contact.JoomlaContact_001.RUN_04_TC_JOOMLA_CONTACTS_007()'><b>RUN_04_TC_JOOMLA_CONTACTS_007</b><br>Test class: contact.JoomlaContact_001<br>Test method: Verify user can move a contact to trash section<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_001@f0f2775</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.RUN_04_TC_JOOMLA_CONTACTS_014()'><b>RUN_04_TC_JOOMLA_CONTACTS_014</b><br>Test class: contact.JoomlaContact_002<br>Test method: Verify user can change the order of contacts using the Ordering column<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.RUN_05_TC_JOOMLA_CONTACTS_009()'><b>RUN_05_TC_JOOMLA_CONTACTS_009</b><br>Test class: contact.JoomlaContact_002<br>Test method: Verify user can search for contacts using the filter text field<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.RUN_06_TC_JOOMLA_CONTACTS_010()'><b>RUN_06_TC_JOOMLA_CONTACTS_010</b><br>Test class: contact.JoomlaContact_002<br>Test method: Verify user can search for contacts using the filter dropdown lists<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+<tr>
+<td title='contact.JoomlaContact_002.RUN_07_TC_JOOMLA_CONTACTS_012()'><b>RUN_07_TC_JOOMLA_CONTACTS_012</b><br>Test class: contact.JoomlaContact_002<br>Test method: Verify user can paging the contacts using the paging control<br>Parameters: firefox, 192.168.189.60, 8881</td>
+<td></td>
+<td>0</td>
+<td>contact.JoomlaContact_002@5a4aa2f2</td></tr>
+</table><p>
+</body>
+</html>
